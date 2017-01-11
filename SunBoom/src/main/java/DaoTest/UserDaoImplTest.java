@@ -2,9 +2,9 @@ package DaoTest;
 
 import DaoImpl.UserDaoImpl;
 import POJO.User;
-import org.junit.Test;
-import org.junit.Before; 
 import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.ArrayList;
 

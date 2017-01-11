@@ -1,12 +1,9 @@
 package controller;
 
-import POJO.User;
 import enums.UniversalState;
 import model.UserInf;
-import model.UserListForm;
 import model.UserModel;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,7 +13,6 @@ import serviceImpl.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by zs on 2016/7/13.
@@ -36,7 +32,6 @@ public class UserController {
         String userId=id;
         UserService userService = new UserServiceImpl();
         UserInf inf=userService.getUserInf(userId);
-
         if(inf==null)
             System.out.print("null");
         ModelAndView model=new ModelAndView("index");
@@ -69,6 +64,7 @@ public class UserController {
             return "SUCCESS";
         return "FAIL";
     }
+
     @RequestMapping(value = "/getHeadPortraits", method = RequestMethod.POST)
     @ResponseBody
     public String getHeadPortraits(String userID) {
