@@ -12,7 +12,6 @@ import service.UserService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  * Created by zs on 2016/7/10.
