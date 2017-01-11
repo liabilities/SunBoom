@@ -2,3 +2,7 @@
 SunBoom/target/*
 
 SunBoom/.idea/*
+
+SunBoom/sunBoom.iml
+
+SunBoom/src/main/resources/hibernate.cfg.xml
