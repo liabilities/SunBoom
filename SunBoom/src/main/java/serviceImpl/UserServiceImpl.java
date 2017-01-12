@@ -3,8 +3,6 @@ package serviceImpl;
 import Dao.UserDao;
 import DaoImpl.UserDaoImpl;
 import POJO.User;
-import enums.Power;
-import enums.UniversalState;
 import model.UserInf;
 import model.UserModel;
 import service.UserService;

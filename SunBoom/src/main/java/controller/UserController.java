@@ -1,6 +1,5 @@
 package controller;
 
-import enums.UniversalState;
 import model.UserInf;
 import model.UserModel;
 import org.springframework.stereotype.Controller;

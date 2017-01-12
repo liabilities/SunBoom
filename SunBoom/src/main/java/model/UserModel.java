@@ -1,7 +1,5 @@
 package model;
 
-import enums.Power;
-
 /**
  * Created by zs on 2016/7/11.
  */

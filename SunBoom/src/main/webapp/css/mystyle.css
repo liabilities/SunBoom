@@ -1,0 +1,70 @@
+.leftArea{
+    text-align: center;
+    width: 50%;
+    margin: 0;
+    padding: 0px;
+    background-color: #CB4042;
+    position: relative;
+}
+
+.inputLine{
+    text-align: center;
+    width: 50%;
+    margin: 0 12.5%;
+    padding: 5px;
+    background-color: #CB4042;
+    position: relative;
+}
+
+div button{
+    text-align: center;
+    width: 15%;
+    margin: 0 30% 0 30%;
+    padding: 5px;
+}
+
+h1{
+    color: red;
+    margin-left: 12.5%;
+    text-align: left;
+    font-family: 微软雅黑;
+}
+
+h2{
+    color: red;
+    margin-left: 12.5%;
+    text-align: left;
+}
+
+p{
+    color: blue;
+}
+
+/*
+提示框
+*/
+strong{
+    color: purple;
+    font-size: 20px;
+    color: #BDC0BA;
+}
+
+/*
+信息输入框
+*/
+input{
+    text-align: center;
+    color: #BDC0BA;
+    background-color: white;
+}
+
+/*
+确认提交按钮
+*/
+button{
+    text-align: center;
+    font-size: 18px;
+    color: #CB4042;
+    cursor: pointer;
+
+}

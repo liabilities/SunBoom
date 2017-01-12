@@ -1,6 +1,5 @@
 package service;
 
-import enums.UniversalState;
 import model.UserInf;
 import model.UserModel;
 
