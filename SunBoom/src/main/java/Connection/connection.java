@@ -17,6 +17,7 @@ public class connection {
 
 
     public static Session getSession(){
+
         if (sessionFactory==null){
             configuration=new Configuration().configure();
             sessionFactory=configuration.buildSessionFactory();
