@@ -1,7 +1,7 @@
 package dao.impl;
 
 import connection.connection;
-import dao.PersonDao;
+import dao.PersonDAO;
 import org.hibernate.Session;
 import pojo.Person;
 
@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by mm on 2016/7/11.
  */
-public class PersonDaoImpl extends BaseDaoImpl<Person> implements PersonDao{
+public class PersonDAOImpl extends BaseDAOImpl<Person> implements PersonDAO {
 
     @Override
     public boolean addPo(Person po) {

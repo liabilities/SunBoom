@@ -1,7 +1,7 @@
 package service.impl;
 
-import dao.PersonDao;
-import dao.impl.PersonDaoImpl;
+import dao.PersonDAO;
+import dao.impl.PersonDAOImpl;
 import service.PersonService;
 
 /**
@@ -10,7 +10,7 @@ import service.PersonService;
 public class PersonServiceImpl implements PersonService {
 
     public String getMail(String personID){
-        PersonDao dao = new PersonDaoImpl();
+        PersonDAO dao = new PersonDAOImpl();
         int id = Integer.parseInt(personID);
         return dao.findPo(id).getMail();
     }

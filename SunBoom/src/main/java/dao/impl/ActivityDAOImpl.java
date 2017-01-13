@@ -1,7 +1,7 @@
 package dao.impl;
 
 import connection.connection;
-import dao.ActivityDao;
+import dao.ActivityDAO;
 import org.hibernate.Session;
 import pojo.Activity;
 
@@ -10,10 +10,10 @@ import java.util.List;
 /**
  * Created by mm on 2016/7/11.
  */
-public class ActivityDaoImpl extends BaseDaoImpl<Activity> implements ActivityDao {
+public class ActivityDAOImpl extends BaseDAOImpl<Activity> implements ActivityDAO {
 
     public static void main(String[] args){
-        ActivityDaoImpl impl = new ActivityDaoImpl();
+        ActivityDAOImpl impl = new ActivityDAOImpl();
         Activity act = impl.findPo(1);
         System.out.println(act.getName());
     }

@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by mm on 2016/7/10.
  */
-public interface UserDao {
+public interface UserDAO {
 
     //the "id" ,"password" ,"userLogin" ,"userState" could not be null, if add succeed ,it will return true
     public boolean addUser(User po);

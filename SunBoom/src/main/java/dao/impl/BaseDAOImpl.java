@@ -1,13 +1,13 @@
 package dao.impl;
 
-import dao.BaseDao;
+import dao.BaseDAO;
 
 import java.util.List;
 
 /**
  * Created by mm on 2016/7/11.
  */
-public class BaseDaoImpl<T> implements BaseDao<T> {
+public class BaseDAOImpl<T> implements BaseDAO<T> {
 
     public boolean addPo(T po) {
         return false;

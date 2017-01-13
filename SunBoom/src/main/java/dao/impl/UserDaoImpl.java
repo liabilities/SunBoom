@@ -1,7 +1,7 @@
 package dao.impl;
 
 import connection.connection;
-import dao.UserDao;
+import dao.UserDAO;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by mm on 2016/7/11.
  */
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl implements UserDAO {
     public boolean addUser(User po) {
         Session session= connection.getSession();
         try {
