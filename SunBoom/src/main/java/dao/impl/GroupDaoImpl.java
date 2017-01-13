@@ -1,6 +1,6 @@
 package DaoImpl;
 
-import Dao.GroupDao;
+import dao.GroupDao;
 
 /**
  * Created by I Like Milk on 2017/1/11.

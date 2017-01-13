@@ -1,4 +1,4 @@
-package Connection;
+package connection;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

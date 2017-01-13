@@ -1,6 +1,6 @@
-package Dao;
+package dao;
 
-import POJO.User;
+import pojo.User;
 
 import java.util.List;
 

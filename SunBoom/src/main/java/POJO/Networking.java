@@ -1,4 +1,4 @@
-package POJO;
+package pojo;
 
 import enums.Place;
 import enums.ParticipantRange;

@@ -1,8 +1,8 @@
 package DaoImpl;
 
-import Connection.connection;
-import Dao.UserDao;
-import POJO.User;
+import connection.connection;
+import dao.UserDao;
+import pojo.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

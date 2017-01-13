@@ -1,8 +1,6 @@
-package Dao;
+package dao;
 
-import POJO.Person;
-
-import java.util.List;
+import pojo.Person;
 
 /**
  * Created by mm on 2016/7/10.

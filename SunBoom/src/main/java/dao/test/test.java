@@ -1,7 +1,7 @@
 package DaoTest;
 
 import DaoImpl.UserDaoImpl;
-import POJO.User;
+import pojo.User;
 
 /**
  * Created by mm on 2016/7/11.

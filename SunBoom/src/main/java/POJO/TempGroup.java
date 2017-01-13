@@ -1,4 +1,4 @@
-package POJO;
+package pojo;
 
 /**
  * Created by zoetx on 2017/1/12.

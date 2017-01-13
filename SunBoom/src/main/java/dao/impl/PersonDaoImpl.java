@@ -1,8 +1,8 @@
 package DaoImpl;
 
-import Connection.connection;
-import Dao.PersonDao;
-import POJO.Person;
+import connection.connection;
+import dao.PersonDao;
+import pojo.Person;
 import org.hibernate.Session;
 
 import java.util.List;

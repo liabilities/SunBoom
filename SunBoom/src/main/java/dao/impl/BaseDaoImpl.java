@@ -1,11 +1,6 @@
 package DaoImpl;
 
-import Connection.connection;
-import Dao.BaseDao;
-import POJO.User;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import dao.BaseDao;
 
 import java.util.List;
 

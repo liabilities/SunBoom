@@ -1,7 +1,7 @@
 package DaoTest;
 
 import DaoImpl.UserDaoImpl;
-import POJO.User;
+import pojo.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

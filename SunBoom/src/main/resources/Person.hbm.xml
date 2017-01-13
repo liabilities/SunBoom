@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="POJO.Person" table="person" schema="rsp" dynamic-insert="true">
+    <class name="pojo.Person" table="person" schema="rsp" dynamic-insert="true">
         <id name="personID">
             <column name="personID" sql-type="int(10)" />
         </id>

@@ -1,8 +1,8 @@
 package DaoImpl;
 
-import Connection.connection;
-import Dao.ActivityDao;
-import POJO.Activity;
+import connection.connection;
+import dao.ActivityDao;
+import pojo.Activity;
 import org.hibernate.Session;
 
 import java.util.List;

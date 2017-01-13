@@ -1,6 +1,6 @@
 package serviceImpl;
 
-import Dao.PersonDao;
+import dao.PersonDao;
 import DaoImpl.PersonDaoImpl;
 import service.PersonService;
 

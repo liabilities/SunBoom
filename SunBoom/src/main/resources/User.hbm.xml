@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="POJO.User" table="user" schema="sunBoom" dynamic-insert="true">
+    <class name="pojo.User" table="user" schema="sunBoom" dynamic-insert="true">
         <id name="id">
             <column name="id" sql-type="varchar(20)" length="20"/>
         </id>
