@@ -22,10 +22,19 @@
                     <a href="#">首页</a>
                 </li>
                 <li>
-                    <a href="#">简介</a>
+                    <a href="#">活动</a>
                 </li>
                 <li class="disabled">
-                    <a href="#">信息</a>
+                    <a href="#">成员</a>
+                </li>
+                <li class="disabled">
+                    <a href="#">物资</a>
+                </li>
+                <li class="disabled">
+                    <a href="#">留言板</a>
+                </li>
+                <li class="disabled">
+                    <a href="#">文件</a>
                 </li>
                 <li class="dropdown pull-right">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>
@@ -49,39 +58,39 @@
             </ul>
         </div>
     </div>
-    <div class="row clearfix">
-        <div class="col-md-1 column">
-            <ul class="nav nav-stacked nav-pills">
-                <li class="active">
-                    <a href="#">首页</a>
-                </li>
-                <li>
-                    <a href="#">简介</a>
-                </li>
-                <li class="disabled">
-                    <a href="#">信息</a>
-                </li>
-                <li class="dropdown pull-right">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">操作</a>
-                        </li>
-                        <li>
-                            <a href="#">设置栏目</a>
-                        </li>
-                        <li>
-                            <a href="#">更多设置</a>
-                        </li>
-                        <li class="divider">
-                        </li>
-                        <li>
-                            <a href="#">分割线</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+    <%--<div class="row clearfix">--%>
+        <%--<div class="col-md-1 column">--%>
+            <%--<ul class="nav nav-stacked nav-pills">--%>
+                <%--<li class="active">--%>
+                    <%--<a href="#">首页</a>--%>
+                <%--</li>--%>
+                <%--<li>--%>
+                    <%--<a href="#">简介</a>--%>
+                <%--</li>--%>
+                <%--<li class="disabled">--%>
+                    <%--<a href="#">信息</a>--%>
+                <%--</li>--%>
+                <%--<li class="dropdown pull-right">--%>
+                    <%--<a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>--%>
+                    <%--<ul class="dropdown-menu">--%>
+                        <%--<li>--%>
+                            <%--<a href="#">操作</a>--%>
+                        <%--</li>--%>
+                        <%--<li>--%>
+                            <%--<a href="#">设置栏目</a>--%>
+                        <%--</li>--%>
+                        <%--<li>--%>
+                            <%--<a href="#">更多设置</a>--%>
+                        <%--</li>--%>
+                        <%--<li class="divider">--%>
+                        <%--</li>--%>
+                        <%--<li>--%>
+                            <%--<a href="#">分割线</a>--%>
+                        <%--</li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
+            <%--</ul>--%>
+        <%--</div>--%>
         <div class="col-md-11 column">
             <p class="lead">
                 <em>Git</em> 是一个分布式的版本控制系统，最初由 <strong>Linus Torvalds</strong> 编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在 <small>Ruby</small> 社区中。
