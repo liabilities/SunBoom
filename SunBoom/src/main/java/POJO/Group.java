@@ -1,4 +1,4 @@
-package pojo;
+package POJO;
 
 
 /**
@@ -8,9 +8,7 @@ package pojo;
 public class Group {
     private int groupID;
 
-    private int UniversityID;
-
-    private int memberNum;
+    private int universityID;
 
     private String tag;
 
@@ -20,13 +18,15 @@ public class Group {
 
     private String introduction;
 
-    private String avatar;
+    private String avatarPath;
 
     private String password;
 
+    private int memberNum;
+
     private String userName;
 
-    private String attestation;
+    private String attestationPath;
 
     public int getGroupID() {
         return groupID;
@@ -37,11 +37,11 @@ public class Group {
     }
 
     public int getUniversityID() {
-        return UniversityID;
+        return universityID;
     }
 
     public void setUniversityID(int universityID) {
-        UniversityID = universityID;
+        universityID = universityID;
     }
 
     public int getMemberNum() {
@@ -85,11 +85,11 @@ public class Group {
     }
 
     public String getAvatar() {
-        return avatar;
+        return avatarPath;
     }
 
     public void setAvatar(String avatar) {
-        this.avatar = avatar;
+        this.avatarPath = avatar;
     }
 
     public String getPassword() {
@@ -109,10 +109,10 @@ public class Group {
     }
 
     public String getAttestation() {
-        return attestation;
+        return attestationPath;
     }
 
     public void setAttestation(String attestation) {
-        this.attestation = attestation;
+        this.attestationPath = attestation;
     }
 }

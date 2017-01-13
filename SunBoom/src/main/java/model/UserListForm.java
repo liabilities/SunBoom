@@ -7,16 +7,12 @@ import java.util.List;
  */
 public class UserListForm {
 
-    List<String> userList;
+    public List<String> userList;
 
     public UserListForm() {
     }
 
-    public List<String> getUserList() {
-        return userList;
-    }
-
-    public void setUserList(List<String> userList) {
+    public UserListForm(List<String> userList) {
         this.userList = userList;
     }
 }
