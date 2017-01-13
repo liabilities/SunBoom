@@ -12,6 +12,8 @@ public interface ActivityHomeService {
      *
      * @param groupID 团队ID编号
      * @return 基本信息载体
+     *
+     * 根据团队的ID获取相应的信息载体
      */
     GroupModel getBasicInfo(String groupID);
 
@@ -19,6 +21,8 @@ public interface ActivityHomeService {
      *
      * @param groupModel 基本信息载体
      * @return 保存操作的状态
+     *
+     * 保存现有的团队信息
      */
     ResultMsg saveBasicInfo(GroupModel groupModel);
 
@@ -26,6 +30,8 @@ public interface ActivityHomeService {
      *
      * @param activityID 活动ID编号
      * @return 图文详情HTML文件的路径
+     *
+     * 根据活动的ID获取相应的图文详情HTML路径
      */
     String getDetailInfo(String activityID);
 
@@ -33,6 +39,8 @@ public interface ActivityHomeService {
      *
      * @param detailHTMLPath 图文详情HTML文件的路径
      * @return 保存操作的状态
+     *
+     * 保存现有的详情HTML文件路径
      */
     ResultMsg saveDetailInfo(String detailHTMLPath);
 }
