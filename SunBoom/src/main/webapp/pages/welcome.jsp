@@ -37,7 +37,10 @@
                     </div>
                     <div class="tab-pane active" id="panel-364309">
                         <p>
-                            潇潇开心吗.
+                            潇潇开心吗
+                            <a href="http://localhost:8080/pages/groupNavigationBar.jsp">
+                                ???kk
+                            </a>
                         </p>
                     </div>
                 </div>
