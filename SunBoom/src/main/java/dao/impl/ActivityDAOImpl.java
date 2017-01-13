@@ -1,6 +1,6 @@
 package dao.impl;
 
-import connection.connection;
+import tool.connection;
 import dao.ActivityDAO;
 import org.hibernate.Session;
 import pojo.Activity;
