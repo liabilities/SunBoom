@@ -4,7 +4,8 @@ package enums;
  * Created by zoetx on 2017/1/13.
  */
 public enum ResultMsg {
-    OFFLINE("断网");//断网
+
+    SUCCESS("成功"), FAIL("失败"), OFFLINE("断网");
 
     private String message;
 

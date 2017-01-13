@@ -37,10 +37,11 @@ public interface ActivityHomeService {
 
     /**
      *
+     * @param activityID 活动ID编号
      * @param detailHTMLPath 图文详情HTML文件的路径
      * @return 保存操作的状态
      *
      * 保存现有的详情HTML文件路径
      */
-    ResultMsg saveDetailInfo(String detailHTMLPath);
+    ResultMsg saveDetailInfo(String activityID, String detailHTMLPath);
 }

@@ -1,6 +1,8 @@
 package pojo;
 
 
+import model.GroupModel;
+
 /**
  * Created by I Like Milk on 2017/1/11.
  */
@@ -27,6 +29,21 @@ public class Group {
     private String userName;
 
     private String attestationPath;
+
+
+    public Group(GroupModel groupModel) {
+        this.groupID = Integer.parseInt(groupModel.groupID);
+        this.universityID = Integer.parseInt(groupModel.universityID);
+        this.tag = groupModel.tag;
+        this.name = groupModel.name;
+        this.signature = groupModel.signature;
+        this.introduction = groupModel.introduction;
+        this.avatarPath = groupModel.avatarPath;
+        this.password = groupModel.password;
+        this.memberNum = groupModel.memberNum;
+        this.userName = groupModel.userName;
+        this.attestationPath = groupModel.attestationPath;
+    }
 
     public int getGroupID() {
         return groupID;
@@ -84,11 +101,11 @@ public class Group {
         this.introduction = introduction;
     }
 
-    public String getAvatar() {
+    public String getAvatarPath() {
         return avatarPath;
     }
 
-    public void setAvatar(String avatar) {
+    public void setAvatarPath(String avatar) {
         this.avatarPath = avatar;
     }
 
@@ -108,11 +125,11 @@ public class Group {
         this.userName = userName;
     }
 
-    public String getAttestation() {
+    public String getAttestationPath() {
         return attestationPath;
     }
 
-    public void setAttestation(String attestation) {
+    public void setAttestationPath(String attestation) {
         this.attestationPath = attestation;
     }
 }

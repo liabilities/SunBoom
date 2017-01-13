@@ -16,7 +16,7 @@ public class Activity {
     private int place;
     private Date startTime;
     private Date endTime;
-    private String detail;
+    private String detailPath;
     private int capital;
 
     public int getActivityID() {
@@ -99,12 +99,12 @@ public class Activity {
         this.endTime = endTime;
     }
 
-    public String getDetail() {
-        return detail;
+    public String getDetailPath() {
+        return detailPath;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
+    public void setDetailPath(String detailPath) {
+        this.detailPath = detailPath;
     }
 
     public int getCapital() {

@@ -1,5 +1,7 @@
 package model;
 
+import pojo.Group;
+
 /**
  * Created by cuihua on 2017/1/13.
  */
@@ -43,5 +45,18 @@ public class GroupModel {
         this.attestationPath = attestationPath;
     }
 
+    public GroupModel(Group group) {
+        this.groupID = String.valueOf(group.getGroupID());
+        this.universityID = String.valueOf(group.getUniversityID());
+        this.tag = group.getTag();
+        this.name = group.getName();
+        this.signature = group.getSignature();
+        this.introduction = group.getIntroduction();
+        this.avatarPath = group.getAvatarPath();
+        this.password = group.getPassword();
+        this.memberNum = group.getMemberNum();
+        this.userName = group.getUserName();
+        this.attestationPath = group.getAttestationPath();
+    }
 
 }
