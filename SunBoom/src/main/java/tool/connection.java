@@ -7,11 +7,11 @@ import org.hibernate.cfg.Configuration;
 /**
  * Created by mm on 2016/7/11.
  */
-public class connection {
+public class Connection {
     private static Configuration configuration;
     private static SessionFactory sessionFactory;
 
-    private connection(){
+    private Connection(){
 
     }
 

@@ -1,6 +1,6 @@
 package dao.impl;
 
-import tool.connection;
+import tool.Connection;
 import dao.PersonDAO;
 import org.hibernate.Session;
 import pojo.Person;
@@ -20,11 +20,11 @@ public class PersonDAOImpl extends BaseDAOImpl<Person> implements PersonDAO {
     @Override
     public Person findPo(int id) {
         System.out.println(id);
-        Session session= connection.getSession();
+        Session session= Connection.getSession();
         System.out.println("find");
         try {
             Person person=(Person)session.get(Person.class,id);
-            connection.closeSession(session);
+            Connection.closeSession(session);
             if(person!=null){
                 return person;
             }else {
@@ -32,7 +32,7 @@ public class PersonDAOImpl extends BaseDAOImpl<Person> implements PersonDAO {
             }
         }catch (Exception e){
             e.printStackTrace();
-            connection.closeSession(session);
+            Connection.closeSession(session);
             return  null;
         }
     }

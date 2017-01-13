@@ -31,30 +31,30 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 
 
 //    public boolean addUser(User po) {
-//        Session session= connection.getSession();
+//        Session session= Connection.getSession();
 //        try {
 //            if (findUser(po)==null){
 //                session.save(po);
 //                Transaction transaction=session.beginTransaction();
 //                transaction.commit();
-//                connection.closeSession(session);
+//                Connection.closeSession(session);
 //                return true;
 //            }else {
-//                connection.closeSession(session);
+//                Connection.closeSession(session);
 //                return false;
 //            }
 //        }catch (Exception e){
 //            e.printStackTrace();
-//            connection.closeSession(session);
+//            Connection.closeSession(session);
 //            return false;
 //        }
 //    }
 //
 //    public User findUser(User po) {
-//        Session session= connection.getSession();
+//        Session session= Connection.getSession();
 //        try {
 //            User user=(User)session.get(User.class,po.getId());
-//            connection.closeSession(session);
+//            Connection.closeSession(session);
 //            if(user!=null){
 //                return user;
 //            }else {
@@ -62,33 +62,33 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 //            }
 //        }catch (Exception e){
 //            e.printStackTrace();
-//            connection.closeSession(session);
+//            Connection.closeSession(session);
 //            return  null;
 //        }
 //    }
 //
 //    public boolean update(User po) {
-//        Session session= connection.getSession();
+//        Session session= Connection.getSession();
 //        try {
 //            if (findUser(po)!=null){
 //                session.update(po);
 //                Transaction transaction=session.beginTransaction();
 //                transaction.commit();
-//                connection.closeSession(session);
+//                Connection.closeSession(session);
 //                return true;
 //            }else {
-//                connection.closeSession(session);
+//                Connection.closeSession(session);
 //                return false;
 //            }
 //        }catch (Exception e){
 //            e.printStackTrace();
-//            connection.closeSession(session);
+//            Connection.closeSession(session);
 //            return false;
 //        }
 //    }
 //
 //    public boolean delete(User po) {
-//        Session session= connection.getSession();
+//        Session session= Connection.getSession();
 //        try {
 //            if (findUser(po)!=null){
 //                User user=new User();
@@ -96,35 +96,35 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 //                session.delete(user);
 //                Transaction transaction=session.beginTransaction();
 //                transaction.commit();
-//                connection.closeSession(session);
+//                Connection.closeSession(session);
 //                return true;
 //            }else {
-//                connection.closeSession(session);
+//                Connection.closeSession(session);
 //                return false;
 //            }
 //        }catch (Exception e){
 //            e.printStackTrace();
-//            connection.closeSession(session);
+//            Connection.closeSession(session);
 //            return false;
 //        }
 //    }
 //
 //    public List getAllUserId(){
-//        Session session=connection.getSession();
+//        Session session=Connection.getSession();
 //        try {
 //            String hql="select id from User";
 //            Query query=session.createQuery(hql);
 //            List list=query.list();
-//            connection.closeSession(session);
+//            Connection.closeSession(session);
 //            return list;
 //        }catch (Exception e){
-//            connection.closeSession(session);
+//            Connection.closeSession(session);
 //            return null;
 //        }
 //    }
 //
 //    public boolean updateHeadPortrait(User po) {
-//        Session session=connection.getSession();
+//        Session session=Connection.getSession();
 //        try {
 //            if (findUser(po)!=null){
 //                String hql="update User u set u.headPortrait=:headPortrait where u.id=:id";
@@ -134,21 +134,21 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 //                query.executeUpdate();
 //                Transaction transaction=session.beginTransaction();
 //                transaction.commit();
-//                connection.closeSession(session);
+//                Connection.closeSession(session);
 //                return true;
 //            }else {
-//                connection.closeSession(session);
+//                Connection.closeSession(session);
 //                return false;
 //            }
 //        }catch (Exception e){
 //            e.printStackTrace();
-//            connection.closeSession(session);
+//            Connection.closeSession(session);
 //            return false;
 //        }
 //    }
 //
 //    public List getSimilarUser(String name) {
-//        Session session=connection.getSession();
+//        Session session=Connection.getSession();
 //        try {
 //            String hql="from User u where u.id like :name";
 //            String temp="";
@@ -164,11 +164,11 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 //
 //            query.setParameter("name",temp);
 //            List list=query.list();
-//            connection.closeSession(session);
+//            Connection.closeSession(session);
 //            return list;
 //        }catch (Exception e){
 //            e.printStackTrace();
-//            connection.closeSession(session);
+//            Connection.closeSession(session);
 //            return null;
 //        }
 //    }

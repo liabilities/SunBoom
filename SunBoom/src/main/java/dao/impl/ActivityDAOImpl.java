@@ -1,6 +1,6 @@
 package dao.impl;
 
-import tool.connection;
+import tool.Connection;
 import dao.ActivityDAO;
 import org.hibernate.Session;
 import pojo.Activity;
@@ -25,11 +25,11 @@ public class ActivityDAOImpl extends BaseDAOImpl<Activity> implements ActivityDA
 
     @Override
     public Activity findPo(int id) {
-        Session session= connection.getSession();
+        Session session= Connection.getSession();
         System.out.println("find");
         try {
             Activity activity =(Activity)session.get(Activity.class,id);
-            connection.closeSession(session);
+            Connection.closeSession(session);
             if(activity!=null){
                 return activity;
             }else {
@@ -37,7 +37,7 @@ public class ActivityDAOImpl extends BaseDAOImpl<Activity> implements ActivityDA
             }
         }catch (Exception e){
             e.printStackTrace();
-            connection.closeSession(session);
+            Connection.closeSession(session);
             return  null;
         }
     }
