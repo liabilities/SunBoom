@@ -6,7 +6,7 @@ package enums;
 public enum ParticipantRange {
 
     //全部，只面向全城，只面向全校
-    all(0), city(1), university(2);
+    ALL(0), CITY(1), UNIVERSITY(2);
 
     private int representNum;
 

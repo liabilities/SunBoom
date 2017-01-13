@@ -6,7 +6,7 @@ package enums;
 public enum Place {
 
     //室内，室外
-    interior(0), exterior(1);
+    INTERIOR(0), EXTERIOR(1);
 
     private int representNum;
 

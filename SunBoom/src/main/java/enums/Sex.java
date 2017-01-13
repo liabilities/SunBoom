@@ -6,7 +6,7 @@ package enums;
 public enum Sex {
 
     //男，女，未知
-    male(0), female(1), notKnown(2);
+    MALE(0), FEMALE(1), NOT_KNOW(2);
 
     private int representNum;
 

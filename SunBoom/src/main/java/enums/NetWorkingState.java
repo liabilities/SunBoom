@@ -6,7 +6,7 @@ package enums;
 public enum NetWorkingState {
 
     //未发布／草稿，已发布，已结束
-    unannounced(0), announced(1), finished(2), cancelled(3);
+    UNANNOUNCED(0), ANNOUNCED(1), FINISHED(2), CANCELLED(3);
 
     private int representNum;
 
