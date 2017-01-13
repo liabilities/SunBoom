@@ -1,7 +1,7 @@
-package serviceImpl;
+package service.impl;
 
 import dao.PersonDao;
-import DaoImpl.PersonDaoImpl;
+import dao.impl.PersonDaoImpl;
 import service.PersonService;
 
 /**

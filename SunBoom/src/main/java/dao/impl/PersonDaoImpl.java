@@ -1,9 +1,9 @@
-package DaoImpl;
+package dao.impl;
 
 import connection.connection;
 import dao.PersonDao;
-import pojo.Person;
 import org.hibernate.Session;
+import pojo.Person;
 
 import java.util.List;
 

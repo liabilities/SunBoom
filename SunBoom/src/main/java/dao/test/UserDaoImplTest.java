@@ -1,10 +1,11 @@
-package DaoTest;
+package dao.test;
 
-import DaoImpl.UserDaoImpl;
-import pojo.User;
+
+import dao.impl.UserDaoImpl;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import pojo.User;
 
 import java.util.ArrayList;
 

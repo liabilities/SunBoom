@@ -1,6 +1,7 @@
-package DaoTest;
+package dao.test;
 
-import DaoImpl.UserDaoImpl;
+
+import dao.impl.UserDaoImpl;
 import pojo.User;
 
 /**

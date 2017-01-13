@@ -1,8 +1,10 @@
 package dao;
 
+import pojo.Group;
+
 /**
- * Created by I Like Milk on 2017/1/11.
+ * Created by mm on 2016/7/10.
  */
-public interface GroupDao {
+public interface GroupDao extends BaseDao<Group>{
 
 }

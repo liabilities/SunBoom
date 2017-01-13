@@ -1,11 +1,11 @@
-package DaoImpl;
+package dao.impl;
 
 import connection.connection;
 import dao.UserDao;
-import pojo.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import pojo.User;
 
 import java.util.List;
 

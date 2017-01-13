@@ -1,4 +1,4 @@
-package DaoImpl;
+package dao.impl;
 
 import dao.BaseDao;
 
