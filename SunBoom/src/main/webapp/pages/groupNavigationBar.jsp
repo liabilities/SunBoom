@@ -11,91 +11,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 引入 Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/groupNavigationBar.css" rel="stylesheet">
     <title>navigationBar</title>
 </head>
 <body>
-<div class="container">
-    <div class="row clearfix">
+<div class="container" id="menu1">
+    <div class="row clearfix" id="menu">
         <div class="col-md-12 column">
             <ul class="nav nav-pills">
-                <li class="active">
+                <li class="active" class="new1">
                     <a href="#">首页</a>
                 </li>
-                <li>
-                    <a href="#">活动</a>
+                <li class="new1">
+                    <a href="http://localhost:8080/pages/welcome.jsp">活动</a>
                 </li>
-                <li class="disabled">
+                <li class="new1">
                     <a href="#">成员</a>
                 </li>
-                <li class="disabled">
+                <li class="new1">
                     <a href="#">物资</a>
                 </li>
-                <li class="disabled">
+                <li class="new1">
                     <a href="#">留言板</a>
                 </li>
-                <li class="disabled">
+                <li class="new1">
                     <a href="#">文件</a>
-                </li>
-                <li class="dropdown pull-right">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">操作</a>
-                        </li>
-                        <li>
-                            <a href="#">设置栏目</a>
-                        </li>
-                        <li>
-                            <a href="#">更多设置</a>
-                        </li>
-                        <li class="divider">
-                        </li>
-                        <li>
-                            <a href="#">分割线</a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         </div>
     </div>
-    <%--<div class="row clearfix">--%>
-        <%--<div class="col-md-1 column">--%>
-            <%--<ul class="nav nav-stacked nav-pills">--%>
-                <%--<li class="active">--%>
-                    <%--<a href="#">首页</a>--%>
-                <%--</li>--%>
-                <%--<li>--%>
-                    <%--<a href="#">简介</a>--%>
-                <%--</li>--%>
-                <%--<li class="disabled">--%>
-                    <%--<a href="#">信息</a>--%>
-                <%--</li>--%>
-                <%--<li class="dropdown pull-right">--%>
-                    <%--<a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>--%>
-                    <%--<ul class="dropdown-menu">--%>
-                        <%--<li>--%>
-                            <%--<a href="#">操作</a>--%>
-                        <%--</li>--%>
-                        <%--<li>--%>
-                            <%--<a href="#">设置栏目</a>--%>
-                        <%--</li>--%>
-                        <%--<li>--%>
-                            <%--<a href="#">更多设置</a>--%>
-                        <%--</li>--%>
-                        <%--<li class="divider">--%>
-                        <%--</li>--%>
-                        <%--<li>--%>
-                            <%--<a href="#">分割线</a>--%>
-                        <%--</li>--%>
-                    <%--</ul>--%>
-                <%--</li>--%>
-            <%--</ul>--%>
-        <%--</div>--%>
-        <div class="col-md-11 column">
-            <p class="lead">
-                <em>Git</em> 是一个分布式的版本控制系统，最初由 <strong>Linus Torvalds</strong> 编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在 <small>Ruby</small> 社区中。
-            </p>
+    <div class="container">
+        <div class="row">
+            <div class="span2"
+            <ul class="nav nav-stacked nav-pills" style="margin-top: 20px" >
+                <li class="active" class="new1">
+                    <a href="#">创建活动</a>
+                </li>
+                <li class="new1">
+                    <a href="#">正在进行</a>
+                </li>
+                <li class="new1">
+                    <a href="#">历史活动</a>
+                </li>
+            </ul>
         </div>
+    </div>
+
+    <div class="col-md-11 column" id="div1">
+        <p class="lead">
+            <em>Git</em>
+        </p>
     </div>
 </div>
 
