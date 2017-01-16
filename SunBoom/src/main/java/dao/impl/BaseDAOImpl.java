@@ -3,7 +3,6 @@ package dao.impl;
 import dao.BaseDAO;
 import org.hibernate.Session;
 import pojo.Person;
-import pojo.PrivateLetter;
 import tool.Connection;
 
 import java.util.Collections;
@@ -29,38 +28,46 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
     public BaseDAOImpl(Object obj){
         this.obj = obj;
         System.out.print(obj.getClass());
-        Connection.closeSession(getSession());
     }
 
-    protected Session getSession() {
-        return Connection.getSession();
-    }
 
     public void save(T entity) {
-        getSession().save(entity);
+
+        Session session= Connection.getSession();
+        session.save(entity);
+        Connection.closeSession(session);
     }
 
     public boolean update(T entity) {
-        getSession().update(entity);
+        Session session= Connection.getSession();
+        session.update(entity);
+        Connection.closeSession(session);
         return true;
     }
 
     public void delete(int id) {
+        Session session= Connection.getSession();
         Object obj = getById(id);
         if (obj != null) {
-            getSession().delete(obj);
+            session.delete(obj);
         }
+        Connection.closeSession(session);
     }
 
     public T getById(int id) {
-        return (T) getSession().get(obj.getClass(), id);
+        Session session= Connection.getSession();
+        T result =  (T)session.get(obj.getClass(), id);
+        Connection.closeSession(session);
+        return result;
+
     }
 
     public List<T> getByIds(Long[] ids) {
+        Session session= Connection.getSession();
         if (ids == null || ids.length == 0) {
             return Collections.EMPTY_LIST;
         } else {
-            return getSession().createQuery(//
+            return session.createQuery(//
                     "FROM " + obj.getClass().getSimpleName() + " WHERE id IN (:ids)")//
                     .setParameterList("ids", ids)//
                     .list();
@@ -68,7 +75,8 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
     }
 
     public List<T> findAll() {
-        return getSession().createQuery(//
+        Session session= Connection.getSession();
+        return session.createQuery(//
                 "FROM " + obj.getClass().getSimpleName())//
                 .list();
     }
