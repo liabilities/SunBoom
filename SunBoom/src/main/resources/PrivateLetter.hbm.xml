@@ -20,8 +20,8 @@
         <property name="receiverName">
             <column name="receiverName" sql-type="varchar(45)" />
         </property>
-        <property name="date">
-            <column name="date" sql-type="date"/>
+        <property name="time">
+            <column name="time" sql-type="date"/>
         </property>
         <property name="content">
             <column name="content" sql-type="text"/>

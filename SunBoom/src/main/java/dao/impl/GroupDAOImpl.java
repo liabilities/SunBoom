@@ -8,4 +8,7 @@ import pojo.Group;
  */
 public class GroupDAOImpl extends BaseDAOImpl<Group> implements GroupDAO {
 
+    public GroupDAOImpl() {
+        super(new Group());
+    }
 }

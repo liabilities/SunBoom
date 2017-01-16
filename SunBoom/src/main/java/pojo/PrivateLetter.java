@@ -11,7 +11,7 @@ public class PrivateLetter {
     private int receiverID;
     private String senderName;
     private String receiverName;
-    private Date date;
+    private Date time;
     private String content;
 
     public int getLetterID() {
@@ -54,20 +54,20 @@ public class PrivateLetter {
         this.receiverName = receiverName;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public String getContent() {
         return content;
     }
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
     }
 
 }

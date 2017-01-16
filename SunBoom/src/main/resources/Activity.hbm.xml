@@ -35,8 +35,8 @@
         <property name="endTime">
             <column name="endTime" sql-type="Date"/>
         </property>
-        <property name="detail">
-            <column name="detail" sql-type="text"/>
+        <property name="detailPath">
+            <column name="detailPath" sql-type="text"/>
         </property>
         <property name="capital">
             <column name="capital" sql-type="int(11)"/>

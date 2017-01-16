@@ -7,10 +7,12 @@ import java.util.List;
  */
 public interface BaseDAO<T> {
 
-    public boolean addPo(T po);
-    public T findPo(int id);
-    public boolean updatePo(T po);
-    public boolean deleteOne(T po);
-    public List<T> getAll();
+    public void save(T entity);
+    public boolean update(T entity);
+    public void delete(int id);
+    public T getById(int id);
+    public List<T> getByIds(Long[] ids);
+    public List<T> findAll();
+
 
 }

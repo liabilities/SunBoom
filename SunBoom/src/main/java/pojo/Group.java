@@ -30,6 +30,10 @@ public class Group {
 
     private String attestationPath;
 
+    public Group(){
+
+    }
+
 
     public Group(GroupModel groupModel) {
         this.groupID = Integer.parseInt(groupModel.groupID);

@@ -1,7 +1,13 @@
 package dao.impl;
 
 import dao.BaseDAO;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import pojo.User;
+import tool.Connection;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -9,169 +15,52 @@ import java.util.List;
  */
 public class BaseDAOImpl<T> implements BaseDAO<T> {
 
-    public boolean addPo(T po) {
-        return false;
+    private Object obj;
+
+    public BaseDAOImpl(Object obj){
+        this.obj = obj;
+        System.out.print(obj.getClass());
     }
 
-    public T findPo(int id) {
-        return null;
+    protected Session getSession() {
+        return Connection.getSession();
     }
 
-    public boolean updatePo(T po) {
-        return false;
+    public void save(T entity) {
+        getSession().save(entity);
     }
 
-    public boolean deleteOne(T po) {
-        return false;
+    public boolean update(T entity) {
+        getSession().update(entity);
+        return true;
     }
 
-    public List<T> getAll() {
-        return null;
+    public void delete(int id) {
+        Object obj = getById(id);
+        if (obj != null) {
+            getSession().delete(obj);
+        }
     }
 
+    public T getById(int id) {
+        return (T) getSession().get(obj.getClass(), id);
+    }
 
-//    public boolean addUser(User po) {
-//        Session session= Connection.getSession();
-//        try {
-//            if (findUser(po)==null){
-//                session.save(po);
-//                Transaction transaction=session.beginTransaction();
-//                transaction.commit();
-//                Connection.closeSession(session);
-//                return true;
-//            }else {
-//                Connection.closeSession(session);
-//                return false;
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            Connection.closeSession(session);
-//            return false;
-//        }
-//    }
-//
-//    public User findUser(User po) {
-//        Session session= Connection.getSession();
-//        try {
-//            User user=(User)session.get(User.class,po.getId());
-//            Connection.closeSession(session);
-//            if(user!=null){
-//                return user;
-//            }else {
-//                return null;
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            Connection.closeSession(session);
-//            return  null;
-//        }
-//    }
-//
-//    public boolean update(User po) {
-//        Session session= Connection.getSession();
-//        try {
-//            if (findUser(po)!=null){
-//                session.update(po);
-//                Transaction transaction=session.beginTransaction();
-//                transaction.commit();
-//                Connection.closeSession(session);
-//                return true;
-//            }else {
-//                Connection.closeSession(session);
-//                return false;
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            Connection.closeSession(session);
-//            return false;
-//        }
-//    }
-//
-//    public boolean delete(User po) {
-//        Session session= Connection.getSession();
-//        try {
-//            if (findUser(po)!=null){
-//                User user=new User();
-//                user.setId(po.getId());
-//                session.delete(user);
-//                Transaction transaction=session.beginTransaction();
-//                transaction.commit();
-//                Connection.closeSession(session);
-//                return true;
-//            }else {
-//                Connection.closeSession(session);
-//                return false;
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            Connection.closeSession(session);
-//            return false;
-//        }
-//    }
-//
-//    public List getAllUserId(){
-//        Session session=Connection.getSession();
-//        try {
-//            String hql="select id from User";
-//            Query query=session.createQuery(hql);
-//            List list=query.list();
-//            Connection.closeSession(session);
-//            return list;
-//        }catch (Exception e){
-//            Connection.closeSession(session);
-//            return null;
-//        }
-//    }
-//
-//    public boolean updateHeadPortrait(User po) {
-//        Session session=Connection.getSession();
-//        try {
-//            if (findUser(po)!=null){
-//                String hql="update User u set u.headPortrait=:headPortrait where u.id=:id";
-//                Query query=session.createQuery(hql);
-//                query.setParameter("headPortrait",po.getHeadPortrait());
-//                query.setParameter("id",po.getId());
-//                query.executeUpdate();
-//                Transaction transaction=session.beginTransaction();
-//                transaction.commit();
-//                Connection.closeSession(session);
-//                return true;
-//            }else {
-//                Connection.closeSession(session);
-//                return false;
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            Connection.closeSession(session);
-//            return false;
-//        }
-//    }
-//
-//    public List getSimilarUser(String name) {
-//        Session session=Connection.getSession();
-//        try {
-//            String hql="from User u where u.id like :name";
-//            String temp="";
-//            Query query=session.createQuery(hql);
-//
-//            //transfer to the format of %
-//            if (!name.trim().equals("")){
-//                temp+="%";
-//                for(int i=0;i<name.length();i++){
-//                    temp+=name.charAt(i)+"%";
-//                }
-//            }
-//
-//            query.setParameter("name",temp);
-//            List list=query.list();
-//            Connection.closeSession(session);
-//            return list;
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            Connection.closeSession(session);
-//            return null;
-//        }
-//    }
+    public List<T> getByIds(Long[] ids) {
+        if (ids == null || ids.length == 0) {
+            return Collections.EMPTY_LIST;
+        } else {
+            return getSession().createQuery(//
+                    "FROM " + obj.getClass().getSimpleName() + " WHERE id IN (:ids)")//
+                    .setParameterList("ids", ids)//
+                    .list();
+        }
+    }
 
+    public List<T> findAll() {
+        return getSession().createQuery(//
+                "FROM " + obj.getClass().getSimpleName())//
+                .list();
+    }
 
 }

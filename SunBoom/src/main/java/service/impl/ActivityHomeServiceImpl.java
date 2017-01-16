@@ -24,25 +24,25 @@ public class ActivityHomeServiceImpl implements ActivityHomeService {
     }
 
     public GroupModel getBasicInfo(String groupID) {
-        return new GroupModel(groupDAO.findPo(Integer.parseInt(groupID)));
+        return new GroupModel(groupDAO.getById(Integer.parseInt(groupID)));
     }
 
     public ResultMsg saveBasicInfo(GroupModel groupModel) {
-        boolean result = groupDAO.updatePo(new Group(groupModel));
+        boolean result = groupDAO.update(new Group(groupModel));
 
         if (result) return ResultMsg.SUCCESS;
         else return ResultMsg.FAIL;
     }
 
     public String getDetailInfo(String activityID) {
-        Activity activity = activityDAO.findPo(Integer.parseInt(activityID));
+        Activity activity = activityDAO.getById(Integer.parseInt(activityID));
         return activity.getDetailPath();
     }
 
     public ResultMsg saveDetailInfo(String activityID, String detailHTMLPath) {
-        Activity activity = activityDAO.findPo(Integer.parseInt(activityID));
+        Activity activity = activityDAO.getById(Integer.parseInt(activityID));
         activity.setDetailPath(detailHTMLPath);
-        boolean result = activityDAO.updatePo(activity);
+        boolean result = activityDAO.update(activity);
 
         if (result) return ResultMsg.SUCCESS;
         else return ResultMsg.FAIL;
