@@ -1,10 +1,9 @@
 package dao.impl;
 
 import dao.BaseDAO;
-import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
-import pojo.User;
+import pojo.Person;
+import pojo.PrivateLetter;
 import tool.Connection;
 
 import java.util.Collections;
@@ -15,11 +14,22 @@ import java.util.List;
  */
 public class BaseDAOImpl<T> implements BaseDAO<T> {
 
+    public static void main(String[] args){
+
+//        PrivateLetterDAOImpl impl = new PrivateLetterDAOImpl();
+//        PrivateLetter obj = impl.getById(1);
+//        System.out.print(obj.getContent());
+        PersonDAOImpl impl = new PersonDAOImpl();
+        Person obj = impl.getById(1);
+        System.out.print(obj.getAvatar());
+    }
+
     private Object obj;
 
     public BaseDAOImpl(Object obj){
         this.obj = obj;
         System.out.print(obj.getClass());
+        Connection.closeSession(getSession());
     }
 
     protected Session getSession() {
