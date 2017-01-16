@@ -30,16 +30,15 @@
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane" id="panel-968060">
-                        <p>
-                            飞机晚点了.
-                        </p>
-                    </div>
                     <div class="tab-pane active" id="panel-364309">
                         <p>
-                            潇潇开心吗
-                            <a href="http://localhost:8080/pages/groupNavigationBar.jsp">
+                            <a href="http://localhost:8080/pages/groupNavigationBarTop.jsp">
                                 ???kk
+                            </a>
+                        </p>
+                        <p>
+                            <a href="http://localhost:8080/pages/groupIndex.jsp">
+                                团体首页
                             </a>
                         </p>
                     </div>
