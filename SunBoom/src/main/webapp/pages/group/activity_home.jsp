@@ -12,8 +12,10 @@
     <!-- 引入 Bootstrap -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <link href="../../css/groupIndex.css" rel="stylesheet">
-    <link href="../css/groupNavigationBarTop.css.css" rel="stylesheet">
+    <link href="../../css/stoled.css" rel="stylesheet">
     <script language="JavaScript" src="../../js/try.js"></script>
+    <script type='text/javascript' src="http://static.iask.cn/v20161228/js/common/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="http://static.iask.cn/v20161228/js/new/common.min.js"></script>
     <title>团体首页</title>
 </head>
 <div class="container">
@@ -23,11 +25,17 @@
 </div>
 <div class="container">
     <div class="row clearfix">
-        <div class="col-md-9 column">
-            <div id="top_div">
-                <ul class="nav nav-pills">
-                    <li class="active">
+        <div class="col-md-9 column" class="nav-con">
+            <div id="top_div" class="pw pw-v nav">
+                <ul class="nav nav-pills" class="nav-list">
+                    <li class="active" class="nav-more-li">
                         <a href="http://localhost:8080/pages/group/activity_home.jsp">首页</a>
+                        <div class="nav-more cf">
+                            <div class="bg-nav-more"></div>
+                            <div class="nav-more-item">
+                                <p><a href="activity.jsp">正在进行</a></p>
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <a href="http://localhost:8080/pages/group/activity.jsp">活动</a>
