@@ -27,7 +27,8 @@ public class Connection {
         }
     }
 
-    public static void closeSession(Session session){
+    public static void closeSession(){
+        Session session = sessionFactory.getCurrentSession();
         session.close();
     }
 }
