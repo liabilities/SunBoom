@@ -20,7 +20,7 @@ public class Group {
 
     private String introduction;
 
-    private String avatarPath;
+    private String avatar;
 
     private String password;
 
@@ -42,7 +42,7 @@ public class Group {
         this.name = groupModel.name;
         this.signature = groupModel.signature;
         this.introduction = groupModel.introduction;
-        this.avatarPath = groupModel.avatarPath;
+        this.avatar = groupModel.avatarPath;
         this.password = groupModel.password;
         this.memberNum = groupModel.memberNum;
         this.userName = groupModel.userName;
@@ -105,12 +105,12 @@ public class Group {
         this.introduction = introduction;
     }
 
-    public String getAvatarPath() {
-        return avatarPath;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setAvatarPath(String avatar) {
-        this.avatarPath = avatar;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public String getPassword() {

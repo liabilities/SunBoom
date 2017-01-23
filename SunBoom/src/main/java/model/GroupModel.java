@@ -52,7 +52,7 @@ public class GroupModel {
         this.name = group.getName();
         this.signature = group.getSignature();
         this.introduction = group.getIntroduction();
-        this.avatarPath = group.getAvatarPath();
+        this.avatarPath = group.getAvatar();
         this.password = group.getPassword();
         this.memberNum = group.getMemberNum();
         this.userName = group.getUserName();

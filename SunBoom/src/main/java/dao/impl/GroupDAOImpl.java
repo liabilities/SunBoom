@@ -9,4 +9,10 @@ import pojo.Group;
  */
 public class GroupDAOImpl extends BaseDAOImpl<Group> implements GroupDAO {
 
+    public static void main(String[] args){
+        GroupDAOImpl impl = new GroupDAOImpl();
+        Group g = impl.getById(1);
+        System.out.print(g.getName());
+    }
+
 }
