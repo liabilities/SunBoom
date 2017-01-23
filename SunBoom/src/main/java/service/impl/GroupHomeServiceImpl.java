@@ -1,12 +1,9 @@
 package service.impl;
 
-import dao.ActivityDAO;
 import dao.GroupDAO;
-import dao.impl.ActivityDAOImpl;
 import dao.impl.GroupDAOImpl;
 import utilities.enums.ResultMsg;
 import model.GroupModel;
-import pojo.Activity;
 import pojo.Group;
 import service.GroupHomeService;
 import utilities.exceptions.InvalidHtmlPathException;
@@ -20,11 +17,9 @@ import utilities.exceptions.NullException;
  */
 public class GroupHomeServiceImpl implements GroupHomeService {
 
-    ActivityDAO activityDAO;
     GroupDAO groupDAO;
 
     public GroupHomeServiceImpl() {
-        activityDAO = new ActivityDAOImpl();
         groupDAO = new GroupDAOImpl();
     }
 
@@ -42,16 +37,16 @@ public class GroupHomeServiceImpl implements GroupHomeService {
     }
 
     public String getDetailInfo(String activityID) throws NotExistException {
-        Activity activity = activityDAO.getById(Integer.parseInt(activityID));
-        return activity.getDetailPath();
+        Group thisGroup = groupDAO.getById(Integer.parseInt(activityID));
+        return thisGroup.getDetailPath();
     }
 
     public ResultMsg saveDetailInfo(String activityID, String detailHTMLPath) throws InvalidHtmlPathException, NotExistException {
         if (!isValid(detailHTMLPath)) throw new InvalidHtmlPathException();
 
-        Activity activity = activityDAO.getById(Integer.parseInt(activityID));
-        activity.setDetailPath(detailHTMLPath);
-        boolean result = activityDAO.updateOne(activity);
+        Group thisGroup = groupDAO.getById(Integer.parseInt(activityID));
+        thisGroup.setDetailPath(detailHTMLPath);
+        boolean result = groupDAO.updateOne(thisGroup);
 
         if (result) return ResultMsg.SUCCESS;
         else return ResultMsg.FAIL;
