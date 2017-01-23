@@ -1,6 +1,7 @@
 package dao.impl;
 
 import dao.ActivityDAO;
+import dao.base.BaseDAOImpl;
 import pojo.Activity;
 
 /**
@@ -8,7 +9,4 @@ import pojo.Activity;
  */
 public class ActivityDAOImpl extends BaseDAOImpl<Activity> implements ActivityDAO {
 
-    public ActivityDAOImpl() {
-        super(new Activity());
-    }
 }

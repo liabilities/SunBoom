@@ -1,6 +1,7 @@
 package dao.impl;
 
 import dao.DynamicDAO;
+import dao.base.BaseDAOImpl;
 import pojo.Dynamic;
 
 /**
@@ -8,7 +9,4 @@ import pojo.Dynamic;
  */
 public class DynamicDAOImpl extends BaseDAOImpl<Dynamic> implements DynamicDAO {
 
-    public DynamicDAOImpl() {
-        super(new Dynamic());
-    }
 }

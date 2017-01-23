@@ -28,7 +28,7 @@ public class ActivityHomeServiceImpl implements ActivityHomeService {
     }
 
     public ResultMsg saveBasicInfo(GroupModel groupModel) {
-        boolean result = groupDAO.update(new Group(groupModel));
+        boolean result = groupDAO.updateOne(new Group(groupModel));
 
         if (result) return ResultMsg.SUCCESS;
         else return ResultMsg.FAIL;
@@ -42,7 +42,7 @@ public class ActivityHomeServiceImpl implements ActivityHomeService {
     public ResultMsg saveDetailInfo(String activityID, String detailHTMLPath) {
         Activity activity = activityDAO.getById(Integer.parseInt(activityID));
         activity.setDetailPath(detailHTMLPath);
-        boolean result = activityDAO.update(activity);
+        boolean result = activityDAO.updateOne(activity);
 
         if (result) return ResultMsg.SUCCESS;
         else return ResultMsg.FAIL;

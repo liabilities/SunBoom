@@ -1,6 +1,7 @@
 package dao.impl;
 
 import dao.PrivateLetterDAO;
+import dao.base.BaseDAOImpl;
 import pojo.PrivateLetter;
 
 /**
@@ -8,8 +9,10 @@ import pojo.PrivateLetter;
  */
 public class PrivateLetterDAOImpl extends BaseDAOImpl<PrivateLetter> implements PrivateLetterDAO{
 
-
-    public PrivateLetterDAOImpl() {
-        super(new PrivateLetter());
+    public static void main(String[] args){
+        PrivateLetterDAOImpl impl = new PrivateLetterDAOImpl();
+        PrivateLetter pl = impl.getById(1);
+        System.out.print(pl.getContent());
     }
+
 }

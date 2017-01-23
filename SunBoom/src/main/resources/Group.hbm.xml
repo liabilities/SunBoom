@@ -8,11 +8,8 @@
         <id name="groupID">
             <column name="groupID" sql-type="int(11)" />
         </id>
-        <property name="universityID">
-            <column name="universityID" sql-type="int(11)"/>
-        </property>
-        <property name="memberNum">
-            <column name="memberNum" sql-type="int(11)"/>
+        <property name="schoolID">
+            <column name="schoolID" sql-type="int(11)"/>
         </property>
         <property name="tag">
             <column name="tag" sql-type="varchar(45)"/>
@@ -32,13 +29,39 @@
         <property name="password">
             <column name="password" sql-type="varchar(45)"/>
         </property>
+        <property name="memberNum">
+            <column name="memberNum" sql-type="int(11)"/>
+        </property>
         <property name="userName">
             <column name="userName" sql-type="varchar(45)"/>
         </property>
-        <property name="attestation">
-            <column name="attestation" sql-type="varchar(255)"/>
+        <property name="tel">
+            <column name="tel" sql-type="varchar(11)"/>
         </property>
-
+        <property name="mail">
+            <column name="mail" sql-type="varchar(45)"/>
+        </property>
+        <property name="detailPath">
+            <column name="detailPath" sql-type="varchar(45)"/>
+        </property>
+        <property name="registerTime">
+            <column name="registerTime" sql-type="DATE"/>
+        </property>
+        <property name="identificationTime">
+            <column name="identificationTime" sql-type="DATE"/>
+        </property>
+        <property name="deadline">
+            <column name="deadline" sql-type="DATE"/>
+        </property>
+        <property name="fellowNum_group">
+            <column name="fellowNum_group" sql-type="int(11)"/>
+        </property>
+        <property name="fellowNum_person">
+            <column name="fellowNum_person" sql-type="int(11)"/>
+        </property>
+        <property name="certifiedMaterial">
+            <column name="certifiedMaterial" sql-type="varchar(255)"/>
+        </property>
 
     </class>
 </hibernate-mapping>
