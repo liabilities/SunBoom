@@ -1,5 +1,7 @@
 package pojo;
 
+import model.ActivityModel;
+
 import java.sql.Date;
 
 /**
@@ -18,6 +20,25 @@ public class Activity {
     private Date endTime;
     private String detailPath;
     private int capital;
+    private Date sponsorEndDate;
+    public String contact;
+
+    public Activity(ActivityModel activityModel) {
+        this.activityID = activityModel.getActivityID_int();
+        this.name = activityModel.getActivityName();
+        this.initiatorID = activityModel.getInitiatorID_int();
+        this.initiatorType = activityModel.getInitiatorType_int();
+        this.minScale = activityModel.getMinScale();
+        this.maxScale = activityModel.getMaxScale();
+        this.type = activityModel.getActivityType();
+        this.place = activityModel.getActivityPlace_int();
+        this.startTime = activityModel.getActivityStartTime_sql();
+        this.endTime = activityModel.getActivityEndTime_sql();
+        this.detailPath = activityModel.getActivityBreif();
+        this.capital = activityModel.getCapitalNeeded_int();
+        this.sponsorEndDate = activityModel.getSponsorEndDate_sql();
+        this.contact = activityModel.getContact();
+    }
 
     public int getActivityID() {
         return activityID;
