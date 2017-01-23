@@ -3,6 +3,7 @@ package controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,11 +14,15 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class GroupController {
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView login(HttpServletRequest request) {
-        ModelAndView model = new ModelAndView("info");
-        model.addObject("username", request.getParameter("username"));
-        model.addObject("password", request.getParameter("password"));
-        return model;
+    @RequestMapping(value = "/getGroup", method = RequestMethod.GET)
+    @ResponseBody
+    public String getGroupInfo() {
+        return "<p>123</p>";
+    }
+
+    @RequestMapping(value = "/getAvatar", method = RequestMethod.GET)
+    @ResponseBody
+    public String getAvatar() {
+        return "<p>456</p>";
     }
 }
