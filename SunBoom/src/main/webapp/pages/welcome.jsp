@@ -21,20 +21,13 @@
     <div class="row-fluid">
         <div class="span12">
             <div class="tabbable" id="tabs-39441">
-                <ul class="nav nav-tabs">
-                    <li>
-                        <a href="#panel-968060" data-toggle="tab">第一部分</a>
-                    </li>
-                    <li class="active">
-                        <a href="#panel-364309" data-toggle="tab">第二部分</a>
-                    </li>
-                </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="panel-364309">
                         <p>
                             <a href="http://localhost:8080/pages/group/activity_home.jsp">
                                 团体首页
                             </a>
+                            <br>
                             <a href="http://localhost:8080/pages/test.jsp">
                                 test
                             </a>

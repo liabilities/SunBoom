@@ -11,9 +11,9 @@
     <meta charset="utf-8" />
     <title>假装这是个团体首页</title>
     <%--<link rel="stylesheet" type="text/css" href="http://static.iask.cn/v20161228/css/reset.min.css?v1.1.6" />--%>
-    <link rel="stylesheet" type="text/css" href="../css/stoled.css">
-    <script type='text/javascript' src="../js/test1.js"></script>
-    <script type="text/javascript" src="../js/test2.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/stoled.css">
+    <script type='text/javascript' src="../../js/test1.js"></script>
+    <script type="text/javascript" src="../../js/test2.js"></script>
 
 </head>
 <body>
@@ -21,9 +21,9 @@
 <div class="nav-con">
     <div class="pw pw-v nav">
         <ul class="nav-list lf">
-            <li><a href="#">首页</a></li>
+            <li><a href="http://localhost:8080/pages/group/activity_home.jsp">首页</a></li>
             <li class="nav-more-li">
-                <a href="#">活动<i class="ico-nav-arrow"></i></a>
+                <a href="http://localhost:8080/pages/group/activity.jsp">活动<i class="ico-nav-arrow"></i></a>
                 <div class="nav-more cf">
                     <div class="bg-nav-more"></div>
                     <div class="nav-more-item fl">
@@ -44,7 +44,7 @@
                 </div>
             </li>
             <li class="nav-more-li">
-                <a href="#">成员<i class="ico-nav-arrow"></i></a>
+                <a href="http://localhost:8080/pages/group/member.jsp">成员<i class="ico-nav-arrow"></i></a>
                 <div class="nav-more cf">
                     <div class="bg-nav-more"></div>
                     <div class="nav-more-item fl">
@@ -65,7 +65,7 @@
                 </div>
             </li>
             <li class="nav-more-li">
-                <a href="#">物资<i class="ico-nav-arrow"></i></a>
+                <a href="http://localhost:8080/pages/group/material.jsp">物资<i class="ico-nav-arrow"></i></a>
                 <div class="nav-more cf">
                     <div class="bg-nav-more"></div>
                     <div class="nav-more-item fl">
@@ -86,7 +86,7 @@
                 </div>
             </li>
             <li class="nav-more-li">
-                <a href="#">留言板<i class="ico-nav-arrow"></i></a>
+                <a href="http://localhost:8080/pages/group/message_board.jsp">留言板<i class="ico-nav-arrow"></i></a>
                 <div class="nav-more cf">
                     <div class="bg-nav-more"></div>
                     <div class="nav-more-item fl">
@@ -107,7 +107,7 @@
                 </div>
             </li>
             <li class="nav-more-li">
-                <a href="#">文件夹<i class="ico-nav-arrow"></i></a>
+                <a href="http://localhost:8080/pages/group/file.jsp">文件夹<i class="ico-nav-arrow"></i></a>
                 <div class="nav-more cf">
                     <div class="bg-nav-more"></div>
                     <div class="nav-more-item fl">

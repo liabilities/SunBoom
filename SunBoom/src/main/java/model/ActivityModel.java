@@ -9,6 +9,11 @@ import java.util.Date;
 public class ActivityModel {
 
     /**
+     * 活动ID
+     */
+    public String activityID;
+
+    /**
      * 活动名称
      */
     public String activityName;
@@ -34,9 +39,24 @@ public class ActivityModel {
     public String activityType;
 
     /**
+     * 发起人ID
+     */
+    private String initiatorID;
+
+    /**
+     * 发起人类型
+     */
+    private String initiatorType;
+
+    /**
      * 活动规模
      */
     public int minScale;
+
+    /**
+     * 活动最大规模
+     */
+    public int maxScale;
 
     /**
      * 活动地点
@@ -73,4 +93,147 @@ public class ActivityModel {
         this.contact = contact;
     }
 
+    public String getActivityName() {
+        return activityName;
+    }
+
+    public void setActivityName(String activityName) {
+        this.activityName = activityName;
+    }
+
+    public Date getActivityStartTime() {
+        return activityStartTime;
+    }
+
+    public java.sql.Date getActivityStartTime_sql() {
+        return new java.sql.Date(activityStartTime.getTime());
+    }
+
+    public void setActivityStartTime(Date activityStartTime) {
+        this.activityStartTime = activityStartTime;
+    }
+
+    public Date getActivityEndTime() {
+        return activityEndTime;
+    }
+
+    public java.sql.Date getActivityEndTime_sql() {
+        return new java.sql.Date(activityEndTime.getTime());
+    }
+
+    public void setActivityEndTime(Date activityEndTime) {
+        this.activityEndTime = activityEndTime;
+    }
+
+    public String getActivityBreif() {
+        return activityBreif;
+    }
+
+    public void setActivityBreif(String activityBreif) {
+        this.activityBreif = activityBreif;
+    }
+
+    public String getActivityType() {
+        return activityType;
+    }
+
+    public void setActivityType(String activityType) {
+        this.activityType = activityType;
+    }
+
+    public int getMinScale() {
+        return minScale;
+    }
+
+    public void setMinScale(int minScale) {
+        this.minScale = minScale;
+    }
+
+    public String getActivityPlace() {
+        return activityPlace;
+    }
+
+    public int getActivityPlace_int() {
+        return  Integer.parseInt(activityPlace);
+    }
+
+    public void setActivityPlace(String activityPlace) {
+        this.activityPlace = activityPlace;
+    }
+
+    public double getCapitalNeeded() {
+        return capitalNeeded;
+    }
+
+    public int getCapitalNeeded_int() {
+        return (int)capitalNeeded;
+    }
+
+    public void setCapitalNeeded(double capitalNeeded) {
+        this.capitalNeeded = capitalNeeded;
+    }
+
+    public Date getSponsorEndDate() {
+        return sponsorEndDate;
+    }
+
+    public java.sql.Date getSponsorEndDate_sql() {
+        return new java.sql.Date(sponsorEndDate.getTime());
+    }
+
+    public void setSponsorEndDate(Date sponsorEndDate) {
+        this.sponsorEndDate = sponsorEndDate;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getActivityID() {
+        return activityID;
+    }
+
+    public int getActivityID_int() {
+        return Integer.parseInt(activityID);
+    }
+
+    public void setActivityID(String activityID) {
+        this.activityID = activityID;
+    }
+
+    public String getInitiatorID() {
+        return initiatorID;
+    }
+
+    public int getInitiatorID_int() {
+        return Integer.parseInt(initiatorID);
+    }
+
+    public void setInitiatorID(String initiatorID) {
+        this.initiatorID = initiatorID;
+    }
+
+    public String getInitiatorType() {
+        return initiatorType;
+    }
+
+    public int getInitiatorType_int() {
+        return Integer.parseInt(initiatorType);
+    }
+
+    public void setInitiatorType(String initiatorType) {
+        this.initiatorType = initiatorType;
+    }
+
+    public int getMaxScale() {
+        return maxScale;
+    }
+
+    public void setMaxScale(int maxScale) {
+        this.maxScale = maxScale;
+    }
 }

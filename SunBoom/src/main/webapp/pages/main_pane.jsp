@@ -18,10 +18,10 @@
     <div id="main_content1">
         这是首页区域
     </div>
-    <div id="main_content2" hidden="hidden">
+    <div id="main_content2">
         这是活动区域
     </div>
-    <div hidden="hidden" id=main_content3">
+    <div id=main_content3">
         这是成员区域
     </div>
 
