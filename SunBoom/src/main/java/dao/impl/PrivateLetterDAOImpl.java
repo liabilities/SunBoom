@@ -1,6 +1,7 @@
 package dao.impl;
 
 import dao.PrivateLetterDAO;
+import dao.base.BaseDAOImpl;
 import pojo.PrivateLetter;
 
 /**
@@ -8,8 +9,4 @@ import pojo.PrivateLetter;
  */
 public class PrivateLetterDAOImpl extends BaseDAOImpl<PrivateLetter> implements PrivateLetterDAO{
 
-
-    public PrivateLetterDAOImpl() {
-        super(new PrivateLetter());
-    }
 }

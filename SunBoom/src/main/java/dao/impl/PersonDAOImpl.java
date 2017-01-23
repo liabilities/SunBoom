@@ -1,6 +1,7 @@
 package dao.impl;
 
 import dao.PersonDAO;
+import dao.base.BaseDAOImpl;
 import pojo.Person;
 
 /**
@@ -8,7 +9,4 @@ import pojo.Person;
  */
 public class PersonDAOImpl extends BaseDAOImpl<Person> implements PersonDAO {
 
-    public PersonDAOImpl() {
-        super(new Person());
-    }
 }

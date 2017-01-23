@@ -1,6 +1,7 @@
 package dao.impl;
 
 import dao.GroupDAO;
+import dao.base.BaseDAOImpl;
 import pojo.Group;
 
 /**
@@ -8,7 +9,4 @@ import pojo.Group;
  */
 public class GroupDAOImpl extends BaseDAOImpl<Group> implements GroupDAO {
 
-    public GroupDAOImpl() {
-        super(new Group());
-    }
 }
