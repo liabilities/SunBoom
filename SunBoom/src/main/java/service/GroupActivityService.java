@@ -11,6 +11,8 @@ import java.util.List;
 
 /**
  * Created by lenovo on 2017/1/13.
+ * Last changed by charles.
+ * Updating time: 2017/1/23.
  */
 public interface GroupActivityService {
 

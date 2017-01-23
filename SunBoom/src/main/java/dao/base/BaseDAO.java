@@ -1,35 +1,56 @@
 package dao.base;
 
+import utilities.exceptions.NotExistException;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Created by zoetx on 2017/1/22.
+ * Last changed by charles.
+ * Updating time: 2017/1/23.
+ */
 public interface BaseDAO<T> {
 
-    //这里是真正会使用到的方法
+    /*
+    这里是真正会使用到的方法
+    其中对于删改查三种操作，数据库中可能并不存在其对应项，抛出NotExistException
+     */
 
-    public T getById(Serializable id);
-
+    /*
+    增
+     */
     public boolean saveOne(T o);
-
-    public boolean insertOne(T o);
-
-    public boolean deleteOne(Serializable id);
-
-    public boolean updateOne(T entity);
 
     public boolean saveList(List<T> list);
 
+    public boolean insertOne(T o);
+
     public boolean insertList(List<T> list);
 
-    public boolean deleteList(List<T> list);
+    /*
+    删
+     */
+    public boolean deleteOne(Serializable id) throws NotExistException;
 
-    public boolean updateList(List<T> list);
+    public boolean deleteList(List<T> list) throws NotExistException;
 
-    public List<T> findByProperty(String name, Object value);
+    /*
+    改
+     */
+    public boolean updateOne(T entity) throws NotExistException;
 
-    public List<T> findByProperty(Map<String, Object> conditionMap);
+    public boolean updateList(List<T> list) throws NotExistException;
+
+    /*
+    查
+     */
+    public T getById(Serializable id) throws NotExistException;
+
+    public List<T> findByProperty(String name, Object value) throws NotExistException;
+
+    public List<T> findByProperty(Map<String, Object> conditionMap) throws NotExistException;
 
 
 

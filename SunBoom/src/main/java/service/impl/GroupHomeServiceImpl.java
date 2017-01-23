@@ -8,30 +8,31 @@ import utilities.enums.ResultMsg;
 import model.GroupModel;
 import pojo.Activity;
 import pojo.Group;
-import service.ActivityHomeService;
+import service.GroupHomeService;
 import utilities.exceptions.InvalidHtmlPathException;
+import utilities.exceptions.NotExistException;
 import utilities.exceptions.NullException;
 
 /**
  * Created by cuihua on 2017/1/13.
- *
- * 活动首页
+ * Last changed by charles.
+ * Updating time: 2017/1/23.
  */
-public class ActivityHomeServiceImpl implements ActivityHomeService {
+public class GroupHomeServiceImpl implements GroupHomeService {
 
     ActivityDAO activityDAO;
     GroupDAO groupDAO;
 
-    public ActivityHomeServiceImpl() {
+    public GroupHomeServiceImpl() {
         activityDAO = new ActivityDAOImpl();
         groupDAO = new GroupDAOImpl();
     }
 
-    public GroupModel getBasicInfo(String groupID) {
+    public GroupModel getBasicInfo(String groupID) throws NotExistException {
         return new GroupModel(groupDAO.getById(Integer.parseInt(groupID)));
     }
 
-    public ResultMsg saveBasicInfo(GroupModel groupModel) throws NullException {
+    public ResultMsg saveBasicInfo(GroupModel groupModel) throws NullException, NotExistException {
         if (groupModel == null) throw new NullException();
 
         boolean result = groupDAO.updateOne(new Group(groupModel));
@@ -40,12 +41,12 @@ public class ActivityHomeServiceImpl implements ActivityHomeService {
         else return ResultMsg.FAIL;
     }
 
-    public String getDetailInfo(String activityID) {
+    public String getDetailInfo(String activityID) throws NotExistException {
         Activity activity = activityDAO.getById(Integer.parseInt(activityID));
         return activity.getDetailPath();
     }
 
-    public ResultMsg saveDetailInfo(String activityID, String detailHTMLPath) throws InvalidHtmlPathException {
+    public ResultMsg saveDetailInfo(String activityID, String detailHTMLPath) throws InvalidHtmlPathException, NotExistException {
         if (!isValid(detailHTMLPath)) throw new InvalidHtmlPathException();
 
         Activity activity = activityDAO.getById(Integer.parseInt(activityID));

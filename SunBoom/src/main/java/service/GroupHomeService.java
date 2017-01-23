@@ -3,12 +3,15 @@ package service;
 import utilities.enums.ResultMsg;
 import model.GroupModel;
 import utilities.exceptions.InvalidHtmlPathException;
+import utilities.exceptions.NotExistException;
 import utilities.exceptions.NullException;
 
 /**
  * Created by cuihua on 2017/1/13.
+ * Last changed by charles.
+ * Updating time: 2017/1/23.
  */
-public interface ActivityHomeService {
+public interface GroupHomeService {
 
     /**
      *
@@ -17,7 +20,7 @@ public interface ActivityHomeService {
      *
      * 根据团队的ID获取相应的信息载体
      */
-    GroupModel getBasicInfo(String groupID);
+    GroupModel getBasicInfo(String groupID) throws NotExistException;
 
     /**
      *
@@ -26,7 +29,7 @@ public interface ActivityHomeService {
      *
      * 保存现有的团队信息
      */
-    ResultMsg saveBasicInfo(GroupModel groupModel) throws NullException;
+    ResultMsg saveBasicInfo(GroupModel groupModel) throws NullException, NotExistException;
 
     /**
      *
@@ -35,7 +38,7 @@ public interface ActivityHomeService {
      *
      * 根据活动的ID获取相应的图文详情HTML路径
      */
-    String getDetailInfo(String activityID);
+    String getDetailInfo(String activityID) throws NotExistException;
 
     /**
      *
@@ -45,5 +48,5 @@ public interface ActivityHomeService {
      *
      * 保存现有的详情HTML文件路径
      */
-    ResultMsg saveDetailInfo(String activityID, String detailHTMLPath) throws InvalidHtmlPathException;
+    ResultMsg saveDetailInfo(String activityID, String detailHTMLPath) throws InvalidHtmlPathException, NotExistException;
 }
