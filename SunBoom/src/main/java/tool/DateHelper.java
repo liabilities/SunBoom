@@ -44,4 +44,20 @@ public class DateHelper{
         return "项目将于今晚结束";
     }
 
+    public static Date String2Date(String str) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date = sdf.parse(str);
+            return date;
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static String Date2String(Date date) {
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(date);
+    }
 }

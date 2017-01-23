@@ -3,50 +3,54 @@ package pojo;
 
 import model.GroupModel;
 
+import java.util.Date;
+
 /**
  * Created by I Like Milk on 2017/1/11.
  */
 
 public class Group {
+
     private int groupID;
-
-    private int universityID;
-
+    private int schoolID;
     private String tag;
-
     private String name;
-
     private String signature;
-
     private String introduction;
-
     private String avatar;
-
     private String password;
-
     private int memberNum;
-
     private String userName;
+    private String tel;
+    private String mail;
+    private String detailPath;
+    private Date registerTime;
+    private Date identificationTime;
+    private Date deadline;
+    private int fellowNum_group;
+    private int fellowNum_person;
+    private String certifiedMaterial;
 
-    private String attestationPath;
-
-    public Group(){
-
-    }
-
-
-    public Group(GroupModel groupModel) {
-        this.groupID = Integer.parseInt(groupModel.groupID);
-        this.universityID = Integer.parseInt(groupModel.universityID);
-        this.tag = groupModel.tag;
-        this.name = groupModel.name;
-        this.signature = groupModel.signature;
-        this.introduction = groupModel.introduction;
-        this.avatar = groupModel.avatarPath;
-        this.password = groupModel.password;
-        this.memberNum = groupModel.memberNum;
-        this.userName = groupModel.userName;
-        this.attestationPath = groupModel.attestationPath;
+    public Group(GroupModel group) {
+        this.groupID = group.getGroupID_int();
+        this.schoolID = group.getSchoolID_int();
+        this.tag = group.getTag();
+        this.name = group.getName();
+        this.signature = group.getSignature();
+        this.introduction = group.getIntroduction();
+        this.avatar = group.getAvatar();
+        this.password = group.getPassword();
+        this.memberNum = group.getMemberNum();
+        this.userName = group.getUserName();
+        this.tel = group.getTel();
+        this.mail = group.getMail();
+        this.detailPath = group.getDetailPath();
+        this.registerTime = group.getRegisterTime_date();
+        this.identificationTime = group.getIdentificationTime_date();
+        this.deadline = group.getDeadline_date();
+        this.fellowNum_group = group.getFellowNum_group();
+        this.fellowNum_person = group.getFellowNum_person();
+        this.certifiedMaterial = group.getCertifiedMaterial();
     }
 
     public int getGroupID() {
@@ -57,20 +61,12 @@ public class Group {
         this.groupID = groupID;
     }
 
-    public int getUniversityID() {
-        return universityID;
+    public int getSchoolID() {
+        return schoolID;
     }
 
-    public void setUniversityID(int universityID) {
-        universityID = universityID;
-    }
-
-    public int getMemberNum() {
-        return memberNum;
-    }
-
-    public void setMemberNum(int memberNum) {
-        this.memberNum = memberNum;
+    public void setSchoolID(int schoolID) {
+        this.schoolID = schoolID;
     }
 
     public String getTag() {
@@ -121,6 +117,14 @@ public class Group {
         this.password = password;
     }
 
+    public int getMemberNum() {
+        return memberNum;
+    }
+
+    public void setMemberNum(int memberNum) {
+        this.memberNum = memberNum;
+    }
+
     public String getUserName() {
         return userName;
     }
@@ -129,11 +133,76 @@ public class Group {
         this.userName = userName;
     }
 
-    public String getAttestationPath() {
-        return attestationPath;
+    public String getTel() {
+        return tel;
     }
 
-    public void setAttestationPath(String attestation) {
-        this.attestationPath = attestation;
+    public void setTel(String tel) {
+        this.tel = tel;
     }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getDetailPath() {
+        return detailPath;
+    }
+
+    public void setDetailPath(String detailPath) {
+        this.detailPath = detailPath;
+    }
+
+    public Date getRegisterTime() {
+        return registerTime;
+    }
+
+    public void setRegisterTime(Date registerTime) {
+        this.registerTime = registerTime;
+    }
+
+    public Date getIdentificationTime() {
+        return identificationTime;
+    }
+
+    public void setIdentificationTime(Date identificationTime) {
+        this.identificationTime = identificationTime;
+    }
+
+    public Date getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(Date deadline) {
+        this.deadline = deadline;
+    }
+
+    public int getFellowNum_group() {
+        return fellowNum_group;
+    }
+
+    public void setFellowNum_group(int fellowNum_group) {
+        this.fellowNum_group = fellowNum_group;
+    }
+
+    public int getFellowNum_person() {
+        return fellowNum_person;
+    }
+
+    public void setFellowNum_person(int fellowNum_person) {
+        this.fellowNum_person = fellowNum_person;
+    }
+
+    public String getCertifiedMaterial() {
+        return certifiedMaterial;
+    }
+
+    public void setCertifiedMaterial(String certifiedMaterial) {
+        this.certifiedMaterial = certifiedMaterial;
+    }
+
 }
