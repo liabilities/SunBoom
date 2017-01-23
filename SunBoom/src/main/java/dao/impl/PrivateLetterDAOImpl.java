@@ -9,4 +9,10 @@ import pojo.PrivateLetter;
  */
 public class PrivateLetterDAOImpl extends BaseDAOImpl<PrivateLetter> implements PrivateLetterDAO{
 
+    public static void main(String[] args){
+        PrivateLetterDAOImpl impl = new PrivateLetterDAOImpl();
+        PrivateLetter pl = impl.getById(1);
+        System.out.print(pl.getContent());
+    }
+
 }

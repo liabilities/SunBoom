@@ -28,7 +28,13 @@ public class Connection {
     }
 
     public static void closeSession(){
-        Session session = sessionFactory.getCurrentSession();
-        session.close();
+        if (sessionFactory==null){
+            configuration=new Configuration().configure();
+            sessionFactory=configuration.buildSessionFactory();
+            return ;
+        }else {
+            Session session = sessionFactory.getCurrentSession();
+            session.close();
+        }
     }
 }

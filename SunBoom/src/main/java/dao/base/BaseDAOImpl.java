@@ -41,39 +41,39 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 
     @Resource
 
-    protected Session getSession() {
+    private Session getSession() {
         Session session= Connection.getSession();
         return session;
     }
 
-    protected void closeSession(){
+    private void closeSession(){
         Connection.closeSession();
     }
 
-    public void save(Object entity) {
+    private void save(Object entity) {
         getSession().save(entity);
         closeSession();
     }
 
-    public void delete(Object entity) {
+    private void delete(Object entity) {
 
         getSession().delete(entity);
         closeSession();
     }
 
-    public void update(Object entity) {
+    private void update(Object entity) {
 
         getSession().update(entity);
         closeSession();
     }
 
-    public void saveOrUpdate(Object entity) {
+    private void saveOrUpdate(Object entity) {
 
         getSession().saveOrUpdate(entity);
         closeSession();
     }
 
-    public void saveAll(Collection<?> entities) {
+    private void saveAll(Collection<?> entities) {
 
         for (@SuppressWarnings("rawtypes")
              Iterator localIterator = entities.iterator(); localIterator.hasNext();) {
@@ -82,7 +82,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         }
     }
 
-    public void deleteAll(Collection<?> entities) {
+    private void deleteAll(Collection<?> entities) {
 
         for (@SuppressWarnings("rawtypes")
              Iterator localIterator = entities.iterator(); localIterator.hasNext();) {
@@ -91,7 +91,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         }
     }
 
-    public void updateAll(Collection<?> entities) {
+    private void updateAll(Collection<?> entities) {
 
         for (@SuppressWarnings("rawtypes")
              Iterator localIterator = entities.iterator(); localIterator.hasNext();) {
@@ -100,7 +100,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         }
     }
 
-    public void saveOrUpdateAll(Collection<?> entities) {
+    private void saveOrUpdateAll(Collection<?> entities) {
 
         for (@SuppressWarnings("rawtypes")
              Iterator localIterator = entities.iterator(); localIterator.hasNext();) {
@@ -110,14 +110,14 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
     }
 
     @SuppressWarnings({ "unchecked", "hiding" })
-    public <T> T get(Class<T> entityClass, Serializable id) {
+    private <T> T get(Class<T> entityClass, Serializable id) {
         T result = (T) getSession().get(entityClass, id);
         closeSession();
         return result;
     }
 
     @SuppressWarnings({ "unchecked", "rawtypes", "hiding" })
-    public <T> T get(CharSequence queryString, Object... params) {
+    private <T> T get(CharSequence queryString, Object... params) {
 
         Query qry = getSession().createQuery(queryString.toString());
         for (int i = 0; i < params.length; ++i) {
@@ -133,7 +133,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
     }
 
     @SuppressWarnings({ "unchecked", "hiding" })
-    public <T> T get(CharSequence queryString, Map<String, Object> params) {
+    private <T> T get(CharSequence queryString, Map<String, Object> params) {
 
         Query qry = getSession().createQuery(queryString.toString());
         setParameter(qry, params);
@@ -148,7 +148,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
     }
 
     @SuppressWarnings({ "unchecked", "hiding" })
-    public <T> List<T> findList(CharSequence queryString, Object... params) {
+    private <T> List<T> findList(CharSequence queryString, Object... params) {
         Query query = getSession().createQuery(queryString.toString());
         for (int i = 0; i < params.length; ++i) {
             query.setParameter(i, params[i]);
@@ -158,7 +158,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
     }
 
     @SuppressWarnings({ "unchecked", "hiding" })
-    public <T> List<T> findList(CharSequence queryString, Map<String, Object> params) {
+    private <T> List<T> findList(CharSequence queryString, Map<String, Object> params) {
         Query query = getSession().createQuery(queryString.toString());
         setParameter(query, params);
         closeSession();
@@ -166,7 +166,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
     }
 
     @SuppressWarnings({ "unchecked", "hiding" })
-    public <T> Pagination<T> findPagination(CharSequence queryString, int pageIndex, int pageSize, Object... params) {
+    private <T> Pagination<T> findPagination(CharSequence queryString, int pageIndex, int pageSize, Object... params) {
         Query query = getSession().createQuery(queryString.toString());
 
         if ((pageSize > 0) && (pageIndex > 0)) {
@@ -196,7 +196,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
     }
 
     @SuppressWarnings({ "unchecked", "hiding" })
-    public <T> Pagination<T> findPagination(CharSequence queryString, Map<String, Object> params, int pageIndex,
+    private <T> Pagination<T> findPagination(CharSequence queryString, Map<String, Object> params, int pageIndex,
                                             int pageSize) {
         Query query = getSession().createQuery(queryString.toString());
 
@@ -225,7 +225,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
     }
 
     @SuppressWarnings({ "unchecked", "hiding" })
-    public <T> Pagination<T> findPagination(CharSequence queryString, CharSequence countString, int pageIndex,
+    private <T> Pagination<T> findPagination(CharSequence queryString, CharSequence countString, int pageIndex,
                                             int pageSize, Object... params) {
         Query query = getSession().createQuery(queryString.toString());
 
@@ -254,7 +254,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
     }
 
     @SuppressWarnings({ "unchecked", "hiding" })
-    public <T> Pagination<T> findPagination(CharSequence queryString, CharSequence countString,
+    private <T> Pagination<T> findPagination(CharSequence queryString, CharSequence countString,
                                             Map<String, Object> params, int pageIndex, int pageSize) {
         Query query = getSession().createQuery(queryString.toString());
 
@@ -281,7 +281,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
     }
 
     @SuppressWarnings({ "serial", "unchecked", "hiding" })
-    public <T> Pagination<T> findSqlPagination(CharSequence queryString, final CharSequence countString,
+    private <T> Pagination<T> findSqlPagination(CharSequence queryString, final CharSequence countString,
                                                final Map<String, Object> params, int pageIndex, int pageSize) {
         SQLQuery query = getSession().createSQLQuery(queryString.toString());
         query.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
@@ -316,41 +316,41 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         return pagination;
     }
 
-    public Object executeQuery(HibernateHandler handler) {
+    private Object executeQuery(HibernateHandler handler) {
         return handler.doInHibernate(getSession());
     }
 
-    public void execute(String hql) {
+    private void execute(String hql) {
         executeUpdate(hql);
     }
 
-    public void execute(HibernateHandler handler) {
+    private void execute(HibernateHandler handler) {
         executeUpdate(handler);
     }
 
-    public void executeSql(String sql) {
+    private void executeSql(String sql) {
         executeSqlUpdate(sql);
     }
 
-    public int executeSqlUpdate(String sql) {
+    private int executeSqlUpdate(String sql) {
         int result =  getSession().createSQLQuery(sql).executeUpdate();
         closeSession();
         return result;
     }
 
-    public int executeUpdate(String hql) {
+    private int executeUpdate(String hql) {
         int result = getSession().createQuery(hql).executeUpdate();
         closeSession();
         return result;
     }
 
-    public Object executeUpdate(HibernateHandler handler) {
+    private Object executeUpdate(HibernateHandler handler) {
         Object obj =  handler.doInHibernate(getSession());
         closeSession();
         return obj;
     }
 
-    protected Query setParameter(Query query, Map<String, Object> parameterMap) {
+    private Query setParameter(Query query, Map<String, Object> parameterMap) {
         for (@SuppressWarnings("rawtypes")
              Iterator iterator = parameterMap.keySet().iterator(); iterator.hasNext();) {
             String key = (String) iterator.next();
@@ -359,7 +359,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         return query;
     }
 
-    protected boolean followWithWord(String s, String sub, int pos) {
+    private boolean followWithWord(String s, String sub, int pos) {
         int i = 0;
         for (; (pos < s.length()) && (i < sub.length()); ++i) {
             if (s.charAt(pos) != sub.charAt(i))
@@ -377,7 +377,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         return (!(isAlpha(s.charAt(pos))));
     }
 
-    protected String parseSelectCount(String queryString) {
+    private String parseSelectCount(String queryString) {
         String hql = queryString.toLowerCase();
         int noBlankStart = 0;
         for (int len = hql.length(); noBlankStart < len; ++noBlankStart) {
@@ -415,19 +415,21 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         return countHql;
     }
 
-    protected boolean isAlpha(char c) {
+    private boolean isAlpha(char c) {
         return ((c == '_') || (('0' <= c) && (c <= '9')) || (('a' <= c) && (c <= 'z')) || (('A' <= c) && (c <= 'Z')));
     }
 
-    public void delete(Serializable id) {
+    public boolean deleteOne(Serializable id) {
         T entity = getById(id);
         delete(entity);
+        return true;
     }
 
-    public void delete(List<T> entitys) {
+    public boolean deleteList(List<T> entitys) {
         for (T entity : entitys) {
             delete(entity);
         }
+        return true;
     }
 
     public T getById(Serializable id) {
@@ -437,30 +439,38 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         return (T) get(entityClazz, id);
     }
 
-    public T saveEntity(T o) {
+    public boolean saveOne(T o) {
         saveOrUpdate(o);
-        return o;
+        return true;
     }
 
-    public void save(List<T> list) {
+    public boolean saveList(List<T> list) {
         saveOrUpdateAll(list);
+        return true;
     }
 
-    public T insert(T entity) {
+    public boolean insertOne(T entity) {
         save(entity);
-        return entity;
+        return true;
     }
 
-    public void insert(List<T> entitys) {
+    public boolean insertList(List<T> entitys) {
         for (T entity : entitys) {
             save(entity);
         }
+        return true;
     }
 
-    public void update(List<T> entitys) {
+    public boolean updateOne(T entity) {
+        update(entity);
+        return true;
+    }
+
+    public boolean updateList(List<T> entitys) {
         for (T entity : entitys) {
             update(entity);
         }
+        return true;
     }
 
     public List<T> findByProperty(String name, Object value) {
@@ -483,7 +493,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         return findList(hql.toString(), conditionMap);
     }
 
-    public <V> List<V> findListByMax(final CharSequence queryString, final int maxResults, final Object... params) {
+    private <V> List<V> findListByMax(final CharSequence queryString, final int maxResults, final Object... params) {
         @SuppressWarnings({ "unchecked", "serial" })
         List<V> list = (List<V>) executeQuery(new HibernateHandler() {
 
@@ -502,7 +512,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         return list;
     }
 
-    public <V> List<V> findListByMax(final CharSequence queryString, final int maxResults,
+    private <V> List<V> findListByMax(final CharSequence queryString, final int maxResults,
                                      final Map<String, Object> params) {
         @SuppressWarnings({ "unchecked", "serial" })
         List<V> list = (List<V>) executeQuery(new HibernateHandler() {

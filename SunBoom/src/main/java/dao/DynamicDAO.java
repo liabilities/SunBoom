@@ -1,7 +1,7 @@
 package dao;
 
 import pojo.Dynamic;
-
+import dao.base.BaseDAO;
 /**
  * Created by mm on 2016/7/10.
  */
