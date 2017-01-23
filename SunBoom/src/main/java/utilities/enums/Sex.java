@@ -1,16 +1,16 @@
-package enums;
+package utilities.enums;
 
 /**
  * Created by cuihua on 2017/1/11.
  */
-public enum Place {
+public enum Sex {
 
-    //室内，室外
-    INTERIOR(0), EXTERIOR(1);
+    //男，女，未知
+    MALE(0), FEMALE(1), NOT_KNOW(2);
 
     private int representNum;
 
-    private Place(int a){
+    private Sex(int a){
         representNum = a;
     }
 
@@ -32,8 +32,8 @@ public enum Place {
      * int TO enum
      * 便于从数据库读入
      */
-    public Place getEnum(int a) {
-        for (Place thisEnum : Place.values()){
+    public Sex getEnum(int a) {
+        for (Sex thisEnum : Sex.values()){
             if (thisEnum.representNum == a){
                 return thisEnum;
             }

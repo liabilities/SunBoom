@@ -1,8 +1,8 @@
 package service;
 
-import enums.ResultMsg;
-import enums.SearchStrategy;
-import enums.SortStrategy;
+import utilities.enums.ResultMsg;
+import utilities.enums.SearchStrategy;
+import utilities.enums.SortStrategy;
 import model.*;
 
 import java.util.List;

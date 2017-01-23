@@ -1,7 +1,7 @@
 package service;
 
 import java.util.List;
-import enums.ResultMsg;
+import utilities.enums.ResultMsg;
 import model.PrivateLetter;
 
 /**

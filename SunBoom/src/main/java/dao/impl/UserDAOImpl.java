@@ -1,6 +1,6 @@
 //package dao.impl;
 //
-//import tool.Connection;
+//import utilities.tool.Connection;
 //import dao.UserDAO;
 //import org.hibernate.Query;
 //import org.hibernate.Session;

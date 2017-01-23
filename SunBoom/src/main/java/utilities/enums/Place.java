@@ -1,16 +1,16 @@
-package enums;
+package utilities.enums;
 
 /**
  * Created by cuihua on 2017/1/11.
  */
-public enum ParticipantRange {
+public enum Place {
 
-    //全部，只面向全城，只面向全校
-    ALL(0), CITY(1), UNIVERSITY(2);
+    //室内，室外
+    INTERIOR(0), EXTERIOR(1);
 
     private int representNum;
 
-    private ParticipantRange(int a){
+    private Place(int a){
         representNum = a;
     }
 
@@ -32,8 +32,8 @@ public enum ParticipantRange {
      * int TO enum
      * 便于从数据库读入
      */
-    public ParticipantRange getEnum(int a) {
-        for (ParticipantRange thisEnum : ParticipantRange.values()){
+    public Place getEnum(int a) {
+        for (Place thisEnum : Place.values()){
             if (thisEnum.representNum == a){
                 return thisEnum;
             }

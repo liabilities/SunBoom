@@ -1,8 +1,8 @@
 package pojo;
 
-import enums.NetWorkingState;
-import enums.ParticipantRange;
-import enums.Place;
+import utilities.enums.NetWorkingState;
+import utilities.enums.ParticipantRange;
+import utilities.enums.Place;
 
 import java.awt.*;
 import java.io.File;

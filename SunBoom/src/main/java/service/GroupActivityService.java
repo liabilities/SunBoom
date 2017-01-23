@@ -1,7 +1,7 @@
 package service;
 
-import enums.ActivityType;
-import enums.ResultMsg;
+import utilities.enums.ActivityType;
+import utilities.enums.ResultMsg;
 import model.ActivityDetailModel;
 import model.ActivityGeneralModel;
 import model.ActivityModel;

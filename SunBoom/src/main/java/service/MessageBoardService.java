@@ -1,6 +1,6 @@
 package service;
 
-import enums.ResultMsg;
+import utilities.enums.ResultMsg;
 import model.Comment;
 import model.Message;
 import model.MessageComment;

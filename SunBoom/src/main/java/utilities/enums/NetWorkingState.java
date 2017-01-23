@@ -1,4 +1,4 @@
-package enums;
+package utilities.enums;
 
 /**
  * Created by cuihua on 2017/1/11.

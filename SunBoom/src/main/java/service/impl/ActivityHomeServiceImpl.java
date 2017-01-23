@@ -4,7 +4,7 @@ import dao.ActivityDAO;
 import dao.GroupDAO;
 import dao.impl.ActivityDAOImpl;
 import dao.impl.GroupDAOImpl;
-import enums.ResultMsg;
+import utilities.enums.ResultMsg;
 import model.GroupModel;
 import pojo.Activity;
 import pojo.Group;

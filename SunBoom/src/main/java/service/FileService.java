@@ -1,7 +1,7 @@
 package service;
 
-import enums.FileState;
-import enums.ResultMsg;
+import utilities.enums.FileState;
+import utilities.enums.ResultMsg;
 import model.GroupModel;
 import model.UserFileModel;
 

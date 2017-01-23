@@ -3,7 +3,7 @@ package dao.impl;
 import dao.BaseDAO;
 import org.hibernate.Session;
 import pojo.Person;
-import tool.Connection;
+import utilities.tool.Connection;
 
 import java.util.Collections;
 import java.util.List;
