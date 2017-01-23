@@ -4,8 +4,8 @@ import dao.ActivityDAO;
 import dao.GroupDAO;
 import dao.impl.ActivityDAOImpl;
 import dao.impl.GroupDAOImpl;
-import enums.ActivityType;
-import enums.ResultMsg;
+import utilities.enums.ActivityType;
+import utilities.enums.ResultMsg;
 import model.ActivityDetailModel;
 import model.ActivityGeneralModel;
 import model.ActivityModel;
@@ -28,6 +28,15 @@ public class GroupActivityServiceImpl implements GroupActivityService {
         groupDAO = new GroupDAOImpl();
     }
 
+
+    public List<ActivityGeneralModel> getActivityHistoryList() {
+        return null;
+    }
+
+    public ActivityDetailModel getActivityDetail(String activityID) {
+        return null;
+    }
+
     public ResultMsg createActivity(ActivityModel activityModel) {
         Activity activity = new Activity(activityModel);
         boolean result = activityDAO.insertOne(activity);
@@ -43,15 +52,7 @@ public class GroupActivityServiceImpl implements GroupActivityService {
         return null;
     }
 
-    public List<ActivityGeneralModel> getActivityHistoryList() {
-        return null;
-    }
-
     public List<ActivityGeneralModel> getActivityHistoryList(String activityName, ActivityType activityType, Date startTime) {
-        return null;
-    }
-
-    public ActivityDetailModel getActivityDetail(String activityID) {
         return null;
     }
 
@@ -71,11 +72,12 @@ public class GroupActivityServiceImpl implements GroupActivityService {
         return null;
     }
 
+    public ResultMsg promoteActivity(String activityID) {
+        return null;
+    }
+
     public List<String> getActivityList(String groupID) {
         return null;
     }
 
-    public ResultMsg promoteActivity(String activityID) {
-        return null;
-    }
 }

@@ -5,7 +5,7 @@ import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
-import tool.Connection;
+import utilities.tool.Connection;
 import utilities.tool.ObjectUtil;
 import utilities.tool.Pagination;
 
