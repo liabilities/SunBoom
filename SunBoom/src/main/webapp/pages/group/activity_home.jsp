@@ -20,72 +20,16 @@
 </head>
 <div class="container">
 <div id="head">
-    <img src="../../img/头像冬.png" width="1100px" height="100px">
+    <img src="../../img/头像冬.png" width=100% height="100px">
 </div>
 </div>
 <div class="container">
-    <div class="row clearfix">
-        <div class="col-md-9 column" class="nav-con">
-            <div id="top_div" class="pw pw-v nav">
-                <ul class="nav nav-pills" class="nav-list">
-                    <li class="active" class="nav-more-li">
-                        <a href="http://localhost:8080/pages/group/activity_home.jsp">首页</a>
-                        <div class="nav-more cf">
-                            <div class="bg-nav-more"></div>
-                            <div class="nav-more-item">
-                                <p><a href="activity.jsp">正在进行</a></p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/pages/group/activity.jsp">活动</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/pages/group/member.jsp">成员</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/pages/group/material.jsp">物资</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/pages/group/message_board.jsp">留言板</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/pages/group/file.jsp">文件</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-3 column" id="top_div_side">
-            <ul class="nav nav-pills">
-                <li><a href="http://localhost:8080/pages/group/fellow.jsp">联系人</a></li>
-                <li><a href="http://localhost:8080/pages/group/dynamics.jsp">信息发布</a></li>
-            </ul>
-        </div>
-    </div>
+    <jsp:include page="group_navigationbar.jsp"/>
 </div>
 <div class="container">
-    <div class="row clearfix">
-        <div class="col-md-2" id="side">
-                <div class="row">
-                    <ul class="nav nav-stacked nav-pills" style="margin-top: 20px" >
-                        <li class="active">
-                            <a href="#">创建活动</a>
-                        </li>
-                        <li>
-                            <a href="#">正在进行</a>
-                        </li>
-                        <li>
-                            <a href="#">历史活动</a>
-                        </li>
-                    </ul>
-                </div>
-        </div>
-        <div class="col-md-10" name="showDiv" id="show">
-            <p>
-                这是首页
-            </p>
-        </div>
-    </div>
+    <p>
+        这是主页的内容
+    </p>
 </div>
 
 <%--<script>--%>

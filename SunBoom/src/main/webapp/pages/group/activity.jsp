@@ -21,64 +21,9 @@
     <img src="../../img/头像冬.png" width="1100px" height="100px">
 </div>
 </div>
-<div class="container">
-    <div class="row clearfix">
-        <div class="col-md-9 column">
-            <div id="top_div">
-                <ul class="nav nav-pills">
-                    <li>
-                        <a href="http://localhost:8080/pages/group/activity_home.jsp">首页</a>
-                    </li>
-                    <li class="active">
-                        <a href="http://localhost:8080/pages/group/activity.jsp">活动</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/pages/group/member.jsp">成员</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/pages/group/material.jsp">物资</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/pages/group/message_board.jsp">留言板</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/pages/group/file.jsp">文件</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-3 column" id="top_div_side">
-            <ul class="nav nav-pills">
-                <li><a href="http://localhost:8080/pages/group/fellow.jsp">联系人</a></li>
-                <li><a href="http://localhost:8080/pages/group/dynamics.jsp">信息发布</a></li>
-            </ul>
-        </div>
+    <div class="container">
+        <jsp:include page="group_navigationbar.jsp"/>
     </div>
-</div>
-<div class="container">
-    <div class="row clearfix">
-        <div class="col-md-2" id="side">
-                <div class="row">
-                    <ul class="nav nav-stacked nav-pills" style="margin-top: 20px" >
-                        <li class="active">
-                            <a href="#">创建活动</a>
-                        </li>
-                        <li>
-                            <a href="#">正在进行</a>
-                        </li>
-                        <li>
-                            <a href="#">历史活动</a>
-                        </li>
-                    </ul>
-                </div>
-        </div>
-        <div class="col-md-10" name="showDiv" id="show">
-            <p>
-                这个是活动界面
-            </p>
-        </div>
-    </div>
-</div>
 
 <%--<script>--%>
     <%--function change() {--%>
