@@ -5,9 +5,10 @@ import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
-import tool.Connection;
-import tool.ObjectUtil;
-import tool.Pagination;
+import utilities.exceptions.NotExistException;
+import utilities.tool.Connection;
+import utilities.tool.ObjectUtil;
+import utilities.tool.Pagination;
 
 import javax.annotation.Resource;
 import java.io.Serializable;
@@ -20,6 +21,10 @@ import java.util.*;
 
 /**
  * Created by zoetx on 2017/1/22.
+ * Last changed by charles.
+ * Updating time: 2017/1/23.
+ *
+ * 抛出NotExistException异常的具体实现未实现
  */
 
 
@@ -27,6 +32,100 @@ import java.util.*;
 public class BaseDAOImpl<T> implements BaseDAO<T> {
 
     protected Class<T> entityClazz;
+
+    /*
+    增
+     */
+    public boolean saveOne(T o) {
+        saveOrUpdate(o);
+        return true;
+    }
+
+    public boolean saveList(List<T> list) {
+        saveOrUpdateAll(list);
+        return true;
+    }
+
+    public boolean insertOne(T entity) {
+        save(entity);
+        return true;
+    }
+
+    public boolean insertList(List<T> entitys) {
+        for (T entity : entitys) {
+            save(entity);
+        }
+        return true;
+    }
+
+
+    /*
+    删
+     */
+    public boolean deleteOne(Serializable id) throws NotExistException{
+        T entity = getById(id);
+        delete(entity);
+        return true;
+    }
+
+    public boolean deleteList(List<T> entitys) throws NotExistException{
+        for (T entity : entitys) {
+            delete(entity);
+        }
+        return true;
+    }
+
+
+    /*
+    改
+     */
+    public boolean updateOne(T entity) throws NotExistException{
+        update(entity);
+        return true;
+    }
+
+    public boolean updateList(List<T> entitys) throws NotExistException{
+        for (T entity : entitys) {
+            update(entity);
+        }
+        return true;
+    }
+
+
+    /*
+    查
+     */
+    public T getById(Serializable id) throws NotExistException{
+        if (id == null)
+            return null;
+
+        return (T) get(entityClazz, id);
+    }
+
+    public List<T> findByProperty(String name, Object value) throws NotExistException{
+        String hql = "from  " + entityClazz.getSimpleName() + " where " + name + "=? ";
+        return findList(hql, value);
+    }
+
+    public List<T> findByProperty(Map<String, Object> conditionMap) throws NotExistException{
+        StringBuilder hql = new StringBuilder();
+        hql.append("from  " + entityClazz.getSimpleName());
+        if (!conditionMap.isEmpty()) {
+            Iterator<String> it = conditionMap.keySet().iterator();
+            String key = it.next();
+            hql.append(" where  " + key + "=:" + key);
+            while (it.hasNext()) {
+                key = it.next();
+                hql.append(" and  " + key + "=:" + key);
+            }
+        }
+        return findList(hql.toString(), conditionMap);
+    }
+
+
+
+
+
 
     @SuppressWarnings("unchecked")
     public BaseDAOImpl() {
@@ -419,79 +518,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         return ((c == '_') || (('0' <= c) && (c <= '9')) || (('a' <= c) && (c <= 'z')) || (('A' <= c) && (c <= 'Z')));
     }
 
-    public boolean deleteOne(Serializable id) {
-        T entity = getById(id);
-        delete(entity);
-        return true;
-    }
 
-    public boolean deleteList(List<T> entitys) {
-        for (T entity : entitys) {
-            delete(entity);
-        }
-        return true;
-    }
-
-    public T getById(Serializable id) {
-        if (id == null)
-            return null;
-
-        return (T) get(entityClazz, id);
-    }
-
-    public boolean saveOne(T o) {
-        saveOrUpdate(o);
-        return true;
-    }
-
-    public boolean saveList(List<T> list) {
-        saveOrUpdateAll(list);
-        return true;
-    }
-
-    public boolean insertOne(T entity) {
-        save(entity);
-        return true;
-    }
-
-    public boolean insertList(List<T> entitys) {
-        for (T entity : entitys) {
-            save(entity);
-        }
-        return true;
-    }
-
-    public boolean updateOne(T entity) {
-        update(entity);
-        return true;
-    }
-
-    public boolean updateList(List<T> entitys) {
-        for (T entity : entitys) {
-            update(entity);
-        }
-        return true;
-    }
-
-    public List<T> findByProperty(String name, Object value) {
-        String hql = "from  " + entityClazz.getSimpleName() + " where " + name + "=? ";
-        return findList(hql, value);
-    }
-
-    public List<T> findByProperty(Map<String, Object> conditionMap) {
-        StringBuilder hql = new StringBuilder();
-        hql.append("from  " + entityClazz.getSimpleName());
-        if (!conditionMap.isEmpty()) {
-            Iterator<String> it = conditionMap.keySet().iterator();
-            String key = it.next();
-            hql.append(" where  " + key + "=:" + key);
-            while (it.hasNext()) {
-                key = it.next();
-                hql.append(" and  " + key + "=:" + key);
-            }
-        }
-        return findList(hql.toString(), conditionMap);
-    }
 
     private <V> List<V> findListByMax(final CharSequence queryString, final int maxResults, final Object... params) {
         @SuppressWarnings({ "unchecked", "serial" })

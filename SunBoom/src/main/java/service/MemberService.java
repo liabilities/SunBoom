@@ -1,6 +1,6 @@
 package service;
 
-import enums.ResultMsg;
+import utilities.enums.ResultMsg;
 
 import java.util.List;
 

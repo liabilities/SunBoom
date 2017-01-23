@@ -1,6 +1,6 @@
 package model;
 
-import enums.FileState;
+import utilities.enums.FileState;
 
 import java.util.Date;
 

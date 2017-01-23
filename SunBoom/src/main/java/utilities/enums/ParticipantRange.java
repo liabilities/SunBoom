@@ -1,16 +1,16 @@
-package enums;
+package utilities.enums;
 
 /**
  * Created by cuihua on 2017/1/11.
  */
-public enum Sex {
+public enum ParticipantRange {
 
-    //男，女，未知
-    MALE(0), FEMALE(1), NOT_KNOW(2);
+    //全部，只面向全城，只面向全校
+    ALL(0), CITY(1), UNIVERSITY(2);
 
     private int representNum;
 
-    private Sex(int a){
+    private ParticipantRange(int a){
         representNum = a;
     }
 
@@ -32,8 +32,8 @@ public enum Sex {
      * int TO enum
      * 便于从数据库读入
      */
-    public Sex getEnum(int a) {
-        for (Sex thisEnum : Sex.values()){
+    public ParticipantRange getEnum(int a) {
+        for (ParticipantRange thisEnum : ParticipantRange.values()){
             if (thisEnum.representNum == a){
                 return thisEnum;
             }
