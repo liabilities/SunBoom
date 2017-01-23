@@ -1,20 +1,22 @@
-package exception;
+package utilities.exceptions;
 
 /**
  * Created by zoetx on 2017/1/22.
  */
 import org.springframework.core.NestedRuntimeException;
 
-public class SessionTimeoutException extends NestedRuntimeException {
+/**
+ * @author
+ */
+public class DaoException extends NestedRuntimeException {
+
     private static final long serialVersionUID = 1L;
 
-    public SessionTimeoutException(String msg) {
+    public DaoException(String msg) {
         super(msg);
     }
 
-    public SessionTimeoutException(String msg, Throwable obj) {
+    public DaoException(String msg, Throwable obj) {
         super(msg, obj);
     }
-
 }
-

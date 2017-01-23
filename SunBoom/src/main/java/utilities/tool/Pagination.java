@@ -1,4 +1,4 @@
-package tool;
+package utilities.tool;
 
 /**
  * Created by zoetx on 2017/1/22.

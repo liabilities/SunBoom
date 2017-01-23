@@ -6,8 +6,8 @@ import org.hibernate.Session;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 import tool.Connection;
-import tool.ObjectUtil;
-import tool.Pagination;
+import utilities.tool.ObjectUtil;
+import utilities.tool.Pagination;
 
 import javax.annotation.Resource;
 import java.io.Serializable;
