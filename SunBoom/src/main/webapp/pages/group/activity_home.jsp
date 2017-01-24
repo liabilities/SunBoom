@@ -32,17 +32,29 @@
 </div>
 <div class="container">
     <div class="group">
-        <div id="avatarArea">
+        <div id="avatarArea" class="float">
             <a href="javascript:void(0);" title="更换头像" onclick="setAvatar()">
                 <img id="avatar" alt="Pulpit rock" width="200" height="200">
             </a>
         </div>
-        <div id="infoArea">
-            <p class = items><span class="info-name">社团名称：</span><span id="name"></span></p>
-            <p class = items><span class="info-name">个性签名：</span></span><span id="signature"></span></p>
-            <p class = items><span class="info-name">成员数：</span></span><span id="memberNum"></span></p>
-            <p class = items><span class="info-name">所属学校：</span></span><span id="school"></span></p>
-            <p class = items><span class="info-name">标签：</span></span><span id="tag"></span></p>
+        <div id="infoArea" class="float">
+            <div id="info" class="float">
+                <p class = items><span class="info-name">社团名称：</span><span id="name"></span></p>
+                <p class = items><span class="info-name">个性签名：</span></span><span id="signature"></span></p>
+                <p class = items><span class="info-name">成员数：</span></span><span id="memberNum"></span></p>
+                <p class = items><span class="info-name">所属学校：</span></span><span id="school"></span></p>
+                <p class = items><span class="info-name">标签：</span></span><span id="tag"></span></p>
+            </div>
+            <div id="editInfo" class="float" style="display: none;">
+                <p class = items><span class="info-name">社团名称：</span><input type="text" id="nameBox"></p>
+                <p class = items><span class="info-name">个性签名：</span><input type="text" id="signatureBox"></p>
+                <p class = items><span class="info-name">成员数：</span><input type="text" id="memberNumBox"></p>
+                <p class = items><span class="info-name">所属学校：</span><input type="text"  id="schoolBox"></p>
+                <p class = items><span class="info-name">标签：</span><input type="text" id="tagBox"></p>
+            </div>
+            <div id="editButtonBox">
+                <a href="javascript:void(0)" onclick="doSomething()" id="editButton">编辑资料</a>
+            </div>
         </div>
     </div>
 </div>
@@ -63,28 +75,7 @@
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/group_home.js"></script>
 <script>
-    var xmlhttp;
-    if (window.XMLHttpRequest) {
-        //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-        xmlhttp = new XMLHttpRequest();
-    } else {
-        // IE6, IE5 浏览器执行代码
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            $(function () {
-                var info = xmlhttp.responseXML.getElementsByTagName("GROUP")[0];
-                $("#name").text(info.getElementsByTagName("NAME")[0].childNodes[0].nodeValue);
-                $("#signature").text(info.getElementsByTagName("SIGNATURE")[0].childNodes[0].nodeValue);
-                $("#memberNum").text(info.getElementsByTagName("MEMBERNUM")[0].childNodes[0].nodeValue);
-                $("#tag").text(info.getElementsByTagName("TAG")[0].childNodes[0].nodeValue);
-                $("#avatar").attr("src", info.getElementsByTagName("AVATAR")[0].childNodes[0].nodeValue);
-            })
-        }
-    }
-    xmlhttp.open("GET", "/getGroupInfo?id=1", true);
-    xmlhttp.send();
+    updateInfo();
 </script>
 </body>
 </html>

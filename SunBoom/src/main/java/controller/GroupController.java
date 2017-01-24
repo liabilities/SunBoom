@@ -1,6 +1,7 @@
 package controller;
 
 import model.GroupModel;
+import org.json.XML;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,21 +19,21 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class GroupController {
 
-    @RequestMapping(value = "/getGroupInfo", method = RequestMethod.GET)
+    @RequestMapping(value = "/getGroupInfo", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
     @ResponseBody
-    public String getGroupInfo(String id) {
-        System.out.println("call");
-            System.out.println(id);
-            GroupHomeService service = new GroupHomeServiceImpl();
-            GroupModel model = null;
-            try {
-                model = service.getBasicInfo(id);
-            } catch (NotExistException e) {
-                e.printStackTrace();
-            }
-            System.out.println("call2");
-            String result = "<GROUP>";
-            if (model != null) {
+    public String getGroupInfo(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        System.out.println("id = " + id);
+        GroupHomeService service = new GroupHomeServiceImpl();
+        GroupModel model = null;
+        try {
+            model = service.getBasicInfo(id);
+        } catch (NotExistException e) {
+            e.printStackTrace();
+        }
+        System.out.println("call2");
+        String result = "<GROUP>";
+        if (model != null) {
             result += "<NAME>" + model.getName() + "</NAME>";
             result += "<SIGNATURE>" + model.getSignature() + "</SIGNATURE>";
             result += "<MEMBERNUM>" + model.getMemberNum() + "</MEMBERNUM>";
@@ -44,6 +45,7 @@ public class GroupController {
         System.out.println("call3");
         System.out.println(result);
         return result;
+//        return "<GROUP><NAME>负债中心</NAME></GROUP>";
     }
 
     @RequestMapping(value = "/getAvatar", method = RequestMethod.GET)
