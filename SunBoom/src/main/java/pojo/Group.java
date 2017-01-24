@@ -31,6 +31,27 @@ public class Group {
 
     public Group(){}
 
+    public Group(Group group){
+        this.schoolID = group.getSchoolID();
+        this.tag = group.getTag();
+        this.name = group.getName();
+        this.signature = group.getSignature();
+        this.introduction = group.getIntroduction();
+        this.avatar = group.getAvatar();
+        this.password = group.getPassword();
+        this.membernum = group.getMembernum();
+        this.username = group.getUsername();
+        this.tel = group.getTel();
+        this.mail = group.getMail();
+        this.detailPath = group.getDetailPath();
+        this.registerTime = group.getRegisterTime();
+        this.identificationTime = group.getIdentificationTime();
+        this.deadline = group.getDeadline();
+        this.fellowGroup = group.getFellowGroup();
+        this.fellowPerson = group.getFellowPerson();
+        this.certifiedMaterial = group.getCertifiedMaterial();
+    }
+
 
     public Group(GroupModel group) {
         this.groupID = group.getGroupID_int();
