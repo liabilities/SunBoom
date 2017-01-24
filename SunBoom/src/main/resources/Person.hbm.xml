@@ -4,35 +4,49 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="pojo.Person" table="person" schema="rsp" dynamic-insert="true">
+    <class name="pojo.Person" table="persontest" schema="rsp" dynamic-insert="true">
         <id name="personID">
-            <column name="personID" sql-type="int(10)" />
+            <column name="personID" sql-type="int(11)" />
             <generator class="increment"/>
         </id>
-        <property name="userName">
-            <column name="userName" sql-type="varchar(45)"/>
-        </property>
-        <property name="nickName">
-            <column name="nickName" sql-type="varchar(45)"/>
+        <property name="usesrname">
+            <column name="usesrname" sql-type="varchar(45)"/>
         </property>
         <property name="password">
             <column name="password" sql-type="varchar(45)"/>
         </property>
-        <property name="universityID">
-            <column name="universityID" sql-type="int(11)" not-null="false"/>
+        <property name="nickName">
+            <column name="nickName" sql-type="varchar(45)"/>
+        </property>
+        <property name="schoolID">
+            <column name="schoolID" sql-type="int(11)" />
         </property>
         <property name="mail">
             <column name="mail" sql-type="varchar(45)"/>
         </property>
         <property name="avatar">
-            <column name="avatar" sql-type="varchar(255)" not-null="false"/>
+            <column name="avatar" sql-type="varchar(255)"/>
         </property>
         <property name="introduction">
-            <column name="introduction" sql-type="text" not-null="false"/>
+            <column name="introduction" sql-type="varchar(255)"/>
         </property>
         <property name="sex">
-            <column name="sex" sql-type="int(11)"/>
+            <column name="sex" sql-type="int(1)"/>
         </property>
+        <property name="detailPath">
+            <column name="detailPath" sql-type="varchar(255)"/>
+        </property>
+        <property name="registerTime">
+            <column name="registerTime" sql-type="date"/>
+        </property>
+        <property name="identificationTime">
+            <column name="identificationTime" sql-type="date"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="int(1)"/>
+        </property>
+
+
 
     </class>
 </hibernate-mapping>
