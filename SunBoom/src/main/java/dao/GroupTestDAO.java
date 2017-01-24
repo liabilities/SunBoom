@@ -1,7 +1,7 @@
 package dao;
 
 import dao.base.BaseDAO;
-import pojo.GroupTest;
+import pojo.Group;
 
-public interface GroupTestDAO extends BaseDAO<GroupTest>{
+public interface GroupTestDAO extends BaseDAO<Group>{
 }

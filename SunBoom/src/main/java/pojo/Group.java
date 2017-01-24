@@ -1,14 +1,12 @@
 package pojo;
 
-
 import model.GroupModel;
 
 import java.util.Date;
 
 /**
- * Created by I Like Milk on 2017/1/11.
+ * Created by zoetx on 2017/1/24.
  */
-
 public class Group {
 
     private int groupID;
@@ -19,19 +17,20 @@ public class Group {
     private String introduction;
     private String avatar;
     private String password;
-    private int memberNum;
-    private String userName;
+    private int membernum;
+    private String username;
     private String tel;
     private String mail;
     private String detailPath;
     private Date registerTime;
     private Date identificationTime;
     private Date deadline;
-    private int fellowNum_group;
-    private int fellowNum_person;
+    private int fellowGroup;
+    private int fellowPerson;
     private String certifiedMaterial;
 
     public Group(){}
+
 
     public Group(GroupModel group) {
         this.groupID = group.getGroupID_int();
@@ -42,16 +41,16 @@ public class Group {
         this.introduction = group.getIntroduction();
         this.avatar = group.getAvatar();
         this.password = group.getPassword();
-        this.memberNum = group.getMemberNum();
-        this.userName = group.getUserName();
+        this.membernum = group.getMemberNum();
+        this.username = group.getUserName();
         this.tel = group.getTel();
         this.mail = group.getMail();
         this.detailPath = group.getDetailPath();
         this.registerTime = group.getRegisterTime_date();
         this.identificationTime = group.getIdentificationTime_date();
         this.deadline = group.getDeadline_date();
-        this.fellowNum_group = group.getFellowNum_group();
-        this.fellowNum_person = group.getFellowNum_person();
+        this.fellowGroup = group.getFellowNum_group();
+        this.fellowPerson = group.getFellowNum_person();
         this.certifiedMaterial = group.getCertifiedMaterial();
     }
 
@@ -119,20 +118,20 @@ public class Group {
         this.password = password;
     }
 
-    public int getMemberNum() {
-        return memberNum;
+    public int getMembernum() {
+        return membernum;
     }
 
-    public void setMemberNum(int memberNum) {
-        this.memberNum = memberNum;
+    public void setMembernum(int membernum) {
+        this.membernum = membernum;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getTel() {
@@ -183,20 +182,20 @@ public class Group {
         this.deadline = deadline;
     }
 
-    public int getFellowNum_group() {
-        return fellowNum_group;
+    public int getFellowGroup() {
+        return fellowGroup;
     }
 
-    public void setFellowNum_group(int fellowNum_group) {
-        this.fellowNum_group = fellowNum_group;
+    public void setFellowGroup(int fellowGroup) {
+        this.fellowGroup = fellowGroup;
     }
 
-    public int getFellowNum_person() {
-        return fellowNum_person;
+    public int getFellowPerson() {
+        return fellowPerson;
     }
 
-    public void setFellowNum_person(int fellowNum_person) {
-        this.fellowNum_person = fellowNum_person;
+    public void setFellowPerson(int fellowPerson) {
+        this.fellowPerson = fellowPerson;
     }
 
     public String getCertifiedMaterial() {

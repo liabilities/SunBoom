@@ -1,7 +1,7 @@
 package dao;
 
-import pojo.Group;
 import dao.base.BaseDAO;
+import pojo.Group;
 
 public interface GroupDAO extends BaseDAO<Group> {
 
