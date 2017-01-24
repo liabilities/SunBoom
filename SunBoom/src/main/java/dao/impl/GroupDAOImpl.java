@@ -19,15 +19,15 @@ public class GroupDAOImpl extends BaseDAOImpl<Group> implements GroupDAO {
         g.setName("学生会");
         ArrayList<Group> list = new ArrayList<Group>();
         Group g2 = new Group(g);
-        g2.setGroupID(3);
+ //       g2.setGroupID(3);
         Group g3 = new Group(g);
-        g3.setGroupID(4);
+//        g3.setGroupID(4);
         Group g4 = new Group(g);
-        g4.setGroupID(6);
+//        g4.setGroupID(6);
         list.add(g2);
         list.add(g3);
         list.add(g4);
-        impl.deleteList(list);
+        impl.insertList(list);
     }
 
 }

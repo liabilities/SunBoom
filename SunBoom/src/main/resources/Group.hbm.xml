@@ -6,7 +6,8 @@
 
     <class name="pojo.Group" table="grouptest" schema="rsp" dynamic-insert="true">
         <id name="groupID">
-            <column name="groupID" sql-type="int(11)" />
+            <column name="groupID" sql-type="int(11) " />
+            <generator class="increment"/>
         </id>
         <property name="schoolID">
             <column name="schoolID" sql-type="int(11)"/>

@@ -189,9 +189,9 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
              Iterator localIterator = entities.iterator(); localIterator.hasNext();) {
             Object entity = localIterator.next();
             session.save(entity);
+            tx.commit();
+            closeSession();
         }
-        tx.commit();
-        closeSession();
     }
 
     private void deleteAll(Collection<?> entities) {
@@ -201,9 +201,9 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
              Iterator localIterator = entities.iterator(); localIterator.hasNext();) {
             Object entity = localIterator.next();
             session.delete(entity);
+            tx.commit();
+            closeSession();
         }
-        tx.commit();
-        closeSession();
     }
 
     private void updateAll(Collection<?> entities) {
@@ -213,9 +213,9 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
              Iterator localIterator = entities.iterator(); localIterator.hasNext();) {
             Object entity = localIterator.next();
             session.update(entity);
+            tx.commit();
+            closeSession();
         }
-        tx.commit();
-        closeSession();
     }
 
     private void saveOrUpdateAll(Collection<?> entities) {
@@ -225,9 +225,9 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
              Iterator localIterator = entities.iterator(); localIterator.hasNext();) {
             Object entity = localIterator.next();
             session.saveOrUpdate(entity);
+            tx.commit();
+            closeSession();
         }
-        tx.commit();
-        closeSession();
     }
 
     @SuppressWarnings({ "unchecked", "hiding" })
