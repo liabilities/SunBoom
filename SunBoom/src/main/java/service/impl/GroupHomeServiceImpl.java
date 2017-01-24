@@ -61,7 +61,7 @@ public class GroupHomeServiceImpl implements GroupHomeService {
      * last updated by charles
      * updating time 2017/1/23
      *
-     * 待具体实现
+     * TODO charles：待具体实现，暂不知HTML路径存取的格式
      */
     private boolean isValid(String htmlPath) {
         return true;
