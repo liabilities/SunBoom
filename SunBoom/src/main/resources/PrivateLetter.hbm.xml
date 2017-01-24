@@ -7,6 +7,7 @@
     <class name="pojo.PrivateLetter" table="privateletter" schema="rsp" dynamic-insert="true">
         <id name="letterID">
             <column name="letterID" sql-type="int(11)" />
+            <generator class="increment"/>
         </id>
         <property name="senderID">
             <column name="senderID" sql-type="int(11)"/>

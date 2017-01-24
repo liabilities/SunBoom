@@ -2,10 +2,10 @@ package service.impl;
 
 import dao.GroupDAO;
 import dao.impl.GroupDAOImpl;
-import utilities.enums.ResultMsg;
 import model.GroupModel;
 import pojo.Group;
 import service.GroupHomeService;
+import utilities.enums.ResultMsg;
 import utilities.exceptions.InvalidHtmlPathException;
 import utilities.exceptions.NotExistException;
 import utilities.exceptions.NullException;

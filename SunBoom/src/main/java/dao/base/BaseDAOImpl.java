@@ -3,6 +3,7 @@ package dao.base;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 import utilities.exceptions.NotExistException;
@@ -21,10 +22,10 @@ import java.util.*;
 
 /**
  * Created by zoetx on 2017/1/22.
- * Last changed by charles.
- * Updating time: 2017/1/23.
+ * Last changed by zoetx.
+ * Updating time: 2017/1/24.
  *
- * 抛出NotExistException异常的具体实现未实现
+ * 添加Transaction的commit
  */
 
 
@@ -150,61 +151,82 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
     }
 
     private void save(Object entity) {
-        getSession().save(entity);
+        Session session = getSession();
+        Transaction tx = session.beginTransaction();
+        session.save(entity);
+        tx.commit();
         closeSession();
     }
 
     private void delete(Object entity) {
-
-        getSession().delete(entity);
+        Session session = getSession();
+        Transaction tx = session.beginTransaction();
+        session.delete(entity);
+        tx.commit();
         closeSession();
     }
 
     private void update(Object entity) {
-
-        getSession().update(entity);
+        Session session = getSession();
+        Transaction tx = session.beginTransaction();
+        session.update(entity);
+        tx.commit();
         closeSession();
     }
 
     private void saveOrUpdate(Object entity) {
-
-        getSession().saveOrUpdate(entity);
+        Session session = getSession();
+        Transaction tx = session.beginTransaction();
+        session.saveOrUpdate(entity);
+        tx.commit();
         closeSession();
     }
 
     private void saveAll(Collection<?> entities) {
-
+        Session session = getSession();
+        Transaction tx = session.beginTransaction();
         for (@SuppressWarnings("rawtypes")
              Iterator localIterator = entities.iterator(); localIterator.hasNext();) {
             Object entity = localIterator.next();
-            getSession().save(entity);
+            session.save(entity);
+            tx.commit();
+            closeSession();
         }
     }
 
     private void deleteAll(Collection<?> entities) {
-
+        Session session = getSession();
+        Transaction tx = session.beginTransaction();
         for (@SuppressWarnings("rawtypes")
              Iterator localIterator = entities.iterator(); localIterator.hasNext();) {
             Object entity = localIterator.next();
-            getSession().delete(entity);
+            session.delete(entity);
+            tx.commit();
+            closeSession();
         }
     }
 
     private void updateAll(Collection<?> entities) {
-
+        Session session = getSession();
+        Transaction tx = session.beginTransaction();
         for (@SuppressWarnings("rawtypes")
              Iterator localIterator = entities.iterator(); localIterator.hasNext();) {
             Object entity = localIterator.next();
-            getSession().update(entity);
+            session.update(entity);
+            tx.commit();
+            closeSession();
         }
     }
 
     private void saveOrUpdateAll(Collection<?> entities) {
-
+        Session session = getSession();
+        Transaction tx = session.beginTransaction();
         for (@SuppressWarnings("rawtypes")
              Iterator localIterator = entities.iterator(); localIterator.hasNext();) {
             Object entity = localIterator.next();
-            getSession().saveOrUpdate(entity);
+            session.saveOrUpdate(entity);
+            tx.commit();
+            closeSession();
         }
     }
 

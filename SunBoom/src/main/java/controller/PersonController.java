@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import service.PersonService;
 import service.impl.PersonServiceImpl;
+import utilities.exceptions.NotExistException;
 
 /**
  * Created by zs on 2016/7/13.
@@ -15,12 +16,14 @@ public class PersonController {
     @RequestMapping(value = "/mail")
     public ModelAndView getUser(String id){
         PersonService userService = new PersonServiceImpl();
-        String mail=userService.getMail(id);
-        if(mail==null)
+        try{
+            String mail=userService.getMail(id);
+            ModelAndView model=new ModelAndView("index");
+            model.addObject("mail",mail);
+            return model;
+        }catch(NotExistException e) {
             System.out.print("null");
-        ModelAndView model=new ModelAndView("index");
-        model.addObject("mail",mail);
-        return model;
+            return null;
+        }
     }
-
 }

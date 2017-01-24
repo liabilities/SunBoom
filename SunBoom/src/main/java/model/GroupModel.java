@@ -1,7 +1,7 @@
 package model;
 
 import pojo.Group;
-import tool.DateHelper;
+import utilities.tool.DateHelper;
 
 import java.util.Date;
 
@@ -236,16 +236,16 @@ public class GroupModel {
         this.introduction = group.getIntroduction();
         this.avatar = group.getAvatar();
         this.password = group.getPassword();
-        this.memberNum = group.getMemberNum();
-        this.userName = group.getUserName();
+        this.memberNum = group.getMembernum();
+        this.userName = group.getUsername();
         this.tel = group.getTel();
         this.mail = group.getMail();
         this.detailPath = group.getDetailPath();
         this.registerTime = DateHelper.Date2String(group.getRegisterTime());
         this.identificationTime = DateHelper.Date2String(group.getIdentificationTime());
         this.deadline = DateHelper.Date2String(group.getDeadline());
-        this.fellowNum_group = group.getFellowNum_group();
-        this.fellowNum_person = group.getFellowNum_person();
+        this.fellowNum_group = group.getFellowGroup();
+        this.fellowNum_person = group.getFellowPerson();
         this.certifiedMaterial = group.getCertifiedMaterial();
     }
 }

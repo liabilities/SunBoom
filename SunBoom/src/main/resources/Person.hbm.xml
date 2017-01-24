@@ -7,6 +7,7 @@
     <class name="pojo.Person" table="person" schema="rsp" dynamic-insert="true">
         <id name="personID">
             <column name="personID" sql-type="int(10)" />
+            <generator class="increment"/>
         </id>
         <property name="userName">
             <column name="userName" sql-type="varchar(45)"/>
