@@ -3,6 +3,7 @@ package dao.base;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 import utilities.exceptions.NotExistException;
@@ -161,8 +162,10 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
     }
 
     private void update(Object entity) {
-
-        getSession().update(entity);
+        Session session = getSession();
+        Transaction tx = session.beginTransaction();
+        session.update(entity);
+        tx.commit();
         closeSession();
     }
 

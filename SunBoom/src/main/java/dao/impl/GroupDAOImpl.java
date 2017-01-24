@@ -14,6 +14,9 @@ public class GroupDAOImpl extends BaseDAOImpl<Group> implements GroupDAO {
         GroupDAOImpl impl = new GroupDAOImpl();
         Group g = impl.getById(1);
         System.out.print(g.getName());
+        g.setName("新媒体中心");
+        System.out.print(g.getName());
+        impl.updateOne(g);
     }
 
 }
