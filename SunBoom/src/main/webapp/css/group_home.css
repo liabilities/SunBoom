@@ -1,12 +1,18 @@
-.group div {
+.group .float{
     float: left;
     margin: 3em;
     font-size: 16px;
 }
 
 #infoArea {
-    margin-left: 8em;
-    margin-top: 4em;
+    margin-top: 1em;
+}
+
+#editButtonBox {
+    position:relative;
+    left: 12em;
+    width: 64px;
+    height: 21px;
 }
 
 .info-name {
@@ -38,7 +44,7 @@
 }
 
 #setAvatarBox {
-
+    position: fixed;
     top: 10em;
     left: 10em;
     width: 200px;
