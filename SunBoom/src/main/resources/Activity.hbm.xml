@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="pojo.Activity" table="activity" schema="rsp" dynamic-insert="true">
+        <id name="activityID">
+            <column name="activityID" sql-type="int(11)" />
+            <generator class="increment"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar(45)"/>
+        </property>
+        <property name="initiatorID">
+            <column name="initiatorID" sql-type="int(11)"/>
+        </property>
+        <property name="initiatorType">
+            <column name="initiatorType" sql-type="int(11)"/>
+        </property>
+        <property name="minScale">
+            <column name="minScale" sql-type="int(11)" />
+        </property>
+        <property name="maxScale">
+            <column name="maxScale" sql-type="int(11)"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="varchar(255)"/>
+        </property>
+        <property name="place">
+            <column name="place" sql-type="int(11)" />
+        </property>
+        <property name="startTime">
+            <column name="startTime" sql-type="Date"/>
+        </property>
+        <property name="endTime">
+            <column name="endTime" sql-type="Date"/>
+        </property>
+        <property name="detailPath">
+            <column name="detailPath" sql-type="text"/>
+        </property>
+        <property name="capital">
+            <column name="capital" sql-type="int(11)"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

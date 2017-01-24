@@ -4,3 +4,5 @@ SunBoom/target/*
 SunBoom/.idea/*
 
 SunBoom/src/main/resources/hibernate.cfg.xml
+SunBoom/sunBoom.iml
+SunBoom/src/main/java/dao/impl/GroupDAOImpl.java

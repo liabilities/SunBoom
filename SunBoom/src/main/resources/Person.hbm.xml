@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="pojo.Person" table="person" schema="rsp" dynamic-insert="true">
+        <id name="personID">
+            <column name="personID" sql-type="int(10)" />
+            <generator class="increment"/>
+        </id>
+        <property name="userName">
+            <column name="userName" sql-type="varchar(45)"/>
+        </property>
+        <property name="nickName">
+            <column name="nickName" sql-type="varchar(45)"/>
+        </property>
+        <property name="password">
+            <column name="password" sql-type="varchar(45)"/>
+        </property>
+        <property name="universityID">
+            <column name="universityID" sql-type="int(11)" not-null="false"/>
+        </property>
+        <property name="mail">
+            <column name="mail" sql-type="varchar(45)"/>
+        </property>
+        <property name="avatar">
+            <column name="avatar" sql-type="varchar(255)" not-null="false"/>
+        </property>
+        <property name="introduction">
+            <column name="introduction" sql-type="text" not-null="false"/>
+        </property>
+        <property name="sex">
+            <column name="sex" sql-type="int(11)"/>
+        </property>
+
+    </class>
+</hibernate-mapping>
