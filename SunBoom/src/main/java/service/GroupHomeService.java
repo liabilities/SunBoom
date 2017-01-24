@@ -34,19 +34,19 @@ public interface GroupHomeService {
     /**
      *
      * @param activityID 活动ID编号
-     * @return 图文详情HTML文件的路径
+     * @return 图文描述信息HTML文件的路径
      *
-     * 根据活动的ID获取相应的图文详情HTML路径
+     * 根据活动的ID获取相应的图文描述信息HTML路径
      */
     String getDetailInfo(String activityID) throws NotExistException;
 
     /**
      *
      * @param activityID 活动ID编号
-     * @param detailHTMLPath 图文详情HTML文件的路径
+     * @param detailHTMLPath 图文描述信息HTML文件的路径
      * @return 保存操作的状态
      *
-     * 保存现有的详情HTML文件路径
+     * 保存现有的描述信息HTML文件路径
      */
     ResultMsg saveDetailInfo(String activityID, String detailHTMLPath) throws InvalidHtmlPathException, NotExistException;
 }
