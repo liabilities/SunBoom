@@ -19,4 +19,9 @@ public class PersonDAOImplTest {
         Person p = impl.getById(0);
         System.out.print(p.getAvatar());
     }
+
+    @Test
+    public void testPerson2School() throws Exception{
+
+    }
 }
