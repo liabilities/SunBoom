@@ -5,7 +5,7 @@ import dao.base.BaseDAOImpl;
 import pojo.Activity;
 
 /**
- * Created by mm on 2016/7/11.
+ * Created by zoe on 2017/1/30.
  */
 public class ActivityDAOImpl extends BaseDAOImpl<Activity> implements ActivityDAO {
 

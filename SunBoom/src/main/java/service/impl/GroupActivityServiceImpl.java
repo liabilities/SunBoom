@@ -39,12 +39,12 @@ public class GroupActivityServiceImpl implements GroupActivityService {
         return null;
     }
 
-    public ResultMsg createActivity(ActivityModel activityModel) {
-        Activity activity = new Activity(activityModel);
-        boolean result = activityDAO.insertOne(activity);
-        if(result) return ResultMsg.SUCCESS;
-        else return ResultMsg.FAIL;
-    }
+//    public ResultMsg createActivity(ActivityModel activityModel) {
+//        Activity activity = new Activity(activityModel);
+//        boolean result = activityDAO.insertOne(activity);
+//        if(result) return ResultMsg.SUCCESS;
+//        else return ResultMsg.FAIL;
+//    }
 
     public String createTimeAxis() {
         return null;

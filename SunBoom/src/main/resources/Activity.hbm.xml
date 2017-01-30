@@ -4,43 +4,49 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="pojo.Activity" table="activity" schema="rsp" dynamic-insert="true">
+    <class name="pojo.Activity" table="activitytest" schema="rsp" dynamic-insert="true">
         <id name="activityID">
-            <column name="activityID" sql-type="int(11)" />
+            <column name="activityID" sql-type="int" />
             <generator class="increment"/>
         </id>
         <property name="name">
             <column name="name" sql-type="varchar(45)"/>
         </property>
         <property name="initiatorID">
-            <column name="initiatorID" sql-type="int(11)"/>
+            <column name="initiatorID" sql-type="int"/>
         </property>
         <property name="initiatorType">
-            <column name="initiatorType" sql-type="int(11)"/>
+            <column name="initiatorType" sql-type="int(1)"/>
         </property>
         <property name="minScale">
-            <column name="minScale" sql-type="int(11)" />
+            <column name="minScale" sql-type="int"/>
         </property>
         <property name="maxScale">
-            <column name="maxScale" sql-type="int(11)"/>
+            <column name="maxScale" sql-type="int"/>
         </property>
         <property name="type">
-            <column name="type" sql-type="varchar(255)"/>
+            <column name="type" sql-type="varchar(45)"/>
         </property>
         <property name="place">
-            <column name="place" sql-type="int(11)" />
+            <column name="place" sql-type="int(1)"/>
         </property>
         <property name="startTime">
-            <column name="startTime" sql-type="Date"/>
+            <column name="startTime" sql-type="date"/>
         </property>
         <property name="endTime">
-            <column name="endTime" sql-type="Date"/>
+            <column name="endTime" sql-type="date"/>
         </property>
         <property name="detailPath">
-            <column name="detailPath" sql-type="text"/>
+            <column name="detailPath" sql-type="varchar(255)"/>
         </property>
-        <property name="capital">
-            <column name="capital" sql-type="int(11)"/>
+        <property name="sponsorID">
+            <column name="sponsorID" sql-type="int"/>
+        </property>
+        <property name="fellowNum">
+            <column name="fellowNum" sql-type="int"/>
+        </property>
+        <property name="likeNum">
+            <column name="likeNum" sql-type="int"/>
         </property>
 
     </class>
