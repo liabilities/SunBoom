@@ -4,13 +4,12 @@ import dao.ActivityDAO;
 import dao.GroupDAO;
 import dao.impl.ActivityDAOImpl;
 import dao.impl.GroupDAOImpl;
-import utilities.enums.ActivityType;
-import utilities.enums.ResultMsg;
 import model.ActivityDetailModel;
 import model.ActivityGeneralModel;
 import model.ActivityModel;
-import pojo.Activity;
 import service.GroupActivityService;
+import utilities.enums.ActivityType;
+import utilities.enums.ResultMsg;
 
 import java.util.Date;
 import java.util.List;
@@ -39,12 +38,13 @@ public class GroupActivityServiceImpl implements GroupActivityService {
         return null;
     }
 
-//    public ResultMsg createActivity(ActivityModel activityModel) {
+    public ResultMsg createActivity(ActivityModel activityModel) {
 //        Activity activity = new Activity(activityModel);
 //        boolean result = activityDAO.insertOne(activity);
 //        if(result) return ResultMsg.SUCCESS;
 //        else return ResultMsg.FAIL;
-//    }
+        return ResultMsg.FAIL;
+    }
 
     public String createTimeAxis() {
         return null;
