@@ -7,6 +7,7 @@ import dao.impl.GroupDAOImpl;
 import model.ActivityDetailModel;
 import model.ActivityGeneralModel;
 import model.ActivityModel;
+import pojo.Activity;
 import service.GroupActivityService;
 import utilities.enums.ActivityType;
 import utilities.enums.ResultMsg;
@@ -39,11 +40,10 @@ public class GroupActivityServiceImpl implements GroupActivityService {
     }
 
     public ResultMsg createActivity(ActivityModel activityModel) {
-//        Activity activity = new Activity(activityModel);
-//        boolean result = activityDAO.insertOne(activity);
-//        if(result) return ResultMsg.SUCCESS;
-//        else return ResultMsg.FAIL;
-        return ResultMsg.FAIL;
+        Activity activity = new Activity(activityModel);
+        boolean result = activityDAO.insertOne(activity);
+        if(result) return ResultMsg.SUCCESS;
+        else return ResultMsg.FAIL;
     }
 
     public String createTimeAxis() {

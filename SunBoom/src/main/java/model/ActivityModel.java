@@ -63,24 +63,25 @@ public class ActivityModel {
      */
     public String activityPlace;
 
-    /**
-     * 活动所需资金
-     */
-    public double capitalNeeded;
 
     /**
-     * 赞助截止日期
+    赞助详情
      */
-    public Date sponsorEndDate;
+    private String sponsorID;
 
     /**
-     * 联系方式
+     * 关注人数
      */
-    public String contact;
+    private int fellowNum;
+
+    /**
+     * 点赞人数
+     */
+    private int likeNum;
 
     public ActivityModel(String activityName,Date activityStartTime,Date activityEndTime,
                          String activityBreif,String activityType,int minScale,String activityPlace,
-                         double capitalNeeded,Date sponsorEndDate,String contact){
+                         String sponsorID,int fellowNum,int likeNum){
         this.activityName = activityName;
         this.activityStartTime = activityStartTime;
         this.activityEndTime = activityEndTime;
@@ -88,9 +89,9 @@ public class ActivityModel {
         this.activityType = activityType;
         this.minScale = minScale;
         this.activityPlace = activityPlace;
-        this.capitalNeeded = capitalNeeded;
-        this.sponsorEndDate = sponsorEndDate;
-        this.contact = contact;
+        this.sponsorID = sponsorID;
+        this.fellowNum = fellowNum;
+        this.likeNum = likeNum;
     }
 
     public String getActivityName() {
@@ -161,37 +162,36 @@ public class ActivityModel {
         this.activityPlace = activityPlace;
     }
 
-    public double getCapitalNeeded() {
-        return capitalNeeded;
+
+    public String getSponsorID() {
+        return sponsorID;
     }
 
-    public int getCapitalNeeded_int() {
-        return (int)capitalNeeded;
+    public int getSponsorID_int() {
+        return Integer.parseInt(sponsorID);
     }
 
-    public void setCapitalNeeded(double capitalNeeded) {
-        this.capitalNeeded = capitalNeeded;
+    public void setSponsorID(String activityID) {
+        this.sponsorID = sponsorID;
     }
 
-    public Date getSponsorEndDate() {
-        return sponsorEndDate;
+    public int getFellowNum() {
+        return fellowNum;
     }
 
-    public java.sql.Date getSponsorEndDate_sql() {
-        return new java.sql.Date(sponsorEndDate.getTime());
+    public void setFellowNum(int fellowNum) {
+        this.fellowNum = fellowNum;
     }
 
-    public void setSponsorEndDate(Date sponsorEndDate) {
-        this.sponsorEndDate = sponsorEndDate;
+    public int getLikeNum() {
+        return likeNum;
     }
 
-    public String getContact() {
-        return contact;
+    public void setLikeNum(int likeNum) {
+        this.likeNum = likeNum;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
+
 
     public String getActivityID() {
         return activityID;
