@@ -1,11 +1,14 @@
 package test.dao.impl;
 
+import dao.School2GroupDAO;
 import dao.School2StudentDAO;
 import dao.SchoolDAO;
+import dao.impl.School2GroupDAOImpl;
 import dao.impl.School2StudentDAOImpl;
 import dao.impl.SchoolDAOImpl;
 import org.junit.Test;
 import pojo.School;
+import pojo.School2Group;
 import pojo.School2Student;
 
 import java.util.HashMap;
@@ -27,6 +30,17 @@ public class SchoolDAOImplTest {
         map.put("enrollmentYear", 2016);
         map.put("schoolID", 0);
         List<School2Student> list = dao.findByProperty(map);
+
+        System.out.print(list.size());
+    }
+
+    @Test
+    public void testSchool2GroupImpl() throws Exception {
+        School2GroupDAO dao = new School2GroupDAOImpl();
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("enrollmentYear", 2016);
+        map.put("schoolID", 0);
+        List<School2Group> list = dao.findByProperty(map);
 
         System.out.print(list.size());
     }
