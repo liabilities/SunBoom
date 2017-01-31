@@ -45,11 +45,11 @@ public class SchoolDAOImplTest {
         System.out.print(list.size());
     }
 
-        @Test
-        public void testSchool() throws Exception {
-            SchoolDAO dao2 = new SchoolDAOImpl();
-            School s = dao2.getById(0);
-            System.out.print(s.getSchoolName());
-        }
+    @Test
+    public void testSchool() throws Exception {
+        SchoolDAO dao2 = new SchoolDAOImpl();
+        School s = dao2.getById(0);
+        System.out.print(s.getSchoolName());
+    }
 
 }
