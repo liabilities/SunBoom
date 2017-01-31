@@ -17,8 +17,8 @@ import java.util.List;
 
 /**
  * Created by lenovo on 2017/1/23.
- * Last changed by charles.
- * Updating time: 2017/1/23.
+ * Last changed by zoetx.
+ * Updating time: 2017/1/30.
  */
 public class GroupActivityServiceImpl implements GroupActivityService {
 

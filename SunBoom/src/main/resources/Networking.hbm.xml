@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="pojo.Networking" table="networkingtest" schema="rsp" dynamic-insert="true">
+        <id name="networkingID">
+            <column name="networkingID" sql-type="int" />
+            <generator class="increment"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar(45)"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="varchar(45)"/>
+        </property>
+        <property name="place">
+            <column name="place" sql-type="int(1)"/>
+        </property>
+        <property name="groupID">
+            <column name="groupID" sql-type="int" />
+        </property>
+        <property name="range">
+            <column name="range" sql-type="int(1)"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="int(1)"/>
+        </property>
+        <property name="announceTime">
+            <column name="announceTime" sql-type="date"/>
+        </property>
+        <property name="startTime">
+            <column name="startTime" sql-type="date"/>
+        </property>
+        <property name="endTime">
+            <column name="endTime" sql-type="date"/>
+        </property>
+        <property name="deadline">
+            <column name="deadline" sql-type="date"/>
+        </property>
+        <property name="introduction">
+            <column name="introduction" sql-type="varchar(255)"/>
+        </property>
+        <property name="detailPath">
+            <column name="detailPath" sql-type="varchar(255)"/>
+        </property>
+        <property name="minScale">
+            <column name="minScale" sql-type="int"/>
+        </property>
+        <property name="maxScale">
+            <column name="maxScale" sql-type="int"/>
+        </property>
+        <property name="presentNum">
+            <column name="presentNum" sql-type="int"/>
+        </property>
+        <property name="responsorNum">
+            <column name="responsorNum" sql-type="int"/>
+        </property>
+        <property name="partnerID">
+            <column name="partnerID" sql-type="int"/>
+        </property>
+    </class>
+</hibernate-mapping>
