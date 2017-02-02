@@ -15,7 +15,11 @@ public class ContactorDAOImplTest {
     public void testContactorDAOImpl() throws Exception {
 
         ContactorDAO impl = new ContactorDAOImpl();
-        Contactor g = impl.getById(0);
+        Contactor g = impl.getById(3);
+        if(g==null){
+            System.out.print("nothing");
+            return;
+        }
         System.out.print(g.getIdB());
     }
 }
