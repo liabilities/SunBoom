@@ -12,7 +12,7 @@ public class MaterialDAOImplTest {
 
 
     @Test
-    public void testSponsorDAOImpl() throws Exception {
+    public void testMaterialDAOImpl() throws Exception {
         MaterialDAO impl = new MaterialDAOImpl();
         Material g = impl.getById(0);
         System.out.print(g.getDescription());
