@@ -1,11 +1,14 @@
 package test.dao.impl;
 
 import dao.ActivityDAO;
+import dao.AxisDAO;
 import dao.IndividualActivityDAO;
 import dao.impl.ActivityDAOImpl;
+import dao.impl.AxisDAOImpl;
 import dao.impl.IndividualActivityDAOImpl;
 import org.junit.Test;
 import pojo.Activity;
+import pojo.Axis;
 import pojo.IndividualActivity;
 
 /**
@@ -26,5 +29,12 @@ public class ActivityDAOImplTest {
         IndividualActivityDAO impl = new IndividualActivityDAOImpl();
         IndividualActivity f = impl.getById(0);
         System.out.print(f.getNeededNum());
+    }
+
+    @Test
+    public void testAxisDAOImpl() throws Exception {
+        AxisDAO impl = new AxisDAOImpl();
+        Axis f = impl.getById(0);
+        System.out.print(f.getActivityID());
     }
 }
