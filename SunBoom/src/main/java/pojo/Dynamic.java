@@ -1,6 +1,7 @@
 package pojo;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 /**
  * Created by zoetx on 2017/1/16.
