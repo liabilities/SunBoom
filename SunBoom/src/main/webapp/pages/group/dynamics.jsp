@@ -18,7 +18,7 @@
 </head>
 <div class="container">
 <div id="head">
-    <img src="../../img/头像冬.png" width="1100px" height="100px">
+    <img src="../../img/1.png" width="1100px" height="100px">
 </div>
 </div>
 <div class="container">
