@@ -21,7 +21,7 @@
     <nav class="global-nav">
         <div class="wrapper">
             <ul>
-                <li class="header-logo"><a href="/"><img src="/img/1.png">SunBoom</a></li>
+                <li class="header-logo"><a href="/"><img src="/img/sunboom.png"></a></li>
 
                 <li><a href="/pages/style2.jsp">另一种样式</a></li>
                 <li><a href="/pages/group/home.jsp">首页</a></li>
