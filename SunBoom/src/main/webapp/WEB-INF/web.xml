@@ -45,7 +45,7 @@
   </filter-mapping>
 
   <welcome-file-list>
-    <welcome-file>/pages/welcome.jsp</welcome-file>
+    <welcome-file>/pages/zoe.jsp</welcome-file>
   </welcome-file-list>
 
 

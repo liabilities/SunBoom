@@ -8,10 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>printMail</title>
+    <title>index</title>
 </head>
 <body>
-mail:
-<%=request.getAttribute("mail")%>
+Here's nothing!
 </body>
 </html>
