@@ -23,6 +23,7 @@
         <ul class="nav-list lf">
             <li><a href="http://localhost:8080/pages/group/activity_home.jsp">首页</a></li>
             <li class="nav-more-li">
+
                 <a href="http://localhost:8080/pages/group/activity.jsp">活动<i class="ico-nav-arrow"></i></a>
                 <div class="nav-more cf">
                     <div class="bg-nav-more"></div>
@@ -45,85 +46,33 @@
             </li>
             <li class="nav-more-li">
                 <a href="http://localhost:8080/pages/group/member.jsp">成员<i class="ico-nav-arrow"></i></a>
-                <div class="nav-more cf">
-                    <div class="bg-nav-more"></div>
-                    <div class="nav-more-item fl">
-                        <p><a href="#">创建活动</a></p>
-                    </div>
-                    <div class="nav-more-line fl"></div>
-                    <div class="nav-more-item fl">
-                        <p><a href="#">历史活动</a></p>
-                    </div>
-                    <div class="nav-more-line fl"></div>
-                    <div class="nav-more-item fl">
-                        <p><a href="#">正在进行</a></p>
-                    </div>
-                    <div class="nav-more-line fl"></div>
-                    <div class="nav-more-item fl">
-                        <p><a href="#">尚未开始</a></p>
-                    </div>
-                </div>
             </li>
             <li class="nav-more-li">
                 <a href="http://localhost:8080/pages/group/material.jsp">物资<i class="ico-nav-arrow"></i></a>
                 <div class="nav-more cf">
                     <div class="bg-nav-more"></div>
                     <div class="nav-more-item fl">
-                        <p><a href="#">创建活动</a></p>
+                        <p><a href="#">我的物资</a></p>
                     </div>
                     <div class="nav-more-line fl"></div>
                     <div class="nav-more-item fl">
-                        <p><a href="#">历史活动</a></p>
-                    </div>
-                    <div class="nav-more-line fl"></div>
-                    <div class="nav-more-item fl">
-                        <p><a href="#">正在进行</a></p>
-                    </div>
-                    <div class="nav-more-line fl"></div>
-                    <div class="nav-more-item fl">
-                        <p><a href="#">尚未开始</a></p>
+                        <p><a href="#">物资求助</a></p>
                     </div>
                 </div>
             </li>
             <li class="nav-more-li">
                 <a href="http://localhost:8080/pages/group/message_board.jsp">留言板<i class="ico-nav-arrow"></i></a>
-                <div class="nav-more cf">
-                    <div class="bg-nav-more"></div>
-                    <div class="nav-more-item fl">
-                        <p><a href="#">创建活动</a></p>
-                    </div>
-                    <div class="nav-more-line fl"></div>
-                    <div class="nav-more-item fl">
-                        <p><a href="#">历史活动</a></p>
-                    </div>
-                    <div class="nav-more-line fl"></div>
-                    <div class="nav-more-item fl">
-                        <p><a href="#">正在进行</a></p>
-                    </div>
-                    <div class="nav-more-line fl"></div>
-                    <div class="nav-more-item fl">
-                        <p><a href="#">尚未开始</a></p>
-                    </div>
-                </div>
             </li>
             <li class="nav-more-li">
-                <a href="http://localhost:8080/pages/group/file.jsp">文件夹<i class="ico-nav-arrow"></i></a>
+                <a href="http://localhost:8080/pages/group/file.jsp">文件<i class="ico-nav-arrow"></i></a>
                 <div class="nav-more cf">
                     <div class="bg-nav-more"></div>
                     <div class="nav-more-item fl">
-                        <p><a href="#">创建活动</a></p>
+                        <p><a href="#">我的文件</a></p>
                     </div>
                     <div class="nav-more-line fl"></div>
                     <div class="nav-more-item fl">
-                        <p><a href="#">历史活动</a></p>
-                    </div>
-                    <div class="nav-more-line fl"></div>
-                    <div class="nav-more-item fl">
-                        <p><a href="#">正在进行</a></p>
-                    </div>
-                    <div class="nav-more-line fl"></div>
-                    <div class="nav-more-item fl">
-                        <p><a href="#">尚未开始</a></p>
+                        <p><a href="#">我的共享</a></p>
                     </div>
                 </div>
             </li>
