@@ -13,7 +13,7 @@
     <meta charset="utf-8">
 
     <title>NavStyle1</title>
-    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/css/nav.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -26,13 +26,13 @@
                 <li><a href="/pages/style2.jsp">另一种样式</a></li>
                 <li><a href="/pages/group/home.jsp">首页</a></li>
                 <li><a href="/pages/group/fellow.jsp">联系人</a></li>
-                <li><a href="/pages/group/activity.jsp">活动</a></li>
+                <li><a href="/pages/group/activity.jsp" class="current_page_item">活动</a></li>
                 <li><a href="/pages/group/dynamic.jsp">动态</a></li>
                 <li><a href="/pages/group/file.jsp">文件</a></li>
                 <li><a href="/pages/group/member.jsp">成员</a></li>
                 <li><a href="/pages/group/material.jsp">物资</a></li>
                 <li><a href="/pages/group/message_board.jsp">留言板</a></li>
-                <li class="menu-item-4943"><a href="/login">注销</a></li>
+                <li class="current-item"><a href="/login">注销</a></li>
             </ul>
         </div>
     </nav>
@@ -40,7 +40,7 @@
 
 <nav class="secondary-nav">
     <div class="wrapper">
-        <ul id="menu-categories" class="categories-nav">
+        <ul class="categories-nav">
             <li class="current-menu-item"><a href="https://litmus.com/blog/category/webinars">活动策划</a></li>
             <li><a href="/pages/index.jsp">创建活动</a></li>
             <li><a href="/pages/index.jsp">尚未开始</a></li>
