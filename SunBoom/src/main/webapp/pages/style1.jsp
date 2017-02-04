@@ -12,8 +12,8 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Nav Style</title>
-    <link rel='stylesheet' id='litmus-style-css'  href='https://d31v04zdn5vmni.cloudfront.net/blog/wp-content/themes/litmus-new/css/style.css?ver=20150425180000' type='text/css' media='all' />
+    <title>NavStyle1</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>

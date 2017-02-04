@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible">
 
-    <title>Zoe's jsp</title>
+    <title>NavStyle2</title>
 
     <link href="/try/css1.css" rel="stylesheet" type="text/css" />
     <link href="/try/css2.css" rel='stylesheet' type='text/css'/>
