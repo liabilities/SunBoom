@@ -12,7 +12,6 @@
     <!-- 引入 Bootstrap -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <link href="../../css/groupIndex.css" rel="stylesheet">
-    <link href="../css/groupNavigationBarTop.css.css" rel="stylesheet">
     <script language="JavaScript" src="../../js/try.js"></script>
     <title>团体首页</title>
 </head>

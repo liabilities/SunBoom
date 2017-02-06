@@ -1,0 +1,32 @@
+body,div,a{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline
+}
+
+#left{
+    float: left;
+    width: 25%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #1a7f94;
+    min-height:300px;
+
+}
+
+#right{
+    float: left;
+    width: 60%;
+    border: solid;
+    border-width: 3px;
+    border-color: #1a7f94;
+    min-height: 300px;
+}
+
+#head1{
+    text-align: center;
+    font-size: 18px;
+}

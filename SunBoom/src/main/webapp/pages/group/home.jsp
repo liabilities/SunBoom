@@ -16,7 +16,7 @@
     <link href="../../css/group_home.css" rel="stylesheet">
 
     <script src="../../js/try.js"></script>
-    <script src="../../../js/ckeditor/ckeditor.js"></script>
+    <script src="../../js/ckeditor/ckeditor.js"></script>
 
     <title>团体首页</title>
 </head>
@@ -24,7 +24,7 @@
 <body>
 <div class="container">
     <div id="head">
-        <img src="../../img/头像冬.png" width=100% height="100px">
+        <img src="../../img/1.png" width=100% height="100px">
     </div>
 </div>
 <div class="container">
@@ -35,7 +35,7 @@
     <div class="row clearfix">
         <div class="col-md-4 column">
             <a id="modal-420333" href="#modal-container-420333" role="button" class="btn" data-toggle="modal">
-                <img id="avatar" alt="头像" width="200" height="200">
+                <img id="avatar" alt="头像" width="200" height="200" src="../../img/1.png">
             </a>
             <div class="modal fade" id="modal-container-420333" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
