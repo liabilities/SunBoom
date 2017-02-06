@@ -15,12 +15,12 @@ a {
 }
 
 body {
-    background: #d0d0d0;
+    background: #dad5cf;
     font-family:"微软雅黑 Light"
 }
 
 .global-nav {
-    background: #333333;
+    background: #6d90ba;
     height: 85px;
     border-top: 5px solid #333333;
     width: 100%;
@@ -29,7 +29,7 @@ body {
 .global-nav ul {
     margin: 0;
     padding: 0;
-    text-align: right;
+    text-align: left;
     overflow: hidden;
 }
 .global-nav ul > li {
@@ -144,8 +144,8 @@ body {
 
 
 .categories-nav .current-menu-item a {
-    border-top: 5px solid #913126;
-    background: #d0d0d0
+    border-top: 5px solid #8cadd0;
+    background: #dad5cf
 }
 .main {
     padding-top: 30px
