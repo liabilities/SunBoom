@@ -15,14 +15,13 @@ a {
 }
 
 body {
-    background: #dad5cf;
+    background: #FFFFFF;
     font-family:"微软雅黑 Light"
 }
 
 .global-nav {
-    background: #6d90ba;
+    background: #3d4749;
     height: 85px;
-    border-top: 5px solid #333333;
     width: 100%;
     font-family:"微软雅黑 Light"
 }
@@ -103,7 +102,7 @@ body {
 
 .secondary-nav {
     height: 75px;
-    background: #FFFFFF;
+    background: #95a7bf;
     font-family:"微软雅黑 Light"
 }
 
@@ -144,8 +143,8 @@ body {
 
 
 .categories-nav .current-menu-item a {
-    border-top: 5px solid #8cadd0;
-    background: #dad5cf
+    border-top: 5px solid #5a9498;
+    background: #FFFFFF
 }
 .main {
     padding-top: 30px
