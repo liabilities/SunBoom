@@ -17,6 +17,11 @@
 </head>
 
 <body>
+
+<div style="background: #325d7f">
+    <img src="../../img/head2.png" width=100% height="170px">
+</div>
+
 <header>
     <nav class="global-nav">
         <div class="wrapper">

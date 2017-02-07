@@ -1,3 +1,17 @@
+div#header-picture{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:-1;
+}
+div#header-picture > img {
+    width:100%;
+    border:0;
+}
+
+
 body,div,a{
     margin: 0;
     padding: 0;
@@ -20,8 +34,8 @@ body {
 }
 
 .global-nav {
-    background: #576069;
-    height: 85px;
+    background: #325d7f;
+    height: 80px;
     width: 100%;
     font-family:"微软雅黑 Light"
 }
@@ -101,7 +115,7 @@ body {
 }
 
 .secondary-nav {
-    height: 75px;
+    height: 70px;
     background: #adc3c0;
     font-family:"微软雅黑 Light"
 }
@@ -131,7 +145,7 @@ body {
     padding: 0 30px;
     height: 70px;
     border-top: 5px solid transparent;
-    color: #888;
+    color: #031634;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
