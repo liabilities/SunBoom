@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Joe
@@ -29,8 +30,9 @@
     </div>
     <div class="container">
 
-        <div id="left">
-            这是左边
+        <div id="left" style="height: 500px;overflow: auto">
+            <button onclick="getContacts()"> 3545</button>
+            <ul class="list-group" id="list"></ul>
         </div>
         <div id="right">
             这是右边
@@ -41,5 +43,28 @@
 <script src="../../js/jquery.js"></script>
 <!-- 包括所有已编译的插件 -->
 <script src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    function getContacts() {
+        $.ajax(
+            {
+                type:"post",
+                url:"/getContacts",
+                data:{id:1},
+//                dataType:"json",
+                success:function (data) {
+                    var list=data.contactList;
+                    for(var i=0;i<list.length;i++){
+                        $("#list").append('<li class="list-group-item">'+list[i]+'</li>')
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert(XMLHttpRequest.status);
+                    alert(XMLHttpRequest.readyState);
+                    alert(textStatus);
+                }
+            }
+        )
+    }
+</script>
 </body>
 </html>
