@@ -9,9 +9,9 @@
 <html>
 <head>
     <title>留言板</title>
+    <link href="/css/nav2.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
 <div id = "nav">
     <jsp:include page="nav/navigationbar1.jsp" ></jsp:include>
 </div>
