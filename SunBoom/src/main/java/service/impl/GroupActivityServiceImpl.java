@@ -4,21 +4,21 @@ import dao.ActivityDAO;
 import dao.GroupDAO;
 import dao.impl.ActivityDAOImpl;
 import dao.impl.GroupDAOImpl;
-import utilities.enums.ActivityType;
-import utilities.enums.ResultMsg;
 import model.ActivityDetailModel;
 import model.ActivityGeneralModel;
 import model.ActivityModel;
 import pojo.Activity;
 import service.GroupActivityService;
+import utilities.enums.ActivityType;
+import utilities.enums.ResultMsg;
 
 import java.util.Date;
 import java.util.List;
 
 /**
  * Created by lenovo on 2017/1/23.
- * Last changed by charles.
- * Updating time: 2017/1/23.
+ * Last changed by zoetx.
+ * Updating time: 2017/1/30.
  */
 public class GroupActivityServiceImpl implements GroupActivityService {
 

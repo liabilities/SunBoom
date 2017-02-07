@@ -16,22 +16,22 @@ function setAvatar() {
 function doSomething() {
     $(function () {
         if ($("#editButton").text() == "编辑资料") {
-            $("#info").css("display", "none");
-            $("#editInfo").css("display", "block");
+            $("#info").addClass("disappear");
+            $("#edit-info").removeClass("disappear");
             $("#nameBox").attr("value", $("#name").text());
             $("#signatureBox").attr("value", $("#signature").text());
             $("#memberNumBox").attr("value", $("#memberNum").text());
             $("#tagBox").attr("value", $("#tag").text());
             $("#editButton").text("保存更改");
         } else {
-            $("#editInfo").css("display", "none");
-        $("#info").css("display", "block");
-        $("#name").text($("#nameBox").attr("value"));
-        $("#signature").text($("#signatureBox").attr("value"));
-        $("#memberNum").text($("#memberNumBox").attr("value"));
-        $("#tag").text($("#tagBox").attr("value"));
-        $("#editButton").text("编辑资料");
-    }
+            $("#edit-info").addClass("disappear");
+            $("#info").removeClass("disappear");
+            $("#name").text($("#nameBox").attr("value"));
+            $("#signature").text($("#signatureBox").attr("value"));
+            $("#memberNum").text($("#memberNumBox").attr("value"));
+            $("#tag").text($("#tagBox").attr("value"));
+            $("#editButton").text("编辑资料");
+        }
     })
 }
 

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="pojo.Publicity" table="publicity" schema="rsp" dynamic-insert="true">
+        <id name="publicityID">
+            <column name="publicityID" sql-type="int" />
+            <generator class="increment"/>
+        </id>
+        <property name="activityID">
+            <column name="activityID" sql-type="int"/>
+        </property>
+        <property name="publishTime">
+            <column name="publishTime" sql-type="date"/>
+        </property>
+        <property name="detailPath">
+            <column name="detailPath" sql-type="varchar(255)"/>
+        </property>
+        <property name="clickNum">
+            <column name="clickNum" sql-type="int" />
+        </property>
+        <property name="lastReplyTime">
+            <column name="lastReplyTime" sql-type="date"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

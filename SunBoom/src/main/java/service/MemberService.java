@@ -1,6 +1,7 @@
 package service;
 
 import utilities.enums.ResultMsg;
+import utilities.exceptions.NotExistException;
 
 import java.util.List;
 
@@ -14,14 +15,14 @@ public interface MemberService {
      * @param groupID 团队ID
      * @return 成员的昵称列表
      */
-    public List<String> getMemberList(String groupID);
+    public List<String> getMemberList(String groupID) throws NotExistException;
 
     /**
      * 删除成员
      * @param personName 成员姓名
      * @return ResultMsg
      */
-    public ResultMsg deleteMember(String personName);
+    public ResultMsg deleteMember(String groupID, String personName) throws NotExistException;
 
     /**
      * 生成邀请码
@@ -34,6 +35,6 @@ public interface MemberService {
      * @param personID 成员ID
      * @return ResultMsg
      */
-    public ResultMsg addMember(String personID);
+    public ResultMsg addMember(String groupID, String personID) throws NotExistException;
 
 }

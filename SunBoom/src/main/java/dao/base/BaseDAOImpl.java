@@ -11,7 +11,6 @@ import utilities.tool.Connection;
 import utilities.tool.ObjectUtil;
 import utilities.tool.Pagination;
 
-import javax.annotation.Resource;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -139,7 +138,6 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         }
     }
 
-    @Resource
 
     private Session getSession() {
         Session session= Connection.getSession();

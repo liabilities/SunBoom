@@ -16,26 +16,27 @@
     <script language="JavaScript" src="../../js/try.js"></script>
     <title>团体首页</title>
 </head>
-<div class="container">
-<div id="head">
-    <img src="../../img/头像冬.png" width="1100px" height="100px">
-</div>
-</div>
-    <div class="container">
-        <jsp:include page="group_navigationbar.jsp"/>
-    </div>
 
+<body>
+
+<div>
+    <jsp:include page="nav/navigationbar1.jsp" ></jsp:include>
+    <jsp:include page="nav/nav2group.jsp" ></jsp:include>
+</div>
+
+
+<div>
 <%--<script>--%>
     <%--function change() {--%>
         <%--x.document.getElementById("show");--%>
         <%--x.innerHTML= <jsp:include page="groupNavigationBarTop.jsp"></jsp:include>--%>
     <%--}--%>
 <%--</script>--%>
+</div>
 <div id="foot_div">
     <p>版权所有@南京大学软件学院</p>
 </div>
 
-<body>
 
 
 <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->

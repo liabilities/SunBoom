@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="pojo.TopicReply" table="topicreply" schema="rsp" dynamic-insert="true">
+        <id name="replyID">
+            <column name="replyID" sql-type="int" />
+            <generator class="increment"/>
+        </id>
+        <property name="topicID">
+            <column name="topicID" sql-type="int"/>
+        </property>
+        <property name="senderID">
+            <column name="senderID" sql-type="int" />
+        </property>
+        <property name="receiverID">
+            <column name="receiverID" sql-type="int" />
+        </property>
+        <property name="time">
+            <column name="time" sql-type="date"/>
+        </property>
+        <property name="content">
+            <column name="content" sql-type="text"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

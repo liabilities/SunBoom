@@ -5,7 +5,7 @@ package utilities.enums;
  */
 public enum ResultMsg {
 
-    SUCCESS("成功"), FAIL("失败"), OFFLINE("断网");
+    SUCCESS("成功"), FAIL("失败"), OFFLINE("断网"), HASEXISTED("已经存在");
 
     private String message;
 

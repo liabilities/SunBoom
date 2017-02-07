@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="pojo.Sponsor" table="sponsor" schema="rsp" dynamic-insert="true">
+        <id name="sponsorID">
+            <column name="sponsorID" sql-type="int" />
+            <generator class="increment"/>
+        </id>
+        <property name="groupID">
+            <column name="groupID" sql-type="int"/>
+        </property>
+        <property name="neededMoney">
+            <column name="neededMoney" sql-type="int"/>
+        </property>
+        <property name="startTime">
+            <column name="startTime" sql-type="date"/>
+        </property>
+        <property name="deadline">
+            <column name="deadline" sql-type="date" />
+        </property>
+        <property name="businessID">
+            <column name="businessID" sql-type="int"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

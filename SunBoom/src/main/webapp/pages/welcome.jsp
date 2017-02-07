@@ -11,7 +11,7 @@
     <script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-ui"></script>
     <link href="http://www.francescomalagrino.com/BootstrapPageGenerator/3/css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
-    <script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <title>
         这是网站的首页
     </title>
@@ -24,12 +24,8 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="panel-364309">
                         <p>
-                            <a href="http://localhost:8080/pages/group/activity_home.jsp">
-                                团体首页
-                            </a>
-                            <br>
-                            <a href="http://localhost:8080/pages/test.jsp">
-                                test
+                            <a href="http://localhost:8080/pages/group/home.jsp">
+                                团体
                             </a>
                         </p>
                     </div>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="pojo.School" table="school" schema="rsp" dynamic-insert="true">
+        <id name="schoolID">
+            <column name="schoolID" sql-type="int" />
+            <generator class="increment"/>
+        </id>
+        <property name="schoolName">
+            <column name="schoolName" sql-type="varchar(45)"/>
+        </property>
+        <property name="groupNum">
+            <column name="groupNum" sql-type="int"/>
+        </property>
+        <property name="personNum">
+            <column name="personNum" sql-type="int"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

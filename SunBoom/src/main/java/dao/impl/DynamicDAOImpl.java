@@ -5,7 +5,7 @@ import dao.base.BaseDAOImpl;
 import pojo.Dynamic;
 
 /**
- * Created by mm on 2016/7/11.
+ * Created by zoe on 2017/2/2.
  */
 public class DynamicDAOImpl extends BaseDAOImpl<Dynamic> implements DynamicDAO {
 

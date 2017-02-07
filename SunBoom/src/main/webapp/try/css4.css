@@ -1,0 +1,65 @@
+#docs {
+    margin-top: 30px;
+}
+
+#docs h1 {
+    margin-top: 0px;
+}
+
+#docs p {
+    line-height: 1.5;
+}
+
+#docs .sidebar ul.nav {
+    margin-top: 5px;
+}
+
+#docs .sidebar ul li {
+    margin-bottom: 0px;
+}
+
+#docs .sidebar ul.nav li a{
+
+    padding: 5px;
+    margin-left: -5px;
+}
+
+#docs .sidebar ul.nav li.active {
+    padding: 5px 0;
+    color: #555;
+}
+
+
+#docs .heading {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#docs .toc {
+    margin: 0 0 5px -5px;
+    padding: 5px;
+    text-decoration: underline;
+    /*border: 1px solid #eee;*/
+}
+
+#docs .faqs .heading {
+    margin-top: 30px;
+}
+
+#docs blockquote {
+    font-size: inherit;
+    color: grey;
+    width: 80%;
+}
+
+#docs blockquote ul {
+    margin-left: -22px;
+}
+
+#docs pre {
+    margin: 5px 0;
+}
+
+#docs .fineprint {
+    font-size: small;
+}

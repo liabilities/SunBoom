@@ -1,46 +1,31 @@
 package pojo;
 
+import java.util.Date;
+
 /**
  * Created by zoetx on 2017/1/12.
  */
 public class TempGroup {
-    private int tempGroupID;
-    private int universityID;
-    private String tag;
-    private String name;
-    private String signature;
-    private String introduction;
-    private String avatar;
-    private String password;
-    private int memberNum;
-    private String userName;
-    private String attestation;
-    private String request;
-    private String goal;
-    private int maxNumber;
+   private int groupID;
+   private String name;
+   private String tag;
+   private int scale;
+   private int presentMemberNum;
+   private String signature;
+   private String memberRequestion;
+   private String goal;
+   private String avatar;
+   private Date registerTime;
+   private int verify;
+   private int fellowGroup;
+   private int fellowPerson;
 
-    public int getTempGroupID() {
-        return tempGroupID;
+    public int getGroupID() {
+        return groupID;
     }
 
-    public void setTempGroupID(int tempGroupID) {
-        this.tempGroupID = tempGroupID;
-    }
-
-    public int getUniversityID() {
-        return universityID;
-    }
-
-    public void setUniversityID(int universityID) {
-        this.universityID = universityID;
-    }
-
-    public String getTag() {
-        return tag;
-    }
-
-    public void setTag(String tag) {
-        this.tag = tag;
+    public void setGroupID(int groupID) {
+        this.groupID = groupID;
     }
 
     public String getName() {
@@ -51,6 +36,30 @@ public class TempGroup {
         this.name = name;
     }
 
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public int getScale() {
+        return scale;
+    }
+
+    public void setScale(int scale) {
+        this.scale = scale;
+    }
+
+    public int getPresentMemberNum() {
+        return presentMemberNum;
+    }
+
+    public void setPresentMemberNum(int presentMemberNum) {
+        this.presentMemberNum = presentMemberNum;
+    }
+
     public String getSignature() {
         return signature;
     }
@@ -59,60 +68,12 @@ public class TempGroup {
         this.signature = signature;
     }
 
-    public String getIntroduction() {
-        return introduction;
+    public String getMemberRequestion() {
+        return memberRequestion;
     }
 
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public int getMemberNum() {
-        return memberNum;
-    }
-
-    public void setMemberNum(int memberNum) {
-        this.memberNum = memberNum;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getAttestation() {
-        return attestation;
-    }
-
-    public void setAttestation(String attestation) {
-        this.attestation = attestation;
-    }
-
-    public String getRequest() {
-        return request;
-    }
-
-    public void setRequest(String request) {
-        this.request = request;
+    public void setMemberRequestion(String memberRequestion) {
+        this.memberRequestion = memberRequestion;
     }
 
     public String getGoal() {
@@ -123,12 +84,45 @@ public class TempGroup {
         this.goal = goal;
     }
 
-    public int getMaxNumber() {
-        return maxNumber;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setMaxNumber(int maxNumber) {
-        this.maxNumber = maxNumber;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
+
+    public Date getRegisterTime() {
+        return registerTime;
+    }
+
+    public void setRegisterTime(Date registerTime) {
+        this.registerTime = registerTime;
+    }
+
+    public int getVerify() {
+        return verify;
+    }
+
+    public void setVerify(int verify) {
+        this.verify = verify;
+    }
+
+    public int getFellowGroup() {
+        return fellowGroup;
+    }
+
+    public void setFellowGroup(int fellowGroup) {
+        this.fellowGroup = fellowGroup;
+    }
+
+    public int getFellowPerson() {
+        return fellowPerson;
+    }
+
+    public void setFellowPerson(int fellowPerson) {
+        this.fellowPerson = fellowPerson;
+    }
+
 
 }

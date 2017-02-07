@@ -4,6 +4,18 @@
     font-size: 16px;
 }
 
+.top-gap {
+    margin-top: 1em;
+}
+
+#editButton {
+    font-size:16px;
+}
+
+.disappear {
+    display: none;
+}
+
 #infoArea {
     margin-top: 1em;
 }
@@ -21,6 +33,7 @@
 
 .items {
     height: 35px;
+    font-size: 16px;
 }
 
 #avatar {

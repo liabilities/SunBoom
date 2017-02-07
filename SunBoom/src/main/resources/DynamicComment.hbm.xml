@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="pojo.DynamicComment" table="dynamiccomment" schema="rsp" dynamic-insert="true">
+        <id name="commentID">
+            <column name="commentID" sql-type="int" />
+            <generator class="increment"/>
+        </id>
+        <property name="dynamicID">
+            <column name="dynamicID" sql-type="int"/>
+        </property>
+        <property name="senderID">
+            <column name="senderID" sql-type="int"/>
+        </property>
+        <property name="receiverID">
+            <column name="receiverID" sql-type="int"/>
+        </property>
+        <property name="time">
+            <column name="time" sql-type="date"/>
+        </property>
+        <property name="content">
+            <column name="content" sql-type="text"/>
+        </property>
+
+
+    </class>
+</hibernate-mapping>
