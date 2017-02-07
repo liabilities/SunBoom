@@ -1,0 +1,26 @@
+table,th,td
+{
+    border:1px solid #FFFFFF;
+}
+table
+{
+    width:100%;
+    margin:0 auto;
+    text-align: center;
+    font-family: "微软雅黑 Light";
+}
+
+table.altrowstable th {
+    height:50px;
+    background-color:#325d7f;
+    color:whitesmoke;
+}
+table.altrowstable td {
+    height:50px;
+}
+.oddrowcolor{
+    background-color:#d4e3e5;
+}
+.evenrowcolor{
+    background-color:#c3dde0;
+}
