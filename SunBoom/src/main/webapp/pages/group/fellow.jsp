@@ -17,10 +17,6 @@
 </head>
 <body>
 
-<div id="head">
-    <img src="../../img/ad.png" width=100% height="100px">
-</div>
-
 <div id = "nav">
     <jsp:include page="navigationbar1.jsp" ></jsp:include>
 </div>

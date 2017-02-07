@@ -37,7 +37,7 @@ body {
     background: #325d7f;
     height: 80px;
     width: 100%;
-    font-family:"微软雅黑 Light"
+    font-family:"微软雅黑 Light";
 }
 .global-nav ul {
     margin: 0;
@@ -76,11 +76,10 @@ body {
     *vertical-align: auto;
     *zoom: 1;
     *display: inline;
-    padding: 0 12px;
+    padding: 10px 12px 0 12px;
     color: #fff;
     font-weight: 600;
-    font-size: 13px;
-    text-transform: uppercase;
+    font-size: 16px;
     letter-spacing: 0.045em;
 }
 .global-nav a:hover {
@@ -146,8 +145,7 @@ body {
     height: 70px;
     border-top: 5px solid transparent;
     color: #031634;
-    text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
     line-height: 4.642857143
 }
