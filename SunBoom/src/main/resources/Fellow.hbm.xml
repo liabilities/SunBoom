@@ -5,12 +5,15 @@
 <hibernate-mapping>
 
     <class name="pojo.Fellow" table="fellow" schema="rsp" dynamic-insert="true">
-        <id name="fellowID">
-            <column name="fellowID" sql-type="int" />
+        <id name="rowID">
+            <column name="rowID" sql-type="int" />
             <generator class="increment"/>
         </id>
+        <property name="fellowID">
+            <column name="fellow" sql-type="int"/>
+        </property>
         <property name="followedID">
-            <column name="followedID" sql-type="int"/>
+            <column name="followed" sql-type="int"/>
         </property>
         <property name="type">
             <column name="type" sql-type="int(1)"/>
