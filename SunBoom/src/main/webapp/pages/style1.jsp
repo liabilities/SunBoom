@@ -13,7 +13,7 @@
     <meta charset="utf-8">
 
     <title>NavStyle1</title>
-    <link href="/css/nav.css" rel="stylesheet" type="text/css" />
+    <link href="/css/nav2.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
