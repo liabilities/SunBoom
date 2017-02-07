@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * Created by cuihua on 2017/1/13.
  */
-public class GroupModel {
+public class GroupModel implements Comparable{
     private String groupID;
     private String schoolID;
     private String tag;
@@ -28,6 +28,7 @@ public class GroupModel {
     private int fellowNum_group;
     private int fellowNum_person;
     private String certifiedMaterial;
+    private String capital;
 
     public String getGroupID() {
         return groupID;
@@ -201,10 +202,18 @@ public class GroupModel {
         this.certifiedMaterial = certifiedMaterial;
     }
 
-    public GroupModel(String groupID , String schoolID ,String tag ,String name ,String signature , String introduction ,
-                      String avatar , String password ,int memberNum , String userName , String tel , String mail ,
-                      String detailPath , String registerTime , String identificationTime ,String deadline ,
-                      int fellowNum_group ,int fellowNum_person ,String certifiedMaterial ) {
+    public String getCapital() {
+        return capital;
+    }
+
+    public void setCapital(String capital) {
+        this.capital = capital;
+    }
+
+    public GroupModel(String groupID , String schoolID , String tag , String name , String signature , String introduction ,
+                      String avatar , String password , int memberNum , String userName , String tel , String mail ,
+                      String detailPath , String registerTime , String identificationTime , String deadline ,
+                      int fellowNum_group , int fellowNum_person , String certifiedMaterial ) {
         this.groupID = groupID;
         this.schoolID = schoolID;
         this.tag = tag;
@@ -227,6 +236,13 @@ public class GroupModel {
 
     }
 
+    public GroupModel(String name, String ID, String avatar, String capital) {
+        this.name = name;
+        this.groupID = ID;
+        this.avatar = avatar;
+        this.capital = capital;
+    }
+
     public GroupModel(Group group) {
         this.groupID = String.valueOf(group.getGroupID());
         this.schoolID = String.valueOf(group.getSchoolID());
@@ -247,5 +263,10 @@ public class GroupModel {
         this.fellowNum_group = group.getFellowGroup();
         this.fellowNum_person = group.getFellowPerson();
         this.certifiedMaterial = group.getCertifiedMaterial();
+    }
+
+    public int compareTo(Object o) {
+        GroupModel groupModel = (GroupModel)o;
+        return this.getName().compareTo(groupModel.getName());
     }
 }
