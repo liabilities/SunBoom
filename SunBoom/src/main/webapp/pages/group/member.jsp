@@ -35,6 +35,59 @@
     .addmember:hover {
         color: #a1a1a1;
     }
+
+     #mask{
+         position: absolute;
+         top: 0px;
+         opacity:0.5;
+         filter: alpha(opacity=50);
+         background-color: white;
+         z-index: 2;
+         left: 0px;
+         display: none;
+     }
+
+    #codepanel{
+        z-index: 4;
+        background-color: white;
+        background-image: url(/img/code.png);
+        color:white;
+        display: none;
+        width:200px;
+        height:130px;
+        margin:0 auto;
+        position:absolute;
+        top:245px;
+        left:600px;
+        font-family:"Century Gothic","微软雅黑 Light";
+    }
+
+    #codepanel .return{
+        font-size: 12px;
+        color: #325d7f;
+    }
+
+    #codepanel .right:hover{
+        background-image: url(/img/code2.png);
+    }
+
+    .right
+    {
+        z-index: 3;
+        position:absolute;
+        right:0px;
+        background-image: url(/img/code1.png);
+        text-align: center;
+    }
+    .left
+    {
+        position:absolute;
+        top:3px;
+        left:20px;
+        width:300px;
+        color: #325d7f;
+    }
+
 </style>
 
 
@@ -42,9 +95,13 @@
     <jsp:include page="nav/navigationbar1.jsp" ></jsp:include>
 </div>
 
+<div id="mask">
+</div>
+
 <div class="main wrapper cf" style="padding-top: 20px">
-    <div class="addmember" onclick='showhidediv("invite")'>
-        邀请新成员
+    <div class="addmember" onClick="locking()" >
+        <%--onclick='showhidediv("invite")'>--%>
+        生成注册码
     </div>
     <div id="invite" style="display:none">
         <div id="generate" style="display:block" onclick='showhidediv2("generate")'>
@@ -53,6 +110,15 @@
         <div id="code" style="display:none" onclick='showhidediv2("code")'>
             q39euwoiufh9823r
         </div>
+    </div>
+</div>
+
+<div id="codepanel">
+    <div class="right" style="width: 80px;height: 66px" onclick="Lock_CheckForm(this);">
+    </div>
+    <div class="left">
+        <p style="font-size:12px">2分钟之内有效</p>
+        <p>33wi8y98</p>
     </div>
 </div>
 
@@ -87,6 +153,19 @@
 </div>
 <script src="/js/tablealtrow.js"></script> 
 <script src="/js/divhide.js"></script> 
+
+
+<script>
+    function locking(){
+        document.all.mask.style.display="block";
+        document.all.mask.style.width=document.body.clientWidth;
+        document.all.mask.style.height=document.body.clientHeight;
+        document.all.codepanel.style.display='block';
+    }
+    function Lock_CheckForm(theForm){
+        document.all.mask.style.display='none';document.all.codepanel.style.display='none';
+    }
+</script>
 
 </body>
 </html>
