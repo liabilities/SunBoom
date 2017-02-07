@@ -24,7 +24,12 @@
         background:#dddddd;
         border-radius:10px;
         -moz-border-radius:10px;
-        cursor:pointer
+        cursor:pointer;
+        -moz-user-select:none;/*火狐*/
+        -webkit-user-select:none;/*webkit浏览器*/
+        -ms-user-select:none;/*IE10*/
+        -khtml-user-select:none;/*早期浏览器*/
+        user-select:none;
     }
 
     .addmember:hover {
@@ -41,10 +46,13 @@
     <div class="addmember" onclick='showhidediv("invite")'>
         邀请新成员
     </div>
-    <div id="invite" style="display:none;">
-        生成邀请码
-    <br />
-        用户名搜索
+    <div id="invite" style="display:none">
+        <div id="generate" style="display:block" onclick='showhidediv2("generate")'>
+            生成邀请码
+        </div>
+        <div id="code" style="display:none" onclick='showhidediv2("code")'>
+            q39euwoiufh9823r
+        </div>
     </div>
 </div>
 

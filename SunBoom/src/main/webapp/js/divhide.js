@@ -8,3 +8,22 @@ function showhidediv(id){
         }
     }
 }
+
+function showhidediv2(id){
+
+    var generate=document.getElementById("code");
+
+    var code=document.getElementById("generate");
+
+    if (id == 'code') {
+        if (code.style.display=='none') {
+            generate.style.display='none';
+            code.style.display='block';
+        }
+    } else {
+        if (generate.style.display=='none') {
+            code.style.display='none';
+            generate.style.display='block';
+        }
+    }
+}
