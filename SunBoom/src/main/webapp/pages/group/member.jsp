@@ -13,6 +13,7 @@
 <body>
 
 <link href="/css/table1.css" rel="stylesheet" type="text/css" />
+<%--<link href="/css/searchbox.css" rel="stylesheet" type="text/css" />--%>
 <style>
     .addmember
     {
@@ -43,9 +44,23 @@
          display: none;
      }
 
+
+    #searchforuser{
+        z-index: 4;
+        background-image: url(/img/search.png);
+        color:white;
+        display: none;
+        width:300px;
+        height:400px;
+        margin:0 auto;
+        position:absolute;
+        top:200px;
+        left:550px;
+        font-family:"Century Gothic","微软雅黑 Light";
+    }
+
     #codepanel{
         z-index: 4;
-        background-color: white;
         background-image: url(/img/code.png);
         color:white;
         display: none;
@@ -72,6 +87,24 @@
         background-image: url(/img/code1.png);
         text-align: center;
     }
+
+    .buttons
+    {
+        -moz-border-radius:10px;
+        -moz-user-select:none;/*火狐*/
+        -webkit-user-select:none;/*webkit浏览器*/
+        -ms-user-select:none;/*IE10*/
+        -khtml-user-select:none;/*早期浏览器*/
+        user-select:none;
+        color:white;
+        font-size: 14px;
+    }
+
+    .buttons:hover
+    {
+        color:lightslategray;
+    }
+
     .left
     {
         position:absolute;
@@ -141,8 +174,8 @@
         添加新成员
     </div>
     <div class="addmember" id="code" style="display:none" onmouseleave='showhidediv2("code")'>
-        <a class="code" onClick="locking()">生成邀请码</a>
-        <a class="invite">用户名搜索</a>
+        <a class="code" onClick="generating()">生成邀请码</a>
+        <a class="invite" onClick="searching()">用户名搜索</a>
     </div>
 </div>
 
@@ -152,6 +185,26 @@
     <div class="left">
        <p><text style="font-size:12px">2分钟之内有效</text></p>
         <p>33wi8y98</p>
+    </div>
+</div>
+
+<div id="searchforuser">
+    <div align="center">
+        <div style="height: 117px">
+            <br/>
+            <br/>
+            <input type="text" />
+            <input type="submit" value="查询"/>
+        </div>
+        <div style="height: 117px">
+            <img src="/img/1.png" style="width: 117px;height: 117px">
+        </div>
+        <div style="height: 60px">
+            <br/>
+            <a class="buttons">-邀请-</a>
+            <br/>
+            <a class="buttons" onclick="Lock_CheckForm2(this)">-返回-</a>
+        </div>
     </div>
 </div>
 
@@ -189,7 +242,7 @@
 
 
 <script>
-    function locking(){
+    function generating(){
         document.all.mask.style.display="block";
         document.all.mask.style.width=document.body.clientWidth;
         document.all.mask.style.height=document.body.clientHeight;
@@ -197,6 +250,16 @@
     }
     function Lock_CheckForm(theForm){
         document.all.mask.style.display='none';document.all.codepanel.style.display='none';
+    }
+
+    function searching(){
+        document.all.mask.style.display="block";
+        document.all.mask.style.width=document.body.clientWidth;
+        document.all.mask.style.height=document.body.clientHeight;
+        document.all.searchforuser.style.display='block';
+    }
+    function Lock_CheckForm2(theForm){
+        document.all.mask.style.display='none';document.all.searchforuser.style.display='none';
     }
 </script>
 
