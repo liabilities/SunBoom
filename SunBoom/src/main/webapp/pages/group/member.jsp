@@ -24,6 +24,7 @@
         background:#dddddd;
         border-radius:10px;
         -moz-border-radius:10px;
+        cursor:pointer
     }
 
     .addmember:hover {
@@ -37,8 +38,13 @@
 </div>
 
 <div class="main wrapper cf" style="padding-top: 20px">
-    <div class="addmember">
+    <div class="addmember" onclick='showhidediv("invite")'>
         邀请新成员
+    </div>
+    <div id="invite" style="display:none;">
+        生成邀请码
+    <br />
+        用户名搜索
     </div>
 </div>
 
@@ -72,5 +78,7 @@
 
 </div>
 <script src="/js/tablealtrow.js"></script> 
+<script src="/js/divhide.js"></script> 
+
 </body>
 </html>
