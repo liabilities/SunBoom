@@ -35,7 +35,7 @@
                 <li><a href="/pages/group/file.jsp">文件</a></li>
                 <li><a href="/pages/group/member.jsp">成员</a></li>
                 <li><a href="/pages/group/material.jsp">物资</a></li>
-                <li><a href="/pages/group/message_board.jsp">留言板</a></li>
+                <li><a href="/pages/group/messageboard.jsp">留言板</a></li>
             </ul>
         </div>
     </nav>

@@ -23,8 +23,8 @@
 
 <body>
 
-<div id = "nav">
-    <jsp:include page="navigationbar1.jsp" ></jsp:include>
+<div>
+    <jsp:include page="nav/navigationbar1.jsp" ></jsp:include>
 </div>
 
 <div class="container top-gap">

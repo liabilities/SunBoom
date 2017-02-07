@@ -11,9 +11,9 @@
     <meta charset="utf-8" />
     <title>假装这是个团体首页</title>
     <%--<link rel="stylesheet" type="text/css" href="http://static.iask.cn/v20161228/css/reset.min.css?v1.1.6" />--%>
-    <link rel="stylesheet" type="text/css" href="../../css/stoled.css">
-    <script type='text/javascript' src="../../js/test1.js"></script>
-    <script type="text/javascript" src="../../js/test2.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../css/stoled.css">
+    <script type='text/javascript' src="../../../js/test1.js"></script>
+    <script type="text/javascript" src="../../../js/test2.js"></script>
 
 </head>
 <body>

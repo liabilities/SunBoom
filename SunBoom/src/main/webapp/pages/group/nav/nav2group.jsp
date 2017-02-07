@@ -16,7 +16,7 @@
 <nav class="secondary-nav">
     <div class="wrapper">
         <ul class="categories-nav">
-            <li class="current-menu-item"><a href="https://litmus.com/blog/category/webinars">活动策划</a></li>
+            <li class="current-menu-item"><a href="/pages/index.jsp">活动策划</a></li>
             <li><a href="/pages/index.jsp">创建活动</a></li>
             <li><a href="/pages/index.jsp">尚未开始</a></li>
             <li><a href="/pages/index.jsp">正在进行</a></li>
