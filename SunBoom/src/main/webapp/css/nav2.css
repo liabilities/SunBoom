@@ -154,7 +154,7 @@ body {
 }
 
 
-.categories-nav .current-menu-item a {
+.categories-nav .current-menu-item  {
     border-top: 5px solid #031634;
     background: #FFFFFF
 }

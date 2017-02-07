@@ -8,40 +8,49 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 引入 Bootstrap -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../css/groupIndex.css" rel="stylesheet">
-    <link href="../css/groupNavigationBarTop.css.css" rel="stylesheet">
-    <script language="JavaScript" src="../../js/try.js"></script>
-    <title>团体首页</title>
+    <title>活动</title>
 </head>
 
 <body>
 
 <div>
     <jsp:include page="nav/navigationbar1.jsp" ></jsp:include>
-    <jsp:include page="nav/nav2group.jsp" ></jsp:include>
 </div>
 
+<nav class="secondary-nav">
+    <div class="wrapper">
+        <ul class="categories-nav">
+            <li id="activity1" onclick="setTab('activity',1,5)" class="current-menu-item"><a>创建活动</a></li>
+            <li id="activity2" onclick="setTab('activity',2,5)"><a>尚未开始</a></li>
+            <li id="activity3" onclick="setTab('activity',3,5)"><a>正在进行</a></li>
+            <li id="activity4" onclick="setTab('activity',4,5)"><a>历史活动</a></li>
+            <li id="activity5" onclick="setTab('activity',5,5)"><a>活动广场</a></li>
+        </ul>
+    </div>
+    <div class="main wrapper cf">
+        <div id="con_activity_1" class="hover">
+            创建活动
+        </div>
 
-<div>
-<%--<script>--%>
-    <%--function change() {--%>
-        <%--x.document.getElementById("show");--%>
-        <%--x.innerHTML= <jsp:include page="groupNavigationBarTop.jsp"></jsp:include>--%>
-    <%--}--%>
-<%--</script>--%>
-</div>
-<div id="foot_div">
-    <p>版权所有@南京大学软件学院</p>
-</div>
+        <div id="con_activity_2" style="display:none">
+            尚未开始
+        </div>
+
+        <div id="con_activity_3" style="display:none">
+            正在进行
+        </div>
+
+        <div id="con_activity_4" style="display:none">
+            历史活动
+        </div>
+
+        <div id="con_activity_5" style="display:none">
+            活动广场
+        </div>
+    </div>
+</nav>
 
 
-
-<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-<script src="../../js/jquery.js"></script>
-<!-- 包括所有已编译的插件 -->
-<script src="../../js/bootstrap.min.js"></script>
+<script src="/js/tab.js"></script> 
 </body>
 </html>
