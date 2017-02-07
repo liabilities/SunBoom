@@ -14,6 +14,19 @@ public class PrivateLetter {
     private Date time;
     private String content;
 
+    public PrivateLetter(){
+
+    }
+
+    public PrivateLetter(model.PrivateLetter model) {
+        this.senderID = model.getSenderGroupID_int();
+        this.receiverID = model.getReceiverGroupID_int();
+        this.senderName = model.getSenderGroupName();
+        this.receiverName = model.getReceiverGroupName();
+        this.time = model.getSendTime_sql();
+        this.content = model.getContent();
+    }
+
     public int getLetterID() {
         return letterID;
     }
