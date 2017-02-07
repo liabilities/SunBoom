@@ -24,7 +24,6 @@
         background:#dddddd;
         border-radius:10px;
         -moz-border-radius:10px;
-        cursor:pointer;
         -moz-user-select:none;/*火狐*/
         -webkit-user-select:none;/*webkit浏览器*/
         -ms-user-select:none;/*IE10*/
@@ -32,9 +31,6 @@
         user-select:none;
     }
 
-    .addmember:hover {
-        color: #a1a1a1;
-    }
 
      #mask{
          position: absolute;
@@ -62,10 +58,7 @@
         font-family:"Century Gothic","微软雅黑 Light";
     }
 
-    #codepanel .return{
-        font-size: 12px;
-        color: #325d7f;
-    }
+
 
     #codepanel .right:hover{
         background-image: url(/img/code2.png);
@@ -87,6 +80,51 @@
         width:300px;
         color: #325d7f;
     }
+    .left>p>text
+    {
+        -moz-border-radius:10px;
+        -moz-user-select:none;/*火狐*/
+        -webkit-user-select:none;/*webkit浏览器*/
+        -ms-user-select:none;/*IE10*/
+        -khtml-user-select:none;/*早期浏览器*/
+        user-select:none;
+    }
+
+    .invite{
+        position:relative;
+        top:0px;
+        right:300px;
+        width:300px;
+        cursor:pointer;
+        -moz-border-radius:10px;
+        -moz-user-select:none;/*火狐*/
+        -webkit-user-select:none;/*webkit浏览器*/
+        -ms-user-select:none;/*IE10*/
+        -khtml-user-select:none;/*早期浏览器*/
+        user-select:none;
+    }
+
+    .code{
+        position:relative;
+        top:0px;
+        left:300px;
+        width:300px;
+        cursor:pointer;
+        -moz-border-radius:10px;
+        -moz-user-select:none;/*火狐*/
+        -webkit-user-select:none;/*webkit浏览器*/
+        -ms-user-select:none;/*IE10*/
+        -khtml-user-select:none;/*早期浏览器*/
+        user-select:none;
+    }
+
+    .invite:hover{
+        color: #a1a1a1;
+    }
+
+    .code:hover{
+        color: #a1a1a1;
+    }
 
 </style>
 
@@ -99,17 +137,12 @@
 </div>
 
 <div class="main wrapper cf" style="padding-top: 20px">
-    <div class="addmember" onClick="locking()" >
-        <%--onclick='showhidediv("invite")'>--%>
-        生成注册码
+    <div class="addmember" id="generate" style="display:block" onmouseenter='showhidediv2("generate")'>
+        添加新成员
     </div>
-    <div id="invite" style="display:none">
-        <div id="generate" style="display:block" onclick='showhidediv2("generate")'>
-            生成邀请码
-        </div>
-        <div id="code" style="display:none" onclick='showhidediv2("code")'>
-            q39euwoiufh9823r
-        </div>
+    <div class="addmember" id="code" style="display:none" onmouseleave='showhidediv2("code")'>
+        <a class="code" onClick="locking()">生成邀请码</a>
+        <a class="invite">用户名搜索</a>
     </div>
 </div>
 
@@ -117,7 +150,7 @@
     <div class="right" style="width: 80px;height: 66px" onclick="Lock_CheckForm(this);">
     </div>
     <div class="left">
-        <p style="font-size:12px">2分钟之内有效</p>
+       <p><text style="font-size:12px">2分钟之内有效</text></p>
         <p>33wi8y98</p>
     </div>
 </div>
