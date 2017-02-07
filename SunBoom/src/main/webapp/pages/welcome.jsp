@@ -24,12 +24,8 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="panel-364309">
                         <p>
-                            <a href="http://localhost:8080/pages/group/activity_home.jsp">
-                                团体首页
-                            </a>
-                            <br>
-                            <a href="http://localhost:8080/pages/test.jsp">
-                                test
+                            <a href="http://localhost:8080/pages/group/home.jsp">
+                                团体
                             </a>
                         </p>
                     </div>

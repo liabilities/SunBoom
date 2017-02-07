@@ -16,15 +16,14 @@
     <script language="JavaScript" src="../../js/try.js"></script>
     <title>团体首页</title>
 </head>
-<div class="container">
-<div id="head">
-    <img src="../../img/1.png" width="1100px" height="100px">
+<div id = "nav">
+    <jsp:include page="navigationbar1.jsp" ></jsp:include>
 </div>
+<div id = "nav">
+    <jsp:include page="groupnav2.jsp" ></jsp:include>
 </div>
-    <div class="container">
-        <jsp:include page="group_navigationbar.jsp"/>
-    </div>
 
+</div>
 <%--<script>--%>
     <%--function change() {--%>
         <%--x.document.getElementById("show");--%>

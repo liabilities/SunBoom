@@ -22,13 +22,9 @@
 </head>
 
 <body>
-<div class="container">
-    <div id="head">
-        <img src="../../img/1.png" width=100% height="100px">
-    </div>
-</div>
-<div class="container">
-    <jsp:include page="group_navigationbar.jsp"/>
+
+<div id = "nav">
+    <jsp:include page="navigationbar1.jsp" ></jsp:include>
 </div>
 
 <div class="container top-gap">
