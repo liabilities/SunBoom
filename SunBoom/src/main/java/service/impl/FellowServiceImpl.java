@@ -6,6 +6,7 @@ import dao.PrivateLetterDAO;
 import dao.impl.FellowDAOImpl;
 import dao.impl.GroupDAOImpl;
 import dao.impl.PrivateLetterDAOImpl;
+import model.GroupModel;
 import model.PrivateLetter;
 import pojo.Fellow;
 import pojo.Group;
@@ -13,15 +14,34 @@ import service.FellowService;
 import utilities.enums.ResultMsg;
 import utilities.exceptions.NotExistException;
 import utilities.exceptions.NullException;
+import utilities.tool.ChineseToEnglish2;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by lenovo on 2017/2/7.
  */
 public class FellowServiceImpl implements FellowService{
+
+    public List<GroupModel> getFellows(String groupID) throws NotExistException {
+        FellowDAO dao = new FellowDAOImpl();
+        List<Fellow> list = dao.findByProperty("fellowID",Integer.parseInt(groupID));
+        GroupDAO groupDAO = new GroupDAOImpl();
+        List<Group> groups = new ArrayList<Group>();
+        for(Fellow fellow : list){
+            groups.add(groupDAO.getById(fellow.getFollowedID()));
+        }
+        List<GroupModel> models = new ArrayList<GroupModel>();
+        for(Group group: groups){
+            models.add(new GroupModel(group.getName(),group.getGroupID()+"",group.getAvatar(),
+                    ChineseToEnglish2.getFullSpell(group.getName()).substring(0,1)));
+        }
+        Collections.sort(models);
+        return models;
+    }
 
     public List<String> getFellowList(String groupID) throws NotExistException{
         FellowDAO dao = new FellowDAOImpl();

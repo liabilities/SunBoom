@@ -1,9 +1,13 @@
 package test.service.impl;
 
+import dao.FellowDAO;
+import dao.impl.FellowDAOImpl;
+import model.GroupModel;
 import model.PrivateLetter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import pojo.Fellow;
 import service.FellowService;
 import service.impl.FellowServiceImpl;
 import utilities.enums.ResultMsg;
@@ -28,6 +32,12 @@ public class FellowServiceImplTest {
     @After
     public void after(){
 
+    }
+
+    @Test
+    public void testGetFellows() throws Exception{
+        List<GroupModel> models = fellowService.getFellows("0");
+        assertEquals("s",models.get(0).getCapital());
     }
 
     @Test
@@ -81,8 +91,17 @@ public class FellowServiceImplTest {
 
     @Test
     public void testDeleteFellow() throws Exception {
-        ResultMsg resultMsg = fellowService.deleteFellow("1","student union");
+        ResultMsg resultMsg = fellowService.deleteFellow("0","牛");
         assertEquals(ResultMsg.SUCCESS, resultMsg);
+    }
+
+    @Test
+    public void test() throws  Exception{
+        Fellow fellow = new Fellow();
+        fellow.setFellowID(2);
+        fellow.setFollowedID(2);
+        fellow.setType(1);
+        new FellowDAOImpl().updateOne(fellow);
     }
 
     @Test

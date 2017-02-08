@@ -1,6 +1,8 @@
 package service;
 
 import java.util.List;
+
+import model.GroupModel;
 import utilities.enums.ResultMsg;
 import model.PrivateLetter;
 import utilities.exceptions.NotExistException;
@@ -10,6 +12,14 @@ import utilities.exceptions.NullException;
  * Created by lenovo on 2017/1/13.
  */
 public interface FellowService {
+
+    /**
+     *
+     * @param groupID
+     * @return 好友名 ID 头像 名字首字母（按字典序排列
+     * @throws NotExistException
+     */
+    public List<GroupModel> getFellows(String groupID) throws  NotExistException;
 
     /**
      * 根据团体id获取联系人列表

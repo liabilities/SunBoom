@@ -5,9 +5,18 @@ package pojo;
  */
 public class Fellow {
 
+    private int rowID;
     private int fellowID;
     private int followedID;
     private int type;
+
+    public int getRowID() {
+        return rowID;
+    }
+
+    public void setRowID(int rowID) {
+        this.rowID = rowID;
+    }
 
     public int getFellowID() {
         return fellowID;

@@ -13,6 +13,7 @@
 <body>
 
 <link href="/css/table1.css" rel="stylesheet" type="text/css" />
+<%--<link href="/css/searchbox.css" rel="stylesheet" type="text/css" />--%>
 <style>
     .addmember
     {
@@ -24,7 +25,6 @@
         background:#dddddd;
         border-radius:10px;
         -moz-border-radius:10px;
-        cursor:pointer;
         -moz-user-select:none;/*火狐*/
         -webkit-user-select:none;/*webkit浏览器*/
         -ms-user-select:none;/*IE10*/
@@ -32,9 +32,132 @@
         user-select:none;
     }
 
-    .addmember:hover {
+
+     #mask{
+         position: absolute;
+         top: 0px;
+         opacity:0.5;
+         filter: alpha(opacity=50);
+         background-color: white;
+         z-index: 2;
+         left: 0px;
+         display: none;
+     }
+
+
+    #searchforuser{
+        z-index: 4;
+        background-image: url(/img/search.png);
+        color:white;
+        display: none;
+        width:300px;
+        height:400px;
+        margin:0 auto;
+        position:absolute;
+        top:200px;
+        left:550px;
+        font-family:"Century Gothic","微软雅黑 Light";
+    }
+
+    #codepanel{
+        z-index: 4;
+        background-image: url(/img/code.png);
+        color:white;
+        display: none;
+        width:200px;
+        height:130px;
+        margin:0 auto;
+        position:absolute;
+        top:245px;
+        left:600px;
+        font-family:"Century Gothic","微软雅黑 Light";
+    }
+
+
+
+    #codepanel .right:hover{
+        background-image: url(/img/code2.png);
+    }
+
+    .right
+    {
+        z-index: 3;
+        position:absolute;
+        right:0px;
+        background-image: url(/img/code1.png);
+        text-align: center;
+    }
+
+    .buttons
+    {
+        -moz-user-select:none;/*火狐*/
+        -webkit-user-select:none;/*webkit浏览器*/
+        -ms-user-select:none;/*IE10*/
+        -khtml-user-select:none;/*早期浏览器*/
+        user-select:none;
+        color:white;
+        font-size: 14px;
+    }
+
+    .buttons:hover
+    {
+        color:lightslategray;
+    }
+
+    .left
+    {
+        position:absolute;
+        top:3px;
+        left:20px;
+        width:300px;
+        color: #325d7f;
+    }
+    .left>p>text
+    {
+        -moz-border-radius:10px;
+        -moz-user-select:none;/*火狐*/
+        -webkit-user-select:none;/*webkit浏览器*/
+        -ms-user-select:none;/*IE10*/
+        -khtml-user-select:none;/*早期浏览器*/
+        user-select:none;
+    }
+
+    .invite{
+        position:relative;
+        top:0px;
+        right:300px;
+        width:300px;
+        cursor:pointer;
+        -moz-border-radius:10px;
+        -moz-user-select:none;/*火狐*/
+        -webkit-user-select:none;/*webkit浏览器*/
+        -ms-user-select:none;/*IE10*/
+        -khtml-user-select:none;/*早期浏览器*/
+        user-select:none;
+    }
+
+    .code{
+        position:relative;
+        top:0px;
+        left:300px;
+        width:300px;
+        cursor:pointer;
+        -moz-border-radius:10px;
+        -moz-user-select:none;/*火狐*/
+        -webkit-user-select:none;/*webkit浏览器*/
+        -ms-user-select:none;/*IE10*/
+        -khtml-user-select:none;/*早期浏览器*/
+        user-select:none;
+    }
+
+    .invite:hover{
         color: #a1a1a1;
     }
+
+    .code:hover{
+        color: #a1a1a1;
+    }
+
 </style>
 
 
@@ -42,16 +165,44 @@
     <jsp:include page="nav/navigationbar1.jsp" ></jsp:include>
 </div>
 
+<div id="mask">
+</div>
+
 <div class="main wrapper cf" style="padding-top: 20px">
-    <div class="addmember" onclick='showhidediv("invite")'>
-        邀请新成员
+    <div class="addmember" id="generate" style="display:block" onmouseenter='showhidediv2("generate")'>
+        添加新成员
     </div>
-    <div id="invite" style="display:none">
-        <div id="generate" style="display:block" onclick='showhidediv2("generate")'>
-            生成邀请码
+    <div class="addmember" id="code" style="display:none" onmouseleave='showhidediv2("code")'>
+        <a class="code" onClick="generating()">生成邀请码</a>
+        <a class="invite" onClick="searching()">用户名搜索</a>
+    </div>
+</div>
+
+<div id="codepanel">
+    <div class="right" style="width: 80px;height: 66px" onclick="Lock_CheckForm(this);">
+    </div>
+    <div class="left">
+       <p><text style="font-size:12px">2分钟之内有效</text></p>
+        <p>33wi8y98</p>
+    </div>
+</div>
+
+<div id="searchforuser">
+    <div align="center">
+        <div style="height: 117px">
+            <br/>
+            <br/>
+            <input type="text" />
+            <input type="submit" value="查询" name="username"/>
         </div>
-        <div id="code" style="display:none" onclick='showhidediv2("code")'>
-            q39euwoiufh9823r
+        <div style="height: 117px">
+            <img src="/img/1.png" style="width: 117px;height: 117px">
+        </div>
+        <div style="height: 60px">
+            <br/>
+            <a class="buttons">-邀请-</a>
+            <br/>
+            <a class="buttons" onclick="Lock_CheckForm2(this)">-返回-</a>
         </div>
     </div>
 </div>
@@ -87,6 +238,29 @@
 </div>
 <script src="/js/tablealtrow.js"></script> 
 <script src="/js/divhide.js"></script> 
+
+
+<script>
+    function generating(){
+        document.all.mask.style.display="block";
+        document.all.mask.style.width=document.body.clientWidth;
+        document.all.mask.style.height=document.body.clientHeight;
+        document.all.codepanel.style.display='block';
+    }
+    function Lock_CheckForm(theForm){
+        document.all.mask.style.display='none';document.all.codepanel.style.display='none';
+    }
+
+    function searching(){
+        document.all.mask.style.display="block";
+        document.all.mask.style.width=document.body.clientWidth;
+        document.all.mask.style.height=document.body.clientHeight;
+        document.all.searchforuser.style.display='block';
+    }
+    function Lock_CheckForm2(theForm){
+        document.all.mask.style.display='none';document.all.searchforuser.style.display='none';
+    }
+</script>
 
 </body>
 </html>

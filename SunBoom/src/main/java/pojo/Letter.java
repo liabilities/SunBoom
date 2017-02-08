@@ -10,7 +10,16 @@ public class Letter {
     private int senderID;
     private int receiverID;
     private Date time;
+    private int type;
     private String content;
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
 
     public int getLetterID() {
         return letterID;

@@ -1,0 +1,38 @@
+body{
+    font: normal 100% 'Arial','Helvetica','Verdana',sans-serif;
+    color: #333;
+}
+p {
+    padding: 12px 0;
+    margin: 0;
+    font-size: .8em;
+    line-height: 1.5;
+}
+form {
+    margin: 0;
+}
+#search_box {
+    width: 201px;
+    height: 31px;
+    background: url(/img/box.png);
+}
+#search_box #s {
+    float: left;
+    padding: 0;
+    margin: 6px 0 0 6px;
+    border: 0;
+    width: 159px;
+    background: none;
+    font-size: .8em;
+}
+#search_box #go {
+    float: right;
+    margin: 3px 4px 0 0;
+}
+
+.center{
+    position:absolute;
+    top:30px;
+    left:50px;
+    width:300px;
+}
