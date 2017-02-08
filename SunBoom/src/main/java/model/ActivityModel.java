@@ -26,6 +26,11 @@ public class ActivityModel {
     public String activityID;
 
     /**
+     * 活动ID
+     */
+    public String groupID;
+
+    /**
      * 活动名称
      */
     public String activityName;
@@ -169,6 +174,18 @@ public class ActivityModel {
 
     public void setActivityName(String activityName) {
         this.activityName = activityName;
+    }
+
+    public String getGroupID() {
+        return groupID;
+    }
+
+    public int getGroupID_int() {
+        return Integer.parseInt(groupID);
+    }
+
+    public void setGroupID(String groupID) {
+        this.groupID = groupID;
     }
 
     public Date getActivityStartTime() {

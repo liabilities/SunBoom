@@ -1,5 +1,6 @@
 package service;
 
+import utilities.enums.ActivityState;
 import utilities.enums.ActivityType;
 import utilities.enums.ResultMsg;
 import model.ActivityGeneralModel;
@@ -71,7 +72,7 @@ public interface ActivityService {
      * @param groupID 团队ID
      * @return activityID的列表
      */
-    public List<String> getActivitySpecial(String groupID, ActivityType activityType);
+    public List<ActivityGeneralModel> getActivitySpecial(String groupID, ActivityState activityState) throws NotExistException;
 
 
 

@@ -6,12 +6,12 @@ import model.ActivityGeneralModel;
 import model.ActivityModel;
 import pojo.Activity;
 import service.ActivityService;
+import utilities.enums.ActivityState;
 import utilities.enums.ActivityType;
 import utilities.enums.ResultMsg;
 import utilities.exceptions.NotExistException;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by lenovo on 2017/1/23.
@@ -47,17 +47,35 @@ public class ActivityServiceImpl implements ActivityService {
         else return ResultMsg.FAIL;
     }
 
-    // TODO CHarles--不知实现
+    // TODO Charles--不知实现
     public String createTimeAxis() {
         return null;
     }
 
-    // TODO Charles--不会使用findByProperty
-    public List<String> getActivitySpecial(String groupID, ActivityType activityType) {
-        return null;
+    public List<ActivityGeneralModel> getActivitySpecial(String groupID, ActivityState activityState) throws NotExistException {
+        Date now = Calendar.getInstance().getTime();
+
+        List<Activity> findingResult = activityDAO.findByProperty("groupID", groupID);
+        for (Activity thisActivity: findingResult) {
+            if (activityState == ActivityState.PREPARING) {
+                if (!thisActivity.getStartTime().before(now)){
+                    findingResult.remove(thisActivity);
+                }
+            } else if (activityState == ActivityState.UNDERGOING) {
+                if (!(thisActivity.getStartTime().before(now) && thisActivity.getEndTime().after(now))) {
+                    findingResult.remove(thisActivity);
+                }
+            } else {
+                if (!thisActivity.getEndTime().before(now)) {
+                    findingResult.remove(thisActivity);
+                }
+            }
+        }
+
+        return convertListPo2GeneralModel(findingResult);
     }
 
-    // TODO Charles--不会使用findByProperty
+    // TODO 不清楚要干嘛
     public List<ActivityGeneralModel> searchActivity(String activityName, ActivityType activityType, Date startTime) {
         return null;
     }
@@ -82,4 +100,11 @@ public class ActivityServiceImpl implements ActivityService {
         return null;
     }
 
+    private List<ActivityGeneralModel> convertListPo2GeneralModel(List<Activity> thisActivitiesList) {
+        List<ActivityGeneralModel> result = new LinkedList<ActivityGeneralModel>();
+        for (Activity thisActivity: thisActivitiesList) {
+            result.add(new ActivityGeneralModel(thisActivity));
+        }
+        return result;
+    }
 }
