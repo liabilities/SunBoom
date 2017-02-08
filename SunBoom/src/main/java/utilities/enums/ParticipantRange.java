@@ -32,7 +32,7 @@ public enum ParticipantRange {
      * int TO enum
      * 便于从数据库读入
      */
-    public ParticipantRange getEnum(int a) {
+    public static ParticipantRange getEnum(int a) {
         for (ParticipantRange thisEnum : ParticipantRange.values()){
             if (thisEnum.representNum == a){
                 return thisEnum;

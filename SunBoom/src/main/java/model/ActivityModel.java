@@ -1,10 +1,22 @@
 package model;
 
+import dao.SponsorDAO;
+import dao.impl.SponsorDAOImpl;
+import pojo.Activity;
+import pojo.Sponsor;
+import utilities.enums.Place;
+import utilities.exceptions.NotExistException;
+
 import java.util.Date;
 
 /**
  * 创建活动
  * Created by lenovo on 2017/1/13.
+ *
+ * Last changed by charles.
+ * Updating time: 2017/2/8.
+ *
+ * TODO Everybody——简介brief就是detailPath？？
  */
 public class ActivityModel {
 
@@ -61,13 +73,33 @@ public class ActivityModel {
     /**
      * 活动地点
      */
-    public String activityPlace;
+    public Place activityPlace;
 
 
     /**
-    赞助详情
+     * 赞助详情ID
      */
     private String sponsorID;
+
+    /**
+     * 活动所需资金
+     */
+    private int capitalNeeded;
+
+    /**
+     * 赞助开始日期
+     */
+    private Date sponsorStartDate;
+
+    /**
+     * 赞助截止日期
+     */
+    private Date sponsorEndDate;
+
+    /**
+     * 赞助ID(businessID)
+     */
+    private String businessID;
 
     /**
      * 关注人数
@@ -80,7 +112,7 @@ public class ActivityModel {
     private int likeNum;
 
     public ActivityModel(String activityName,Date activityStartTime,Date activityEndTime,
-                         String activityBreif,String activityType,int minScale,String activityPlace,
+                         String activityBreif,String activityType,int minScale,Place activityPlace,
                          String sponsorID,int fellowNum,int likeNum){
         this.activityName = activityName;
         this.activityStartTime = activityStartTime;
@@ -89,9 +121,46 @@ public class ActivityModel {
         this.activityType = activityType;
         this.minScale = minScale;
         this.activityPlace = activityPlace;
-        this.sponsorID = sponsorID;
         this.fellowNum = fellowNum;
         this.likeNum = likeNum;
+
+        this.sponsorID = sponsorID;
+        SponsorDAO sponsorDAO = new SponsorDAOImpl();
+        Sponsor thisSponsor = null;
+        try {
+            thisSponsor = sponsorDAO.getById(sponsorID);
+        } catch (NotExistException e) {
+            e.printStackTrace();
+        }
+        this.capitalNeeded = thisSponsor.getNeededMoney();
+        this.sponsorStartDate = thisSponsor.getStartTime();
+        this.sponsorEndDate = thisSponsor.getDeadline();
+        this.businessID = String.valueOf(thisSponsor.getBusinessID());
+    }
+
+    public ActivityModel(Activity activity) {
+        this.activityName = activity.getName();
+        this.activityStartTime = activity.getStartTime();
+        this.activityEndTime = activity.getEndTime();
+        this.activityBreif = activity.getDetailPath();
+        this.activityType = activity.getType();
+        this.minScale = activity.getMinScale();
+        this.activityPlace = Place.getEnum(activity.getPlace());
+        this.fellowNum = activity.getFellowNum();
+        this.likeNum = activity.getLikeNum();
+
+        this.sponsorID = String.valueOf(activity.getSponsorID());
+        SponsorDAO sponsorDAO = new SponsorDAOImpl();
+        Sponsor thisSponsor = null;
+        try {
+            thisSponsor = sponsorDAO.getById(sponsorID);
+        } catch (NotExistException e) {
+            e.printStackTrace();
+        }
+        this.capitalNeeded = thisSponsor.getNeededMoney();
+        this.sponsorStartDate = thisSponsor.getStartTime();
+        this.sponsorEndDate = thisSponsor.getDeadline();
+        this.businessID = String.valueOf(thisSponsor.getBusinessID());
     }
 
     public String getActivityName() {
@@ -150,15 +219,15 @@ public class ActivityModel {
         this.minScale = minScale;
     }
 
-    public String getActivityPlace() {
+    public Place getActivityPlace() {
         return activityPlace;
     }
 
     public int getActivityPlace_int() {
-        return  Integer.parseInt(activityPlace);
+        return activityPlace.getRepresentNum();
     }
 
-    public void setActivityPlace(String activityPlace) {
+    public void setActivityPlace(Place activityPlace) {
         this.activityPlace = activityPlace;
     }
 
@@ -173,6 +242,38 @@ public class ActivityModel {
 
     public void setSponsorID(String activityID) {
         this.sponsorID = sponsorID;
+    }
+
+    public int getCapitalNeeded() {
+        return capitalNeeded;
+    }
+
+    public void setCapitalNeeded(int capitalNeeded) {
+        this.capitalNeeded = capitalNeeded;
+    }
+
+    public Date getSponsorStartDate() {
+        return sponsorStartDate;
+    }
+
+    public void setSponsorStartDate(Date sponsorStartDate) {
+        this.sponsorStartDate = sponsorStartDate;
+    }
+
+    public Date getSponsorEndDate() {
+        return sponsorEndDate;
+    }
+
+    public void setSponsorEndDate(Date sponsorEndDate) {
+        this.sponsorEndDate = sponsorEndDate;
+    }
+
+    public String getBusinessID() {
+        return businessID;
+    }
+
+    public void setBusinessID(String businessID) {
+        this.businessID = businessID;
     }
 
     public int getFellowNum() {

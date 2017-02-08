@@ -4,13 +4,13 @@ import dao.ActivityDAO;
 import dao.GroupDAO;
 import dao.impl.ActivityDAOImpl;
 import dao.impl.GroupDAOImpl;
-import model.ActivityDetailModel;
 import model.ActivityGeneralModel;
 import model.ActivityModel;
 import pojo.Activity;
 import service.ActivityService;
 import utilities.enums.ActivityType;
 import utilities.enums.ResultMsg;
+import utilities.exceptions.NotExistException;
 
 import java.util.Date;
 import java.util.List;
@@ -31,12 +31,12 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
 
-    public List<ActivityGeneralModel> getActivityHistoryList() {
+    public List<ActivityGeneralModel> getActivityHistoryList(String groupID) {
         return null;
     }
 
-    public ActivityDetailModel getActivityDetail(String activityID) {
-        return null;
+    public ActivityModel getActivityDetail(String activityID) throws NotExistException {
+        return new ActivityModel(activityDAO.getById(activityID));
     }
 
     public ResultMsg createActivity(ActivityModel activityModel) {

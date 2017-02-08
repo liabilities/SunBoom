@@ -32,7 +32,7 @@ public enum Place {
      * int TO enum
      * 便于从数据库读入
      */
-    public Place getEnum(int a) {
+    public static Place getEnum(int a) {
         for (Place thisEnum : Place.values()){
             if (thisEnum.representNum == a){
                 return thisEnum;

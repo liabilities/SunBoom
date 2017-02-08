@@ -2,9 +2,9 @@ package service;
 
 import utilities.enums.ActivityType;
 import utilities.enums.ResultMsg;
-import model.ActivityDetailModel;
 import model.ActivityGeneralModel;
 import model.ActivityModel;
+import utilities.exceptions.NotExistException;
 
 import java.util.Date;
 import java.util.List;
@@ -12,22 +12,25 @@ import java.util.List;
 /**
  * Created by lenovo on 2017/1/13.
  * Last changed by charles.
- * Updating time: 2017/1/23.
+ * Updating time: 2017/2/8.
  */
 public interface ActivityService {
 
     /**
      * 默认显示
      * @return activity简介的列表
+     *
+     * Last changed by charles.
+     * Updating time: 2017/2/8.
      */
-    public List<ActivityGeneralModel> getActivityHistoryList();
+    public List<ActivityGeneralModel> getActivityHistoryList(String groupID);
 
     /**
      * 根据活动ID获取活动详情
      * @param activityID 活动ID
      * @return 活动详情
      */
-    public ActivityDetailModel getActivityDetail(String activityID);
+    public ActivityModel getActivityDetail(String activityID) throws NotExistException;
 
 
 

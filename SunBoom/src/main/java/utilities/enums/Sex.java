@@ -32,7 +32,7 @@ public enum Sex {
      * int TO enum
      * 便于从数据库读入
      */
-    public Sex getEnum(int a) {
+    public static Sex getEnum(int a) {
         for (Sex thisEnum : Sex.values()){
             if (thisEnum.representNum == a){
                 return thisEnum;
