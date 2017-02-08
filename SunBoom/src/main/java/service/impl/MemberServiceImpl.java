@@ -5,7 +5,6 @@ import dao.PersonDAO;
 import dao.impl.Group2MemberDAOImpl;
 import dao.impl.PersonDAOImpl;
 import pojo.Group2Member;
-import pojo.Person;
 import service.MemberService;
 import utilities.enums.ResultMsg;
 import utilities.exceptions.NotExistException;
