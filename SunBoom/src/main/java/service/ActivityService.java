@@ -12,7 +12,9 @@ import java.util.List;
 /**
  * Created by lenovo on 2017/1/13.
  * Last changed by charles.
- * Updating time: 2017/2/8.
+ * Updating time: 2017/2/8.'
+ *
+ * TODO EVERYBODY--不知道getActivityHistoryList，getScheme，getActivityList有什么不一样= =
  */
 public interface ActivityService {
 
@@ -32,12 +34,19 @@ public interface ActivityService {
      */
     public ActivityModel getActivityDetail(String activityID) throws NotExistException;
 
-
+    /**
+     * 根据活动ID更新该活动信息
+     * @param activityID 活动ID
+     * @return ResultMsg
+     *
+     * TODO tangxin--???????这个接口？？？？？？
+     */
+    public ResultMsg modifyUndergoingAcitivity(String activityID);
 
 
 
     /*
-    Tab01：新建活动
+    新建活动
      */
     /**
      * 创建活动
@@ -55,19 +64,19 @@ public interface ActivityService {
 
 
     /*
-    Tab02：正在进行
+    正在进行、尚未开始、已结束
      */
     /**
      * 根据团体id获取正在进行的活动列表
      * @param groupID 团队ID
      * @return activityID的列表
      */
-    public List<String> getActivityUnderwayList(String groupID);
+    public List<String> getActivitySpecial(String groupID, ActivityType activityType);
 
 
 
     /*
-    Tab03：历史活动
+    Tab03：历史活动、搜索
      */
     /**
      * 根据现有条件搜索显示
@@ -76,31 +85,12 @@ public interface ActivityService {
      * @param startTime 活动开始时间
      * @return activity简介的列表
      */
-    public List<ActivityGeneralModel> getActivityHistoryList(String activityName, ActivityType activityType, Date startTime);
+    public List<ActivityGeneralModel> searchActivity(String activityName, ActivityType activityType, Date startTime);
 
 
 
     /*
-    Tab04：尚未开始
-     */
-    /**
-     * 根据团体ID获取尚未开始的活动列表
-     * @param groupID 团队ID
-     * @return activity简介的列表
-     */
-    public List<ActivityGeneralModel> getActivityToBeginList (String groupID);
-
-    /**
-     * 根据活动ID更新该活动信息
-     * @param activityID 活动ID
-     * @return ResultMsg
-     */
-    public ResultMsg modifyAcitivityToBegin(String activityID);
-
-
-
-    /*
-    Tab05：活动策划
+    活动策划
      */
     /**
      * 获取已有的策划模板列表
@@ -118,7 +108,7 @@ public interface ActivityService {
 
 
     /*
-    Tab06：活动推广
+    活动推广
      */
     /**
      * 根据活动ID推广活动

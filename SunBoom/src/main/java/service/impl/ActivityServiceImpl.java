@@ -1,9 +1,7 @@
 package service.impl;
 
 import dao.ActivityDAO;
-import dao.GroupDAO;
 import dao.impl.ActivityDAOImpl;
-import dao.impl.GroupDAOImpl;
 import model.ActivityGeneralModel;
 import model.ActivityModel;
 import pojo.Activity;
@@ -17,26 +15,29 @@ import java.util.List;
 
 /**
  * Created by lenovo on 2017/1/23.
- * Last changed by zoetx.
- * Updating time: 2017/1/30.
+ * Last changed by charles.
+ * Updating time: 2017/2/8.
  */
 public class ActivityServiceImpl implements ActivityService {
 
     ActivityDAO activityDAO;
-    GroupDAO groupDAO;
 
     public ActivityServiceImpl() {
         activityDAO = new ActivityDAOImpl();
-        groupDAO = new GroupDAOImpl();
     }
 
 
+    // TODO 待议
     public List<ActivityGeneralModel> getActivityHistoryList(String groupID) {
         return null;
     }
 
     public ActivityModel getActivityDetail(String activityID) throws NotExistException {
         return new ActivityModel(activityDAO.getById(activityID));
+    }
+
+    public ResultMsg modifyUndergoingAcitivity(String activityID) {
+        return null;
     }
 
     public ResultMsg createActivity(ActivityModel activityModel) {
@@ -46,38 +47,37 @@ public class ActivityServiceImpl implements ActivityService {
         else return ResultMsg.FAIL;
     }
 
+    // TODO CHarles--不知实现
     public String createTimeAxis() {
         return null;
     }
 
-    public List<String> getActivityUnderwayList(String groupID) {
+    // TODO Charles--不会使用findByProperty
+    public List<String> getActivitySpecial(String groupID, ActivityType activityType) {
         return null;
     }
 
-    public List<ActivityGeneralModel> getActivityHistoryList(String activityName, ActivityType activityType, Date startTime) {
+    // TODO Charles--不会使用findByProperty
+    public List<ActivityGeneralModel> searchActivity(String activityName, ActivityType activityType, Date startTime) {
         return null;
     }
 
-    public List<ActivityGeneralModel> getActivityToBeginList(String groupID) {
-        return null;
-    }
-
-    public ResultMsg modifyAcitivityToBegin(String activityID) {
-        return null;
-    }
-
+    // TODO 不知道要干嘛
     public List<String> getTemplate() {
         return null;
     }
 
+    // TODO 待议
     public List<String> getScheme(String groupID) {
         return null;
     }
 
+    // TODO 不知道要干嘛
     public ResultMsg promoteActivity(String activityID) {
         return null;
     }
 
+    // TODO 待议
     public List<String> getActivityList(String groupID) {
         return null;
     }
