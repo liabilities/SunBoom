@@ -14,7 +14,7 @@ import java.util.List;
  * Last changed by charles.
  * Updating time: 2017/1/23.
  */
-public interface GroupActivityService {
+public interface ActivityService {
 
     /**
      * 默认显示

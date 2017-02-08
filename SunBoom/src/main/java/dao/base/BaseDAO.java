@@ -21,10 +21,6 @@ public interface BaseDAO<T> {
     /*
     增
      */
-    public boolean saveOne(T o);
-
-    public boolean saveList(List<T> list);
-
     public boolean insertOne(T o);
 
     public boolean insertList(List<T> list);

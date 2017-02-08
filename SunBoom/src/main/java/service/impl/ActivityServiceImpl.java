@@ -8,7 +8,7 @@ import model.ActivityDetailModel;
 import model.ActivityGeneralModel;
 import model.ActivityModel;
 import pojo.Activity;
-import service.GroupActivityService;
+import service.ActivityService;
 import utilities.enums.ActivityType;
 import utilities.enums.ResultMsg;
 
@@ -20,12 +20,12 @@ import java.util.List;
  * Last changed by zoetx.
  * Updating time: 2017/1/30.
  */
-public class GroupActivityServiceImpl implements GroupActivityService {
+public class ActivityServiceImpl implements ActivityService {
 
     ActivityDAO activityDAO;
     GroupDAO groupDAO;
 
-    public GroupActivityServiceImpl() {
+    public ActivityServiceImpl() {
         activityDAO = new ActivityDAOImpl();
         groupDAO = new GroupDAOImpl();
     }
