@@ -35,9 +35,14 @@ public class FellowServiceImpl implements FellowService{
             groups.add(groupDAO.getById(fellow.getFollowedID()));
         }
         List<GroupModel> models = new ArrayList<GroupModel>();
+        String capital;
+        char temp;
         for(Group group: groups){
-            models.add(new GroupModel(group.getName(),group.getGroupID()+"",group.getAvatar(),
-                    ChineseToEnglish2.getFullSpell(group.getName()).substring(0,1)));
+            capital = ChineseToEnglish2.getFullSpell(group.getName()).substring(0,1).toLowerCase();
+            temp = capital.charAt(0);
+            if(temp < 'a' || temp > 'z')
+                capital = "0";
+            models.add(new GroupModel(group.getName(),group.getGroupID()+"",group.getAvatar(),capital));
         }
         Collections.sort(models);
         return models;

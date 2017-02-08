@@ -567,6 +567,6 @@ public class ChineseToEnglish2 {
 
     public static void main(String[] args) {
         // 转换成拼音
-        System.out.println(ChineseToEnglish2.getFullSpell("中华人民共和国"));
+        System.out.println(ChineseToEnglish2.getFullSpell("1中华人民共和国h"));
     }
 }
