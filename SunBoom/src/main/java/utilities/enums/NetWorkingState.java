@@ -32,7 +32,7 @@ public enum NetWorkingState {
      * int TO enum
      * 便于从数据库读入
      */
-    public NetWorkingState getEnum(int a) {
+    public static NetWorkingState getEnum(int a) {
         for (NetWorkingState thisEnum : NetWorkingState.values()){
             if (thisEnum.representNum == a){
                 return thisEnum;

@@ -9,6 +9,7 @@ import java.sql.Date;
  */
 public class Activity {
     private int activityID;
+    private int groupID;
     private String name;
     private int initiatorID;
     private int initiatorType;
@@ -26,6 +27,7 @@ public class Activity {
     public Activity(){}
     public Activity(ActivityModel activityModel){
         this.activityID = activityModel.getActivityID_int();
+        this.groupID = activityModel.getGroupID_int();
         this.name = activityModel.activityName;
         this.initiatorID = activityModel.getInitiatorID_int();
         this.initiatorType = activityModel.getInitiatorType_int();
@@ -41,30 +43,6 @@ public class Activity {
         this.likeNum = activityModel.getLikeNum();
     }
 
-    public int getSponsorID() {
-        return sponsorID;
-    }
-
-    public void setSponsorID(int sponsorID) {
-        this.sponsorID = sponsorID;
-    }
-
-    public int getFellowNum() {
-        return fellowNum;
-    }
-
-    public void setFellowNum(int fellowNum) {
-        this.fellowNum = fellowNum;
-    }
-
-    public int getLikeNum() {
-        return likeNum;
-    }
-
-    public void setLikeNum(int likeNum) {
-        this.likeNum = likeNum;
-    }
-
 
     public int getActivityID() {
         return activityID;
@@ -72,6 +50,14 @@ public class Activity {
 
     public void setActivityID(int activityID) {
         this.activityID = activityID;
+    }
+
+    public int getGroupID() {
+        return groupID;
+    }
+
+    public void setGroupID(int groupID) {
+        this.groupID = groupID;
     }
 
     public String getName() {
@@ -154,4 +140,27 @@ public class Activity {
         this.detailPath = detailPath;
     }
 
+    public int getSponsorID() {
+        return sponsorID;
+    }
+
+    public void setSponsorID(int sponsorID) {
+        this.sponsorID = sponsorID;
+    }
+
+    public int getFellowNum() {
+        return fellowNum;
+    }
+
+    public void setFellowNum(int fellowNum) {
+        this.fellowNum = fellowNum;
+    }
+
+    public int getLikeNum() {
+        return likeNum;
+    }
+
+    public void setLikeNum(int likeNum) {
+        this.likeNum = likeNum;
+    }
 }

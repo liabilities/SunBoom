@@ -1,17 +1,17 @@
 package utilities.enums;
 
 /**
- * Created by cuihua on 2017/1/11.
+ * Created by cuihua on 2017/2/8.
  */
-public enum Sex {
+public enum ActivityState {
 
-    //男，女，未知
-    MALE(0), FEMALE(1), NOT_KNOW(2);
+    //尚未开始，正在进行，已结束
+    PREPARING(0), UNDERGOING(1), COMPLETED(2);
 
     private int representNum;
 
-    private Sex(int a){
-        representNum = a;
+    private ActivityState(int a) {
+        this.representNum = a;
     }
 
     /**
@@ -32,8 +32,8 @@ public enum Sex {
      * int TO enum
      * 便于从数据库读入
      */
-    public static Sex getEnum(int a) {
-        for (Sex thisEnum : Sex.values()){
+    public static ActivityState getEnum(int a) {
+        for (ActivityState thisEnum : ActivityState.values()){
             if (thisEnum.representNum == a){
                 return thisEnum;
             }
