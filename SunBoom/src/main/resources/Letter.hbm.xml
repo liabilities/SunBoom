@@ -18,6 +18,9 @@
         <property name="time">
             <column name="time" sql-type="date"/>
         </property>
+        <property name="type">
+            <column name="type" sql-type="int(1)"/>
+        </property>
         <property name="content">
             <column name="content" sql-type="text"/>
         </property>

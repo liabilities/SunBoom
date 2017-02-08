@@ -193,7 +193,7 @@
             <br/>
             <br/>
             <input type="text" />
-            <input type="submit" value="查询"/>
+            <input type="submit" value="查询" name="username"/>
         </div>
         <div style="height: 117px">
             <img src="/img/1.png" style="width: 117px;height: 117px">
