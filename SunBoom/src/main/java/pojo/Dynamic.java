@@ -15,6 +15,20 @@ public class Dynamic {
     private int likeNum;
     private int commentNum;
 
+    public Dynamic(){
+
+    }
+
+    public Dynamic(model.Dynamic dynamic){
+        this.dynamicID = dynamic.getDynamicID_int();
+        this.publishTime = dynamic.getPublishTime_sql();
+        this.publisherID = dynamic.getDynamicID_int();
+        this.content = dynamic.getContent();
+        this.pictureNum = dynamic.getPictures().size();
+        this.likeNum = dynamic.getLikeNumbers();
+        this.commentNum = dynamic.getCommentNumbers();
+    }
+
     public int getDynamicID() {
         return dynamicID;
     }
