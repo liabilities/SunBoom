@@ -1,5 +1,7 @@
 package pojo;
 
+import model.MessageComment;
+
 import java.util.Date;
 
 /**
@@ -12,6 +14,17 @@ public class MessageReply {
     private int identity;
     private Date time;
     private String content;
+
+    public MessageReply() {
+
+    }
+
+    public MessageReply(MessageComment comment){
+        this.replyID = comment.getReplyGroupID_int();
+        this.messageID = comment.getCommentID_int();
+        this.time = comment.getSendTime_sql();
+        this.content = comment.getContent();
+    }
 
     public int getReplyID() {
         return replyID;

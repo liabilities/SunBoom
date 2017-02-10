@@ -43,6 +43,13 @@ public class Message {
      */
     public String content;
 
+    public Message(pojo.Message message){
+        this.messageID = message.getMessageID()+"";
+        this.senderGroupID = message.getSenderID()+"";
+        this.receiverGroupID = message.getReceiverID()+"";
+        this.content = message.getContent();
+    }
+
     public Message(String messageID,String senderGroupID,String receiverGroupID,
                    String senderGroupName,String receiverGroupName,Date sendTime,String content){
         this.messageID = messageID;
@@ -54,4 +61,59 @@ public class Message {
         this.content = content;
     }
 
+    public String getMessageID() {
+        return messageID;
+    }
+
+    public void setMessageID(String messageID) {
+        this.messageID = messageID;
+    }
+
+    public String getSenderGroupID() {
+        return senderGroupID;
+    }
+
+    public void setSenderGroupID(String senderGroupID) {
+        this.senderGroupID = senderGroupID;
+    }
+
+    public String getReceiverGroupID() {
+        return receiverGroupID;
+    }
+
+    public void setReceiverGroupID(String receiverGroupID) {
+        this.receiverGroupID = receiverGroupID;
+    }
+
+    public String getSenderGroupName() {
+        return senderGroupName;
+    }
+
+    public void setSenderGroupName(String senderGroupName) {
+        this.senderGroupName = senderGroupName;
+    }
+
+    public String getReceiverGroupName() {
+        return receiverGroupName;
+    }
+
+    public void setReceiverGroupName(String receiverGroupName) {
+        this.receiverGroupName = receiverGroupName;
+    }
+
+    public Date getSendTime() {
+        return sendTime;
+    }
+
+    public void setSendTime(Date sendTime) {
+        this.sendTime = sendTime;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 }

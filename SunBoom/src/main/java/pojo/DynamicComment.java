@@ -61,4 +61,17 @@ public class DynamicComment {
         this.content = content;
     }
 
+    public DynamicComment() {
+
+    }
+
+    public DynamicComment(model.DynamicComment dynamicComment){
+        this.commentID = dynamicComment.getCommentID_int();
+        this.dynamicID = dynamicComment.getDynamicID_int();
+        this.senderID = dynamicComment.getReplyGroupID_int();
+        this.receiverID = dynamicComment.getRepliedGroupID_int();
+        this.time = dynamicComment.getSendTime_sql();
+        this.content = dynamicComment.getContent();
+    }
+
 }

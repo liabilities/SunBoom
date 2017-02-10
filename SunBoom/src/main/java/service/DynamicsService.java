@@ -4,6 +4,7 @@ import java.util.List;
 import utilities.enums.ResultMsg;
 import model.Dynamic;
 import model.DynamicComment;
+import utilities.exceptions.NotExistException;
 
 /**
  * Created by lenovo on 2017/1/13.
@@ -22,7 +23,7 @@ public interface DynamicsService {
      * @param groupID 团队ID
      * @return 我关注的所有团体的动态消息，每次显示20条，根据下拉情况显示更多条
      */
-    public List<Dynamic> getDynamicList(String groupID);
+    public List<Dynamic> getDynamicList(String groupID) throws NotExistException;
 
     /**
      * 回复动态
@@ -36,6 +37,6 @@ public interface DynamicsService {
      * @param dynamicID 动态ID
      * @return ResultMsg
      */
-    public ResultMsg like(int dynamicID);
+    public ResultMsg like(int dynamicID) throws NotExistException;
 
 }
