@@ -49,9 +49,27 @@
         font-family:"微软雅黑 Light";
     }
 
+    .mychoose{
+        border-width: 0px;
+    }
+
+    .myinput-scale{
+        background: url("/img/inputbg.png") fixed center center no-repeat;
+        background-size: cover;
+        border-width: 0px;
+        width:60px;
+        height:30px;
+        font-size: 17px;
+        color: white;
+        font-family:"微软雅黑 Light";
+    }
+
     table,th,td
     {
         border:10px solid #325d7f;
+        font-size: 17px;
+        color: white;
+        font-family:"微软雅黑 Light";
     }
 
 </style>
@@ -90,11 +108,23 @@
                     </tr>
                     <tr>
                         <td class="white">
-                            活动简介
+                            发起者
                         </td>
                         <td>
-                            <input id="text2" class="myinput" type="password" name="text2" onblur="check()">
+                            <input id="text2" class="myinput" type="text" name="text2" value="这里应该是发起者名称，不可编辑" readOnly="true">
                             <div id="div2" style="display:inline">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="white">
+                            发起者类型
+                        </td>
+                        <td>
+                            <input type="radio" name="type" class="mychoose"/>注册团体
+                            <input type="radio" name="type" class="mychoose"/>临时团体
+                            <input type="radio" name="type" class="mychoose"/>个人
+                            <div id="div3" style="display:inline">
                             </div>
                         </td>
                     </tr>
@@ -103,18 +133,48 @@
                             活动规模
                         </td>
                         <td>
-                            <input id="text3" class="myinput" type="password" name="text3" onblur="check()">
-                            <div id="div3" style="display:inline">
+                            <input id="text4" class="myinput-scale" type="text" name="text4" onblur="check()">
+                            <span style="color: white"> - </span>
+                            <input id="text5" class="myinput-scale" type="text" name="text4" onblur="check()">
+                            <span style="color: white"> 人</span>
+                            <div id="div4" style="display:inline">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            活动类型
+                        </td>
+                        <td>
+                            <input type="checkbox" name="chkType" class="mychoose"/>晚会
+                            <input type="checkbox" name="chkType" class="mychoose"/>体育
+                            <input type="checkbox" name="chkType" class="mychoose"/>音乐
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            活动场地
+                        </td>
+                        <td>
+                            <input type="radio" name="place" class="mychoose"/>室内
+                            <input type="radio" name="place" class="mychoose"/>户外
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="white">
+                            开始时间
+                        </td>
+                        <td>
+                            <input id="text8" class="myinput" type="password" name="text3" onblur="check()">
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td class="white">
-                            活动场地
+                            结束时间
                         </td>
                         <td>
-                            <input id="text4" class="myinput" type="text" name="text4" onblur="check()">
-                            <div id="div4" style="display:inline">
+                            <input id="text9" class="myinput" type="text" name="text4" onblur="check()">
                             </div>
                         </td>
                     </tr>
