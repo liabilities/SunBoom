@@ -33,15 +33,15 @@
         </div>
 
         <div id="con_activity_2" style="display:none">
-            尚未开始
+            <jsp:include page="activity/notstarted.jsp" ></jsp:include>
         </div>
 
         <div id="con_activity_3" style="display:none">
-            正在进行
+            <jsp:include page="activity/underway.jsp" ></jsp:include>
         </div>
 
         <div id="con_activity_4" style="display:none">
-            历史活动
+            <jsp:include page="activity/history.jsp" ></jsp:include>
         </div>
 
         <div id="con_activity_5" style="display:none">
@@ -49,6 +49,6 @@
         </div>
     </div>
 </nav>
-
+<script src="/js/tab.js"></script> 
 </body>
 </html>

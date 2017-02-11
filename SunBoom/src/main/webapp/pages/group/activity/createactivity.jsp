@@ -16,16 +16,15 @@
 <script type="text/javascript" src="/js/editor/uploader.js"></script>
 <script type="text/javascript" src="/js/editor/simditor.js"></script>
 
-
 <div class="main wrapper cf" style="height: 5px">
 </div>
 <div class="formtable">
-    <table>
+    <table class="tb">
         <tr>
-            <td class="white">
+            <td class="white" >
                 活动名称
             </td>
-            <td>
+            <td class="tb">
                 <input id="text1" class="myinput" type="text" name="text1" onblur="check()">
                 <div id="div1" style="display:inline">
                 </div>
@@ -35,7 +34,7 @@
             <td class="white">
                 发起者
             </td>
-            <td>
+            <td  class="tb">
                 <input id="text2" class="myinput" type="text" name="text2" value="这里应该是发起者名称，不可编辑" readOnly="true">
                 <div id="div2" style="display:inline">
                 </div>
@@ -45,7 +44,7 @@
             <td class="white">
                 发起者类型
             </td>
-            <td>
+            <td class="tb">
                 <input type="radio" name="type" class="mychoose"/>注册团体
                 <input type="radio" name="type" class="mychoose"/>临时团体
                 <input type="radio" name="type" class="mychoose"/>个人
@@ -57,7 +56,7 @@
             <td class="white">
                 活动规模
             </td>
-            <td>
+            <td class="tb">
                 <input id="text4" class="myinput-scale" type="text" name="text4" onblur="check()">
                 <span style="color: white"> - </span>
                 <input id="text5" class="myinput-scale" type="text" name="text4" onblur="check()">
@@ -67,20 +66,20 @@
             </td>
         </tr>
         <tr>
-            <td>
+            <td class="white">
                 活动类型
             </td>
-            <td>
+            <td class="tb">
                 <input type="checkbox" name="chkType" class="mychoose"/>晚会
                 <input type="checkbox" name="chkType" class="mychoose"/>体育
                 <input type="checkbox" name="chkType" class="mychoose"/>音乐
             </td>
         </tr>
         <tr>
-            <td>
+            <td class="white">
                 活动场地
             </td>
-            <td>
+            <td class="tb">
                 <input type="radio" name="place" class="mychoose"/>室内
                 <input type="radio" name="place" class="mychoose"/>户外
                 <input type="radio" name="place" class="mychoose"/>线上
@@ -90,7 +89,7 @@
             <td class="white">
                 开始时间
             </td>
-            <td>
+            <td class="tb">
                 <form name="reg_testdate">
                     <select id="selectYear" name="YYYY" onchange="YYYYDD(this.value)">
                         <option value="">选择年</option>
@@ -108,7 +107,7 @@
             <td class="white">
                 结束时间
             </td>
-            <td>
+            <td class="tb">
                 <form name="reg_testdate2">
                     <select id="selectYear2" name="YYYY2" onchange="YYYYDD2(this.value)">
                         <option value="">选择年</option>
@@ -123,10 +122,10 @@
             </td>
         </tr>
         <tr>
-            <td aclass="white">
+            <td class="white">
                 详细图文信息
             </td>
-            <td></td>
+            <td class="tb"></td>
         </tr>
     </table>
 </div>

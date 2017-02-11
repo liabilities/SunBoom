@@ -10,6 +10,16 @@
     color: white;
     font-family:"微软雅黑 Light";
     font-size: 18px;
+    border:10px solid #325d7f;
+    text-align: right;
+}
+
+.tb{
+    border:10px solid #325d7f;
+    font-size: 17px;
+    color: white;
+    font-family:"微软雅黑 Light";
+    text-align: left;
 }
 
 .footpicture{
@@ -27,6 +37,7 @@
     font-size: 17px;
     color: white;
     font-family:"微软雅黑 Light";
+    padding-left: 3px;
 }
 
 .mybutton{
@@ -58,14 +69,7 @@
     font-size: 17px;
     color: white;
     font-family:"微软雅黑 Light";
-}
-
-table,th,td
-{
-    border:10px solid #325d7f;
-    font-size: 17px;
-    color: white;
-    font-family:"微软雅黑 Light";
+    padding-left: 3px;
 }
 
 .buttondiv{
