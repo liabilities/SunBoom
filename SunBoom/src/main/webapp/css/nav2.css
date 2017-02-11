@@ -133,6 +133,7 @@ body {
     -ms-user-select:none;/*IE10*/
     -khtml-user-select:none;/*早期浏览器*/
     user-select:none;
+    cursor: pointer;
 }
 .categories-nav li {
     display: -moz-inline-stack;
