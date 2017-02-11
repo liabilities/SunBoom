@@ -57,6 +57,22 @@
         font-family:"微软雅黑 Light";
     }
 
+    .mybutton{
+        background: url("/img/inputbg.png") fixed center center no-repeat;
+        background-size: cover;
+        border-width: 0px;
+        width:80px;
+        height:30px;
+        font-size: 17px;
+        color: white;
+        font-family:"微软雅黑 Light";
+    }
+
+    .mybutton:hover{
+        color: gainsboro;
+        cursor: pointer;
+    }
+
     .mychoose{
         border-width: 0px;
     }
@@ -78,6 +94,14 @@
         font-size: 17px;
         color: white;
         font-family:"微软雅黑 Light";
+    }
+
+    .buttondiv{
+        padding-right: 50px;
+        text-align: right;
+        background: #325d7f;
+        padding-top:10px;
+        padding-bottom: 40px;
     }
 
 </style>
@@ -210,17 +234,16 @@
                         </td>
                         <td></td>
                     </tr>
-                    <%--<tr align="center">--%>
-                        <%--<td align="center">--%>
-                            <%--<input type="submit" value="提交" name="text5"><input type="reset" value="重置" name="text7">--%>
-                        <%--</td>--%>
-                    <%--</tr>--%>
                 </table>
             </div>
             <div style="padding-right: 50px;padding-bottom: 20px;padding-left: 50px;background: #325d7f">
                 <div>
                     <textarea id="editor" placeholder="输入详细图文信息" autofocus></textarea>
                 </div>
+            </div>
+            <div class="buttondiv">
+                <input type="submit" value="重置" class="mybutton">
+                <input type="reset" value="清空"class="mybutton" style="margin-left:30px;">
             </div>
             <div class="footpicture">
             </div>
