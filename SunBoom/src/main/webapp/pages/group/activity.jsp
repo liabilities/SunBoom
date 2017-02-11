@@ -165,8 +165,17 @@
                             开始时间
                         </td>
                         <td>
-                            <input id="text8" class="myinput" type="password" name="text3" onblur="check()">
-                            </div>
+                            <form name="reg_testdate">
+                                <select id="selectYear" name="YYYY" onchange="YYYYDD(this.value)">
+                                    <option value="">选择年</option>
+                                </select>
+                                <select id="selectMonth" name="MM" onchange="MMDD(this.value)">
+                                    <option value="">选择月</option>
+                                </select>
+                                <select id="selectDay" name="DD">
+                                    <option value="">选择日</option>
+                                </select>
+                            </form>
                         </td>
                     </tr>
                     <tr>
@@ -174,8 +183,17 @@
                             结束时间
                         </td>
                         <td>
-                            <input id="text9" class="myinput" type="text" name="text4" onblur="check()">
-                            </div>
+                            <form name="reg_testdate2">
+                                <select id="selectYear2" name="YYYY2" onchange="YYYYDD2(this.value)">
+                                    <option value="">选择年</option>
+                                </select>
+                                <select id="selectMonth2" name="MM2" onchange="MMDD2(this.value)">
+                                    <option value="">选择月</option>
+                                </select>
+                                <select id="selectDay2" name="DD2">
+                                    <option value="">选择日</option>
+                                </select>
+                            </form>
                         </td>
                     </tr>
                     <tr align="center">
@@ -210,5 +228,7 @@
 
 
 <script src="/js/tab.js"></script> 
+<script src="/js/selectdate.js"></script> 
+<link href="/css/selectdate.css" rel="stylesheet" type="text/css" />
 </body>
 </html>
