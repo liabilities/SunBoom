@@ -17,6 +17,14 @@
     <jsp:include page="nav/navigationbar1.jsp" ></jsp:include>
 </div>
 
+<link rel="stylesheet" type="text/css" href="/css/editor/simditor.css" />
+
+<script type="text/javascript" src="/js/editor/jquery.min.js"></script>
+<script type="text/javascript" src="/js/editor/module.js"></script>
+<script type="text/javascript" src="/js/editor/hotkeys.js"></script>
+<script type="text/javascript" src="/js/editor/uploader.js"></script>
+<script type="text/javascript" src="/js/editor/simditor.js"></script>
+
 <style>
     .formtable{
         background: #325d7f;
@@ -196,15 +204,25 @@
                             </form>
                         </td>
                     </tr>
-                    <tr align="center">
-                        <td align="center">
-                            <input type="submit" value="提交" name="text5"><input type="reset" value="重置" name="text7">
+                    <tr>
+                        <td aclass="white">
+                            详细图文信息
                         </td>
+                        <td></td>
                     </tr>
+                    <%--<tr align="center">--%>
+                        <%--<td align="center">--%>
+                            <%--<input type="submit" value="提交" name="text5"><input type="reset" value="重置" name="text7">--%>
+                        <%--</td>--%>
+                    <%--</tr>--%>
                 </table>
             </div>
+            <div style="padding-right: 50px;padding-bottom: 20px;padding-left: 50px;background: #325d7f">
+                <div>
+                    <textarea id="editor" placeholder="输入详细图文信息" autofocus></textarea>
+                </div>
+            </div>
             <div class="footpicture">
-
             </div>
         </div>
 
@@ -230,5 +248,11 @@
 <script src="/js/tab.js"></script> 
 <script src="/js/selectdate.js"></script> 
 <link href="/css/selectdate.css" rel="stylesheet" type="text/css" />
+<script>
+    var editor = new Simditor({
+        textarea: $('#editor')
+        //optional options
+    });
+</script>
 </body>
 </html>
