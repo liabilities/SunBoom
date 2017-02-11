@@ -1,0 +1,61 @@
+.formtable2{
+    background: #c9d6d4;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    color: #1f2020;
+    font-family:"微软雅黑 Light";
+}
+.white2{
+    color: #1f2020;
+    font-family:"微软雅黑 Light";
+    font-size: 18px;
+    border:10px solid #c9d6d4;
+    text-align: right;
+}
+
+.tb2{
+    border:10px solid #c9d6d4;
+    font-size: 17px;
+    color: #1f2020;
+    font-family:"微软雅黑 Light";
+    text-align: left;
+}
+
+.footpicture2{
+    background: url(/img/foot2.png);
+    width:100%;
+    height: 73px;
+}
+
+.myinput2{
+    background: #dae2e1;
+    background-size: cover;
+    border-width: 0px;
+    width:600px;
+    height:30px;
+    font-size: 17px;
+    color: #1f2020;
+    font-family:"微软雅黑 Light";
+    padding-left: 3px;
+}
+
+.myinput-scale2{
+    background: #dae2e1;
+    background-size: cover;
+    border-width: 0px;
+    width:60px;
+    height:30px;
+    font-size: 17px;
+    color: #1f2020;
+    font-family:"微软雅黑 Light";
+    padding-left: 3px;
+}
+
+.buttondiv2{
+    padding-right: 50px;
+    text-align: right;
+    background: #c9d6d4;
+    padding-top:10px;
+    padding-bottom: 40px;
+}

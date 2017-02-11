@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" type="text/css" href="/css/editor/simditor.css" />
     <link rel="stylesheet" type="text/css" href="/css/create.css" />
+    <link rel="stylesheet" type="text/css" href="/css/display.css" />
 
     <script type="text/javascript" src="/js/editor/jquery.min.js"></script>
     <script type="text/javascript" src="/js/editor/module.js"></script>
@@ -40,119 +41,119 @@
 <body>
 
 <div id = "nav">
-    <jsp:include page="/pages/group/nav/navigationbar1.jsp" ></jsp:include>
+    <jsp:include page="/pages/group/nav/navhead.jsp" ></jsp:include>
 </div>
 
     <div class="main wrapper cf">
         <div id="con_news_1" class="hover">
             <div class="main wrapper cf" style="height: 5px">
             </div>
-            <div class="formtable">
-                <table class="tb">
+            <div class="formtable2">
+                <table class="tb2">
                     <tr>
-                        <td class="white" >
+                        <td class="white2" >
                             活动名称
                         </td>
-                        <td class="tb">
-                            <input class="myinput" type="text" value="大不了自己学" readOnly="true">
+                        <td class="tb2">
+                            <input class="myinput2" type="text" value="大不了自己学" readOnly="true">
                         </td>
                     </tr>
                     <tr>
-                        <td class="white">
+                        <td class="white2">
                             发起者
                         </td>
-                        <td  class="tb">
-                            <input class="myinput" type="text" value="南京大学软件学院新媒体中心采编部" readOnly="true">
+                        <td  class="tb2">
+                            <input class="myinput2" type="text" value="南京大学软件学院新媒体中心采编部" readOnly="true">
                         </td>
                     </tr>
                     <tr>
-                        <td class="white">
+                        <td class="white2">
                             发起者类型
                         </td>
-                        <td class="tb">
-                            <input class="myinput" type="text" value="注册团体" readOnly="true">
+                        <td class="tb2">
+                            <input class="myinput2" type="text" value="注册团体" readOnly="true">
                         </td>
                     </tr>
                     <tr>
-                        <td class="white">
+                        <td class="white2">
                             活动规模
                         </td>
-                        <td class="tb">
-                            <input class="myinput" type="text" value="30" readOnly="true" style="width: 60px">
-                            <span style="color: white"> - </span>
-                            <input class="myinput" type="text" value="200" readOnly="true" style="width: 60px">
-                            <span style="color: white"> 人</span>
+                        <td class="tb2">
+                            <input class="myinput2" type="text" value="30" readOnly="true" style="width: 60px">
+                            <span style="color: #1f2020"> - </span>
+                            <input class="myinput2" type="text" value="200" readOnly="true" style="width: 60px">
+                            <span style="color: #1f2020"> 人</span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="white">
+                        <td class="white2">
                             活动类型
                         </td>
-                        <td class="tb">
-                            <input class="myinput" type="text" value="自学 编程" readOnly="true">
+                        <td class="tb2">
+                            <input class="myinput2" type="text" value="自学 编程" readOnly="true">
                         </td>
                     </tr>
                     <tr>
-                        <td class="white">
+                        <td class="white2">
                             活动场地
                         </td>
-                        <td class="tb">
-                            <input class="myinput" type="text" value="线上" readOnly="true">
+                        <td class="tb2">
+                            <input class="myinput2" type="text" value="线上" readOnly="true">
                         </td>
                     </tr>
                     <tr>
-                        <td class="white">
+                        <td class="white2">
                             开始时间
                         </td>
-                        <td class="tb">
-                            <input class="myinput" type="text" value="2017年" readOnly="true" style="width: 100px">
-                            <input class="myinput" type="text" value="1月" readOnly="true" style="width: 80px">
-                            <input class="myinput" type="text" value="1日" readOnly="true" style="width: 80px">
+                        <td class="tb2">
+                            <input class="myinput2" type="text" value="2017年" readOnly="true" style="width: 100px">
+                            <input class="myinput2" type="text" value="1月" readOnly="true" style="width: 80px">
+                            <input class="myinput2" type="text" value="1日" readOnly="true" style="width: 80px">
                         </td>
                     </tr>
                     <tr>
-                        <td class="white">
+                        <td class="white2">
                             结束时间
                         </td>
-                        <td class="tb">
-                            <input class="myinput" type="text" value="2017年" readOnly="true" style="width: 100px">
-                            <input class="myinput" type="text" value="2月" readOnly="true" style="width: 80px">
-                            <input class="myinput" type="text" value="12日" readOnly="true" style="width: 80px">
+                        <td class="tb2">
+                            <input class="myinput2" type="text" value="2017年" readOnly="true" style="width: 100px">
+                            <input class="myinput2" type="text" value="2月" readOnly="true" style="width: 80px">
+                            <input class="myinput2" type="text" value="12日" readOnly="true" style="width: 80px">
                         </td>
                     </tr>
                     <tr>
-                        <td class="white">
+                        <td class="white2">
                             点赞数
                         </td>
-                        <td class="tb">
-                            <input class="myinput" type="text" value="50" readOnly="true" style="width: 60px">
+                        <td class="tb2">
+                            <input class="myinput2" type="text" value="50" readOnly="true" style="width: 60px">
                         </td>
                     </tr>
                     <tr>
-                        <td class="white">
+                        <td class="white2">
                             关注数
                         </td>
-                        <td class="tb">
-                            <input class="myinput" type="text" value="23" readOnly="true" style="width: 60px">
+                        <td class="tb2">
+                            <input class="myinput2" type="text" value="23" readOnly="true" style="width: 60px">
                         </td>
                     </tr>
                     <tr>
-                        <td class="white">
+                        <td class="white2">
                             详细图文信息
                         </td>
-                        <td class="tb"></td>
+                        <td class="tb2"></td>
                     </tr>
                 </table>
             </div>
-            <div style="padding-right: 50px;padding-bottom: 20px;padding-left: 50px;background: #325d7f">
+            <div style="padding-right: 50px;padding-bottom: 20px;padding-left: 50px;background: #c9d6d4">
                 <div style="background: white;padding: 10px">
                     <%@include file="/link/selfstudying.html"%>
                 </div>
             </div>
-            <div class="buttondiv">
+            <div class="buttondiv2">
                 <input type="submit" value="编辑" class="mybutton" id="news1" onclick="edit('news',2,2)" class="current-menu-item">
             </div>
-            <div class="footpicture">
+            <div class="footpicture2">
             </div>
         </div>
 
@@ -166,7 +167,9 @@
                             活动名称
                         </td>
                         <td class="tb">
-                            <input class="myinput" type="text" value="大不了自己学">
+                            <input id="text1" class="myinput" type="text" name="text1" onblur="check()">
+                            <div id="div1" style="display:inline">
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -174,7 +177,9 @@
                             发起者
                         </td>
                         <td  class="tb">
-                            <input class="myinput" type="text" value="南京大学软件学院新媒体中心采编部">
+                            <input id="text2" class="myinput" type="text" name="text2" value="这里应该是发起者名称，不可编辑" readOnly="true">
+                            <div id="div2" style="display:inline">
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -182,7 +187,11 @@
                             发起者类型
                         </td>
                         <td class="tb">
-                            <input class="myinput" type="text" value="注册团体">
+                            <input type="radio" name="type" class="mychoose"/>注册团体
+                            <input type="radio" name="type" class="mychoose"/>临时团体
+                            <input type="radio" name="type" class="mychoose"/>个人
+                            <div id="div3" style="display:inline">
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -190,10 +199,12 @@
                             活动规模
                         </td>
                         <td class="tb">
-                            <input class="myinput" type="text" value="30" style="width: 60px">
+                            <input id="text4" class="myinput-scale" type="text" name="text4" onblur="check()">
                             <span style="color: white"> - </span>
-                            <input class="myinput" type="text" value="200" style="width: 60px">
+                            <input id="text5" class="myinput-scale" type="text" name="text4" onblur="check()">
                             <span style="color: white"> 人</span>
+                            <div id="div4" style="display:inline">
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -201,7 +212,9 @@
                             活动类型
                         </td>
                         <td class="tb">
-                            <input class="myinput" type="text" value="自学 编程">
+                            <input type="checkbox" name="chkType" class="mychoose"/>晚会
+                            <input type="checkbox" name="chkType" class="mychoose"/>体育
+                            <input type="checkbox" name="chkType" class="mychoose"/>音乐
                         </td>
                     </tr>
                     <tr>
@@ -209,7 +222,9 @@
                             活动场地
                         </td>
                         <td class="tb">
-                            <input class="myinput" type="text" value="线上">
+                            <input type="radio" name="place" class="mychoose"/>室内
+                            <input type="radio" name="place" class="mychoose"/>户外
+                            <input type="radio" name="place" class="mychoose"/>线上
                         </td>
                     </tr>
                     <tr>
@@ -217,9 +232,17 @@
                             开始时间
                         </td>
                         <td class="tb">
-                            <input class="myinput" type="text" value="2017年"style="width: 100px">
-                            <input class="myinput" type="text" value="1月" style="width: 80px">
-                            <input class="myinput" type="text" value="1日"style="width: 80px">
+                            <form name="reg_testdate">
+                                <select id="selectYear" name="YYYY" onchange="YYYYDD(this.value)">
+                                    <option value="">选择年</option>
+                                </select>
+                                <select id="selectMonth" name="MM" onchange="MMDD(this.value)">
+                                    <option value="">选择月</option>
+                                </select>
+                                <select id="selectDay" name="DD">
+                                    <option value="">选择日</option>
+                                </select>
+                            </form>
                         </td>
                     </tr>
                     <tr>
@@ -227,25 +250,17 @@
                             结束时间
                         </td>
                         <td class="tb">
-                            <input class="myinput" type="text" value="2017年" style="width: 100px">
-                            <input class="myinput" type="text" value="2月" style="width: 80px">
-                            <input class="myinput" type="text" value="12日" style="width: 80px">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="white">
-                            点赞数
-                        </td>
-                        <td class="tb">
-                            <input class="myinput" type="text" value="50" style="width: 60px">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="white">
-                            关注数
-                        </td>
-                        <td class="tb">
-                            <input class="myinput" type="text" value="23" style="width: 60px">
+                            <form name="reg_testdate2">
+                                <select id="selectYear2" name="YYYY2" onchange="YYYYDD2(this.value)">
+                                    <option value="">选择年</option>
+                                </select>
+                                <select id="selectMonth2" name="MM2" onchange="MMDD2(this.value)">
+                                    <option value="">选择月</option>
+                                </select>
+                                <select id="selectDay2" name="DD2">
+                                    <option value="">选择日</option>
+                                </select>
+                            </form>
                         </td>
                     </tr>
                     <tr>
