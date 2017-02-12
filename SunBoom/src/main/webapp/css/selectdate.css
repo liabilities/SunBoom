@@ -1,0 +1,154 @@
+select#selectYear
+ {
+     width                    : 100px;
+     height                   : 30px;
+     vertical-align           : middle;
+     border                   : 0px;
+     background: #597b97;
+     -webkit-appearance       : none;
+     -moz-appearance          : none;
+     appearance               : none;
+     font-family              : "微软雅黑 Light";
+     font-size                : 17px;
+     color                    : white;
+     cursor                   : pointer;
+ }
+select#selectYear  option
+{
+    font-size               : 17px;
+    background: #d4e3e5;
+    color:black;
+}
+select#selectYear  option:nth-child(even) {
+    background-color:#c3dde0;
+}
+
+
+select#selectMonth
+{
+    width                    : 80px;
+    height                   : 30px;
+    vertical-align           : middle;
+    border                   : 0px;
+    background: #597b97;
+    -webkit-appearance       : none;
+    -moz-appearance          : none;
+    appearance               : none;
+    font-family              : "微软雅黑 Light";
+    font-size                : 17px;
+    color                    : white;
+    cursor                   : pointer;
+}
+select#selectMonth  option
+{
+    font-size               : 17px;
+    background: #d4e3e5;
+    color:black;
+}
+select#selectMonth  option:nth-child(even) {
+    background-color:#c3dde0;
+}
+
+
+select#selectDay
+{
+    width                    : 80px;
+    height                   : 30px;
+    vertical-align           : middle;
+    border                   : 0px;
+    background: #597b97;
+    -webkit-appearance       : none;
+    -moz-appearance          : none;
+    appearance               : none;
+    font-family              : "微软雅黑 Light";
+    font-size                : 17px;
+    color                    : white;
+    cursor                   : pointer;
+}
+select#selectDay  option
+{
+    font-size               : 17px;
+    background: #d4e3e5;
+    color:black;
+}
+select#selectDay  option:nth-child(even) {
+    background-color:#c3dde0;
+}
+
+
+select#selectYear2
+{
+    width                    : 100px;
+    height                   : 30px;
+    vertical-align           : middle;
+    border                   : 0px;
+    background: #597b97;
+    -webkit-appearance       : none;
+    -moz-appearance          : none;
+    appearance               : none;
+    font-family              : "微软雅黑 Light";
+    font-size                : 17px;
+    color                    : white;
+    cursor                   : pointer;
+}
+select#selectYear2  option
+{
+    font-size               : 17px;
+    background: #d4e3e5;
+    color:black;
+}
+select#selectYear2  option:nth-child(even) {
+    background-color:#c3dde0;
+}
+
+
+select#selectMonth2
+{
+    width                    : 80px;
+    height                   : 30px;
+    vertical-align           : middle;
+    border                   : 0px;
+    background: #597b97;
+    -webkit-appearance       : none;
+    -moz-appearance          : none;
+    appearance               : none;
+    font-family              : "微软雅黑 Light";
+    font-size                : 17px;
+    color                    : white;
+    cursor                   : pointer;
+}
+select#selectMonth2  option
+{
+    font-size               : 17px;
+    background: #d4e3e5;
+    color:black;
+}
+select#selectMonth2  option:nth-child(even) {
+    background-color:#c3dde0;
+}
+
+
+select#selectDay2
+{
+    width                    : 80px;
+    height                   : 30px;
+    vertical-align           : middle;
+    border                   : 0px;
+    background: #597b97;
+    -webkit-appearance       : none;
+    -moz-appearance          : none;
+    appearance               : none;
+    font-family              : "微软雅黑 Light";
+    font-size                : 17px;
+    color                    : white;
+    cursor                   : pointer;
+}
+select#selectDay2  option
+{
+    font-size               : 17px;
+    background: #d4e3e5;
+    color:black;
+}
+select#selectDay2  option:nth-child(even) {
+    background-color:#c3dde0;
+}

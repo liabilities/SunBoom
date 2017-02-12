@@ -16,4 +16,7 @@
 
     window.onload=function(){
         altRows('alternatecolor');
+        altRows('alternatecolor2');
+        altRows('alternatecolor3');
     }
+
