@@ -10,10 +10,14 @@ body,div,a{
 #left{
     float: left;
     width: 25%;
-    border-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
     border-style: solid;
     border-color: #1a7f94;
-    min-height:300px;
+    min-height:500px;
+    margin-bottom: 100px;
+    margin-top: 10px;
 
 }
 
@@ -21,12 +25,77 @@ body,div,a{
     float: left;
     width: 60%;
     border: solid;
-    border-width: 3px;
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
     border-color: #1a7f94;
-    min-height: 300px;
+    min-height: 500px;
+    margin-bottom: 100px;
+    margin-top: 10px;
+
+
 }
 
 #head1{
     text-align: center;
     font-size: 18px;
 }
+
+#message{
+    width: 100%;
+    height:330px;
+    border:solid;
+    border-color: #eef5e3;
+    background-color: #eef5e3;
+}
+#content{
+    height:100%;
+    background-color: #aff5ef;
+}
+#message_tool{
+    width:100%;
+    height:5%;
+    border:solid;
+    border-color: #eef5e3;
+}
+
+#message_edit{
+    width: 100%;
+    height:16.3%;
+    border:solid;
+    border-color: #eef5e3;
+    background-color: #eef5e3;
+
+}
+#message_edit_message{
+    height: 161px;
+    background-color: #eef5e3;
+}
+#message_edit_table{
+    width: 555px;
+    background-color: #eef5e3;
+}
+
+.button{
+    float: left;
+}
+
+#button_send{
+    float: right;
+    margin-right: 10px;
+}
+
+#send_box{
+    background-color: #eef5e3;
+    width: 552px;
+    height:110px;
+    vertical-align: top;
+}
+.tool{
+    float: left;
+}
+#select{
+    margin-top: 6px;
+}
+
