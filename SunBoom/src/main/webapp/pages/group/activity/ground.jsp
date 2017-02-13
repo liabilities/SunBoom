@@ -9,7 +9,6 @@
 
 <style>
     .condition-table{
-        border: 1px solid white;
         height: 40px;
         border:0px;
         margin:0 auto;
@@ -23,7 +22,6 @@
     }
 
     .condition-table-column{
-        border: 1px solid white
         height: 40px;
         border:0px;
         margin:0 auto;
