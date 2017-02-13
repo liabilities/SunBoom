@@ -45,7 +45,7 @@
         </div>
 
         <div id="con_activity_5" style="display:none">
-            活动广场
+            <jsp:include page="activity/ground.jsp" ></jsp:include>
         </div>
     </div>
 </nav>
