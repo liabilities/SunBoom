@@ -9,6 +9,7 @@
 
 <style>
     .condition-table{
+        border: 1px solid white;
         height: 40px;
         border:0px;
         margin:0 auto;
@@ -22,6 +23,7 @@
     }
 
     .condition-table-column{
+        border: 1px solid white
         height: 40px;
         border:0px;
         margin:0 auto;
@@ -141,47 +143,59 @@
     <div>
         <div class="card">
             <div class="picturefield">
-                <img alt="300x200" src="/img/1.png" style="width: 200px"/>
+                <img alt="300x200" src="/img/1.png"class="picture-size-260"/>
             </div>
             <h3>
                 活动名称
             </h3>
-            <p>
-                这里需要一些具体的介绍
-            </p>
+            <div class="detailfield">
+                <p>发起者：</p>
+                <p>场地：</p>
+                <p>类型：</p>
+                <p>进度：</p>
+                <p>规模：</p>
+            </div>
             <div class="buttonfield">
                 <button class="mybutton">查看详情</button>
             </div>
         </div>
     </div>
-    <div>
+    <div class="card">
         <div class="picturefield">
-            <img alt="300x200" src="/img/1.png"style="width: 200px"/>
+            <img alt="300x200" src="/img/1.png" class="picture-size-260"/>
         </div>
-
         <h3>
             活动名称
         </h3>
-        <p>
-            这里需要一些具体的介绍
-        </p>
+        <div class="detailfield">
+            <p>发起者：</p>
+            <p>场地：</p>
+            <p>类型：</p>
+            <p>进度：</p>
+            <p>规模：</p>
+        </div>
         <div class="buttonfield">
             <button class="mybutton">查看详情</button>
         </div>
     </div>
     <div>
-        <div class="picturefield">
-            <img alt="300x200" src="/img/1.png"style="width: 200px"/>
-        </div>
-
-        <h3>
-            活动名称
-        </h3>
-        <p>
-            这里需要一些具体的介绍
-        </p>
-        <div class="buttonfield">
-            <button class="mybutton">查看详情</button>
+        <div class="card">
+            <div class="picturefield">
+                <img alt="300x200" src="/img/1.png" class="picture-size-260"/>
+            </div>
+            <h3>
+                活动名称
+            </h3>
+            <div class="detailfield">
+                <p>发起者：</p>
+                <p>场地：</p>
+                <p>类型：</p>
+                <p>进度：</p>
+                <p>规模：</p>
+            </div>
+            <div class="buttonfield">
+                <button class="mybutton">查看详情</button>
+            </div>
         </div>
     </div>
 </div>
@@ -199,15 +213,28 @@
         float:left;
     }
 
+
+
     .picturefield{
         width:280px;
         height:185px;
         text-align: center;
     }
 
+    .detailfield{
+        width:260px;
+        padding: 10px;
+        font-size: 12px;
+    }
+
     .buttonfield{
         width:280px;
-        height:185px;
+        height:33px;
         text-align: right;
+    }
+
+    .picture-size-260{
+        height: 100%;
+        width: 100%;
     }
 </style>
