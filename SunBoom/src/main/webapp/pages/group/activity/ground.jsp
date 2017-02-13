@@ -134,6 +134,80 @@
     <div style="height: 40px; text-align: right;padding-top: 20px;padding-right: 30px">
         <input type="submit" value="筛选" class="mybutton" style="height: 28px;width: 50px;font-size: 15px;" >
     </div>
+    <div style="height: 12px;"></div>
+    <div style="height: 2px;background-color: white;width: 100%"></div>
+
+    <%--以下是具体的列表消息--%>
+    <div>
+        <div class="card">
+            <div class="picturefield">
+                <img alt="300x200" src="/img/1.png" style="width: 200px"/>
+            </div>
+            <h3>
+                活动名称
+            </h3>
+            <p>
+                这里需要一些具体的介绍
+            </p>
+            <div class="buttonfield">
+                <button class="mybutton">查看详情</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="picturefield">
+            <img alt="300x200" src="/img/1.png"style="width: 200px"/>
+        </div>
+
+        <h3>
+            活动名称
+        </h3>
+        <p>
+            这里需要一些具体的介绍
+        </p>
+        <div class="buttonfield">
+            <button class="mybutton">查看详情</button>
+        </div>
+    </div>
+    <div>
+        <div class="picturefield">
+            <img alt="300x200" src="/img/1.png"style="width: 200px"/>
+        </div>
+
+        <h3>
+            活动名称
+        </h3>
+        <p>
+            这里需要一些具体的介绍
+        </p>
+        <div class="buttonfield">
+            <button class="mybutton">查看详情</button>
+        </div>
+    </div>
 </div>
 
 <script src="/js/selectdate_ground.js"></script> 
+<style>
+    .card{
+        width:280px;
+        margin: 12px;
+        border: 2px solid white;
+        padding: 12px;
+        background-color: #325d7f;
+        color: white;
+        border-radius: 15px;
+        float:left;
+    }
+
+    .picturefield{
+        width:280px;
+        height:185px;
+        text-align: center;
+    }
+
+    .buttonfield{
+        width:280px;
+        height:185px;
+        text-align: right;
+    }
+</style>
