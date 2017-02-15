@@ -31,6 +31,7 @@ function doSomething() {
             $("#memberNum").text($("#memberNumBox").attr("value"));
             $("#tag").text($("#tagBox").attr("value"));
             $("#editButton").text("编辑资料");
+            print("succeed")
         }
     })
 }

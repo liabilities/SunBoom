@@ -55,7 +55,7 @@
 </nav>
 
 <div class="main wrapper cf">
-    这是网站的主体部分
+    这是网站的主体部分<a href="http://localhost:8080/pages/group/fellow_tx.jsp">联系人2链接</a>
 </div>
 </body>
 </html>
