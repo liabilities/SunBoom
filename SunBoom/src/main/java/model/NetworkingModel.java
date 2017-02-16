@@ -1,5 +1,8 @@
 package model;
 
+import pojo.Networking;
+import utilities.enums.Place;
+
 import java.util.Date;
 
 /**
@@ -11,7 +14,7 @@ public class NetworkingModel {
     public String networkingID;
     public String networkingName;
     public String networkingType;
-    public String networkingPlace;
+    public Place networkingPlace;
     public String groupID;
     public int range;
     public int state;
@@ -28,7 +31,7 @@ public class NetworkingModel {
     public int memberNum;
 
     public NetworkingModel(String networkigID, String networkingName, String networkingType,
-                           String networkingPlace, String groupID, int range, int state,
+                           Place networkingPlace, String groupID, int range, int state,
                            Date announceTime, Date respondingEndTime, Date startTime,
                            Date endTime, Date lastUpdateTime, String introduction,
                            String introPhotoPath, String detail,int minScale,int maxScale,int memberNum){
@@ -50,5 +53,31 @@ public class NetworkingModel {
         this.minScale = minScale;
         this.maxScale = maxScale;
         this.memberNum = memberNum;
+    }
+
+    public NetworkingModel(Networking networking) {
+        this.networkingID = String.valueOf(networking.getNetworkingID());
+        this.networkingName = networking.getName();
+        this.networkingType = networking.getType();
+        this.networkingPlace = Place.getEnum(networking.getPlace());
+        this.groupID = String.valueOf(networking.getGroupID());
+        this.range = networking.getRange();
+        this.state = networking.getState();
+        this.announceTime = networking.getAnnounceTime();
+        this.respondingEndTime = networking.getDeadline();
+        this.startTime = networking.getStartTime();
+        this.endTime = networking.getEndTime();
+        this.lastUpdateTime = networking.getLastUpdateTime();
+        this.introduction = networking.getIntroduction();
+
+        /*
+
+         */
+        this.introPhotoPath = networking.getIntroduction();
+
+        this.detail = networking.getDetailPath();
+        this.minScale = networking.getMinScale();
+        this.maxScale = networking.getMaxScale();
+        this.memberNum = networking.getPresentNum();
     }
 }

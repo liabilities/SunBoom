@@ -1,99 +1,126 @@
 package service;
 
+import utilities.enums.NetworkingState;
 import utilities.enums.ResultMsg;
 import utilities.enums.SearchStrategy;
 import utilities.enums.SortStrategy;
 import model.*;
+import utilities.exceptions.NotExistException;
 
 import java.util.List;
 
 /**
  * Created by lenovo on 2017/1/13.
+ * Last changed by charles.
+ * Updating time: 2017/2/16.
  */
-public interface NetWorkingService {
+public interface NetworkingService {
+
+
+    /*
+    默认、常用功能
+     */
+    /**
+     * 默认显示／默认综合排序
+     * @return networking简介的列表
+     */
+    public List<NetworkingGeneralModel> defalutDisplay(String groupID) throws NotExistException;
 
     /**
+     * 根据联谊ID获取联谊详情
+     * @param networkingID 联谊ID
+     * @return 联谊详情
+     */
+    public NetworkingModel getNetworkingDetail(String networkingID) throws NotExistException;
+
+    /**
+     * 根据活动ID更新该活动信息
+     * @param networkingModel 联谊详情载体
+     * @return ResultMsg 是否成功修改
+     */
+    public ResultMsg modifyNetworking(NetworkingModel networkingModel) throws NotExistException;
+
+
+    /*
+    新建联谊
+     */
+    /**
      * 新增一条联谊事项
-     * @param newNetworkingModel
+     * @param newNetworkingModel 需创建的联谊载体
      * @return ResultMsg
      */
-    public ResultMsg announceNetWorking(NetworkingModel newNetworkingModel);
+    public ResultMsg createNetworking(NetworkingModel newNetworkingModel);
 
     /**
      * 将此条联谊事项暂时保存到草稿
-     * @param newNetworkingModel
+     * @param newNetworkingModel 需暂时保存的联谊载体
      * @return ResultMsg
      */
-    public ResultMsg tempSaveNetWorking(NetworkingModel newNetworkingModel);
+    public ResultMsg tempSaveNetworking(NetworkingModel newNetworkingModel);
 
-    /**
-     * 默认综合排序
-     * @return 综合排序后的联谊项目列表
+
+
+    /*
+    搜索
      */
-    public List<NetworkingGeneralModel> search();
-
     /**
      * 根据现有条件检索联谊项目并根据现有排序方式排序
      * @param searchStrategy
      * @param sortStrategy
      * @return 检索现有条件排序后的联谊项目列表
+     *
+     * TODO：接口待确定
      */
     public List<NetworkingGeneralModel> search(SearchStrategy searchStrategy, SortStrategy sortStrategy);
 
-    /**
-     * 查看对应ID的联谊详情
-     * @param networkingID
-     * @return 此联谊详情
-     */
-    public NetworkingModel getDetail(int networkingID);
 
-    /**
-     * 响应该联谊活动
-     * @param muGroupNum
-     * @return ResultMsg
-     */
-    public ResultMsg respond(int muGroupNum);
 
-    /**
-     * 查看已发布的
-     * @param networkingID
-     * @return 已发布的联谊概况列表
+    /*
+    响应
      */
-    public List<NetworkingModel> getAnnounced(int networkingID);
-
     /**
-     * 查看草稿箱的
-     * @param networkingID
-     * @return 草稿箱的联谊概况列表
+     * 响应该联谊联谊
+     * @param myGroupNum 我的团体ID
+     * @return ResultMsg 是否响应成功
      */
-    public List<NetworkingModel> getDrafts(int networkingID);
-
-    /**
-     * 查看已完成的
-     * @param networkingID
-     * @return 已完成的联谊概况列表
-     */
-    public List<NetworkingModel> getCompleted(int networkingID);
-
-    /**
-     * 查看活动团队的详情
-     * @param groupID 团队ID
-     * @return 此团队ID对应的团队详情
-     */
-    public ResultMsg checkGroup(int groupID);
-
-    /**
-     * 显示该团队ID对应的响应团体的个数
-     * @param networkingID 联谊ID
-     * @return 响应团体个数
-     */
-    public ResultMsg getRespongdingGroupNum(int networkingID);
+    public ResultMsg respond(int myGroupNum);
 
     /**
      * 显示该团队ID对应的响应团体
      * @param networkingID 联谊ID
      * @return 响应团体
      */
-    public List<GroupGeneralModel> getRespongdingGroup(int networkingID);
+    public List<GroupGeneralModel> getRespongdingGroup(int networkingID) throws NotExistException;
+
+
+
+
+    /*
+    查看：正在进行、尚未开始、已结束
+     */
+    /**
+     *
+     * @param groupID 该团体的编号
+     * @param networkingState 要查看的联谊状态
+     * @return 该团体特定状态的活动列表
+     * @throws NotExistException
+     *
+     * Last changed by charles.
+     * Updating time: 2017/2/16.
+     */
+    public List<NetworkingGeneralModel> getNetworkingSpecial(String groupID, NetworkingState networkingState) throws NotExistException;
+
+
+
+
+
+
+    /**
+     * 查看联谊团队的详情
+     * @param groupID 团队ID
+     * @return 此团队ID对应的团队详情
+     * TODO：待议，很多地方会重复
+     */
+    public ResultMsg checkGroup(int groupID);
 
 }
