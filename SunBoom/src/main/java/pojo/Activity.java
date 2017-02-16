@@ -23,6 +23,7 @@ public class Activity {
     private int sponsorID;
     private int fellowNum;
     private int likeNum;
+    private String promotePath;
 
     public Activity(){}
     public Activity(ActivityModel activityModel){
@@ -41,6 +42,7 @@ public class Activity {
         this.sponsorID = activityModel.getSponsorID_int();
         this.fellowNum = activityModel.getFellowNum();
         this.likeNum = activityModel.getLikeNum();
+        this.promotePath = activityModel.getPromotePath();
     }
 
 
@@ -162,5 +164,13 @@ public class Activity {
 
     public void setLikeNum(int likeNum) {
         this.likeNum = likeNum;
+    }
+
+    public String getPromotePath() {
+        return promotePath;
+    }
+
+    public void setPromotePath(String promotePath) {
+        this.promotePath = promotePath;
     }
 }
