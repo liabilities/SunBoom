@@ -4,8 +4,7 @@ import dao.base.BaseDAO;
 import pojo.Networking;
 
 /**
- * Created by zoetx on 2017/1/29.
+ * Created by zoe on 2017/2/2.
  */
-public interface NetworkingDAO extends BaseDAO<Networking> {
-
+public interface NetworkingDAO extends BaseDAO<Networking>{
 }

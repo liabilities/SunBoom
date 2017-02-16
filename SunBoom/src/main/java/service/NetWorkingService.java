@@ -90,7 +90,7 @@ public interface NetworkingService {
      * @param networkingID 联谊ID
      * @return 响应团体
      */
-    public List<GroupGeneralModel> getRespongdingGroup(int networkingID);
+    public List<GroupGeneralModel> getRespongdingGroup(int networkingID) throws NotExistException;
 
 
 
@@ -108,7 +108,7 @@ public interface NetworkingService {
      * Last changed by charles.
      * Updating time: 2017/2/16.
      */
-    public List<NetworkingModel> getNetworkingSpecial(String groupID, NetworkingState networkingState);
+    public List<NetworkingGeneralModel> getNetworkingSpecial(String groupID, NetworkingState networkingState) throws NotExistException;
 
 
 
