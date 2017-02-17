@@ -24,6 +24,9 @@
 </body>
 
 <script type="text/javascript">
+
+    var myid = 1;
+
     var websocket = null;
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
@@ -60,7 +63,9 @@
 
     //将消息显示在网页上
     function setMessageInnerHTML(innerHTML) {
-        document.getElementById('message').innerHTML += innerHTML + '<br/>';
+        var ms = innerHTML.substring(0,1);
+        if(ms=="1") document.getElementById('message').innerHTML += innerHTML + '<br/>';
+        else document.getElementById('message').innerHTML += '<br/>';
     }
 
     //关闭WebSocket连接
