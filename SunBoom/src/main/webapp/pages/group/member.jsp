@@ -229,7 +229,7 @@
             <td>2015-09-20</td>
         </tr>
         <tr>
-            <td><a onclick="getCode()">txin</a></td>
+            <td><a onclick="getMember()">txin</a></td>
             <td>糖心</td>
             <td>txin15@smail.nju.edu.cn</td>
             <td>2016-09-20</td>
@@ -269,12 +269,8 @@
                 type:"post",
                 url:"/getMembers",
                 data:{id:1},
-            success:function (data) {
-                var userNames=data.userNames;
-                var nickNames=data.nickNames;
-                var mail=data.mails;
-                var inTime=data.inTimes;
-                alert(userNames[0]);
+                dataType:"json",
+            success:function (memberList) {
             },
             error:function () {
                 alert("error");
