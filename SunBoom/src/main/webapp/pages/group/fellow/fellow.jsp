@@ -11,17 +11,17 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 引入 Bootstrap -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../css/nav.css" rel="stylesheet" type="text/css"/>
-    <link href="../../css/fellow.css" rel="stylesheet" type="text/css"/>
-    <link href="../../css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/nav.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../css/fellow.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../css/style.css" rel="stylesheet" type="text/css"/>
 
     <title>联系人</title>
 </head>
 <body onload="getContacts()">
 
 <div>
-    <jsp:include page="nav/navigationbar1.jsp"></jsp:include>
+    <jsp:include page="../nav/navigationbar1.jsp"></jsp:include>
 </div>
 
 <div class="main wrapper cf" id="contact_main">
@@ -262,9 +262,9 @@
     All CopyRights reserved @2017 sunboom team
 </div>
 <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-<script src="../../js/jquery.js"></script>
+<script src="../../../js/jquery.js"></script>
 <!-- 包括所有已编译的插件 -->
-<script src="../../js/bootstrap.min.js"></script>
+<script src="../../../js/bootstrap.min.js"></script>
 <script type="text/javascript">
     function getContacts() {
         $.ajax(
@@ -284,7 +284,7 @@
                     var capitals=data.capital;
                     for(var i=0;i<names.length;i++){
                         $("#"+capitals[i]).append('<a href="#" class="list-group-item">' +
-                            '<img width="30" height="30" src="../../img/1.png " class="img-circle">'+names[i]+'</a>')
+                            '<img width="30" height="30" src="../../../img/1.png " class="img-circle">'+names[i]+'</a>')
                     }
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {

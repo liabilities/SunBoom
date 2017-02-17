@@ -14,7 +14,7 @@
     <title></title>
 </head>
 <body>
-<form method="post" action="fellow_tx.jsp" accept-charset="utf-8">
+<form method="post" action="fellow/fellow_tx.jsp" accept-charset="utf-8">
     <input type="hidden" name="conversation" value="123">
     <input type="submit" name="send" value="click here">
 </form>
