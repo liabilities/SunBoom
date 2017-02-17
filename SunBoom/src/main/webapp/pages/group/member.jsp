@@ -159,6 +159,16 @@
         color: #a1a1a1;
     }
 
+    .username-to-select{
+        color:midnightblue;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .username-to-select:hover{
+        color:mediumslateblue;
+    }
+
 </style>
 
 
@@ -210,33 +220,6 @@
 
 <div class="main wrapper cf">
     <div id="list">
-        <a onclick="getMember()">txin</a>
-        <%--<table class="altrowstable" id="alternatecolor">--%>
-        <%--<tr>--%>
-        <%--<th>用户名</th>--%>
-        <%--<th>昵称</th>--%>
-        <%--<th>邮箱</th>--%>
-        <%--<th>加入时间</th>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-        <%--<td>zoetxt</td>--%>
-        <%--<td>小太阳</td>--%>
-        <%--<td>zoetxt@outlook.com</td>--%>
-        <%--<td>2015-09-20</td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-        <%--<td>zhousaisai</td>--%>
-        <%--<td>子非鱼</td>--%>
-        <%--<td>zs14@smail.nju.edu.cn</td>--%>
-        <%--<td>2015-09-20</td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-        <%--<td><a onclick="getMember()">txin</a></td>--%>
-        <%--<td>糖心</td>--%>
-        <%--<td>txin15@smail.nju.edu.cn</td>--%>
-        <%--<td>2016-09-20</td>--%>
-        <%--</tr>--%>
-        <%--</table>--%>
     </div>
 
 </div>
@@ -281,9 +264,9 @@
                     str+=" <tr><th>用户名</th><th>昵称</th><th>邮箱</th><th>加入时间</th></tr>";
                     for(i in member){
                         if(i%2==0)
-                            str+="<tr style=\"background-color:#d4e3e5\"><td>"+member[i].userName+"</td><td>"+member[i].nickName+"</td><td>"+member[i].email+"</td><td>"+member[i].time+"</td></tr>";
+                            str+="<tr style=\"background-color:#d4e3e5\"><td class=\"username-to-select\" href=\"/pages/group/activity/displayactivity.jsp\">"+member[i].userName+"</td><td>"+member[i].nickName+"</td><td>"+member[i].email+"</td><td>"+member[i].time+"</td></tr>";
                         else
-                            str+="<tr style=\"background-color:#c3dde0\"><td>"+member[i].userName+"</td><td>"+member[i].nickName+"</td><td>"+member[i].email+"</td><td>"+member[i].time+"</td></tr>";
+                            str+="<tr style=\"background-color:#c3dde0\"><td class=\"username-to-select\" href=\"/pages/group/activity/displayactivity.jsp\">"+member[i].userName+"</td><td>"+member[i].nickName+"</td><td>"+member[i].email+"</td><td>"+member[i].time+"</td></tr>";
                     }
                     str+="</table>"
                     $("#list").html(str);
