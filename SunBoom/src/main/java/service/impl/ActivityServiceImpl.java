@@ -30,24 +30,22 @@ public class ActivityServiceImpl implements ActivityService {
 
 
     public List<ActivityGeneralModel> defalutDisplay(String groupID) throws NotExistException {
-        return convertListPo2GeneralModel(activityDAO.findByProperty("groupID", groupID));
+        return convertListPo2GeneralModel(activityDAO.findByProperty("groupID", Integer.parseInt(groupID)));
     }
 
     public ActivityModel getActivityDetail(String activityID) throws NotExistException {
-        return new ActivityModel(activityDAO.getById(activityID));
+        return new ActivityModel(activityDAO.getById(Integer.parseInt(activityID)));
     }
 
     public ResultMsg modifyAcitivity(ActivityModel activityModel) throws NotExistException {
-        Activity activity = new Activity(activityModel);
-        boolean result = activityDAO.updateOne(activity);
+        boolean result = activityDAO.updateOne(new Activity(activityModel));
         if(result) return ResultMsg.SUCCESS;
         else return ResultMsg.FAIL;
     }
 
 
     public ResultMsg createActivity(ActivityModel activityModel) {
-        Activity activity = new Activity(activityModel);
-        boolean result = activityDAO.insertOne(activity);
+        boolean result = activityDAO.insertOne(new Activity(activityModel));
         if(result) return ResultMsg.SUCCESS;
         else return ResultMsg.FAIL;
     }
@@ -60,7 +58,7 @@ public class ActivityServiceImpl implements ActivityService {
     public List<ActivityGeneralModel> getActivitySpecial(String groupID, ActivityState activityState) throws NotExistException {
         Date now = Calendar.getInstance().getTime();
 
-        List<Activity> findingResult = activityDAO.findByProperty("groupID", groupID);
+        List<Activity> findingResult = activityDAO.findByProperty("groupID", Integer.parseInt(groupID));
         for (Activity thisActivity: findingResult) {
             if (activityState == ActivityState.PREPARING) {
                 if (!thisActivity.getStartTime().before(now)){

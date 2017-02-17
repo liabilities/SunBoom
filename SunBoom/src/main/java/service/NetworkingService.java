@@ -90,7 +90,7 @@ public interface NetworkingService {
      * @param networkingID 联谊ID
      * @return 响应团体
      */
-    public List<GroupGeneralModel> getRespongdingGroup(int networkingID) throws NotExistException;
+    public List<GroupGeneralModel> getRespongdingGroup(String networkingID) throws NotExistException;
 
 
 
