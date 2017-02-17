@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import service.MemberService;
+import service.impl.MemberServiceImpl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,6 +16,7 @@ import java.util.Map;
  */
 @Controller
 public class MemberController {
+    MemberService service=new MemberServiceImpl();
     @RequestMapping(value = "/getMembers",method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> getMembers(String id){
@@ -38,12 +41,20 @@ public class MemberController {
     @ResponseBody
     public String findMember(String userName){
         System.out.print(userName);
+//        String avatar=null;
+//        try {
+//            avatar = service.getAvatar(userName);
+//        }catch (NotExistException e){
+//            e.printStackTrace();
+//        }
+//        if(avatar!=null)
+//            return avatar;
         return "../../img/1.png ";
     }
 
     @RequestMapping(value = "/findCode",method =RequestMethod.GET)
     @ResponseBody
     public String findCode(){
-        return "sdsf";
+        return "dfad";
     }
 }
