@@ -56,8 +56,6 @@ public class FellowServiceImplTest {
         privateLetter.setSendTime(Calendar.getInstance().getTime());
         privateLetter.setSenderGroupID("1");
         privateLetter.setReceiverGroupID("2");
-        privateLetter.setSenderGroupName("new media");
-        privateLetter.setReceiverGroupName("student union");
         privateLetter.setContent("lalala~");
         ResultMsg resultMsg = fellowService.saveMessage(privateLetter);
         assertEquals(ResultMsg.SUCCESS, resultMsg);
