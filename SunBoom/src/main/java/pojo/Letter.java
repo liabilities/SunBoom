@@ -13,6 +13,19 @@ public class Letter {
     private int type;
     private String content;
 
+    public Letter(){
+
+    }
+
+    public Letter(model.Letter model){
+        this.letterID = model.getPrivateLetterID_int();
+        this.senderID = model.getSenderGroupID_int();
+        this.receiverID = model.getReceiverGroupID_int();
+        this.time = model.getSendTime_sql();
+        this.type = model.getType();
+        this.content = model.getContent();
+    }
+
     public int getType() {
         return type;
     }

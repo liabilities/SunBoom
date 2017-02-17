@@ -2,12 +2,12 @@ package service.impl;
 
 import dao.FellowDAO;
 import dao.GroupDAO;
-import dao.PrivateLetterDAO;
+import dao.LetterDAO;
 import dao.impl.FellowDAOImpl;
 import dao.impl.GroupDAOImpl;
-import dao.impl.PrivateLetterDAOImpl;
+import dao.impl.LetterDAOImpl;
 import model.GroupModel;
-import model.PrivateLetter;
+import model.Letter;
 import pojo.Fellow;
 import pojo.Group;
 import service.FellowService;
@@ -58,53 +58,51 @@ public class FellowServiceImpl implements FellowService{
         return ss;
     }
 
-    public List<PrivateLetter> getMessageByID(String ID1, String ID2) throws NotExistException{
-        PrivateLetterDAO dao = new PrivateLetterDAOImpl();
-        List<pojo.PrivateLetter> list = dao.findByProperty("senderID",Integer.parseInt(ID1));
-        List<PrivateLetter> res = new ArrayList<PrivateLetter>();
-        for(pojo.PrivateLetter privateLetter : list){
+    public List<Letter> getMessageByID(String ID1, String ID2) throws NotExistException{
+        LetterDAO dao = new LetterDAOImpl();
+        List<pojo.Letter> list = dao.findByProperty("senderID",Integer.parseInt(ID1));
+        List<Letter> res = new ArrayList<Letter>();
+        for(pojo.Letter privateLetter : list){
             if(privateLetter.getReceiverID() == Integer.parseInt(ID2))
-                res.add(new PrivateLetter(privateLetter.getLetterID()+"",privateLetter.getSenderID()+"",
-                privateLetter.getReceiverID()+"",privateLetter.getSenderName()+"",
-                        privateLetter.getSenderName()+"",privateLetter.getTime(),privateLetter.getContent()));
+                res.add(new Letter(privateLetter.getLetterID()+"",privateLetter.getSenderID()+"",
+                privateLetter.getReceiverID()+"",privateLetter.getTime(),
+                        privateLetter.getType(),privateLetter.getContent()));
         }
         return res;
     }
 
-    public PrivateLetter sendMessage(String message, String ID1, String ID2) throws NullException, NotExistException{
+    public Letter sendMessage(String message, String ID1, String ID2) throws NullException, NotExistException{
         GroupDAO dao = new GroupDAOImpl();
-        PrivateLetter privateLetter = new PrivateLetter();
+        Letter privateLetter = new Letter();
         privateLetter.setContent(message);
         privateLetter.setSenderGroupID(ID1);
         privateLetter.setReceiverGroupID(ID2);
-        privateLetter.setSenderGroupName(dao.getById(Integer.parseInt(ID1)).getName());
-        privateLetter.setReceiverGroupName(dao.getById(Integer.parseInt(ID2)).getName());
         privateLetter.setSendTime(Calendar.getInstance().getTime());
         saveMessage(privateLetter);
         return privateLetter;
     }
 
-    public ResultMsg saveMessage(PrivateLetter message) throws NullException{
+    public ResultMsg saveMessage(Letter message) throws NullException{
 
         if(message == null) throw  new NullException();
 
-        PrivateLetterDAO dao = new PrivateLetterDAOImpl();
-        boolean b = dao.insertOne(new pojo.PrivateLetter(message));
+        LetterDAO dao = new LetterDAOImpl();
+        boolean b = dao.insertOne(new pojo.Letter(message));
         if(b) return ResultMsg.SUCCESS;
         return ResultMsg.FAIL;
     }
 
-    public ResultMsg deleteMessage(PrivateLetter message) throws NullException, NotExistException{
+    public ResultMsg deleteMessage(Letter message) throws NullException, NotExistException{
 
         if(message == null) throw  new NullException();
 
-        PrivateLetterDAO dao = new PrivateLetterDAOImpl();
+        LetterDAO dao = new LetterDAOImpl();
         boolean b = dao.deleteOne(Integer.parseInt(message.getPrivateLetterID()));
         if(b) return  ResultMsg.SUCCESS;
         return ResultMsg.FAIL;
     }
 
-    public PrivateLetter transmitMessage(String message, String ID1, String ID2) throws NullException, NotExistException{
+    public Letter transmitMessage(String message, String ID1, String ID2) throws NullException, NotExistException{
         return sendMessage(message, ID1, ID2);
     }
 

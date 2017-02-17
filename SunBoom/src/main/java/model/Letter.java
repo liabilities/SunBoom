@@ -6,7 +6,7 @@ import java.util.Date;
  * 私信
  * Created by lenovo on 2017/1/13.
  */
-public class PrivateLetter {
+public class Letter {
 
     /**
      * 私信ID
@@ -24,37 +24,31 @@ public class PrivateLetter {
     public String receiverGroupID;
 
     /**
-     * 发件团体名称
-     */
-    public String senderGroupName;
-
-    /**
-     * 收件团体名称
-     */
-    public String receiverGroupName;
-
-    /**
      * 发送时间
      */
     public Date sendTime;
+
+    /**
+     * 发送类型
+     */
+    public int type;
 
     /**
      * 消息内容
      */
     public String content;
 
-    public PrivateLetter(){
+    public Letter(){
 
     }
 
-    public PrivateLetter(String privateLetterID,String senderGroupID,String receiverGroupID,
-                         String senderGroupName,String receiverGroupName,Date sendTime,String content){
+    public Letter(String privateLetterID, String senderGroupID, String receiverGroupID,
+                   Date sendTime, int type, String content){
         this.privateLetterID = privateLetterID;
         this.senderGroupID = senderGroupID;
         this.receiverGroupID = receiverGroupID;
-        this.senderGroupName = senderGroupName;
-        this.receiverGroupName = receiverGroupName;
         this.sendTime = sendTime;
+        this.type = type;
         this.content = content;
     }
 
@@ -94,22 +88,6 @@ public class PrivateLetter {
         this.receiverGroupID = receiverGroupID;
     }
 
-    public String getSenderGroupName() {
-        return senderGroupName;
-    }
-
-    public void setSenderGroupName(String senderGroupName) {
-        this.senderGroupName = senderGroupName;
-    }
-
-    public String getReceiverGroupName() {
-        return receiverGroupName;
-    }
-
-    public void setReceiverGroupName(String receiverGroupName) {
-        this.receiverGroupName = receiverGroupName;
-    }
-
     public Date getSendTime() {
         return sendTime;
     }
@@ -120,6 +98,14 @@ public class PrivateLetter {
 
     public void setSendTime(Date sendTime) {
         this.sendTime = sendTime;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 
     public String getContent() {
