@@ -278,15 +278,6 @@
 //                    for(var i=0;i<list.length;i++){
 //                        $("#list").append('<li class="list-group-item">'+list[i]+'</li>')
 //                    }
-<<<<<<< HEAD
-                    var names = data.nickname;
-                    var groupids = data.groupId;
-                    var avatars = data.avatar;
-                    var capitals = data.capital;
-                    for (var i = 0; i < names.length; i++) {
-                        $("#" + capitals[i]).append('<a href="#" class="list-group-item">' +
-                            '<img width="30" height="30" src="../../img/1.png " class="img-circle">' + '+names[i]' + '</a>')
-=======
                     var names=data.nickname;
                     var groupids=data.groupId;
                     var avatars=data.avatar;
@@ -294,7 +285,6 @@
                     for(var i=0;i<names.length;i++){
                         $("#"+capitals[i]).append('<a href="#" class="list-group-item">' +
                             '<img width="30" height="30" src="../../img/1.png " class="img-circle">'+names[i]+'</a>')
->>>>>>> origin/master
                     }
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
