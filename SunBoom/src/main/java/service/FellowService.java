@@ -1,5 +1,6 @@
 package service;
 
+import java.util.Date;
 import java.util.List;
 
 import model.GroupModel;
@@ -39,16 +40,18 @@ public interface FellowService {
     /**
      * 发送信息
      * @param message 信息
+     * @param username1
+     * @param username2
      * @return Letter
      */
-    public Letter sendMessage(String message, String ID1, String ID2) throws NullException, NotExistException;
+    public Date sendMessage(String message, String username1, String username2) throws NullException, NotExistException;
 
     /**
      * 将发送的信息保存到数据库
      * @param message 信息
      * @return ResultMsg
      */
-    public ResultMsg saveMessage(Letter message) throws NullException;
+    public ResultMsg saveChatLog(Letter message) throws NullException;
 
     /**
      * 允许用户删除一条消息
@@ -62,7 +65,7 @@ public interface FellowService {
      * @param message 信息
      * @return Letter
      */
-    public Letter transmitMessage(String message, String ID1, String ID2) throws NullException, NotExistException;
+    public Date transmitMessage(String message, String ID1, String ID2) throws NullException, NotExistException;
 
     /**
      * 增加联系人，根据团体名称查找团体，如果没有相匹配的团体，则提示“团体不存在”

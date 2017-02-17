@@ -10,6 +10,7 @@ import service.impl.FellowServiceImpl;
 import utilities.enums.ResultMsg;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -53,19 +54,19 @@ public class FellowServiceImplTest {
     }
 
     @Test
-    public void testSaveMessage() throws Exception{
+    public void testSaveChatLog() throws Exception{
         Letter privateLetter = new Letter();
         privateLetter.setSendTime(Calendar.getInstance().getTime());
         privateLetter.setSenderGroupID("1");
         privateLetter.setReceiverGroupID("2");
         privateLetter.setContent("lalala~");
-        ResultMsg resultMsg = fellowService.saveMessage(privateLetter);
+        ResultMsg resultMsg = fellowService.saveChatLog(privateLetter);
         assertEquals(ResultMsg.SUCCESS, resultMsg);
     }
 
     @Test
     public void testSendMessage() throws Exception {
-        Letter privateLetter = fellowService.sendMessage("lalalalalaze~","1","0");
+        Date date = fellowService.sendMessage("lalalalalaze~","se@nju","CharlesFeng");
     }
 
     @Test
@@ -78,7 +79,7 @@ public class FellowServiceImplTest {
 
     @Test
     public void testTransmitMessage() throws Exception {
-        Letter privateLetter = fellowService.transmitMessage("lalalalalaze~","1","2");
+        Date date = fellowService.transmitMessage("lalalalalaze~","1","2");
     }
 
     @Test

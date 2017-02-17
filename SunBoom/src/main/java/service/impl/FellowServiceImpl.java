@@ -16,10 +16,7 @@ import utilities.exceptions.NotExistException;
 import utilities.exceptions.NullException;
 import utilities.tool.ChineseToEnglish2;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by lenovo on 2017/2/7.
@@ -84,18 +81,22 @@ public class FellowServiceImpl implements FellowService{
         return res;
     }
 
-    public Letter sendMessage(String message, String ID1, String ID2) throws NullException, NotExistException{
-        GroupDAO dao = new GroupDAOImpl();
+    public Date sendMessage(String message, String username1, String username2) throws NullException, NotExistException{
         Letter privateLetter = new Letter();
         privateLetter.setContent(message);
-        privateLetter.setSenderGroupID(ID1);
-        privateLetter.setReceiverGroupID(ID2);
-        privateLetter.setSendTime(Calendar.getInstance().getTime());
-        saveMessage(privateLetter);
-        return privateLetter;
+
+        GroupDAO dao = new GroupDAOImpl();
+        privateLetter.setSenderGroupID(dao.findByProperty("username",username1).get(0).getGroupID()+"");
+        privateLetter.setReceiverGroupID(dao.findByProperty("username",username2).get(0).getGroupID()+"");
+        Date date = new Date(Calendar.getInstance().getTimeInMillis());
+        privateLetter.setType(1);
+        privateLetter.setSendTime(date);
+        saveChatLog(privateLetter);
+
+        return date;
     }
 
-    public ResultMsg saveMessage(Letter message) throws NullException{
+    public ResultMsg saveChatLog(Letter message) throws NullException{
 
         if(message == null) throw  new NullException();
 
@@ -115,7 +116,7 @@ public class FellowServiceImpl implements FellowService{
         return ResultMsg.FAIL;
     }
 
-    public Letter transmitMessage(String message, String ID1, String ID2) throws NullException, NotExistException{
+    public Date transmitMessage(String message, String ID1, String ID2) throws NullException, NotExistException{
         return sendMessage(message, ID1, ID2);
     }
 

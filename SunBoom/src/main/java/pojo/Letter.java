@@ -18,7 +18,6 @@ public class Letter {
     }
 
     public Letter(model.Letter model){
-        this.letterID = model.getPrivateLetterID_int();
         this.senderID = model.getSenderGroupID_int();
         this.receiverID = model.getReceiverGroupID_int();
         this.time = model.getSendTime_sql();
