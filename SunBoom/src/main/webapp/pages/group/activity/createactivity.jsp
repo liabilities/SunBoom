@@ -163,7 +163,7 @@
 //                    setTab('activity',2,5);
 //                }
 //            })
-            $.post("/gi", {id:"1", state:"0"}, function (data) {
+            $.post("/gi", {id:"0", state:"0"}, function (data) {
                 alert(data);
             })
         })

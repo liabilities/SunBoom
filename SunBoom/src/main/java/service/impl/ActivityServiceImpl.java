@@ -59,18 +59,22 @@ public class ActivityServiceImpl implements ActivityService {
         Date now = Calendar.getInstance().getTime();
 
         List<Activity> findingResult = activityDAO.findByProperty("groupID", Integer.parseInt(groupID));
-        for (Activity thisActivity: findingResult) {
+
+        for (int i = 0; i < findingResult.size(); i++) {
+            Activity thisActivity = findingResult.get(i);
             if (activityState == ActivityState.PREPARING) {
-                if (!thisActivity.getStartTime().before(now)){
-                    findingResult.remove(thisActivity);
+                if (!thisActivity.getStartTime().after(now)){
+                    findingResult.remove(thisActivity);i--;
                 }
             } else if (activityState == ActivityState.UNDERGOING) {
                 if (!(thisActivity.getStartTime().before(now) && thisActivity.getEndTime().after(now))) {
-                    findingResult.remove(thisActivity);
+                    findingResult.remove(thisActivity);i--;
+
                 }
             } else {
                 if (!thisActivity.getEndTime().before(now)) {
-                    findingResult.remove(thisActivity);
+                    findingResult.remove(thisActivity);i--;
+
                 }
             }
         }
