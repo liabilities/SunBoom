@@ -171,7 +171,7 @@
                     var capitals=data.capital;
                     for(var i=0;i<names.length;i++){
                         $("#"+capitals[i]).append('<a href="#" class="list-group-item">' +
-                            '<img width="30" height="30" src="../../img/1.png " class="img-circle">'+'+names[i]'+'</a>')
+                            '<img width="30" height="30" src="../../img/1.png " class="img-circle">'+names[i]+'</a>')
                     }
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {

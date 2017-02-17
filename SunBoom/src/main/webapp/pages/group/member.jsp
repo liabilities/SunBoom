@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: zoetx
@@ -10,7 +11,7 @@
 <head>
     <title>成员</title>
 </head>
-<body>
+<body onload="getMember()">
 
 <link href="/css/table1.css" rel="stylesheet" type="text/css" />
 <%--<link href="/css/searchbox.css" rel="stylesheet" type="text/css" />--%>
@@ -193,7 +194,7 @@
             <br/>
             <br/>
             <input type="text" />
-            <input type="submit" value="查询" name="username"/>
+            <input type="submit" value="查询" name="username" />
         </div>
         <div style="height: 117px">
             <img src="/img/1.png" style="width: 117px;height: 117px">
@@ -228,7 +229,7 @@
             <td>2015-09-20</td>
         </tr>
         <tr>
-            <td>txin</td>
+            <td><a onclick="getMember()">txin</a></td>
             <td>糖心</td>
             <td>txin15@smail.nju.edu.cn</td>
             <td>2016-09-20</td>
@@ -238,9 +239,10 @@
 </div>
 <script src="/js/tablealtrow.js"></script> 
 <script src="/js/divhide.js"></script> 
+<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+<script src="../../js/jquery.js"></script>
 
-
-<script>
+<script type="text/javascript">
     function generating(){
         document.all.mask.style.display="block";
         document.all.mask.style.width=document.body.clientWidth;
@@ -260,6 +262,54 @@
     function Lock_CheckForm2(theForm){
         document.all.mask.style.display='none';document.all.searchforuser.style.display='none';
     }
+
+    function getMember() {
+        $.ajax(
+            {
+                type:"post",
+                url:"/getMembers",
+                data:{id:1},
+            success:function (data) {
+                var userNames=data.userNames;
+                var nickNames=data.nickNames;
+                var mail=data.mails;
+                var inTime=data.inTimes;
+                alert(userNames[0]);
+            },
+            error:function () {
+                alert("error");
+            }
+        }
+        )
+    }
+    
+    function findMember() {
+        $.ajax({
+            type:"post",
+            url:"/findMember",
+            data:{userName:"hehe"},
+            success:function (data) {
+                alert(data);
+            },
+            error:function () {
+                alert("error");
+            }
+        })
+    }
+
+    function getCode() {
+        $.ajax({
+            type:"get",
+            url:"findCode",
+            success:function (data) {
+                alert(data);
+            },
+            error:function () {
+                alert("error");
+            }
+        })
+    }
+
 </script>
 
 </body>
