@@ -1,6 +1,8 @@
 package controller;
 
 import model.GroupModel;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -53,4 +55,17 @@ public class ContactsController {
         }
         return map;
     }
+
+    @RequestMapping(value = "/getLetter" ,method = RequestMethod.POST)
+    @ResponseBody
+    public String getLetter(String id1,String id2){
+        JSONArray array=new JSONArray();
+        JSONObject object=new JSONObject();
+        array.put("1");
+        array.put("2");
+        object.put("letter",array);
+        return object.toString();
+    }
+
+    
 }

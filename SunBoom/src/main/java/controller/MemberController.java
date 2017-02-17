@@ -58,7 +58,14 @@ public class MemberController {
 
     @RequestMapping(value = "/findCode",method =RequestMethod.GET)
     @ResponseBody
-    public String findCode(){
+    public String findCode(String id){
+//        String code;
+//        try {
+//            code = service.generateCode(id);
+//        }catch (NotExistException e){
+//            e.printStackTrace();
+//        }
+//        return code;
         return "dfad";
     }
 }

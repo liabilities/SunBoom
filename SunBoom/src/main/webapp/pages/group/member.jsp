@@ -271,6 +271,8 @@
                 data:{id:1},
                 dataType:"json",
             success:function (memberList) {
+                    var member=memberList.member;
+                    alert(member[0].userName);
             },
             error:function () {
                 alert("error");
@@ -297,6 +299,7 @@
         $.ajax({
             type:"get",
             url:"/findCode",
+            data:{id:1},
             success:function (data) {
                 alert(data);
             },
