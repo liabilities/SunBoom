@@ -18,6 +18,8 @@
 
 <div class="main wrapper cf" style="height: 5px">
 </div>
+
+<form>
 <div class="formtable">
     <table class="tb">
         <tr>
@@ -135,9 +137,10 @@
     </div>
 </div>
 <div class="buttondiv">
-    <input type="submit" value="重置" class="mybutton">
-    <input type="reset" value="提交"class="mybutton" style="margin-left:30px;">
+    <input type="reset" value="重置" class="mybutton">
+    <input type="button" value="提交"class="mybutton" style="margin-left:30px;" onclick="create()">
 </div>
+</form>
 <div class="footpicture">
 </div>
 
@@ -152,9 +155,17 @@
     });
 </script>
 
-
 <script>
-    function check(){
-
+    function create() {
+        $(function () {
+//            $.post("/na", $("form").serialize(), function(data) {
+//                if (data == "1") {
+//                    setTab('activity',2,5);
+//                }
+//            })
+            $.post("/gi", {id:"1", state:"0"}, function (data) {
+                alert(data);
+            })
+        })
     }
 </script>
