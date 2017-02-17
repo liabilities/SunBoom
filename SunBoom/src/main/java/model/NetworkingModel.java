@@ -8,6 +8,8 @@ import java.util.Date;
 /**
  * 数据库中对应的networking表项属性
  * Created by lenovo on 2017/1/13.
+ * Last changed by charles.
+ * Updating time: 2017/2/17.
  */
 public class NetworkingModel {
 

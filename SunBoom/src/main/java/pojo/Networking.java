@@ -7,8 +7,8 @@ import java.util.Date;
 
 /**
  * Created by cuihua on 2017/1/11.
- * Last changed by zoetx.
- * Updating time: 2017/1/31.
+ * Last changed by charles.
+ * Updating time: 2017/2/17.
  */
 public class Networking {
 
