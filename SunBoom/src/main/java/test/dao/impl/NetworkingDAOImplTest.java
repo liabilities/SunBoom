@@ -1,6 +1,6 @@
 package test.dao.impl;
 
-import dao.NetWorkingDAO;
+import dao.NetworkingDAO;
 import dao.ResponsorDAO;
 import dao.impl.NetworkingDAOImpl;
 import dao.impl.ResponsorDAOImpl;
@@ -16,7 +16,7 @@ public class NetworkingDAOImplTest {
 
     @Test
     public void testNetworkingDAOImpl() throws Exception {
-        NetWorkingDAO impl = new NetworkingDAOImpl();
+        NetworkingDAO impl = new NetworkingDAOImpl();
         Networking f = impl.getById(0);
         System.out.print(f.getName());
     }

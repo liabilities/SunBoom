@@ -1,5 +1,6 @@
 package service;
 
+import model.PersonModel;
 import utilities.enums.ResultMsg;
 import utilities.exceptions.NotExistException;
 
@@ -16,6 +17,14 @@ public interface MemberService {
      * @return 成员的昵称列表
      */
     public List<String> getMemberList(String groupID) throws NotExistException;
+
+    /**
+     * 获取成员列表:用户名，昵称，邮箱，加入时间
+     * @param groupID
+     * @return
+     * @throws NotExistException
+     */
+    public List<PersonModel> getMemberListInfo(String groupID) throws NotExistException;
 
     /**
      * 删除成员
@@ -36,5 +45,12 @@ public interface MemberService {
      * @return ResultMsg
      */
     public ResultMsg addMember(String groupID, String personID) throws NotExistException;
+
+    /**
+     * 获取头像
+     * @param personName
+     * @return
+     */
+    public String getAvatar(String personName) throws NotExistException;
 
 }

@@ -116,9 +116,14 @@ public class ActivityModel {
      */
     private int likeNum;
 
+    /**
+     * 推广信息编号
+     */
+    private String promotePath;
+
     public ActivityModel(String activityName,Date activityStartTime,Date activityEndTime,
                          String activityBreif,String activityType,int minScale,Place activityPlace,
-                         String sponsorID,int fellowNum,int likeNum){
+                         String sponsorID,int fellowNum,int likeNum,String promotePath){
         this.activityName = activityName;
         this.activityStartTime = activityStartTime;
         this.activityEndTime = activityEndTime;
@@ -128,6 +133,7 @@ public class ActivityModel {
         this.activityPlace = activityPlace;
         this.fellowNum = fellowNum;
         this.likeNum = likeNum;
+        this.promotePath = promotePath;
 
         this.sponsorID = sponsorID;
         SponsorDAO sponsorDAO = new SponsorDAOImpl();
@@ -153,6 +159,7 @@ public class ActivityModel {
         this.activityPlace = Place.getEnum(activity.getPlace());
         this.fellowNum = activity.getFellowNum();
         this.likeNum = activity.getLikeNum();
+        this.promotePath = activity.getPromotePath();
 
         this.sponsorID = String.valueOf(activity.getSponsorID());
         SponsorDAO sponsorDAO = new SponsorDAOImpl();
@@ -353,5 +360,13 @@ public class ActivityModel {
 
     public void setMaxScale(int maxScale) {
         this.maxScale = maxScale;
+    }
+
+    public String getPromotePath() {
+        return promotePath;
+    }
+
+    public void setPromotePath(String promotePath) {
+        this.promotePath = promotePath;
     }
 }

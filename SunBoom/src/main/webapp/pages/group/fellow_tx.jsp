@@ -102,7 +102,11 @@
 </div>
 
 <div id="nav">
+<<<<<<< HEAD
     <%--<jsp:include page="navigationbar1.jsp"></jsp:include>--%>
+=======
+    <jsp:include page="nav/navigationbar1.jsp"></jsp:include>
+>>>>>>> origin/master
 </div>
 
 <div class="main wrapper cf" id="contact_main">

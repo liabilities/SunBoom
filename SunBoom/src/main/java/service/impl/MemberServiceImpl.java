@@ -4,7 +4,9 @@ import dao.Group2MemberDAO;
 import dao.PersonDAO;
 import dao.impl.Group2MemberDAOImpl;
 import dao.impl.PersonDAOImpl;
+import model.PersonModel;
 import pojo.Group2Member;
+import pojo.Person;
 import service.MemberService;
 import utilities.enums.ResultMsg;
 import utilities.exceptions.NotExistException;
@@ -25,6 +27,22 @@ public class MemberServiceImpl implements MemberService {
         List<String> memberList = new ArrayList<String>();
         for(int i = 0; i < group2Members.size(); i++){
             memberList.add(personDAO.getById(group2Members.get(i).getPersonID()).getNickName());
+        }
+        return memberList;
+    }
+
+    public List<PersonModel> getMemberListInfo(String groupID) throws NotExistException{
+        Group2MemberDAO dao = new Group2MemberDAOImpl();
+        List<Group2Member> group2Members = dao.findByProperty("groupID",Integer.parseInt(groupID));
+        PersonDAO personDAO = new PersonDAOImpl();
+        List<PersonModel> memberList = new ArrayList<PersonModel>();
+        for(int i = 0; i < group2Members.size(); i++){
+            PersonModel model = new PersonModel();
+            model.setUsername(personDAO.getById(group2Members.get(i).getPersonID()).getUsesrname());
+            model.setNickname(personDAO.getById(group2Members.get(i).getPersonID()).getNickName());
+            model.setEmail(personDAO.getById(group2Members.get(i).getPersonID()).getMail());
+            model.setAddTime(group2Members.get(i).getAddTime());
+            memberList.add(model);
         }
         return memberList;
     }
@@ -63,5 +81,13 @@ public class MemberServiceImpl implements MemberService {
         boolean b = dao.insertOne(group2Member);
         if(b) return ResultMsg.SUCCESS;
         return ResultMsg.FAIL;
+    }
+
+    public String getAvatar(String personName) throws NotExistException{
+        PersonDAO personDAO = new PersonDAOImpl();
+        List<Person> list = personDAO.findByProperty("usesrname",personName);
+        if(list.get(0) != null)
+            return list.get(0).getAvatar();
+        return null;
     }
 }

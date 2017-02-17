@@ -1,5 +1,7 @@
 package service;
 
+import model.ActivityTemplateGeneral;
+import model.AxisModel;
 import utilities.enums.ActivityState;
 import utilities.enums.ActivityType;
 import utilities.enums.ResultMsg;
@@ -13,20 +15,21 @@ import java.util.List;
 /**
  * Created by lenovo on 2017/1/13.
  * Last changed by charles.
- * Updating time: 2017/2/8.'
- *
- * TODO EVERYBODY--不知道getActivityHistoryList，getScheme，getActivityList有什么不一样= =
+ * Updating time: 2017/2/16.
  */
 public interface ActivityService {
 
+    /*
+    默认、常用功能
+     */
     /**
-     * 默认显示
+     * 默认显示／活动推广界面获取该团体全部活动
      * @return activity简介的列表
      *
      * Last changed by charles.
-     * Updating time: 2017/2/8.
+     * Updating time: 2017/2/16.
      */
-    public List<ActivityGeneralModel> getActivityHistoryList(String groupID);
+    public List<ActivityGeneralModel> defalutDisplay(String groupID) throws NotExistException;
 
     /**
      * 根据活动ID获取活动详情
@@ -37,12 +40,10 @@ public interface ActivityService {
 
     /**
      * 根据活动ID更新该活动信息
-     * @param activityID 活动ID
-     * @return ResultMsg
-     *
-     * TODO tangxin--???????这个接口？？？？？？
+     * @param activityModel 活动详情载体
+     * @return ResultMsg 是否成功修改
      */
-    public ResultMsg modifyUndergoingAcitivity(String activityID);
+    public ResultMsg modifyAcitivity(ActivityModel activityModel) throws NotExistException;
 
 
 
@@ -51,42 +52,55 @@ public interface ActivityService {
      */
     /**
      * 创建活动
-     * @param activityModel 创建活动
+     * @param activityModel 需创建的活动载体
      * @return ResultMsg
      */
     public ResultMsg createActivity(ActivityModel activityModel);
 
     /**
      * 创建时间轴
-     * @return 时间轴ID
+     * @return 创建的时间轴详情载体
+     *
+     * TODO 接口待确定
+     * Last changed by charles.
+     * Updating time: 2017/2/16.
      */
-    public String createTimeAxis();
+    public AxisModel createTimeAxis();
 
 
 
     /*
-    正在进行、尚未开始、已结束
+    查看：正在进行、尚未开始、已结束
      */
     /**
-     * 根据团体id获取正在进行的活动列表
-     * @param groupID 团队ID
-     * @return activityID的列表
+     *
+     * @param groupID 该团体的编号
+     * @param activityState 要查看的活动状态
+     * @return 该团体特定状态的活动列表
+     * @throws NotExistException
+     *
+     * Last changed by charles.
+     * Updating time: 2017/2/16.
      */
     public List<ActivityGeneralModel> getActivitySpecial(String groupID, ActivityState activityState) throws NotExistException;
 
 
 
     /*
-    Tab03：历史活动、搜索
+    搜索
      */
     /**
      * 根据现有条件搜索显示
      * @param activityName 活动名称
      * @param activityType 活动类型
+     * @param activityState 要查看的活动状态（包括：尚未开始，正在进行，已结束）
      * @param startTime 活动开始时间
      * @return activity简介的列表
+     *
+     * Last changed by charles.
+     * Updating time: 2017/2/16.
      */
-    public List<ActivityGeneralModel> searchActivity(String activityName, ActivityType activityType, Date startTime);
+    public List<ActivityGeneralModel> searchActivity(String activityName, ActivityType activityType, ActivityState activityState, Date startTime);
 
 
 
@@ -94,17 +108,23 @@ public interface ActivityService {
     活动策划
      */
     /**
-     * 获取已有的策划模板列表
-     * @return 策划模板ID列表
+     * 获取已有的可参考的策划模板列表
+     * @return 策划模板简要列表
+     *
+     * Last changed by charles.
+     * Updating time: 2017/2/16.
      */
-    public List<String> getTemplate();
+    public List<ActivityTemplateGeneral> getTemplates();
 
     /**
      * 根据团体ID获取策划列表
      * @param groupID 团队ID
-     * @return 策划ID列表
+     * @return 该团体模板简要列表
+     *
+     * Last changed by charles.
+     * Updating time: 2017/2/16.
      */
-    public List<String> getScheme(String groupID);
+    public List<ActivityTemplateGeneral> myTemplates(String groupID);
 
 
 
@@ -113,22 +133,11 @@ public interface ActivityService {
      */
     /**
      * 根据活动ID推广活动
-     * @param activityID 活动ID
-     * @return ResultMsg
+     * @param activityID 活动编号
+     * @return 是否成功推广
+     *
+     * TODO 接口待确定
      */
     public ResultMsg promoteActivity(String activityID);
-
-
-
-
-    /*
-    !!!!!!!!!!!!!!!
-     */
-    /**
-     * 根据团体ID获取所有活动列表
-     * @param groupID 团队ID
-     * @return 活动ID列表
-     */
-    public List<String> getActivityList(String groupID);
 
 }

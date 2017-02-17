@@ -1,12 +1,8 @@
 package pojo;
 
-import utilities.enums.NetWorkingState;
-import utilities.enums.ParticipantRange;
+import model.NetworkingModel;
 import utilities.enums.Place;
 
-import java.awt.*;
-import java.io.File;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -27,6 +23,7 @@ public class Networking {
     private Date startTime;
     private Date endTime;
     private Date deadline;
+    private Date lastUpdateTime;
     private String introduction;
     private String detailPath;
     private int minScale;
@@ -34,6 +31,26 @@ public class Networking {
     private int presentNum;
     private int responsorNum;
     private int partnerID;
+
+    public Networking(NetworkingModel networkingModel) {
+        this.networkingID = Integer.parseInt(networkingModel.networkingID);
+        this.name = networkingModel.networkingName;
+        this.type = networkingModel.networkingType;
+        this.place = networkingModel.networkingPlace.getRepresentNum();
+        this.groupID = Integer.parseInt(networkingModel.groupID);
+        this.range = networkingModel.range;
+        this.state = networkingModel.state;
+        this.announceTime = networkingModel.announceTime;
+        this.deadline = networkingModel.respondingEndTime;
+        this.startTime = networkingModel.startTime;
+        this.endTime = networkingModel.endTime;
+        this.lastUpdateTime = networkingModel.lastUpdateTime;
+        this.introduction = networkingModel.introduction;
+        this.detailPath = networkingModel.detail;
+        this.minScale = networkingModel.minScale;
+        this.maxScale = networkingModel.maxScale;
+        this.responsorNum = networkingModel.memberNum;
+    }
 
     public int getNetworkingID() {
         return networkingID;
@@ -121,6 +138,14 @@ public class Networking {
 
     public void setDeadline(Date deadline) {
         this.deadline = deadline;
+    }
+
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
+    }
+
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
     public String getIntroduction() {

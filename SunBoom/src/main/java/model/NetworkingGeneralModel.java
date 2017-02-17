@@ -1,5 +1,7 @@
 package model;
 
+import pojo.Networking;
+
 import java.util.Date;
 
 /**
@@ -22,5 +24,14 @@ public class NetworkingGeneralModel {
         this.memberNum = memberNum;
         this.groupID = groupID;
         this.introduction = introduction;
+    }
+
+    public NetworkingGeneralModel(Networking networking) {
+        this.networkingID = String.valueOf(networking.getNetworkingID());
+        this.networkingName = networking.getName();
+        this.startTime = networking.getStartTime();
+        this.memberNum = networking.getPresentNum();
+        this.groupID = String.valueOf(networking.getGroupID());
+        this.introduction = networking.getIntroduction();
     }
 }

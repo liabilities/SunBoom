@@ -4,6 +4,8 @@ import dao.ActivityDAO;
 import dao.impl.ActivityDAOImpl;
 import model.ActivityGeneralModel;
 import model.ActivityModel;
+import model.ActivityTemplateGeneral;
+import model.AxisModel;
 import pojo.Activity;
 import service.ActivityService;
 import utilities.enums.ActivityState;
@@ -27,18 +29,21 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
 
-    // TODO 待议
-    public List<ActivityGeneralModel> getActivityHistoryList(String groupID) {
-        return null;
+    public List<ActivityGeneralModel> defalutDisplay(String groupID) throws NotExistException {
+        return convertListPo2GeneralModel(activityDAO.findByProperty("groupID", groupID));
     }
 
     public ActivityModel getActivityDetail(String activityID) throws NotExistException {
         return new ActivityModel(activityDAO.getById(activityID));
     }
 
-    public ResultMsg modifyUndergoingAcitivity(String activityID) {
-        return null;
+    public ResultMsg modifyAcitivity(ActivityModel activityModel) throws NotExistException {
+        Activity activity = new Activity(activityModel);
+        boolean result = activityDAO.updateOne(activity);
+        if(result) return ResultMsg.SUCCESS;
+        else return ResultMsg.FAIL;
     }
+
 
     public ResultMsg createActivity(ActivityModel activityModel) {
         Activity activity = new Activity(activityModel);
@@ -48,7 +53,7 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     // TODO Charles--不知实现
-    public String createTimeAxis() {
+    public AxisModel createTimeAxis() {
         return null;
     }
 
@@ -75,30 +80,27 @@ public class ActivityServiceImpl implements ActivityService {
         return convertListPo2GeneralModel(findingResult);
     }
 
-    // TODO 不清楚要干嘛
-    public List<ActivityGeneralModel> searchActivity(String activityName, ActivityType activityType, Date startTime) {
+    // TODO Charles--等确定了再写
+    public List<ActivityGeneralModel> searchActivity(String activityName, ActivityType activityType, ActivityState activityState, Date startTime) {
         return null;
     }
 
-    // TODO 不知道要干嘛
-    public List<String> getTemplate() {
+    // TODO 策划模版这个东西是啥。。
+    public List<ActivityTemplateGeneral> getTemplates() {
         return null;
     }
 
-    // TODO 待议
-    public List<String> getScheme(String groupID) {
+    // TODO 策划模版这个东西是啥。。
+    public List<ActivityTemplateGeneral> myTemplates(String groupID) {
         return null;
     }
 
-    // TODO 不知道要干嘛
+    // TODO 不知道具体要干嘛
     public ResultMsg promoteActivity(String activityID) {
         return null;
     }
 
-    // TODO 待议
-    public List<String> getActivityList(String groupID) {
-        return null;
-    }
+
 
     private List<ActivityGeneralModel> convertListPo2GeneralModel(List<Activity> thisActivitiesList) {
         List<ActivityGeneralModel> result = new LinkedList<ActivityGeneralModel>();

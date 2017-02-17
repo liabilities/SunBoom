@@ -1,5 +1,6 @@
 package test.service.impl;
 
+import model.PersonModel;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,6 +35,12 @@ public class MemberServiceImplTest {
     }
 
     @Test
+    public void testGetMemberListInfo() throws Exception{
+        List<PersonModel> lists = memberService.getMemberListInfo("0");
+        assertEquals("zoe",lists.get(0).getUsername());
+    }
+
+    @Test
     public void testAddMember() throws Exception {
         ResultMsg resultMsg = memberService.addMember("0","1");
         assertEquals(ResultMsg.SUCCESS, resultMsg);
@@ -49,5 +56,11 @@ public class MemberServiceImplTest {
     public void testDeleteMember() throws Exception {
         ResultMsg resultMsg = memberService.deleteMember("0","txin");
         assertEquals(ResultMsg.SUCCESS, resultMsg);
+    }
+
+    @Test
+    public void testGetAvatar() throws Exception{
+        String s = memberService.getAvatar("zoe");
+        assertEquals("zoe.jpg",s);
     }
 }

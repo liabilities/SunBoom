@@ -51,6 +51,9 @@
         <property name="likeNum">
             <column name="likeNum" sql-type="int"/>
         </property>
+        <property name="promotePath">
+            <column name="promotePath" sql-type="varchar(255)"/>
+        </property>
 
     </class>
 </hibernate-mapping>
