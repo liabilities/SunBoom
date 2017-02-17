@@ -35,9 +35,10 @@ public interface MemberService {
 
     /**
      * 生成邀请码
+     * @param groupID
      * @return 8位乱码邀请码
      */
-    public String generateCode();
+    public String generateCode(String groupID) throws NotExistException;
 
     /**
      * 添加成员
@@ -45,5 +46,12 @@ public interface MemberService {
      * @return ResultMsg
      */
     public ResultMsg addMember(String groupID, String personID) throws NotExistException;
+
+    /**
+     * 获取头像
+     * @param personName
+     * @return
+     */
+    public String getAvatar(String personName) throws NotExistException;
 
 }

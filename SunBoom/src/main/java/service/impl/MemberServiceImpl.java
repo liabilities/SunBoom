@@ -1,17 +1,22 @@
 package service.impl;
 
+import dao.CodeDAO;
 import dao.Group2MemberDAO;
 import dao.PersonDAO;
+import dao.impl.CodeDAOImpl;
 import dao.impl.Group2MemberDAOImpl;
 import dao.impl.PersonDAOImpl;
 import model.PersonModel;
+import pojo.Code;
 import pojo.Group2Member;
+import pojo.Person;
 import service.MemberService;
 import utilities.enums.ResultMsg;
 import utilities.exceptions.NotExistException;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -60,9 +65,19 @@ public class MemberServiceImpl implements MemberService {
         return ResultMsg.FAIL;
     }
 
-    public String generateCode() {
+    public String generateCode(String groupID) throws NotExistException{
         Calendar calendar = Calendar.getInstance();
         int timeUpToDate = (int)(calendar.getTimeInMillis()/1000);
+        String s = Integer.toHexString(timeUpToDate);
+
+        CodeDAO dao = new CodeDAOImpl();
+
+        Code code = new Code();
+        code.setGroupID(Integer.parseInt(groupID));
+        code.setDdl(new Date(calendar.getTimeInMillis()+120000));
+        code.setCode(s);
+
+        dao.insertOne(code);
         return Integer.toHexString(timeUpToDate);
     }
 
@@ -80,5 +95,13 @@ public class MemberServiceImpl implements MemberService {
         boolean b = dao.insertOne(group2Member);
         if(b) return ResultMsg.SUCCESS;
         return ResultMsg.FAIL;
+    }
+
+    public String getAvatar(String personName) throws NotExistException{
+        PersonDAO personDAO = new PersonDAOImpl();
+        List<Person> list = personDAO.findByProperty("usesrname",personName);
+        if(list.get(0) != null)
+            return list.get(0).getAvatar();
+        return null;
     }
 }

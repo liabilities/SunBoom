@@ -48,7 +48,7 @@ public class MemberServiceImplTest {
 
     @Test
     public void testGenerateCode() throws Exception {
-        String s = memberService.generateCode();
+        String s = memberService.generateCode("1");
         assertEquals(8, s.length());
     }
 
@@ -56,5 +56,11 @@ public class MemberServiceImplTest {
     public void testDeleteMember() throws Exception {
         ResultMsg resultMsg = memberService.deleteMember("0","txin");
         assertEquals(ResultMsg.SUCCESS, resultMsg);
+    }
+
+    @Test
+    public void testGetAvatar() throws Exception{
+        String s = memberService.getAvatar("zoe");
+        assertEquals("zoe.jpg",s);
     }
 }
