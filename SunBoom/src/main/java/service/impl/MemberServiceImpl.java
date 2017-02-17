@@ -1,10 +1,13 @@
 package service.impl;
 
+import dao.CodeDAO;
 import dao.Group2MemberDAO;
 import dao.PersonDAO;
+import dao.impl.CodeDAOImpl;
 import dao.impl.Group2MemberDAOImpl;
 import dao.impl.PersonDAOImpl;
 import model.PersonModel;
+import pojo.Code;
 import pojo.Group2Member;
 import pojo.Person;
 import service.MemberService;
@@ -13,6 +16,7 @@ import utilities.exceptions.NotExistException;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -61,9 +65,16 @@ public class MemberServiceImpl implements MemberService {
         return ResultMsg.FAIL;
     }
 
-    public String generateCode() {
+    public String generateCode(String groupID) throws NotExistException{
+        CodeDAO dao = new CodeDAOImpl();
         Calendar calendar = Calendar.getInstance();
         int timeUpToDate = (int)(calendar.getTimeInMillis()/1000);
+        Code code = new Code();
+        String s = Integer.toHexString(timeUpToDate);
+        code.setCode(s);
+        code.setDdl(new Date(calendar.getTimeInMillis()+120000));
+        code.setGroupID(Integer.parseInt(groupID));
+        dao.insertOne(code);
         return Integer.toHexString(timeUpToDate);
     }
 
