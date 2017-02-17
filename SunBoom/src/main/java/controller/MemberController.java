@@ -41,9 +41,9 @@ public class MemberController {
         return "../../img/1.png ";
     }
 
-    @RequestMapping(value = "/findCode",method =RequestMethod.POST)
+    @RequestMapping(value = "/findCode",method =RequestMethod.GET)
     @ResponseBody
     public String findCode(){
-        return "";
+        return "sdsf";
     }
 }

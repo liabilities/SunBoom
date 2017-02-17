@@ -229,7 +229,7 @@
             <td>2015-09-20</td>
         </tr>
         <tr>
-            <td><a onclick="getMember()">txin</a></td>
+            <td><a onclick="getCode()">txin</a></td>
             <td>糖心</td>
             <td>txin15@smail.nju.edu.cn</td>
             <td>2016-09-20</td>
@@ -300,7 +300,7 @@
     function getCode() {
         $.ajax({
             type:"get",
-            url:"findCode",
+            url:"/findCode",
             success:function (data) {
                 alert(data);
             },
