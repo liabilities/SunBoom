@@ -6,6 +6,7 @@ import dao.impl.Group2MemberDAOImpl;
 import dao.impl.PersonDAOImpl;
 import model.PersonModel;
 import pojo.Group2Member;
+import pojo.Person;
 import service.MemberService;
 import utilities.enums.ResultMsg;
 import utilities.exceptions.NotExistException;
@@ -80,5 +81,13 @@ public class MemberServiceImpl implements MemberService {
         boolean b = dao.insertOne(group2Member);
         if(b) return ResultMsg.SUCCESS;
         return ResultMsg.FAIL;
+    }
+
+    public String getAvatar(String personName) throws NotExistException{
+        PersonDAO personDAO = new PersonDAOImpl();
+        List<Person> list = personDAO.findByProperty("usesrname",personName);
+        if(list.get(0) != null)
+            return list.get(0).getAvatar();
+        return null;
     }
 }

@@ -57,4 +57,10 @@ public class MemberServiceImplTest {
         ResultMsg resultMsg = memberService.deleteMember("0","txin");
         assertEquals(ResultMsg.SUCCESS, resultMsg);
     }
+
+    @Test
+    public void testGetAvatar() throws Exception{
+        String s = memberService.getAvatar("zoe");
+        assertEquals("zoe.jpg",s);
+    }
 }

@@ -46,4 +46,11 @@ public interface MemberService {
      */
     public ResultMsg addMember(String groupID, String personID) throws NotExistException;
 
+    /**
+     * 获取头像
+     * @param personName
+     * @return
+     */
+    public String getAvatar(String personName) throws NotExistException;
+
 }
