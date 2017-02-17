@@ -6,7 +6,7 @@ import java.util.Date;
  * 私信
  * Created by lenovo on 2017/1/13.
  */
-public class Letter {
+public class Letter implements Comparable{
 
     /**
      * 私信ID
@@ -114,5 +114,10 @@ public class Letter {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public int compareTo(Object o) {
+        Letter letter = (Letter)o;
+        return this.getSendTime().compareTo(letter.getSendTime());
     }
 }

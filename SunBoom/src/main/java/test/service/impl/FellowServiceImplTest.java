@@ -45,9 +45,11 @@ public class FellowServiceImplTest {
     }
 
     @Test
-    public void testGetMessageByID() throws Exception {
-        List<Letter> list = fellowService.getMessageByID("1","2");
-        assertEquals("hello my friend",list.get(0).getContent());
+    public void testGetChatLog() throws Exception {
+        List<Letter> list = fellowService.getChatLog("se@nju","CharlesFeng");
+        assertEquals("Guten Abend!",list.get(0).getContent());
+        assertEquals("Hey!",list.get(1).getContent());
+        assertEquals("pu",list.get(2).getContent());
     }
 
     @Test

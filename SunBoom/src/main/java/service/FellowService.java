@@ -26,15 +26,15 @@ public interface FellowService {
      * @param groupID 团体id
      * @return List<String> userID的列表
      */
-    public List<String> getFellowList(String groupID)  throws NotExistException;
+    public List<String> getFellowList(String groupID) throws NotExistException;
 
     /**
-     * 根据两个团体的id获取他们之间的对话信息
-     * @param ID1 团体id1
-     * @param ID2 团体id2
+     * 根据两个团体的username获取他们之间的对话信息
+     * @param username1 团体1
+     * @param username2 团体2
      * @return 会话信息的列表
      */
-    public List<Letter> getMessageByID(String ID1, String ID2) throws NotExistException;
+    public List<Letter> getChatLog(String username1, String username2) throws NotExistException;
 
     /**
      * 发送信息

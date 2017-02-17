@@ -58,16 +58,29 @@ public class FellowServiceImpl implements FellowService{
         return ss;
     }
 
-    public List<Letter> getMessageByID(String ID1, String ID2) throws NotExistException{
+    public List<Letter> getChatLog(String username1, String username2) throws NotExistException{
         LetterDAO dao = new LetterDAOImpl();
-        List<pojo.Letter> list = dao.findByProperty("senderID",Integer.parseInt(ID1));
+        GroupDAO groupDAO = new GroupDAOImpl();
+
+        List<pojo.Letter> list = dao.findByProperty("senderID",groupDAO.findByProperty("username",username1).get(0).getGroupID());
         List<Letter> res = new ArrayList<Letter>();
         for(pojo.Letter privateLetter : list){
-            if(privateLetter.getReceiverID() == Integer.parseInt(ID2))
+            if(privateLetter.getReceiverID() == groupDAO.findByProperty("username",username2).get(0).getGroupID())
                 res.add(new Letter(privateLetter.getLetterID()+"",privateLetter.getSenderID()+"",
                 privateLetter.getReceiverID()+"",privateLetter.getTime(),
                         privateLetter.getType(),privateLetter.getContent()));
         }
+
+        list = dao.findByProperty("senderID",groupDAO.findByProperty("username",username2).get(0).getGroupID());
+        for(pojo.Letter privateLetter : list){
+            if(privateLetter.getReceiverID() == groupDAO.findByProperty("username",username1).get(0).getGroupID())
+                res.add(new Letter(privateLetter.getLetterID()+"",privateLetter.getSenderID()+"",
+                        privateLetter.getReceiverID()+"",privateLetter.getTime(),
+                        privateLetter.getType(),privateLetter.getContent()));
+        }
+
+        Collections.sort(res);
+
         return res;
     }
 
