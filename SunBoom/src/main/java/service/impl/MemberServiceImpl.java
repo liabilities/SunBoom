@@ -66,14 +66,17 @@ public class MemberServiceImpl implements MemberService {
     }
 
     public String generateCode(String groupID) throws NotExistException{
-        CodeDAO dao = new CodeDAOImpl();
         Calendar calendar = Calendar.getInstance();
         int timeUpToDate = (int)(calendar.getTimeInMillis()/1000);
-        Code code = new Code();
         String s = Integer.toHexString(timeUpToDate);
-        code.setCode(s);
-        code.setDdl(new Date(calendar.getTimeInMillis()+120000));
+
+        CodeDAO dao = new CodeDAOImpl();
+
+        Code code = new Code();
         code.setGroupID(Integer.parseInt(groupID));
+        code.setDdl(new Date(calendar.getTimeInMillis()+120000));
+        code.setCode(s);
+
         dao.insertOne(code);
         return Integer.toHexString(timeUpToDate);
     }

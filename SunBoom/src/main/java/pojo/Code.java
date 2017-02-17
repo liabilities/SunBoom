@@ -36,7 +36,6 @@ public class Code {
         this.groupID = groupID;
     }
 
-
     public Date getDdl() {
         return ddl;
     }

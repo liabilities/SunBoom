@@ -48,7 +48,7 @@ public class MemberServiceImplTest {
 
     @Test
     public void testGenerateCode() throws Exception {
-        String s = memberService.generateCode();
+        String s = memberService.generateCode("1");
         assertEquals(8, s.length());
     }
 

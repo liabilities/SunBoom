@@ -16,7 +16,7 @@
             <column name="groupID" sql-type="int"/>
         </property>
         <property name="ddl">
-            <column name="ddl" sql-type="int"/>
+            <column name="ddl" sql-type="datetime"/>
         </property>
 
 
