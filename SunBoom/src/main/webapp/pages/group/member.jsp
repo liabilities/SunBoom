@@ -264,9 +264,9 @@
                     str+=" <tr><th>用户名</th><th>昵称</th><th>邮箱</th><th>加入时间</th></tr>";
                     for(i in member){
                         if(i%2==0)
-                            str+="<tr style=\"background-color:#d4e3e5\"><td class=\"username-to-select\" href=\"/pages/group/activity/displayactivity.jsp\">"+member[i].userName+"</td><td>"+member[i].nickName+"</td><td>"+member[i].email+"</td><td>"+member[i].time+"</td></tr>";
+                            str+="<tr style=\"background-color:#d4e3e5\"><td class=\"username-to-select\">"+member[i].userName+"</td><td>"+member[i].nickName+"</td><td>"+member[i].email+"</td><td>"+member[i].time+"</td></tr>";
                         else
-                            str+="<tr style=\"background-color:#c3dde0\"><td class=\"username-to-select\" href=\"/pages/group/activity/displayactivity.jsp\">"+member[i].userName+"</td><td>"+member[i].nickName+"</td><td>"+member[i].email+"</td><td>"+member[i].time+"</td></tr>";
+                            str+="<tr style=\"background-color:#c3dde0\"><td class=\"username-to-select\">"+member[i].userName+"</td><td>"+member[i].nickName+"</td><td>"+member[i].email+"</td><td>"+member[i].time+"</td></tr>";
                     }
                     str+="</table>"
                     $("#list").html(str);
