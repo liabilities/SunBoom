@@ -39,6 +39,9 @@
         <property name="deadline">
             <column name="deadline" sql-type="date"/>
         </property>
+        <property name="lastUpdateTime">
+            <column name="lastUpdateTime" sql-type="date"/>
+        </property>
         <property name="introduction">
             <column name="introduction" sql-type="varchar(255)"/>
         </property>

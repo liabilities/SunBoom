@@ -1,5 +1,6 @@
 package test.service.impl;
 
+import model.PersonModel;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,6 +32,12 @@ public class MemberServiceImplTest {
     public void testGetMemberList() throws  Exception{
         List<String> lists = memberService.getMemberList("0");
         assertEquals("txt",lists.get(0));
+    }
+
+    @Test
+    public void testGetMemberListInfo() throws Exception{
+        List<PersonModel> lists = memberService.getMemberListInfo("0");
+        assertEquals("zoe",lists.get(0).getUsername());
     }
 
     @Test
