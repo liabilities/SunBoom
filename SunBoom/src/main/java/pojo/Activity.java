@@ -2,49 +2,121 @@ package pojo;
 
 import model.ActivityModel;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Created by zoetx on 2017/1/12.
+ * Last changed by charles.
+ * Updating time: 2017/2/17.
  */
 public class Activity {
+
+    /**
+     * 活动ID
+     */
     private int activityID;
+
+    /**
+     * 发起团队ID
+     */
     private int groupID;
+
+    /**
+     * 活动名称
+     */
     private String name;
+
+    /**
+     * 发起人ID
+     */
     private int initiatorID;
+
+    /**
+     * 发起人类型
+     */
     private int initiatorType;
+
+    /**
+     * 活动最小规模
+     */
     private int minScale;
+
+    /**
+     * 活动最大规模
+     */
     private int maxScale;
+
+    /**
+     * 活动类型
+     */
     private String type;
+
+    /**
+     * 活动地点类型
+     */
     private int place;
+
+    /**
+     * 活动开始时间
+     */
     private Date startTime;
+
+    /**
+     * 活动结束时间
+     */
     private Date endTime;
+
+    /**
+     * 活动一句话简介
+     */
+    private String brief;
+
+    /**
+     * 活动详情路径
+     */
     private String detailPath;
+
+    /**
+     * 赞助详情ID
+     */
     private int sponsorID;
+
+    /**
+     * 关注人数
+     */
     private int fellowNum;
+
+    /**
+     * 点赞人数
+     */
     private int likeNum;
+
+    /**
+     * 推广信息路径
+     */
     private String promotePath;
 
     public Activity(){}
+
     public Activity(ActivityModel activityModel){
-        this.activityID = activityModel.getActivityID_int();
-        this.groupID = activityModel.getGroupID_int();
-        this.name = activityModel.activityName;
-        this.initiatorID = activityModel.getInitiatorID_int();
-        this.initiatorType = activityModel.getInitiatorType_int();
+        this.activityID = Integer.parseInt(activityModel.activityID);
+        this.groupID = Integer.parseInt(activityModel.groupID);
+        this.name = activityModel.name;
+        this.initiatorID = Integer.parseInt(activityModel.initiatorID);
+        this.initiatorType = activityModel.initiatorType.getRepresentNum();
         this.minScale = activityModel.minScale;
         this.maxScale = activityModel.maxScale;
-        this.type = activityModel.activityType;
-        this.place = activityModel.getActivityPlace_int();
-        this.startTime = activityModel.getActivityStartTime_sql();
-        this.endTime = activityModel.getActivityEndTime_sql();
-        this.detailPath = activityModel.activityBreif;
-        this.sponsorID = activityModel.getSponsorID_int();
-        this.fellowNum = activityModel.getFellowNum();
-        this.likeNum = activityModel.getLikeNum();
-        this.promotePath = activityModel.getPromotePath();
+        this.type = activityModel.type;
+        this.place = activityModel.place.getRepresentNum();
+        this.startTime = activityModel.startTime;
+        this.endTime = activityModel.endTime;
+        this.brief = activityModel.brief;
+        this.detailPath = activityModel.detailPath;
+        this.sponsorID = Integer.parseInt(activityModel.sponsorID);
+        this.fellowNum = activityModel.fellowNum;
+        this.likeNum = activityModel.likeNum;
+        this.promotePath = activityModel.promotePath;
     }
-
 
     public int getActivityID() {
         return activityID;
@@ -132,6 +204,14 @@ public class Activity {
 
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
+    }
+
+    public String getBrief() {
+        return brief;
+    }
+
+    public void setBrief(String brief) {
+        this.brief = brief;
     }
 
     public String getDetailPath() {

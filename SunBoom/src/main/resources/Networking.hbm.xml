@@ -36,14 +36,17 @@
         <property name="endTime">
             <column name="endTime" sql-type="date"/>
         </property>
-        <property name="deadline">
-            <column name="deadline" sql-type="date"/>
+        <property name="respondingDeadline">
+            <column name="RespondingDeadline" sql-type="date"/>
         </property>
         <property name="lastUpdateTime">
             <column name="lastUpdateTime" sql-type="date"/>
         </property>
         <property name="introduction">
             <column name="introduction" sql-type="varchar(255)"/>
+        </property>
+        <property name="introPhotoPath">
+            <column name="introPhotoPath" sql-type="varchar(255)"/>
         </property>
         <property name="detailPath">
             <column name="detailPath" sql-type="varchar(255)"/>
@@ -54,8 +57,8 @@
         <property name="maxScale">
             <column name="maxScale" sql-type="int"/>
         </property>
-        <property name="presentNum">
-            <column name="presentNum" sql-type="int"/>
+        <property name="presentHostNum">
+            <column name="presentHostNum" sql-type="int"/>
         </property>
         <property name="responsorNum">
             <column name="responsorNum" sql-type="int"/>
