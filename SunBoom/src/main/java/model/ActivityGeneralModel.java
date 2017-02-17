@@ -39,12 +39,24 @@ public class ActivityGeneralModel {
      */
     public Place place;
 
-    public ActivityGeneralModel(String name, Date startTime, String brief, String type, Place place){
+    /**
+     * 活动最小规模
+     */
+    public int minScale;
+
+    /**
+     * 活动最大规模
+     */
+    public int maxScale;
+
+    public ActivityGeneralModel(String name, Date startTime, String brief, String type, Place place, int minScale, int maxScale) {
         this.name = name;
         this.startTime = startTime;
         this.brief = brief;
         this.type = type;
         this.place = place;
+        this.minScale = minScale;
+        this.maxScale = maxScale;
     }
 
     public ActivityGeneralModel(Activity activity){
@@ -53,5 +65,7 @@ public class ActivityGeneralModel {
         this.brief = activity.getDetailPath();
         this.type = activity.getType();
         this.place = Place.getEnum(activity.getPlace());
+        this.minScale = activity.getMinScale();
+        this.maxScale = activity.getMaxScale();
     }
 }
