@@ -171,7 +171,7 @@ public class ActivityModel {
         this.place = Place.getEnum(activity.getPlace());
         this.startTime = activity.getStartTime();
         this.endTime = activity.getEndTime();
-        this.brief = activity.getBreif();
+        this.brief = activity.getBrief();
         this.detailPath = activity.getDetailPath();
         this.fellowNum = activity.getFellowNum();
         this.likeNum = activity.getLikeNum();

@@ -17,42 +17,41 @@ public class ActivityGeneralModel {
     /**
      * 活动名称
      */
-    public String activityName;
+    public String name;
 
     /**
      * 活动开始时间
      */
-    public Date activityStartTime;
+    public Date startTime;
 
     /**
      * 活动简介
      */
-    public String activityBreif;
+    public String brief;
 
     /**
      * 活动类型
      */
-    public String activityType;
+    public String type;
 
     /**
      * 活动地点
      */
-    public Place activityPlace;
+    public Place place;
 
-    public ActivityGeneralModel(String activityName,Date activityStartTime,
-                         String activityBreif,String activityType,Place activityPlace){
-        this.activityName = activityName;
-        this.activityStartTime = activityStartTime;
-        this.activityBreif = activityBreif;
-        this.activityType = activityType;
-        this.activityPlace = activityPlace;
+    public ActivityGeneralModel(String name, Date startTime, String brief, String type, Place place){
+        this.name = name;
+        this.startTime = startTime;
+        this.brief = brief;
+        this.type = type;
+        this.place = place;
     }
 
     public ActivityGeneralModel(Activity activity){
-        this.activityName = activity.getName();
-        this.activityStartTime = activity.getStartTime();
-        this.activityBreif = activity.getDetailPath();
-        this.activityType = activity.getType();
-        this.activityPlace = Place.getEnum(activity.getPlace());
+        this.name = activity.getName();
+        this.startTime = activity.getStartTime();
+        this.brief = activity.getDetailPath();
+        this.type = activity.getType();
+        this.place = Place.getEnum(activity.getPlace());
     }
 }
