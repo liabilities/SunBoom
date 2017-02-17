@@ -51,8 +51,13 @@ body,div,a{
 }
 #content{
     height:100%;
-    background-color: #aff5ef;
+    background-color: #e5f5ea;
 }
+
+#content_father{
+    background-color: #e5f5ea;
+}
+
 #message_tool{
     width:100%;
     height:5%;
@@ -99,3 +104,49 @@ body,div,a{
     margin-top: 6px;
 }
 
+#send_box{
+    width: 672px;
+    height: 110px;
+    max-height: 110px;
+    max-width: 672px;
+    resize: none;
+}
+
+.content_left{
+    width: 100%;
+    float: left;
+    margin-left: 20px;
+}
+
+.content_left_name{
+    color: #95a4ef;
+    font-family: "Century Gothic", "微软雅黑 Light";
+    font-size: 12px;
+}
+
+.content_left_text{
+    color: #233333;
+    font-family: "Century Gothic", "微软雅黑 Light";
+    font-size: 12px;
+}
+
+.content_right{
+    margin-right: 20px;
+    float: right;
+}
+
+.content_right_name{
+    color: #99c36e;
+    font-family: "Century Gothic", "微软雅黑 Light";
+    font-size: 12px;
+}
+
+.content_right_text{
+    color: #233333;
+    font-family: "Century Gothic", "微软雅黑 Light";
+    font-size: 12px;
+}
+
+.chat_record{
+    float: left;S
+}
