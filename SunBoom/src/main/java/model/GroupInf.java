@@ -7,12 +7,16 @@ package model;
 public class GroupInf {
     private String groupID;
     private String schoolID;
+    //官方名称
     private String name;
+    //账号名称
+    private String userName;
 
-    public GroupInf(String groupID, String schoolID, String name) {
+    public GroupInf(String groupID, String schoolID, String name, String userName) {
         this.groupID = groupID;
         this.schoolID = schoolID;
         this.name = name;
+        this.userName = userName;
     }
 
     public String getGroupID() {
@@ -37,5 +41,23 @@ public class GroupInf {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    @Override
+    public String toString() {
+        return "GroupInf{" +
+                "groupID='" + groupID + '\'' +
+                ", schoolID='" + schoolID + '\'' +
+                ", name='" + name + '\'' +
+                ", userName='" + userName + '\'' +
+                '}';
     }
 }
