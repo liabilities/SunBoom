@@ -5,6 +5,6 @@ package utilities.enums;
  */
 public enum ActivitySearchCriteria {
 
-    // 名称，发起者类型，活动类型，活动地点类型
-    NAME, INITIATOR_TYPE, TYPE, PLACE;
+    // 名称，发起者类型，活动类型，活动地点类型，目标时间区间
+    NAME, INITIATOR_TYPE, TYPE, PLACE, TIME_SPAN;
 }
