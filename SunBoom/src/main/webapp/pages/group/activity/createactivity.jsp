@@ -67,6 +67,16 @@
         </tr>
         <tr>
             <td class="white">
+                一句话简介
+            </td>
+            <td  class="tb">
+                <input id="invitation" class="myinput" type="text" name="initiator">
+                <div id="invi-div" style="display:inline">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="white">
                 发起者类型
             </td>
             <td class="tb">
