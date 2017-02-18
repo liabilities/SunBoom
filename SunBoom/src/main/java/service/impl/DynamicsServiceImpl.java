@@ -79,14 +79,18 @@ public class DynamicsServiceImpl implements DynamicsService {
             temp = new Dynamic(dynamic);
             temp.setGroupname(groupname);
             temp.setAvatar(group.getAvatar());
-            List<String> pictures = new ArrayList<String>(dynamic.getPictureNum());
 
-            //
+            if(dynamic.getPictureNum() != 0){
+                List<String> pictures = new ArrayList<String>(dynamic.getPictureNum());
+                temp.setPictures(pictures);
+            }else{
+                temp.setPictures(null);
+            }
 
-            temp.setPictures(pictures);
             comments = new DynamicsServiceImpl().getDynamicComment(dynamic.getDynamicID()+"");
             Collections.sort(comments);
             temp.setComments(comments);
+
             list.add(temp);
         }
 
@@ -117,7 +121,7 @@ public class DynamicsServiceImpl implements DynamicsService {
         List<DynamicComment> list = new ArrayList<DynamicComment>();
         DynamicCommentDAO dynamicCommentDAO = new DynamicCommentDAOImpl();
         GroupDAO groupDAO = new GroupDAOImpl();
-        List<pojo.DynamicComment> lists = dynamicCommentDAO.findByProperty("dynamicID",dynamicID);
+        List<pojo.DynamicComment> lists = dynamicCommentDAO.findByProperty("dynamicID",Integer.parseInt(dynamicID));
         DynamicComment com;
         for(pojo.DynamicComment comment : lists){
             com = new DynamicComment(comment);
