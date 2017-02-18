@@ -5,6 +5,8 @@ import dao.impl.ActivityDAOImpl;
 import model.*;
 import pojo.Activity;
 import service.activityService.ActivityService;
+import service.activityService.activityScan.search.SearchCriteriaFactory;
+import service.activityService.activityScan.sortComparator.SortComparatorFactory;
 import utilities.enums.*;
 import utilities.exceptions.NotExistException;
 
@@ -78,14 +80,25 @@ public class ActivityServiceImpl implements ActivityService {
         return convertListPo2GeneralModel(findingResult);
     }
 
-    // TODO Charles--等确定了再写
     public List<Activity> searchActivities(List<ActivitySearchCriteria> activitySearchCriterias, ActivitySearchCreteriaModel activitySearchCreteriaModel) {
-        return null;
+
+        // TODO Charles：保存现场，少传参数————修改result为成员变量
+        List<Activity> result = null;
+        SearchCriteriaFactory factory = new SearchCriteriaFactory();
+        for (ActivitySearchCriteria activitySearchCriteria : activitySearchCriterias) {
+            result = factory.createSearchCriteria(activitySearchCriteria, activitySearchCreteriaModel).meetCriteria(result);
+        }
+        return result;
     }
 
-    // TODO Charles--等确定了再写
     public List<Activity> sortActivities(ActivitySortStrategy activitySortStrategy) {
-        return null;
+
+        // TODO Charles：保存现场，少传参数————修改result为成员变量
+        List<Activity> result = null;
+        SortComparatorFactory factory = new SortComparatorFactory();
+        Comparator<Activity> comparator = factory.createComparator(activitySortStrategy);
+        result.sort(comparator);
+        return result;
     }
 
     // TODO 策划模版这个东西是啥。。
