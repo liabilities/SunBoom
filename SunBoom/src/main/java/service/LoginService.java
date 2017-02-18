@@ -2,6 +2,9 @@ package service;
 
 import model.GroupInf;
 import utilities.enums.ResultMsg;
+import utilities.exceptions.NotExistException;
+import utilities.exceptions.SafeException;
+import utilities.exceptions.WrongException;
 
 /**
  * Created by zs on 2017/2/9.
@@ -14,5 +17,5 @@ public interface LoginService {
     public ResultMsg loginUser(String userName, String password);
 
     //团队登录
-    public GroupInf loginGroup(String groupName, String password);
+    public GroupInf loginGroup(String groupName, String password) throws NotExistException,SafeException,WrongException;
 }
