@@ -49,32 +49,38 @@
                     <p class="message-single-mid-time" name="message-single-mid-time">
                         2017-2-18 11:11
                     </p>
-                    <p>
-                        <input type="button" class="message-single-mid-reply" value="回复">
-                    </p>
                 </div>
                 <div class="message-single-bottom">
-                    <div class="message-single-bottom-avatar&name&time">
-                        <div class="message-single-bottom-avatar">
-
-                        </div>
-                        <div class="message-single-bottom-time">
-                            <p class="message-single-bottom-getUserName">
-                                田小他
-                            </p>
-                            <p class="message-single-bottom-getTime">
-                                2017-2-18 11:16
-                            </p>
-                        </div>
-                    </div>
+                    <ul class="message-single-bottom-singlereply">
+                        <li class="message-single-bottom-avatar&name&time">
+                            <div class="message-single-bottom-avatar">
+                                <img src="../../../img/1.png" class="message-single-bottom-avatar-img">
+                            </div>
+                            <div class="message-single-bottom-time">
+                                <p class="message-single-bottom-getUserName">
+                                    田小他
+                                </p>
+                                <p class="message-single-bottom-getTime">
+                                    2017-2-18 11:16
+                                </p>
+                            </div>
+                            <div class="message-single-bottom-getReply">
+                                <p class="message-single-bottom-getReply-content">
+                                    谢谢赛赛，你说的真对
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
                     <hr class="message-single-dividerLine">
-                    <div class="message-single-bottom-comment">
-                        <div class="message-single-bottom-commentText">
-                        <textarea class="message-single-bottom-comment-text" name="message-single-bottom-comment-text"
-                                  cols="30" rows="2">
-                            我来评论一句
+                    <div class="message-single-bottom-reply">
+                        <div class="message-single-bottom-replyText">
+                        <textarea class="message-single-bottom-reply-text" name="message-single-bottom-reply-text"
+                                  cols="30" rows="2">回复的内容
                         </textarea>
                         </div>
+                        <p class="message-single-bottom-reply-p">
+                            <input type="button" class="message-single-bottom-reply" value="回复">
+                        </p>
                     </div>
                 </div>
             </li>
