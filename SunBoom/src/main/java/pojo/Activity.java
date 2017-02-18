@@ -17,17 +17,12 @@ public class Activity {
     private int activityID;
 
     /**
-     * 发起团队ID
-     */
-    private int groupID;
-
-    /**
      * 活动名称
      */
     private String name;
 
     /**
-     * 发起人ID
+     * 发起人／团队ID
      */
     private int initiatorID;
 
@@ -100,7 +95,6 @@ public class Activity {
 
     public Activity(ActivityModel activityModel){
         this.activityID = Integer.parseInt(activityModel.activityID);
-        this.groupID = Integer.parseInt(activityModel.groupID);
         this.name = activityModel.name;
         this.initiatorID = Integer.parseInt(activityModel.initiatorID);
         this.initiatorType = activityModel.initiatorType.getRepresentNum();
@@ -124,14 +118,6 @@ public class Activity {
 
     public void setActivityID(int activityID) {
         this.activityID = activityID;
-    }
-
-    public int getGroupID() {
-        return groupID;
-    }
-
-    public void setGroupID(int groupID) {
-        this.groupID = groupID;
     }
 
     public String getName() {

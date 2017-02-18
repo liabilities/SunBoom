@@ -13,7 +13,7 @@ import java.util.Date;
 /**
  * Created by lenovo on 2017/1/13.
  * Last changed by charles.
- * Updating time: 2017/2/17.
+ * Updating time: 2017/2/18.
  */
 public class ActivityModel {
 
@@ -23,17 +23,12 @@ public class ActivityModel {
     public String activityID;
 
     /**
-     * 发起团队ID
-     */
-    public String groupID;
-
-    /**
      * 活动名称
      */
     public String name;
 
     /**
-     * 发起人ID
+     * 发起人／团队ID
      */
     public String initiatorID;
 
@@ -122,14 +117,11 @@ public class ActivityModel {
      */
     public String promotePath;
 
-
-    public ActivityModel(String activityID, String groupID, String name, String initiatorID,
-                         ActivityInitiatorType initiatorType, int minScale, int maxScale, String type,
-                         Place place, Date startTime, Date endTime, String brief, String detailPath,
-                         String sponsorID, int fellowNum, int likeNum, String promotePath) {
-        System.out.println("ActivityModelConstructor");
+    public ActivityModel(String activityID, String name, String initiatorID, ActivityInitiatorType initiatorType,
+                         int minScale, int maxScale, String type, Place place, Date startTime, Date endTime,
+                         String brief, String detailPath, String sponsorID, int neededMoney, Date sponsorStartDate,
+                         Date sponsorEndDate, String businessID, int fellowNum, int likeNum, String promotePath) {
         this.activityID = activityID;
-        this.groupID = groupID;
         this.name = name;
         this.initiatorID = initiatorID;
         this.initiatorType = initiatorType;
@@ -162,7 +154,6 @@ public class ActivityModel {
 
     public ActivityModel(Activity activity) {
         this.activityID = String.valueOf(activity.getActivityID());
-        this.groupID = String.valueOf(activity.getGroupID());
         this.name = activity.getName();
         this.initiatorID = String.valueOf(activity.getInitiatorID());
         this.initiatorType = ActivityInitiatorType.getEnum(activity.getInitiatorType());
