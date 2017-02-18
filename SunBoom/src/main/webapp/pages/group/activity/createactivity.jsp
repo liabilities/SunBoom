@@ -213,11 +213,12 @@
 <script>
     function create() {
         $(function () {
-            $.post("/na", $("form").serialize(), function(data) {
-                if (data == "1") {
-                    setTab('activity',2,5);
-                }
-            })
+//            $.post("/na", $("form").serialize(), function(data) {
+//                if (data == "1") {
+//                    setTab('activity',2,5);
+//                }
+//            })
+            getActivities(0, alert);
         })
     }
 </script>
@@ -229,7 +230,7 @@
      */
     function getActivities(state, callback) {
         $(function () {
-            $.post("/gi", {id:"0", state:"0"}, function (data) {
+            $.post("/gi", {id:"0", state:state}, function (data) {
                 callback(data);
             })
         })

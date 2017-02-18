@@ -36,12 +36,20 @@ public class ActivityController {
     @ResponseBody
     public String newActivity(HttpServletRequest request) {
         System.out.println("newActivity");
-        System.out.println(activityService);
-        ResultMsg msg = activityService.createActivity(new ActivityModel(null, "0", request.getParameter("name"), "0",
-                ActivityInitiatorType.getEnum(Integer.parseInt(request.getParameter("initiatorType"))), Integer.parseInt(request.getParameterValues("scale")[0]),
-                Integer.parseInt(request.getParameterValues("scale")[1]), String.join(",", request.getParameterValues("activityType")),
+        System.out.println(request.getParameter("name"));
+        System.out.println(ActivityInitiatorType.getEnum(Integer.parseInt(request.getParameter("initiatorType"))));
+        System.out.println(Integer.parseInt(request.getParameterValues("scale[]")[0]));
+        System.out.println(Integer.parseInt(request.getParameterValues("scale[]")[1]));
+        System.out.println(String.join(",", request.getParameterValues("activityType[]")));
+        System.out.println(Place.getEnum(Integer.parseInt(request.getParameter("place"))));
+        ActivityModel am = new ActivityModel(null, "0", request.getParameter("name"), "0",
+                ActivityInitiatorType.getEnum(Integer.parseInt(request.getParameter("initiatorType"))),
+                Integer.parseInt(request.getParameterValues("scale[]")[0]),
+                Integer.parseInt(request.getParameterValues("scale[]")[1]), String.join(",", request.getParameterValues("activityType[]")),
                 Place.getEnum(Integer.parseInt(request.getParameter("place"))), null, null, null, null,
-                null, 0, 0, null));
+                null, 0, 0, null);
+        System.out.println("constructed successfully");
+        ResultMsg msg = activityService.createActivity(am);
         return "1";
     }
 
