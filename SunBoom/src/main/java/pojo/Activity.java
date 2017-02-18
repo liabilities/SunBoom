@@ -94,7 +94,6 @@ public class Activity {
     public Activity(){}
 
     public Activity(ActivityModel activityModel){
-        this.activityID = Integer.parseInt(activityModel.activityID);
         this.name = activityModel.name;
         this.initiatorID = Integer.parseInt(activityModel.initiatorID);
         this.initiatorType = activityModel.initiatorType.getRepresentNum();
@@ -106,10 +105,22 @@ public class Activity {
         this.endTime = activityModel.endTime;
         this.brief = activityModel.brief;
         this.detailPath = activityModel.detailPath;
-        this.sponsorID = Integer.parseInt(activityModel.sponsorID);
+
+        //在生成一个新的活动时，将默认参数进行转化
+        try {
+            this.activityID = Integer.parseInt(activityModel.activityID);
+        } catch (NullPointerException ex) {
+            this.activityID = -1;
+        }
+        try {
+            this.sponsorID = Integer.parseInt(activityModel.sponsorID);
+        } catch (NullPointerException ex) {
+            this.sponsorID = -1;
+        }
         this.fellowNum = activityModel.fellowNum;
         this.likeNum = activityModel.likeNum;
         this.promotePath = activityModel.promotePath;
+
     }
 
     public int getActivityID() {

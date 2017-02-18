@@ -136,6 +136,7 @@ public class ActivityModel {
         this.detailPath = detailPath;
 
         //已默认的形式存取
+        this.activityID = null;
         this.sponsorID = null;
         this.neededMoney = -1;
         this.sponsorStartDate = new Date(1970,1,1,12,0,0);
@@ -144,42 +145,6 @@ public class ActivityModel {
         this.fellowNum = -1;
         this.likeNum = -1;
         this.promotePath = null;
-    }
-
-
-    public ActivityModel(String activityID, String name, String initiatorID, ActivityInitiatorType initiatorType,
-                         int minScale, int maxScale, String type, Place place, Date startTime, Date endTime,
-                         String brief, String detailPath, String sponsorID, int fellowNum, int likeNum,
-                         String promotePath) {
-        this.activityID = activityID;
-        this.name = name;
-        this.initiatorID = initiatorID;
-        this.initiatorType = initiatorType;
-        this.minScale = minScale;
-        this.maxScale = maxScale;
-        this.type = type;
-        this.place = place;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.brief = brief;
-        this.detailPath = detailPath;
-        this.fellowNum = fellowNum;
-        this.likeNum = likeNum;
-        this.promotePath = promotePath;
-
-        //赞助相关
-        this.sponsorID = sponsorID;
-        SponsorDAO sponsorDAO = new SponsorDAOImpl();
-        Sponsor thisSponsor = null;
-        try {
-            thisSponsor = sponsorDAO.getById(sponsorID);
-        } catch (NotExistException e) {
-            e.printStackTrace();
-        }
-        this.neededMoney = thisSponsor.getNeededMoney();
-        this.sponsorStartDate = thisSponsor.getStartTime();
-        this.sponsorEndDate = thisSponsor.getDeadline();
-        this.businessID = String.valueOf(thisSponsor.getBusinessID());
     }
 
     /**
@@ -226,7 +191,42 @@ public class ActivityModel {
             this.likeNum = -1;
             this.promotePath = null;
         }
+    }
 
+
+    public ActivityModel(String activityID, String name, String initiatorID, ActivityInitiatorType initiatorType,
+                         int minScale, int maxScale, String type, Place place, Date startTime, Date endTime,
+                         String brief, String detailPath, String sponsorID, int fellowNum, int likeNum,
+                         String promotePath) {
+        this.activityID = activityID;
+        this.name = name;
+        this.initiatorID = initiatorID;
+        this.initiatorType = initiatorType;
+        this.minScale = minScale;
+        this.maxScale = maxScale;
+        this.type = type;
+        this.place = place;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.brief = brief;
+        this.detailPath = detailPath;
+        this.fellowNum = fellowNum;
+        this.likeNum = likeNum;
+        this.promotePath = promotePath;
+
+        //赞助相关
+        this.sponsorID = sponsorID;
+        SponsorDAO sponsorDAO = new SponsorDAOImpl();
+        Sponsor thisSponsor = null;
+        try {
+            thisSponsor = sponsorDAO.getById(sponsorID);
+        } catch (NotExistException e) {
+            e.printStackTrace();
+        }
+        this.neededMoney = thisSponsor.getNeededMoney();
+        this.sponsorStartDate = thisSponsor.getStartTime();
+        this.sponsorEndDate = thisSponsor.getDeadline();
+        this.businessID = String.valueOf(thisSponsor.getBusinessID());
     }
 
 }
