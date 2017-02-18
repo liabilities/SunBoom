@@ -67,6 +67,16 @@
         </tr>
         <tr>
             <td class="white">
+                一句话简介
+            </td>
+            <td  class="tb">
+                <input id="invitation" class="myinput" type="text" name="initiator">
+                <div id="invi-div" style="display:inline">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="white">
                 发起者类型
             </td>
             <td class="tb">
@@ -203,11 +213,12 @@
 <script>
     function create() {
         $(function () {
-            $.post("/na", $("form").serialize(), function(data) {
-                if (data == "1") {
-                    setTab('activity',2,5);
-                }
-            })
+//            $.post("/na", $("form").serialize(), function(data) {
+//                if (data == "1") {
+//                    setTab('activity',2,5);
+//                }
+//            })
+            getActivities(0, alert);
         })
     }
 </script>
@@ -219,7 +230,7 @@
      */
     function getActivities(state, callback) {
         $(function () {
-            $.post("/gi", {id:"0", state:"0"}, function (data) {
+            $.post("/gi", {id:"0", state:state}, function (data) {
                 callback(data);
             })
         })
