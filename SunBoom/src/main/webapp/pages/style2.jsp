@@ -36,7 +36,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/pages/group/home.jsp">首页</a></li>
-                <li><a href="/pages/group/fellow.jsp">联系人</a></li>
+                <li><a href="/pages/group/fellow/fellow.jsp">联系人</a></li>
                 <li><a href="/pages/group/activity.jsp">活动</a></li>
                 <li><a href="/pages/group/dynamic.jsp">动态</a></li>
                 <li><a href="/pages/group/file.jsp">文件</a></li>

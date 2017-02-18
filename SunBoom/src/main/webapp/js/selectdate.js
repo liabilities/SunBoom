@@ -68,7 +68,7 @@ function YYYYMMDDstart2()
     document.reg_testdate2.MM2.value = new Date().getMonth() + 1;
     var n = MonHead[new Date().getMonth()];
     if (new Date().getMonth() ==1 && IsPinYear2(YYYYvalue)) n++;
-    writeDay(n); //赋日期下拉框Author:meizz
+    writeDay2(n); //赋日期下拉框Author:meizz
     document.reg_testdate2.DD2.value = new Date().getDate();
 }
 if(document.attachEvent)
@@ -77,7 +77,7 @@ else
     window.addEventListener('load', YYYYMMDDstart2, false);
 function YYYYDD2(str) //年发生变化时日期发生变化(主要是判断闰平年)
 {
-    var MMvalue = document.reg_testdate2.MM2.options[document.reg_testdate.MM.selectedIndex].value;
+    var MMvalue = document.reg_testdate2.MM2.options[document.reg_testdate2.MM2.selectedIndex].value;
     if (MMvalue == ""){ var e = document.reg_testdate2.DD2; optionsClear2(e); return;}
     var n = MonHead[MMvalue - 1];
     if (MMvalue ==2 && IsPinYear(str)) n++;

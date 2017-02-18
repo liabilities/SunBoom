@@ -8,7 +8,7 @@ import java.util.List;
  * 动态
  * Created by lenovo on 2017/1/13.
  */
-public class Dynamic {
+public class Dynamic implements Comparable{
 
     /**
      * 动态ID
@@ -26,6 +26,16 @@ public class Dynamic {
     public String groupID;
 
     /**
+     * 发布者
+     */
+    public String groupname;
+
+    /**
+     * 头像
+     */
+    public String avatar;
+
+    /**
      * 内容
      */
     public String content;
@@ -39,6 +49,11 @@ public class Dynamic {
      * 点赞数
      */
     public int likeNumbers;
+
+    /**
+     * 评论
+     */
+    public List<DynamicComment> comments;
 
     /**
      * 评论数
@@ -64,6 +79,30 @@ public class Dynamic {
         this.pictures = pictures;
         this.likeNumbers = likeNumbers;
         this.commentNumbers = commentNumbers;
+    }
+
+    public String getGroupname() {
+        return groupname;
+    }
+
+    public void setGroupname(String groupname) {
+        this.groupname = groupname;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public List<DynamicComment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<DynamicComment> comments) {
+        this.comments = comments;
     }
 
     public String getDynamicID() {
@@ -132,5 +171,10 @@ public class Dynamic {
 
     public void setCommentNumbers(int commentNumbers) {
         this.commentNumbers = commentNumbers;
+    }
+
+    public int compareTo(Object o) {
+        Dynamic dynamic = (Dynamic)o;
+        return this.getPublishTime().compareTo(dynamic.getPublishTime());
     }
 }

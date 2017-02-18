@@ -1,7 +1,7 @@
 package test.service.impl;
 
 import model.GroupModel;
-import model.PrivateLetter;
+import model.Letter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +10,7 @@ import service.impl.FellowServiceImpl;
 import utilities.enums.ResultMsg;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -45,32 +46,32 @@ public class FellowServiceImplTest {
     }
 
     @Test
-    public void testGetMessageByID() throws Exception {
-        List<PrivateLetter> list = fellowService.getMessageByID("1","2");
-        assertEquals("hello my friend",list.get(0).getContent());
+    public void testGetChatLog() throws Exception {
+        List<Letter> list = fellowService.getChatLog("se@nju","CharlesFeng");
+        assertEquals("Guten Abend!",list.get(0).getContent());
+        assertEquals("Hey!",list.get(1).getContent());
+        assertEquals("pu",list.get(2).getContent());
     }
 
     @Test
-    public void testSaveMessage() throws Exception{
-        PrivateLetter privateLetter = new PrivateLetter();
+    public void testSaveChatLog() throws Exception{
+        Letter privateLetter = new Letter();
         privateLetter.setSendTime(Calendar.getInstance().getTime());
         privateLetter.setSenderGroupID("1");
         privateLetter.setReceiverGroupID("2");
-        privateLetter.setSenderGroupName("new media");
-        privateLetter.setReceiverGroupName("student union");
         privateLetter.setContent("lalala~");
-        ResultMsg resultMsg = fellowService.saveMessage(privateLetter);
+        ResultMsg resultMsg = fellowService.saveChatLog(privateLetter);
         assertEquals(ResultMsg.SUCCESS, resultMsg);
     }
 
     @Test
     public void testSendMessage() throws Exception {
-        PrivateLetter privateLetter = fellowService.sendMessage("lalalalalaze~","1","0");
+        Date date = fellowService.sendMessage("lalalalalaze~","se@nju","CharlesFeng");
     }
 
     @Test
     public void testDeleteMessage() throws Exception {
-        PrivateLetter privateLetter = new PrivateLetter();
+        Letter privateLetter = new Letter();
         privateLetter.setPrivateLetterID("4");
         ResultMsg resultMsg = fellowService.deleteMessage(privateLetter);
         assertEquals(ResultMsg.SUCCESS, resultMsg);
@@ -78,7 +79,7 @@ public class FellowServiceImplTest {
 
     @Test
     public void testTransmitMessage() throws Exception {
-        PrivateLetter privateLetter = fellowService.transmitMessage("lalalalalaze~","1","2");
+        Date date = fellowService.transmitMessage("lalalalalaze~","1","2");
     }
 
     @Test

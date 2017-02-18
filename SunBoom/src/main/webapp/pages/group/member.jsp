@@ -34,16 +34,16 @@
     }
 
 
-     #mask{
-         position: absolute;
-         top: 0px;
-         opacity:0.5;
-         filter: alpha(opacity=50);
-         background-color: white;
-         z-index: 2;
-         left: 0px;
-         display: none;
-     }
+    #mask{
+        position: absolute;
+        top: 0px;
+        opacity:0.5;
+        filter: alpha(opacity=50);
+        background-color: white;
+        z-index: 2;
+        left: 0px;
+        display: none;
+    }
 
 
     #searchforuser{
@@ -159,6 +159,16 @@
         color: #a1a1a1;
     }
 
+    .username-to-select{
+        color:midnightblue;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .username-to-select:hover{
+        color:mediumslateblue;
+    }
+
 </style>
 
 
@@ -174,17 +184,17 @@
         添加新成员
     </div>
     <div class="addmember" id="code" style="display:none" onmouseleave='showhidediv2("code")'>
-        <a class="code" onClick="generating()">生成邀请码</a>
-        <a class="invite" onClick="searching()">用户名搜索</a>
+        <a class="code" onClick="getCode();generating();">生成邀请码</a>
+        <a class="invite" onClick="searching();">用户名搜索</a>
     </div>
 </div>
 
 <div id="codepanel">
-    <div class="right" style="width: 80px;height: 66px" onclick="Lock_CheckForm(this);">
+    <div class="right" style="width: 80px;height: 66px" onclick="Lock_CheckForm(this);clearCode();">
     </div>
     <div class="left">
-       <p><text style="font-size:12px">2分钟之内有效</text></p>
-        <p>33wi8y98</p>
+        <p><text style="font-size:12px">2分钟之内有效</text></p>
+        <div id="codeplace"></div>
     </div>
 </div>
 
@@ -193,48 +203,24 @@
         <div style="height: 117px">
             <br/>
             <br/>
-            <input type="text" />
-            <input type="submit" value="查询" name="username" />
+            <input type="text" id="searchfield"/>
+            <input type="submit" value="查询" name="username" onclick="findMember()" />
         </div>
-        <div style="height: 117px">
-            <img src="/img/1.png" style="width: 117px;height: 117px">
+        <div style="height: 117px" id="avatar">
+            <%--<img src="/img/1.png" style="width: 117px;height: 117px">--%>
         </div>
         <div style="height: 60px">
             <br/>
-            <a class="buttons">-邀请-</a>
+            <div id="invitation"><br/></div>
             <br/>
-            <a class="buttons" onclick="Lock_CheckForm2(this)">-返回-</a>
+            <a class="buttons" onclick="Lock_CheckForm2(this);clearAvatar()">-返回-</a>
         </div>
     </div>
 </div>
 
 <div class="main wrapper cf">
-    <table class="altrowstable" id="alternatecolor">
-        <tr>
-            <th>用户名</th>
-            <th>昵称</th>
-            <th>邮箱</th>
-            <th>加入时间</th>
-        </tr>
-        <tr>
-            <td>zoetxt</td>
-            <td>小太阳</td>
-            <td>zoetxt@outlook.com</td>
-            <td>2015-09-20</td>
-        </tr>
-        <tr>
-            <td>zhousaisai</td>
-            <td>子非鱼</td>
-            <td>zs14@smail.nju.edu.cn</td>
-            <td>2015-09-20</td>
-        </tr>
-        <tr>
-            <td><a onclick="getMember()">txin</a></td>
-            <td>糖心</td>
-            <td>txin15@smail.nju.edu.cn</td>
-            <td>2016-09-20</td>
-        </tr>
-    </table>
+    <div id="list">
+    </div>
 
 </div>
 <script src="/js/tablealtrow.js"></script> 
@@ -243,6 +229,7 @@
 <script src="../../js/jquery.js"></script>
 
 <script type="text/javascript">
+    window.onload=getMember()
     function generating(){
         document.all.mask.style.display="block";
         document.all.mask.style.width=document.body.clientWidth;
@@ -270,22 +257,39 @@
                 url:"/getMembers",
                 data:{id:1},
                 dataType:"json",
-            success:function (memberList) {
-            },
-            error:function () {
-                alert("error");
+                success:function (memberList) {
+                    var member=memberList.member;
+
+                    str="<table class=\"altrowstable\">";
+                    str+=" <tr><th>用户名</th><th>昵称</th><th>邮箱</th><th>加入时间</th></tr>";
+                    for(i in member){
+                        if(i%2==0)
+                            str+="<tr style=\"background-color:#d4e3e5\"><td class=\"username-to-select\">"+member[i].userName+"</td><td>"+member[i].nickName+"</td><td>"+member[i].email+"</td><td>"+member[i].time+"</td></tr>";
+                        else
+                            str+="<tr style=\"background-color:#c3dde0\"><td class=\"username-to-select\">"+member[i].userName+"</td><td>"+member[i].nickName+"</td><td>"+member[i].email+"</td><td>"+member[i].time+"</td></tr>";
+                    }
+                    str+="</table>"
+                    $("#list").html(str);
+
+                },
+                error:function () {
+                    alert("error");
+                }
             }
-        }
         )
     }
-    
+
     function findMember() {
+        var username = document.getElementById("searchfield").value;
         $.ajax({
             type:"post",
             url:"/findMember",
-            data:{userName:"hehe"},
+            data:{userName:username},
             success:function (data) {
-                alert(data);
+                str="<img src=\""+data+"\" style=\"width: 117px;height: 117px\">"
+                $("#avatar").html(str);
+                str2 = "<a class=\"buttons\" onclick='havesent()'>-邀请-</a>"
+                $("#invitation").html(str2);
             },
             error:function () {
                 alert("error");
@@ -297,8 +301,11 @@
         $.ajax({
             type:"get",
             url:"/findCode",
+            data:{id:1},
             success:function (data) {
-                alert(data);
+//                alert(data);
+                str="<p>"+data+"</p>";
+                $("#codeplace").html(str);
             },
             error:function () {
                 alert("error");
@@ -306,6 +313,18 @@
         })
     }
 
+    function clearCode() {
+        $("#codeplace").html("");
+    }
+
+    function clearAvatar(){
+        $("#avatar").html("");
+        $("#invitation").html("<br/>");
+    }
+
+    function havesent(){
+        alert("邀请已发送");
+    }
 </script>
 
 </body>

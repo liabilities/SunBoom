@@ -6,7 +6,7 @@ import java.util.Date;
  * 动态的评论
  * Created by lenovo on 2017/1/13.
  */
-public class DynamicComment {
+public class DynamicComment implements Comparable{
 
     /**
      * 回复的动态ID
@@ -17,11 +17,6 @@ public class DynamicComment {
      * 评论ID
      */
     public String commentID;
-
-    /**
-     * 评论序号
-     */
-    public int commentNumber;
 
     /**
      * 回复团体ID
@@ -53,12 +48,20 @@ public class DynamicComment {
      */
     public String content;
 
-    public DynamicComment(String dynamicID,String commentID,int commentNumber,String replyGroupID,
+    public DynamicComment(pojo.DynamicComment comment){
+        this.dynamicID = comment.getDynamicID()+"";
+        this.commentID = comment.getCommentID()+"";
+        this.replyGroupID = comment.getSenderID()+"";
+        this.repliedGroupID = comment.getReceiverID()+"";
+        this.sendTime = new Date(comment.getTime().getTime());
+        this.content = comment.getContent();
+    }
+
+    public DynamicComment(String dynamicID,String commentID,String replyGroupID,
                    String repliedGroupID,String replyGroupName,String repliedGroupName,
                    Date sendTime,String content){
         this.dynamicID = dynamicID;
         this.commentID = commentID;
-        this.commentNumber = commentNumber;
         this.replyGroupID = replyGroupID;
         this.repliedGroupID = repliedGroupID;
         this.replyGroupName = replyGroupName;
@@ -89,14 +92,6 @@ public class DynamicComment {
 
     public void setCommentID(String commentID) {
         this.commentID = commentID;
-    }
-
-    public int getCommentNumber() {
-        return commentNumber;
-    }
-
-    public void setCommentNumber(int commentNumber) {
-        this.commentNumber = commentNumber;
     }
 
     public String getReplyGroupID() {
@@ -157,5 +152,10 @@ public class DynamicComment {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public int compareTo(Object o) {
+        DynamicComment comment = (DynamicComment)o;
+        return this.getSendTime().compareTo(comment.getSendTime());
     }
 }

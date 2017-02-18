@@ -187,3 +187,7 @@ body {
     margin: 0 auto;
     width: 1000px
 }
+.wrapper-inner{
+    margin: 0 auto;
+    width: 800px;
+}

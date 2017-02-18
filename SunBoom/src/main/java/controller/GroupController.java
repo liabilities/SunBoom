@@ -23,7 +23,6 @@ public class GroupController {
     @ResponseBody
     public String getGroupInfo(HttpServletRequest request) {
         String id = request.getParameter("id");
-        System.out.println("id = " + id);
         GroupHomeService service = new GroupHomeServiceImpl();
         GroupModel model = null;
         try {
@@ -31,7 +30,6 @@ public class GroupController {
         } catch (NotExistException e) {
             e.printStackTrace();
         }
-        System.out.println("call2");
         String result = "<GROUP>";
         if (model != null) {
             result += "<NAME>" + model.getName() + "</NAME>";
@@ -42,8 +40,6 @@ public class GroupController {
             result += "<AVATAR>" + model.getAvatar() + "</AVATAR>";
         }
         result += "</GROUP>";
-        System.out.println("call3");
-        System.out.println(result);
         return result;
 //        return "<GROUP><NAME>负债中心</NAME></GROUP>";
     }

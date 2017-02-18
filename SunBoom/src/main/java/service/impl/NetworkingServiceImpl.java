@@ -33,11 +33,11 @@ public class NetworkingServiceImpl implements NetworkingService {
     }
 
     public List<NetworkingGeneralModel> defalutDisplay(String groupID) throws NotExistException {
-        return convertListPo2GeneralModel(networkingDAO.findByProperty("groupID", groupID));
+        return convertListPo2GeneralModel(networkingDAO.findByProperty("groupID", Integer.parseInt(groupID)));
     }
 
     public NetworkingModel getNetworkingDetail(String networkingID) throws NotExistException {
-        return new NetworkingModel(networkingDAO.getById(networkingID));
+        return new NetworkingModel(networkingDAO.getById(Integer.parseInt(networkingID)));
     }
 
     public ResultMsg modifyNetworking(NetworkingModel networkingModel) throws NotExistException {
@@ -71,14 +71,14 @@ public class NetworkingServiceImpl implements NetworkingService {
     }
 
     // TODO Charles——不清楚responsor干啥？
-    public List<GroupGeneralModel> getRespongdingGroup(int networkingID) throws NotExistException {
-        List<Responsor> result = responsorDAO.findByProperty("networkingID", networkingID);
+    public List<GroupGeneralModel> getRespongdingGroup(String networkingID) throws NotExistException {
+        List<Responsor> result = responsorDAO.findByProperty("networkingID", Integer.parseInt(networkingID));
 
         return null;
     }
 
     public List<NetworkingGeneralModel> getNetworkingSpecial(String groupID, NetworkingState networkingState) throws NotExistException {
-        List<Networking> findingResult = networkingDAO.findByProperty("groupID", groupID);
+        List<Networking> findingResult = networkingDAO.findByProperty("groupID", Integer.parseInt(groupID));
         for (Networking thisNetworkingGModel: findingResult) {
             if (thisNetworkingGModel.getState() != networkingState.getRepresentNum()) {
                 findingResult.remove(thisNetworkingGModel);

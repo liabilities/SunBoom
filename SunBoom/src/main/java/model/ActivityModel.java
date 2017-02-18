@@ -127,6 +127,7 @@ public class ActivityModel {
                          ActivityInitiatorType initiatorType, int minScale, int maxScale, String type,
                          Place place, Date startTime, Date endTime, String brief, String detailPath,
                          String sponsorID, int fellowNum, int likeNum, String promotePath) {
+        System.out.println("ActivityModelConstructor");
         this.activityID = activityID;
         this.groupID = groupID;
         this.name = name;

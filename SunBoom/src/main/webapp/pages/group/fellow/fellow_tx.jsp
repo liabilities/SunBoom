@@ -10,11 +10,11 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 引入 Bootstrap -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../css/nav.css" rel="stylesheet" type="text/css"/>
-    <link href="../../css/fellow.css" rel="stylesheet" type="text/css"/>
-    <link href="../../css/style.css" rel="stylesheet" type="text/css"/>
-    <script src="../../js/chat.js"></script>
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/nav.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../css/fellow.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="../../../js/chat.js"></script>
     <title>联系人</title>
     <script language="JavaScript">
         function showContent() {
@@ -98,7 +98,7 @@
 <body>
 
 <div id="head">
-    <img src="../../img/ad.png" width=100% height="100px">
+    <img src="../../../img/ad.png" width=100% height="100px">
 </div>
 
 <div id="nav">
@@ -208,8 +208,8 @@
         All CopyRights reserved @2017 sunboom team
     </div>
     <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-    <script src="../../js/jquery.js"></script>
+    <script src="../../../js/jquery.js"></script>
     <!-- 包括所有已编译的插件 -->
-    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
 </body>
 </html>

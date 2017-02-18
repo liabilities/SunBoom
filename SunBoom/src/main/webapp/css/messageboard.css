@@ -1,0 +1,78 @@
+.message-single-dividerLine{
+    width: 80%;
+    height: 0;
+    margin: 0 auto 2px;
+    border: none;
+    border-top: 1px solid #cadbe6;
+}
+.message-content{
+    width: 100%;
+    height: 100px;
+}
+.leave-message{
+    width: 100%;
+    height: 100px;
+}
+.leave-message-textarea{
+    float: left;
+    width: 620px;
+    height: 100%;
+    margin-left: 50px;
+}
+.leave-message-text{
+    float: left;
+    resize: none;
+    width: 100%;
+    height: 100%;
+}
+.leave-message-send{
+    float: left;
+    width: 80px;
+    height: 100%;
+}
+.message_set{
+    width: 100px;
+    height: 30px;
+    margin: 10px 0 10px 50px;
+}
+.message-set-button{
+    width: 100%;
+    height: 30px;
+    background-color: #0F769F;
+}
+.message-content{
+    width: 100%;
+    height: auto;
+}
+.message-single{
+    width: 100%;
+    height:auto;
+}
+.message-single-top{
+    width: 100%;
+    height:auto;
+}
+.message-singel-top-avator{
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+.message-single-top-avatar-img{
+    width: 100%;
+    height:100%;
+    border-radius: 18px;
+    float: left;
+}
+.message-single-top-leavername{
+    width: auto;
+    height: auto;
+    max-width: 80px;
+    max-height: 20px;
+    color: #5cb85c;
+    float: left;
+}
+.message-single-top-text{
+    width: 700px;
+    float: left;
+
+}

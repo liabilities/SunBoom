@@ -2,12 +2,12 @@ package service.impl;
 
 import dao.FellowDAO;
 import dao.GroupDAO;
-import dao.PrivateLetterDAO;
+import dao.LetterDAO;
 import dao.impl.FellowDAOImpl;
 import dao.impl.GroupDAOImpl;
-import dao.impl.PrivateLetterDAOImpl;
+import dao.impl.LetterDAOImpl;
 import model.GroupModel;
-import model.PrivateLetter;
+import model.Letter;
 import pojo.Fellow;
 import pojo.Group;
 import service.FellowService;
@@ -16,10 +16,7 @@ import utilities.exceptions.NotExistException;
 import utilities.exceptions.NullException;
 import utilities.tool.ChineseToEnglish2;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by lenovo on 2017/2/7.
@@ -58,53 +55,68 @@ public class FellowServiceImpl implements FellowService{
         return ss;
     }
 
-    public List<PrivateLetter> getMessageByID(String ID1, String ID2) throws NotExistException{
-        PrivateLetterDAO dao = new PrivateLetterDAOImpl();
-        List<pojo.PrivateLetter> list = dao.findByProperty("senderID",Integer.parseInt(ID1));
-        List<PrivateLetter> res = new ArrayList<PrivateLetter>();
-        for(pojo.PrivateLetter privateLetter : list){
-            if(privateLetter.getReceiverID() == Integer.parseInt(ID2))
-                res.add(new PrivateLetter(privateLetter.getLetterID()+"",privateLetter.getSenderID()+"",
-                privateLetter.getReceiverID()+"",privateLetter.getSenderName()+"",
-                        privateLetter.getSenderName()+"",privateLetter.getTime(),privateLetter.getContent()));
+    public List<Letter> getChatLog(String username1, String username2) throws NotExistException{
+        LetterDAO dao = new LetterDAOImpl();
+        GroupDAO groupDAO = new GroupDAOImpl();
+
+        List<pojo.Letter> list = dao.findByProperty("senderID",groupDAO.findByProperty("username",username1).get(0).getGroupID());
+        List<Letter> res = new ArrayList<Letter>();
+        for(pojo.Letter privateLetter : list){
+            if(privateLetter.getReceiverID() == groupDAO.findByProperty("username",username2).get(0).getGroupID())
+                res.add(new Letter(privateLetter.getLetterID()+"",privateLetter.getSenderID()+"",
+                privateLetter.getReceiverID()+"",privateLetter.getTime(),
+                        privateLetter.getType(),privateLetter.getContent()));
         }
+
+        list = dao.findByProperty("senderID",groupDAO.findByProperty("username",username2).get(0).getGroupID());
+        for(pojo.Letter privateLetter : list){
+            if(privateLetter.getReceiverID() == groupDAO.findByProperty("username",username1).get(0).getGroupID())
+                res.add(new Letter(privateLetter.getLetterID()+"",privateLetter.getSenderID()+"",
+                        privateLetter.getReceiverID()+"",privateLetter.getTime(),
+                        privateLetter.getType(),privateLetter.getContent()));
+        }
+
+        Collections.sort(res);
+
         return res;
     }
 
-    public PrivateLetter sendMessage(String message, String ID1, String ID2) throws NullException, NotExistException{
-        GroupDAO dao = new GroupDAOImpl();
-        PrivateLetter privateLetter = new PrivateLetter();
+    public Date sendMessage(String message, String username1, String username2) throws NullException, NotExistException{
+        Letter privateLetter = new Letter();
         privateLetter.setContent(message);
-        privateLetter.setSenderGroupID(ID1);
-        privateLetter.setReceiverGroupID(ID2);
-        privateLetter.setSenderGroupName(dao.getById(Integer.parseInt(ID1)).getName());
-        privateLetter.setReceiverGroupName(dao.getById(Integer.parseInt(ID2)).getName());
-        privateLetter.setSendTime(Calendar.getInstance().getTime());
-        saveMessage(privateLetter);
-        return privateLetter;
+
+        GroupDAO dao = new GroupDAOImpl();
+        privateLetter.setSenderGroupID(dao.findByProperty("username",username1).get(0).getGroupID()+"");
+        privateLetter.setReceiverGroupID(dao.findByProperty("username",username2).get(0).getGroupID()+"");
+        Date date = new Date(Calendar.getInstance().getTimeInMillis());
+        privateLetter.setType(1);
+        privateLetter.setSendTime(date);
+        saveChatLog(privateLetter);
+
+        return date;
     }
 
-    public ResultMsg saveMessage(PrivateLetter message) throws NullException{
+    public ResultMsg saveChatLog(Letter message) throws NullException{
 
         if(message == null) throw  new NullException();
 
-        PrivateLetterDAO dao = new PrivateLetterDAOImpl();
-        boolean b = dao.insertOne(new pojo.PrivateLetter(message));
+        LetterDAO dao = new LetterDAOImpl();
+        boolean b = dao.insertOne(new pojo.Letter(message));
         if(b) return ResultMsg.SUCCESS;
         return ResultMsg.FAIL;
     }
 
-    public ResultMsg deleteMessage(PrivateLetter message) throws NullException, NotExistException{
+    public ResultMsg deleteMessage(Letter message) throws NullException, NotExistException{
 
         if(message == null) throw  new NullException();
 
-        PrivateLetterDAO dao = new PrivateLetterDAOImpl();
+        LetterDAO dao = new LetterDAOImpl();
         boolean b = dao.deleteOne(Integer.parseInt(message.getPrivateLetterID()));
         if(b) return  ResultMsg.SUCCESS;
         return ResultMsg.FAIL;
     }
 
-    public PrivateLetter transmitMessage(String message, String ID1, String ID2) throws NullException, NotExistException{
+    public Date transmitMessage(String message, String ID1, String ID2) throws NullException, NotExistException{
         return sendMessage(message, ID1, ID2);
     }
 
