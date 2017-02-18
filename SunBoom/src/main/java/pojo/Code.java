@@ -8,15 +8,6 @@ import java.util.Date;
 public class Code {
     private int rowID;
     private int groupID;
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
     private String code;
     private Date ddl;
 
@@ -34,6 +25,14 @@ public class Code {
 
     public void setGroupID(int groupID) {
         this.groupID = groupID;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Date getDdl() {
