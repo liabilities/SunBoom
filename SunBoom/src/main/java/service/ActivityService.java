@@ -29,7 +29,7 @@ public interface ActivityService {
      * Last changed by charles.
      * Updating time: 2017/2/16.
      */
-    public List<ActivityGeneralModel> defalutDisplay(String groupID) throws NotExistException;
+    public List<ActivityGeneralModel> defalutDisplay(String initiatorID) throws NotExistException;
 
     /**
      * 根据活动ID获取活动详情
@@ -74,7 +74,7 @@ public interface ActivityService {
      */
     /**
      *
-     * @param groupID 该团体的编号
+     * @param initiatorID 该团体的编号
      * @param activityState 要查看的活动状态
      * @return 该团体特定状态的活动列表
      * @throws NotExistException
@@ -82,7 +82,7 @@ public interface ActivityService {
      * Last changed by charles.
      * Updating time: 2017/2/16.
      */
-    public List<ActivityGeneralModel> getActivitySpecial(String groupID, ActivityState activityState) throws NotExistException;
+    public List<ActivityGeneralModel> getActivitySpecial(String initiatorID, ActivityState activityState) throws NotExistException;
 
 
 
@@ -118,13 +118,13 @@ public interface ActivityService {
 
     /**
      * 根据团体ID获取策划列表
-     * @param groupID 团队ID
+     * @param initiatorID 团队ID
      * @return 该团体模板简要列表
      *
      * Last changed by charles.
      * Updating time: 2017/2/16.
      */
-    public List<ActivityTemplateGeneral> myTemplates(String groupID);
+    public List<ActivityTemplateGeneral> myTemplates(String initiatorID);
 
 
 
