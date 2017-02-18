@@ -16,14 +16,19 @@
 <div class="messageboard-content">
     <div class="leave-message">
         <div class="leave-message-textarea">
-
+            <textarea id="tx" class="dynamic_publish_text" cols="40" rows="7">你想对ta说...</textarea>
         </div>
         <div class="leave-message-insertImg">
-
+            <input type="button" class="dynamic_publish_img" value="插入图片" onclick=""  onkeydown="">
         </div>
     </div>
-    <div>
-
+    <div class="message_screen">
+        <input type="button" class="dynamic_screen_button" value="筛选">
+    </div>
+    <div class="message-content">
+        <div class="message-single">
+            你这样我怎么办
+        </div>
     </div>
 </div>
 

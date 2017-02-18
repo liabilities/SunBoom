@@ -64,9 +64,6 @@
                     <td>
                         <input type="button" class="praise" value="赞" onclick="">
                     </td>
-                    <td>
-                        <input type="button" class="collect" value="收藏" onclick="">
-                    </td>
                 </tr>
             </table>
             <table class="dynamic_praisers">
