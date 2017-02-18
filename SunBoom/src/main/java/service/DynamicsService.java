@@ -26,6 +26,14 @@ public interface DynamicsService {
     public List<Dynamic> getDynamicList(String groupID) throws NotExistException;
 
     /**
+     * 获得动态
+     * 动态包括（时间、内容、发布者、头像、图片、评论、点赞数）
+     * @param groupname
+     * @return list
+     */
+    public List<Dynamic> getDynamicListByName(String groupname) throws NotExistException;
+
+    /**
      * 回复动态
      * @param dynamicComment 动态评论
      * @return ResultMsg
@@ -33,10 +41,17 @@ public interface DynamicsService {
     public ResultMsg replyDynamic(DynamicComment dynamicComment);
 
     /**
-     * 点赞动态
+     * 点赞
      * @param dynamicID 动态ID
-     * @return ResultMsg
+     * @return int
      */
-    public ResultMsg like(int dynamicID) throws NotExistException;
+    public int like(int dynamicID) throws NotExistException;
+
+    /**
+     * 根据动态ID获取评论
+     * @param dynamicID
+     * @return list
+     */
+    public List<DynamicComment> getDynamicComment(String dynamicID) throws NotExistException;
 
 }
