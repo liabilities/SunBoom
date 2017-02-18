@@ -295,6 +295,35 @@
             }
         )
     }
+
+    function getLeters() {
+        $.ajax({
+            type:"post",
+            url:"/getLetter",
+            data:{userName1:"a",userName2:"b"},
+            dataType:"json",
+            success:function (data) {
+                var LetterList=data.letter;
+            },
+            error:function () {
+                alert("error");
+            }
+        })
+    }
+
+    function sendMessage() {
+        $.ajax({
+            type:"post",
+            url:"/sendMessage",
+            data:{userName1:"a",userName2:"b",content:"dfsdf"},
+            success:function (data) {
+                var date=data;
+            },
+            error:function () {
+                alert("error");
+            }
+        })
+    }
 </script>
 </body>
 </html>
