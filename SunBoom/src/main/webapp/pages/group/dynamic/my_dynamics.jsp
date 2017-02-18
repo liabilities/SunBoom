@@ -89,5 +89,21 @@
 <script src="../../../js/jquery.js"></script>
 <!-- 包括所有已编译的插件 -->
 <script src="../../../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    function getDynamics() {
+        $.ajax({
+            type:"post",
+            url:"/getDynamic",
+            data:{userName:"南京大学软件学院新媒体中心"},
+            dataType:"json",
+            success:function () {
+                alert(data.dynameics);
+            },
+            error:function () {
+              alert("error");
+            }
+        })
+    }
+</script>
 </body>
 </html>
