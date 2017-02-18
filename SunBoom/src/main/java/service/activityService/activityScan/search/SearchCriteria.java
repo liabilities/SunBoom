@@ -1,6 +1,6 @@
 package service.activityService.activityScan.search;
 
-import pojo.Activity;
+import model.ActivityModel;
 
 import java.util.List;
 
@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface SearchCriteria {
 
-    public List<Activity> meetCriteria (List<Activity> activities);
+    public List<ActivityModel> meetCriteria (List<ActivityModel> activities);
 }

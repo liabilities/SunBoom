@@ -1,6 +1,6 @@
 package service.activityService.activityScan.search.searchImpl;
 
-import pojo.Activity;
+import model.ActivityModel;
 import service.activityService.activityScan.search.SearchCriteria;
 import utilities.enums.Place;
 
@@ -19,7 +19,7 @@ public class PlaceCriteria implements SearchCriteria{
 
 
     @Override
-    public List<Activity> meetCriteria(List<Activity> activities) {
+    public List<ActivityModel> meetCriteria(List<ActivityModel> activities) {
         return null;
     }
 }

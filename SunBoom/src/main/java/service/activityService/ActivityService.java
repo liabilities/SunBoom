@@ -25,7 +25,7 @@ public interface ActivityService {
      * Last changed by charles.
      * Updating time: 2017/2/16.
      */
-    public List<ActivityGeneralModel> defalutDisplay(String initiatorID) throws NotExistException;
+    public List<ActivityModel> defalutDisplay(String initiatorID) throws NotExistException;
 
     /**
      * 根据活动ID获取活动详情
@@ -78,7 +78,7 @@ public interface ActivityService {
      * Last changed by charles.
      * Updating time: 2017/2/16.
      */
-    public List<ActivityGeneralModel> getActivitySpecial(String initiatorID, ActivityState activityState) throws NotExistException;
+    public List<ActivityModel> getActivitySpecial(String initiatorID, ActivityState activityState) throws NotExistException;
 
 
 
@@ -93,14 +93,17 @@ public interface ActivityService {
      * Last changed by charles.
      * Updating time: 2017/2/18.
      */
-    public List<Activity> searchActivities(List<ActivitySearchCriteria> activitySearchCriterias, ActivitySearchCreteriaModel activitySearchCreteriaModel);
+    public List<ActivityModel> searchActivities(List<ActivitySearchCriteria> activitySearchCriterias, ActivitySearchCreteriaModel activitySearchCreteriaModel);
 
     /**
      * 根据现有规则排序显示
      * @param activitySortStrategy 现有的排序规则
      * @return
      */
-    public List<Activity> sortActivities(ActivitySortStrategy activitySortStrategy);
+    public List<ActivityModel> sortActivities(ActivitySortStrategy activitySortStrategy);
+
+
+
 
     /*
     活动策划

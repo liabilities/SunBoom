@@ -1,6 +1,6 @@
 package service.activityService.activityScan.search.searchImpl;
 
-import pojo.Activity;
+import model.ActivityModel;
 import service.activityService.activityScan.search.SearchCriteria;
 
 import java.util.List;
@@ -12,7 +12,7 @@ public class NullCriteria implements SearchCriteria {
 
 
     @Override
-    public List<Activity> meetCriteria(List<Activity> activities) {
-        return activities;
+    public List<ActivityModel> meetCriteria(List<ActivityModel> activities) {
+        return null;
     }
 }

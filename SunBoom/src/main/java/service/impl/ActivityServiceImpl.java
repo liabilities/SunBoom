@@ -19,6 +19,8 @@ import java.util.*;
  */
 public class ActivityServiceImpl implements ActivityService {
 
+    List<ActivityModel> currentAcitivities;
+
     ActivityDAO activityDAO;
 
     public ActivityServiceImpl() {
@@ -26,8 +28,9 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
 
-    public List<ActivityGeneralModel> defalutDisplay(String initiatorID) throws NotExistException {
-        return convertListPo2GeneralModel(activityDAO.findByProperty("initiatorID", Integer.parseInt(initiatorID)));
+    public List<ActivityModel> defalutDisplay(String initiatorID) throws NotExistException {
+        currentAcitivities = convertListPo2Model(activityDAO.findByProperty("initiatorID", Integer.parseInt(initiatorID)));
+        return currentAcitivities;
     }
 
     public ActivityModel getActivityDetail(String activityID) throws NotExistException {
@@ -53,7 +56,7 @@ public class ActivityServiceImpl implements ActivityService {
         return null;
     }
 
-    public List<ActivityGeneralModel> getActivitySpecial(String initiatorID, ActivityState activityState) throws NotExistException {
+    public List<ActivityModel> getActivitySpecial(String initiatorID, ActivityState activityState) throws NotExistException {
         Date now = Calendar.getInstance().getTime();
 
         List<Activity> findingResult = activityDAO.findByProperty("initiatorID", Integer.parseInt(initiatorID));
@@ -77,13 +80,13 @@ public class ActivityServiceImpl implements ActivityService {
             }
         }
 
-        return convertListPo2GeneralModel(findingResult);
+        currentAcitivities = convertListPo2Model(findingResult);
+
+        return currentAcitivities;
     }
 
-    public List<Activity> searchActivities(List<ActivitySearchCriteria> activitySearchCriterias, ActivitySearchCreteriaModel activitySearchCreteriaModel) {
-
-        // TODO Charles：保存现场，少传参数————修改result为成员变量
-        List<Activity> result = null;
+    public List<ActivityModel> searchActivities(List<ActivitySearchCriteria> activitySearchCriterias, ActivitySearchCreteriaModel activitySearchCreteriaModel) {
+        List<ActivityModel> result = currentAcitivities;
         SearchCriteriaFactory factory = new SearchCriteriaFactory();
         for (ActivitySearchCriteria activitySearchCriteria : activitySearchCriterias) {
             result = factory.createSearchCriteria(activitySearchCriteria, activitySearchCreteriaModel).meetCriteria(result);
@@ -91,12 +94,10 @@ public class ActivityServiceImpl implements ActivityService {
         return result;
     }
 
-    public List<Activity> sortActivities(ActivitySortStrategy activitySortStrategy) {
-
-        // TODO Charles：保存现场，少传参数————修改result为成员变量
-        List<Activity> result = null;
+    public List<ActivityModel> sortActivities(ActivitySortStrategy activitySortStrategy) {
+        List<ActivityModel> result = currentAcitivities;
         SortComparatorFactory factory = new SortComparatorFactory();
-        Comparator<Activity> comparator = factory.createComparator(activitySortStrategy);
+        Comparator<ActivityModel> comparator = factory.createComparator(activitySortStrategy);
         result.sort(comparator);
         return result;
     }
@@ -122,6 +123,14 @@ public class ActivityServiceImpl implements ActivityService {
         List<ActivityGeneralModel> result = new LinkedList<ActivityGeneralModel>();
         for (Activity thisActivity: thisActivitiesList) {
             result.add(new ActivityGeneralModel(thisActivity));
+        }
+        return result;
+    }
+
+    private List<ActivityModel> convertListPo2Model(List<Activity> thisActivitiesList) {
+        List<ActivityModel> result = new LinkedList<ActivityModel>();
+        for (Activity thisActivity: thisActivitiesList) {
+            result.add(new ActivityModel(thisActivity));
         }
         return result;
     }

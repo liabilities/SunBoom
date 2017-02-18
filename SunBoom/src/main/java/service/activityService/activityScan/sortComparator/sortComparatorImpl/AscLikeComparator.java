@@ -1,16 +1,16 @@
 package service.activityService.activityScan.sortComparator.sortComparatorImpl;
 
-import pojo.Activity;
+import model.ActivityModel;
 
 import java.util.Comparator;
 
 /**
  * Created by cuihua on 2017/2/18.
  */
-public class AscLikeComparator implements Comparator<Activity> {
+public class AscLikeComparator implements Comparator<ActivityModel> {
 
     @Override
-    public int compare(Activity o1, Activity o2) {
+    public int compare(ActivityModel o1, ActivityModel o2) {
         return 0;
     }
 }

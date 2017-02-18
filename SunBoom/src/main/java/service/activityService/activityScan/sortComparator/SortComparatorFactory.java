@@ -1,6 +1,6 @@
 package service.activityService.activityScan.sortComparator;
 
-import pojo.Activity;
+import model.ActivityModel;
 import service.activityService.activityScan.sortComparator.sortComparatorImpl.*;
 import utilities.enums.ActivitySortStrategy;
 
@@ -11,7 +11,7 @@ import java.util.Comparator;
  */
 public class SortComparatorFactory {
 
-    public Comparator<Activity> createComparator(ActivitySortStrategy sortStrategy) {
+    public Comparator<ActivityModel> createComparator(ActivitySortStrategy sortStrategy) {
         if (sortStrategy == ActivitySortStrategy.ASC_START_TIME) {
             return new AscStartTimeComparator();
         } else if (sortStrategy == ActivitySortStrategy.DEC_START_TIME) {

@@ -1,5 +1,6 @@
 package service.activityService.activityScan.sortComparator.sortComparatorImpl;
 
+import model.ActivityModel;
 import pojo.Activity;
 
 import java.util.Comparator;
@@ -7,10 +8,10 @@ import java.util.Comparator;
 /**
  * Created by cuihua on 2017/2/18.
  */
-public class DecMinScaleComparator implements Comparator<Activity> {
+public class DecMinScaleComparator implements Comparator<ActivityModel> {
 
     @Override
-    public int compare(Activity o1, Activity o2) {
+    public int compare(ActivityModel o1, ActivityModel o2) {
         return 0;
     }
 }
