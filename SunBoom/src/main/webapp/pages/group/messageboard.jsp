@@ -15,8 +15,8 @@
 <div id = "nav">
     <jsp:include page="nav/navigationbar1.jsp" ></jsp:include>
 </div>
-<div>
-    <jsp:include page=""></jsp:include>
+<div class="main wrapper-inner cf" >
+    <jsp:include page="messageboard/messageboard_inner.jsp"></jsp:include>
 </div>
 
 </body>
