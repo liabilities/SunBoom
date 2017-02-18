@@ -5,8 +5,8 @@ package utilities.enums;
  */
 public enum Place {
 
-    //室内，室外
-    INTERIOR(0), EXTERIOR(1);
+    //室内，户外，线上
+    INTERIOR(0), EXTERIOR(1), ONLINE(2);
 
     private int representNum;
 
