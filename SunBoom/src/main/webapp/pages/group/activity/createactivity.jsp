@@ -70,7 +70,7 @@
                 一句话简介
             </td>
             <td  class="tb">
-                <input id="invitation" class="myinput" type="text" name="initiator">
+                <input id="invitation" class="myinput" type="text" name="brief">
                 <div id="invi-div" style="display:inline">
                 </div>
             </td>
@@ -213,12 +213,11 @@
 <script>
     function create() {
         $(function () {
-//            $.post("/na", $("form").serialize(), function(data) {
-//                if (data == "1") {
-//                    setTab('activity',2,5);
-//                }
-//            })
-            getActivities(0, alert);
+            $.post("/na", $("form").serialize(), function(data) {
+                if (data == "1") {
+                    setTab('activity',2,5);
+                }
+            })
         })
     }
 </script>

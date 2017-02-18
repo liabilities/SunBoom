@@ -29,8 +29,8 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
 
-    public List<ActivityGeneralModel> defalutDisplay(String groupID) throws NotExistException {
-        return convertListPo2GeneralModel(activityDAO.findByProperty("groupID", Integer.parseInt(groupID)));
+    public List<ActivityGeneralModel> defalutDisplay(String initiatorID) throws NotExistException {
+        return convertListPo2GeneralModel(activityDAO.findByProperty("initiatorID", Integer.parseInt(initiatorID)));
     }
 
     public ActivityModel getActivityDetail(String activityID) throws NotExistException {
@@ -56,10 +56,10 @@ public class ActivityServiceImpl implements ActivityService {
         return null;
     }
 
-    public List<ActivityGeneralModel> getActivitySpecial(String groupID, ActivityState activityState) throws NotExistException {
+    public List<ActivityGeneralModel> getActivitySpecial(String initiatorID, ActivityState activityState) throws NotExistException {
         Date now = Calendar.getInstance().getTime();
 
-        List<Activity> findingResult = activityDAO.findByProperty("groupID", Integer.parseInt(groupID));
+        List<Activity> findingResult = activityDAO.findByProperty("initiatorID", Integer.parseInt(initiatorID));
 
         for (int i = 0; i < findingResult.size(); i++) {
             Activity thisActivity = findingResult.get(i);
@@ -94,7 +94,7 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     // TODO 策划模版这个东西是啥。。
-    public List<ActivityTemplateGeneral> myTemplates(String groupID) {
+    public List<ActivityTemplateGeneral> myTemplates(String initiatorID) {
         return null;
     }
 
