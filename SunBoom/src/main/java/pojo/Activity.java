@@ -107,16 +107,8 @@ public class Activity {
         this.detailPath = activityModel.detailPath;
 
         //在生成一个新的活动时，将默认参数进行转化
-        try {
-            this.activityID = Integer.parseInt(activityModel.activityID);
-        } catch (NullPointerException ex) {
-            this.activityID = -1;
-        }
-        try {
-            this.sponsorID = Integer.parseInt(activityModel.sponsorID);
-        } catch (NullPointerException ex) {
-            this.sponsorID = -1;
-        }
+        this.activityID = activityModel.activityID == null ? -1 : Integer.parseInt(activityModel.activityID);
+        this.sponsorID = activityModel.sponsorID == null ? -1 : Integer.parseInt(activityModel.sponsorID);
         this.fellowNum = activityModel.fellowNum;
         this.likeNum = activityModel.likeNum;
         this.promotePath = activityModel.promotePath;
