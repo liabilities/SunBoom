@@ -19,6 +19,29 @@
 <div class="main wrapper cf" style="height: 5px">
 </div>
 
+<form name="reg_testdate2">
+    <select name="YYYY2" onChange="YYYYDD2(this.value)">
+        <option value="">请选择 年</option>
+    </select>
+    <select name="MM2" onChange="MMDD2(this.value)">
+        <option value="">选择 月</option>
+    </select>
+    <select name="DD2">
+        <option value="">选择 日</option>
+    </select>
+</form>
+<form name="reg_testdate">
+    <select name="YYYY" onChange="YYYYDD(this.value)">
+        <option value="">请选择 年</option>
+    </select>
+    <select name="MM" onChange="MMDD(this.value)">
+        <option value="">选择 月</option>
+    </select>
+    <select name="DD">
+        <option value="">选择 日</option>
+    </select>
+</form>
+
 <form>
 <div class="formtable">
     <table class="tb">
@@ -92,17 +115,29 @@
                 开始时间
             </td>
             <td class="tb">
-                <form name="reg_testdate">
-                    <select id="selectYear" name="YYYY" onchange="YYYYDD(this.value)">
-                        <option value=""></option>
-                    </select>
-                    <select id="selectMonth" name="" onchange="MMDD(this.value)">
-                        <option value=""></option>
-                    </select>
-                    <select id="selectDay" name="DD">
-                        <option value=""></option>
-                    </select>
-                </form>
+                <%--<form name="reg_testdate">--%>
+                    <%--&lt;%&ndash;<select id="selectYear" name="YYYY" onchange="YYYYDD(this.value)">&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;<option value=""></option>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;</select>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<select id="selectMonth" name="MM" onchange="MMDD(this.value)">&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;<option value=""></option>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;</select>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<select id="selectDay" name="DD">&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;<option value=""></option>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;</select>&ndash;%&gt;--%>
+
+                        <%--<select name="YYYY" onChange="YYYYDD(this.value)">--%>
+                            <%--<option value="">请选择 年</option>--%>
+                        <%--</select>--%>
+                        <%--<select name="MM" onChange="MMDD(this.value)">--%>
+                            <%--<option value="">选择 月</option>--%>
+                        <%--</select>--%>
+                        <%--<select name="DD">--%>
+                            <%--<option value="">选择 日</option>--%>
+                        <%--</select>--%>
+                <%--</form>--%>
+
+
             </td>
         </tr>
         <tr>
@@ -110,19 +145,30 @@
                 结束时间
             </td>
             <td class="tb">
-                <form name="reg_testdate2">
-                    <select id="selectYear2" name="YYYY2" onchange="YYYYDD2(this.value)">
-                        <option value=""></option>
-                    </select>
-                    <select id="selectMonth2" name="MM2" onchange="MMDD2(this.value)">
-                        <option value=""></option>
-                    </select>
-                    <select id="selectDay2" name="DD2">
-                        <option value=""></option>
-                    </select>
-                </form>
+                <%--<form name="reg_testdate2">--%>
+                    <%--&lt;%&ndash;<select id="selectYear2" name="YYYY2" onchange="YYYYDD2(this.value)">&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;<option value=""></option>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;</select>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<select id="selectMonth2" name="MM2" onchange="MMDD2(this.value)">&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;<option value=""></option>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;</select>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<select id="selectDay2" name="DD2">&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;<option value=""></option>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;</select>&ndash;%&gt;--%>
+
+                    <%--<select name="YYYY2" onChange="YYYYDD2(this.value)">--%>
+                        <%--<option value="">请选择 年</option>--%>
+                    <%--</select>--%>
+                    <%--<select name="MM2" onChange="MMDD2(this.value)">--%>
+                        <%--<option value="">选择 月</option>--%>
+                    <%--</select>--%>
+                    <%--<select name="DD2">--%>
+                        <%--<option value="">选择 日</option>--%>
+                    <%--</select>--%>
+                <%--</form>--%>
             </td>
         </tr>
+
         <tr>
             <td class="white">
                 详细图文信息
@@ -145,8 +191,7 @@
 </div>
 
 
-<script src="/js/tab.js"></script> 
-<script src="/js/selectdate.js"></script> 
+<script src="/js/tab.js"></script>
 <link href="/css/selectdate.css" rel="stylesheet" type="text/css" />
 <script>
     var editor = new Simditor({
@@ -180,4 +225,115 @@
             })
         })
     }
+</script>
+
+
+<script language="JavaScript">
+    function YYYYMMDDstart(){
+        MonHead = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        //先给年下拉框赋内容
+        var y  = new Date().getFullYear();
+        for (var i = (y-10); i < (y+10); i++) //以今年为准，前30年，后30年
+            document.reg_testdate.YYYY.options.add(new Option(" "+ i +" 年", i));
+
+        //赋月份的下拉框
+        for (var i = 1; i < 13; i++)
+            document.reg_testdate.MM.options.add(new Option(" " + i + " 月", i));
+
+        document.reg_testdate.YYYY.value = y;
+        document.reg_testdate.MM.value = new Date().getMonth() + 1;
+        var n = MonHead[new Date().getMonth()];
+        if (new Date().getMonth() ==1 && IsPinYear(YYYYvalue)) n++;
+        writeDay(n); //赋日期下拉框Author:meizz
+        document.reg_testdate.DD.value = new Date().getDate();
+    }
+    if(document.attachEvent)
+        window.attachEvent("onload", YYYYMMDDstart);
+    else
+        window.addEventListener('load', YYYYMMDDstart, false);
+    function YYYYDD(str) //年发生变化时日期发生变化(主要是判断闰平年)
+    {
+        var MMvalue = document.reg_testdate.MM.options[document.reg_testdate.MM.selectedIndex].value;
+        if (MMvalue == ""){ var e = document.reg_testdate.DD; optionsClear(e); return;}
+        var n = MonHead[MMvalue - 1];
+        if (MMvalue ==2 && IsPinYear(str)) n++;
+        writeDay(n)
+    }
+    function MMDD(str)   //月发生变化时日期联动
+    {
+        var YYYYvalue = document.reg_testdate.YYYY.options[document.reg_testdate.YYYY.selectedIndex].value;
+        if (YYYYvalue == ""){ var e = document.reg_testdate.DD; optionsClear(e); return;}
+        var n = MonHead[str - 1];
+        if (str ==2 && IsPinYear(YYYYvalue)) n++;
+        writeDay(n)
+    }
+    function writeDay(n)   //据条件写日期的下拉框
+    {
+        var e = document.reg_testdate.DD; optionsClear(e);
+        for (var i=1; i<(n+1); i++)
+            e.options.add(new Option(" "+ i + " 日", i));
+    }
+    function IsPinYear(year)//判断是否闰平年
+    {
+        return(0 == year%4 && (year%100 !=0 || year%400 == 0));
+    }
+    function optionsClear(e)
+    {
+        e.options.length = 1;
+    }
+
+
+    function YYYYMMDDstart2(){
+        MonHead = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        //先给年下拉框赋内容
+        var y  = new Date().getFullYear();
+        for (var i = (y-10); i < (y+10); i++) //以今年为准，前30年，后30年
+            document.reg_testdate2.YYYY2.options.add(new Option(" "+ i +" 年", i));
+
+        //赋月份的下拉框
+        for (var i = 1; i < 13; i++)
+            document.reg_testdate2.MM2.options.add(new Option(" " + i + " 月", i));
+
+        document.reg_testdate2.YYYY2.value = y;
+        document.reg_testdate2.MM2.value = new Date().getMonth() + 1;
+        var n = MonHead[new Date().getMonth()];
+        if (new Date().getMonth() ==1 && IsPinYear(YYYYvalue)) n++;
+        writeDay(n); //赋日期下拉框Author:meizz
+        document.reg_testdate2.DD2.value = new Date().getDate();
+    }
+    if(document.attachEvent)
+        window.attachEvent("onload", YYYYMMDDstart2);
+    else
+        window.addEventListener('load', YYYYMMDDstart2, false);
+    function YYYYDD2(str) //年发生变化时日期发生变化(主要是判断闰平年)
+    {
+        var MMvalue = document.reg_testdate2.MM2.options[document.reg_testdate2.MM2.selectedIndex].value;
+        if (MMvalue == ""){ var e = document.reg_testdate2.DD2; optionsClear2(e); return;}
+        var n = MonHead[MMvalue - 1];
+        if (MMvalue ==2 && IsPinYear2(str)) n++;
+        writeDay2(n)
+    }
+    function MMDD2(str)   //月发生变化时日期联动
+    {
+        var YYYYvalue = document.reg_testdate2.YYYY2.options[document.reg_testdate2.YYYY2.selectedIndex].value;
+        if (YYYYvalue == ""){ var e = document.reg_testdate2.DD2; optionsClear2(e); return;}
+        var n = MonHead[str - 1];
+        if (str ==2 && IsPinYear2(YYYYvalue)) n++;
+        writeDay2(n)
+    }
+    function writeDay2(n)   //据条件写日期的下拉框
+    {
+        var e = document.reg_testdate2.DD2; optionsClear2(e);
+        for (var i=1; i<(n+1); i++)
+            e.options.add(new Option(" "+ i + " 日", i));
+    }
+    function IsPinYear2(year)//判断是否闰平年
+    {
+        return(0 == year%4 && (year%100 !=0 || year%400 == 0));
+    }
+    function optionsClear2(e)
+    {
+        e.options.length = 1;
+    }
+
 </script>

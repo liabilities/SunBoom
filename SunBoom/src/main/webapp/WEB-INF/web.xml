@@ -45,7 +45,7 @@
   </filter-mapping>
 
   <welcome-file-list>
-    <!--<welcome-file>/pages/style1.jsp</welcome-file>-->
+    <!--<welcome-file>/pages/date.jsp</welcome-file>-->
     <welcome-file>/pages/group/fellow/socket.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
