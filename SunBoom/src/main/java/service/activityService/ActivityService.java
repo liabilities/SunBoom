@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by lenovo on 2017/1/13.
  * Last changed by charles.
- * Updating time: 2017/2/16.
+ * Updating time: 2017/2/18.
  */
 public interface ActivityService {
 

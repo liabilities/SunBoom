@@ -20,6 +20,12 @@ public class PlaceCriteria implements SearchCriteria{
 
     @Override
     public List<ActivityModel> meetCriteria(List<ActivityModel> activities) {
-        return null;
+        for (int i = 0; i < activities.size();) {
+            if (activities.get(i).place != targetPlace) {
+                activities.remove(i);
+            }
+            i++;
+        }
+        return activities;
     }
 }

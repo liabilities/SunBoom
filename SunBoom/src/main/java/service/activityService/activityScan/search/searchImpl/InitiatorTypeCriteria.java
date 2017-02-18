@@ -11,15 +11,21 @@ import java.util.List;
  */
 public class InitiatorTypeCriteria implements SearchCriteria {
 
-    private ActivityInitiatorType TargetActivityInitiatorType;
+    private ActivityInitiatorType targetActivityInitiatorType;
 
     public InitiatorTypeCriteria(ActivityInitiatorType targetActivityInitiatorType) {
-        TargetActivityInitiatorType = targetActivityInitiatorType;
+        this.targetActivityInitiatorType = targetActivityInitiatorType;
     }
 
 
     @Override
     public List<ActivityModel> meetCriteria(List<ActivityModel> activities) {
-        return null;
+        for (int i = 0; i < activities.size();) {
+            if (activities.get(i).initiatorType != targetActivityInitiatorType) {
+                activities.remove(i);
+            }
+            i++;
+        }
+        return activities;
     }
 }

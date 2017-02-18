@@ -13,6 +13,6 @@ public class NullCriteria implements SearchCriteria {
 
     @Override
     public List<ActivityModel> meetCriteria(List<ActivityModel> activities) {
-        return null;
+        return activities;
     }
 }

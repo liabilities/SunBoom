@@ -21,6 +21,12 @@ public class TimeSpanCriteria implements SearchCriteria {
 
     @Override
     public List<ActivityModel> meetCriteria(List<ActivityModel> activities) {
-        return null;
+        for (int i = 0; i < activities.size();) {
+            if (!(activities.get(i).startTime.after(targetStartTime) && activities.get(i).endTime.before(targetEndTime))) {
+                activities.remove(i);
+            }
+            i++;
+        }
+        return activities;
     }
 }

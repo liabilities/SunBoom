@@ -18,6 +18,12 @@ public class ActivityNameCriteria implements SearchCriteria {
 
     @Override
     public List<ActivityModel> meetCriteria(List<ActivityModel> activities) {
-        return null;
+        for (int i = 0; i < activities.size();) {
+            if (!activities.get(i).name.contains(targetName)) {
+                activities.remove(i);
+            }
+            i++;
+        }
+        return activities;
     }
 }

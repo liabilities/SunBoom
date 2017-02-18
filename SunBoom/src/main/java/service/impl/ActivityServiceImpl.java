@@ -15,7 +15,7 @@ import java.util.*;
 /**
  * Created by lenovo on 2017/1/23.
  * Last changed by charles.
- * Updating time: 2017/2/8.
+ * Updating time: 2017/2/18.
  */
 public class ActivityServiceImpl implements ActivityService {
 
