@@ -3,14 +3,14 @@ package utilities.enums;
 /**
  * Created by cuihua on 2017/1/11.
  */
-public enum ParticipantRange {
+public enum NetworkingParticipantRange {
 
     //全部，只面向全城，只面向全校
     ALL(0), CITY(1), UNIVERSITY(2);
 
     private int representNum;
 
-    private ParticipantRange(int a){
+    private NetworkingParticipantRange(int a){
         representNum = a;
     }
 
@@ -32,8 +32,8 @@ public enum ParticipantRange {
      * int TO enum
      * 便于从数据库读入
      */
-    public static ParticipantRange getEnum(int a) {
-        for (ParticipantRange thisEnum : ParticipantRange.values()){
+    public static NetworkingParticipantRange getEnum(int a) {
+        for (NetworkingParticipantRange thisEnum : NetworkingParticipantRange.values()){
             if (thisEnum.representNum == a){
                 return thisEnum;
             }
