@@ -45,27 +45,24 @@ public class MemberController {
     @ResponseBody
     public String findMember(String userName){
         System.out.print(userName);
-//        String avatar=null;
-//        try {
-//            avatar = service.getAvatar(userName);
-//        }catch (NotExistException e){
-//            e.printStackTrace();
-//        }
-//        if(avatar!=null)
-//            return avatar;
-        return "../../img/1.png ";
+        String avatar="";
+        try {
+            avatar = service.getAvatar(userName);
+        }catch (NotExistException e){
+            e.printStackTrace();
+        }
+        return avatar;
     }
 
     @RequestMapping(value = "/findCode",method =RequestMethod.GET)
     @ResponseBody
     public String findCode(String id){
-//        String code;
-//        try {
-//            code = service.generateCode(id);
-//        }catch (NotExistException e){
-//            e.printStackTrace();
-//        }
-//        return code;
-        return "dfad";
+        String code="";
+        try {
+            code = service.generateCode(id);
+        }catch (NotExistException e){
+            e.printStackTrace();
+        }
+        return code;
     }
 }
