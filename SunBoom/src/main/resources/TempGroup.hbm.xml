@@ -34,7 +34,7 @@
             <column name="avatar" sql-type="varchar(255)"/>
         </property>
         <property name="registerTime">
-            <column name="registerTime" sql-type="date" />
+            <column name="registerTime" sql-type="datetime" />
         </property>
         <property name="verify">
             <column name="verify" sql-type="int(1)"/>

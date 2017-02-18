@@ -16,7 +16,7 @@
             <column name="identity" sql-type="int(1)" />
         </property>
         <property name="time">
-            <column name="time" sql-type="date"/>
+            <column name="time" sql-type="datetime"/>
         </property>
         <property name="content">
             <column name="content" sql-type="text"/>

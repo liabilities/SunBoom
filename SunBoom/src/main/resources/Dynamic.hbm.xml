@@ -10,7 +10,7 @@
             <generator class="increment"/>
         </id>
         <property name="publishTime">
-            <column name="publishTime" sql-type="date"/>
+            <column name="publishTime" sql-type="datetime"/>
         </property>
         <property name="publisherID">
             <column name="publisherID" sql-type="int"/>

@@ -19,7 +19,7 @@
             <column name="enrollmentYear" sql-type="int"/>
         </property>
         <property name="identificationTime">
-            <column name="identificationTime" sql-type="date"/>
+            <column name="identificationTime" sql-type="datetime"/>
         </property>
 
     </class>

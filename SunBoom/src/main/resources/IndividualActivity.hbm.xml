@@ -13,7 +13,7 @@
             <column name="activityID" sql-type="int"/>
         </property>
         <property name="startTime">
-            <column name="startTime" sql-type="date"/>
+            <column name="startTime" sql-type="datetime"/>
         </property>
         <property name="responsorNum">
             <column name="responsorNum" sql-type="int"/>
