@@ -184,17 +184,17 @@
         添加新成员
     </div>
     <div class="addmember" id="code" style="display:none" onmouseleave='showhidediv2("code")'>
-        <a class="code" onClick="generating()">生成邀请码</a>
-        <a class="invite" onClick="searching()">用户名搜索</a>
+        <a class="code" onClick="getCode();generating();">生成邀请码</a>
+        <a class="invite" onClick="searching();findMember()">用户名搜索</a>
     </div>
 </div>
 
 <div id="codepanel">
-    <div class="right" style="width: 80px;height: 66px" onclick="Lock_CheckForm(this);">
+    <div class="right" style="width: 80px;height: 66px" onclick="Lock_CheckForm(this);clearCode();">
     </div>
     <div class="left">
         <p><text style="font-size:12px">2分钟之内有效</text></p>
-        <p>33wi8y98</p>
+        <div id="codeplace"></div>
     </div>
 </div>
 
@@ -285,7 +285,7 @@
             url:"/findMember",
             data:{userName:"hehe"},
             success:function (data) {
-                alert(data);
+//                alert(data);
             },
             error:function () {
                 alert("error");
@@ -299,12 +299,18 @@
             url:"/findCode",
             data:{id:1},
             success:function (data) {
-                alert(data);
+//                alert(data);
+                str="<p>"+data+"</p>";
+                $("#codeplace").html(str);
             },
             error:function () {
                 alert("error");
             }
         })
+    }
+
+    function clearCode() {
+        $("#codeplace").html("");
     }
 </script>
 
