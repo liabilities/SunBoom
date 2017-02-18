@@ -185,7 +185,7 @@
     </div>
     <div class="addmember" id="code" style="display:none" onmouseleave='showhidediv2("code")'>
         <a class="code" onClick="getCode();generating();">生成邀请码</a>
-        <a class="invite" onClick="searching();findMember()">用户名搜索</a>
+        <a class="invite" onClick="searching();">用户名搜索</a>
     </div>
 </div>
 
@@ -203,17 +203,17 @@
         <div style="height: 117px">
             <br/>
             <br/>
-            <input type="text" />
-            <input type="submit" value="查询" name="username" />
+            <input type="text" id="searchfield"/>
+            <input type="submit" value="查询" name="username" onclick="findMember()" />
         </div>
-        <div style="height: 117px">
-            <img src="/img/1.png" style="width: 117px;height: 117px">
+        <div style="height: 117px" id="avatar">
+            <%--<img src="/img/1.png" style="width: 117px;height: 117px">--%>
         </div>
         <div style="height: 60px">
             <br/>
-            <a class="buttons">-邀请-</a>
+            <div id="invitation"><br/></div>
             <br/>
-            <a class="buttons" onclick="Lock_CheckForm2(this)">-返回-</a>
+            <a class="buttons" onclick="Lock_CheckForm2(this);clearAvatar()">-返回-</a>
         </div>
     </div>
 </div>
@@ -280,12 +280,16 @@
     }
 
     function findMember() {
+        var username = document.getElementById("searchfield").value;
         $.ajax({
             type:"post",
             url:"/findMember",
-            data:{userName:"hehe"},
+            data:{userName:username},
             success:function (data) {
-//                alert(data);
+                str="<img src=\""+data+"\" style=\"width: 117px;height: 117px\">"
+                $("#avatar").html(str);
+                str2 = "<a class=\"buttons\" onclick='havesent()'>-邀请-</a>"
+                $("#invitation").html(str2);
             },
             error:function () {
                 alert("error");
@@ -311,6 +315,15 @@
 
     function clearCode() {
         $("#codeplace").html("");
+    }
+
+    function clearAvatar(){
+        $("#avatar").html("");
+        $("#invitation").html("<br/>");
+    }
+
+    function havesent(){
+        alert("邀请已发送");
     }
 </script>
 
