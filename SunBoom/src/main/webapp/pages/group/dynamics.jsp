@@ -25,7 +25,7 @@
     </div>
     <div class="main wrapper cf">
         <div id="con_dynamics_1" class="hover">
-            我的动态
+            <jsp:include page="dynamic/my_dynamics.jsp"></jsp:include>
         </div>
 
         <div id="con_dynamics_2" style="display:none">
