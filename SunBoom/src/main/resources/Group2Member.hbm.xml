@@ -16,7 +16,7 @@
             <column name="personID" sql-type="int"/>
         </property>
         <property name="addTime">
-            <column name="addTime" sql-type="date"/>
+            <column name="addTime" sql-type="datetime"/>
         </property>
 
     </class>

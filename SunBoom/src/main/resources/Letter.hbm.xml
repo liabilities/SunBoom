@@ -16,7 +16,7 @@
             <column name="receiverID" sql-type="int" />
         </property>
         <property name="time">
-            <column name="time" sql-type="date"/>
+            <column name="time" sql-type="datetime"/>
         </property>
         <property name="type">
             <column name="type" sql-type="int(1)"/>

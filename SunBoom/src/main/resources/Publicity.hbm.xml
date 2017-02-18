@@ -13,7 +13,7 @@
             <column name="activityID" sql-type="int"/>
         </property>
         <property name="publishTime">
-            <column name="publishTime" sql-type="date"/>
+            <column name="publishTime" sql-type="datetime"/>
         </property>
         <property name="detailPath">
             <column name="detailPath" sql-type="varchar(255)"/>
@@ -22,7 +22,7 @@
             <column name="clickNum" sql-type="int" />
         </property>
         <property name="lastReplyTime">
-            <column name="lastReplyTime" sql-type="date"/>
+            <column name="lastReplyTime" sql-type="datetime"/>
         </property>
 
     </class>

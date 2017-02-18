@@ -2,10 +2,14 @@ package utilities.enums;
 
 /**
  * Created by cuihua on 2017/2/17.
- * TODO 小他：不知道活动发起者类型有哪些，我就算随便写了个
+ * Last changed by charles.
+ * Updating time: 2017/2/18.
  */
 public enum ActivityInitiatorType {
-    STUDENT(0);
+
+    //注册团体，临时团体，个人
+    REGISTERED(0), TEMPORARY(1), INDIVIDUAL(2);
+
 
 
     private int representNum;

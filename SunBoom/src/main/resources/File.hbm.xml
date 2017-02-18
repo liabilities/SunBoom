@@ -28,7 +28,7 @@
             <column name="parentID" sql-type="int"/>
         </property>
         <property name="updateTime">
-            <column name="updateTime" sql-type="date"/>
+            <column name="updateTime" sql-type="datetime"/>
         </property>
 
     </class>

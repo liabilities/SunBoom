@@ -34,10 +34,10 @@
             <column name="place" sql-type="int(1)"/>
         </property>
         <property name="startTime">
-            <column name="startTime" sql-type="date"/>
+            <column name="startTime" sql-type="datetime"/>
         </property>
         <property name="endTime">
-            <column name="endTime" sql-type="date"/>
+            <column name="endTime" sql-type="datetime"/>
         </property>
         <property name="brief">
             <column name="brief" sql-type="varchar(255)"/>

@@ -16,10 +16,10 @@
             <column name="neededMoney" sql-type="int"/>
         </property>
         <property name="startTime">
-            <column name="startTime" sql-type="date"/>
+            <column name="startTime" sql-type="datetime"/>
         </property>
         <property name="deadline">
-            <column name="deadline" sql-type="date" />
+            <column name="deadline" sql-type="datetime" />
         </property>
         <property name="businessID">
             <column name="businessID" sql-type="int"/>

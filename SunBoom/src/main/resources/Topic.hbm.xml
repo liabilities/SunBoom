@@ -22,7 +22,7 @@
             <column name="content" sql-type="text"/>
         </property>
         <property name="time">
-            <column name="time" sql-type="date"/>
+            <column name="time" sql-type="datetime"/>
         </property>
 
     </class>
