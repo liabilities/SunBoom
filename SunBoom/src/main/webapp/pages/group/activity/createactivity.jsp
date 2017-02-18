@@ -27,7 +27,7 @@
                 活动名称
             </td>
             <td class="tb">
-                <input id="text1" class="myinput" type="text" name="text1" onblur="check()">
+                <input id="text1" class="myinput" type="text" name="name" onblur="check()">
                 <div id="div1" style="display:inline">
                 </div>
             </td>
@@ -37,7 +37,7 @@
                 发起者
             </td>
             <td  class="tb">
-                <input id="text2" class="myinput" type="text" name="text2" value="这里应该是发起者名称，不可编辑" readOnly="true">
+                <input id="text2" class="myinput" type="text" name="initiator" value="这里应该是发起者名称，不可编辑" readOnly="true">
                 <div id="div2" style="display:inline">
                 </div>
             </td>
@@ -47,9 +47,9 @@
                 发起者类型
             </td>
             <td class="tb">
-                <input type="radio" name="type" class="mychoose"/>注册团体
-                <input type="radio" name="type" class="mychoose"/>临时团体
-                <input type="radio" name="type" class="mychoose"/>个人
+                <input type="radio" name="initiatorType" value="0" class="mychoose"/>注册团体
+                <input type="radio" name="initiatorType" value="1" class="mychoose"/>临时团体
+                <input type="radio" name="initiatorType" value="2" class="mychoose"/>个人
                 <div id="div3" style="display:inline">
                 </div>
             </td>
@@ -59,9 +59,9 @@
                 活动规模
             </td>
             <td class="tb">
-                <input id="text4" class="myinput-scale" type="text" name="text4" onblur="check()">
+                <input id="text4" class="myinput-scale" type="number" name="scale[]" onblur="check()">
                 <span style="color: white"> - </span>
-                <input id="text5" class="myinput-scale" type="text" name="text4" onblur="check()">
+                <input id="text5" class="myinput-scale" type="number" name="scale[]" onblur="check()">
                 <span style="color: white"> 人</span>
                 <div id="div4" style="display:inline">
                 </div>
@@ -72,9 +72,9 @@
                 活动类型
             </td>
             <td class="tb">
-                <input type="checkbox" name="chkType" class="mychoose"/>晚会
-                <input type="checkbox" name="chkType" class="mychoose"/>体育
-                <input type="checkbox" name="chkType" class="mychoose"/>音乐
+                <input type="checkbox" name="activityType[]" value="0" class="mychoose"/>志愿
+                <input type="checkbox" name="activityType[]" value="1" class="mychoose"/>音乐
+                <input type="checkbox" name="activityType[]" value="2" class="mychoose"/>体育
             </td>
         </tr>
         <tr>
@@ -82,9 +82,9 @@
                 活动场地
             </td>
             <td class="tb">
-                <input type="radio" name="place" class="mychoose"/>室内
-                <input type="radio" name="place" class="mychoose"/>户外
-                <input type="radio" name="place" class="mychoose"/>线上
+                <input type="radio" name="place" value="0" class="mychoose"/>室内
+                <input type="radio" name="place" value="1" class="mychoose"/>户外
+                <input type="radio" name="place" value="2" class="mychoose"/>线上
             </td>
         </tr>
         <tr>
@@ -158,13 +158,25 @@
 <script>
     function create() {
         $(function () {
-//            $.post("/na", $("form").serialize(), function(data) {
-//                if (data == "1") {
-//                    setTab('activity',2,5);
-//                }
-//            })
+            alert($("form").serialize());
+            $.post("/na", $("form").serialize(), function(data) {
+                if (data == "1") {
+                    setTab('activity',2,5);
+                }
+            })
+        })
+    }
+</script>
+
+
+<script>
+    /*
+    根据状态state获得活动，然后执行callback
+     */
+    function getActivities(state, callback) {
+        $(function () {
             $.post("/gi", {id:"0", state:"0"}, function (data) {
-                alert(data);
+                callback(data);
             })
         })
     }
