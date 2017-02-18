@@ -2,15 +2,10 @@ package service.impl;
 
 import dao.ActivityDAO;
 import dao.impl.ActivityDAOImpl;
-import model.ActivityGeneralModel;
-import model.ActivityModel;
-import model.ActivityTemplateGeneral;
-import model.AxisModel;
+import model.*;
 import pojo.Activity;
-import service.ActivityService;
-import utilities.enums.ActivityState;
-import utilities.enums.ActivityType;
-import utilities.enums.ResultMsg;
+import service.activityService.ActivityService;
+import utilities.enums.*;
 import utilities.exceptions.NotExistException;
 
 import java.util.*;
@@ -84,7 +79,12 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     // TODO Charles--等确定了再写
-    public List<ActivityGeneralModel> searchActivity(String activityName, ActivityType activityType, ActivityState activityState, Date startTime) {
+    public List<Activity> searchActivities(List<ActivitySearchCriteria> activitySearchCriterias, ActivitySearchCreteriaModel activitySearchCreteriaModel) {
+        return null;
+    }
+
+    // TODO Charles--等确定了再写
+    public List<Activity> sortActivities(ActivitySortStrategy activitySortStrategy) {
         return null;
     }
 
