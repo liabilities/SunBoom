@@ -17,7 +17,8 @@ import java.util.List;
 @Controller
 public class MemberController {
     MemberService service=new MemberServiceImpl();
-    @RequestMapping(value = "/getMembers",method = RequestMethod.POST)
+    @RequestMapping(value = "/getMembers",method = RequestMethod.POST,produces = "text/html; charset=UTF-8"
+    )
     @ResponseBody
     public String getMembers(String id){
         System.out.println(id);

@@ -12,6 +12,7 @@ import service.DynamicsService;
 import service.impl.DynamicsServiceImpl;
 import utilities.exceptions.NotExistException;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -58,7 +59,7 @@ public class DynamicController {
 
     @RequestMapping(value = "/republish",method = RequestMethod.POST)
     @ResponseBody
-    public String republish(){
+    public String republish(HttpServletRequest request){
         return "";
     }
 

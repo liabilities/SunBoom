@@ -257,6 +257,7 @@
                 url:"/getMembers",
                 data:{id:1},
                 dataType:"json",
+                scriptCharset: 'utf-8',
                 success:function (memberList) {
                     var member=memberList.member;
 

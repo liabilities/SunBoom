@@ -1,4 +1,4 @@
-\<%--
+<%--
   Created by IntelliJ IDEA.
   User: zs
   Date: 2017/2/18
@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href="/css/login_group.css" type="text/css" rel="stylesheet">
     <title>登录</title>
 </head>
 <body>
@@ -19,60 +19,21 @@
 <div id = "nav">
     <jsp:include page="/pages/group/nav/navhead.jsp" ></jsp:include>
 </div>
-
-
-<style>
-    .input-form{
-        text-align: center;
-        padding-top: 30px;
-        padding-button:30px;
-    }
-
-    .input-name{
-        font-family:"微软雅黑 Light";
-        font-size: 18px;
-        text-align: center;
-    }
-
-    .input-field{
-        border-width: 0px;
-        width:300px;
-        height:30px;
-        font-size: 17px;
-        color: white;
-        font-family:"微软雅黑 Light";
-        padding-left: 2px;
-        border:1px solid #325d7f;
-    }
-
-    .login-button{
-        background: url("/img/inputbg.png") fixed center center no-repeat;
-        background-size: cover;
-        border-width: 0px;
-        width:80px;
-        height:30px;
-        font-size: 17px;
-        color: white;
-        font-family:"微软雅黑 Light";
-        cursor:pointer;
-    }
-
-    .login-button:hover{
-        background: grey;
-    }
-
-</style>
-
-<div class="main wrapper cf">
+<div class="main login-wrapper cf">
     <div class="input-form">
         <div>
             <table>
+                <tr>
+                   <td colspan="2">
+                       <img src="/img/1.png" class="avatar">
+                   </td>
+                </tr>
                 <tr style="height:50px">
                     <td>
                         <label for="groupName" class="input-name">用户名</label>
                     </td>
                     <td>
-                        <input type="userName" class="input-field" id="groupName" name="groupName" placeholder="请输入用户名">
+                        <input type="text" class="input-field" id="groupName" name="groupName" placeholder="请输入用户名">
                     </td>
                 </tr>
                 <tr style="height:50px">
@@ -96,7 +57,5 @@
 <script src="../../js/group/login.js">
 </script>
 
-
-</div>
 </body>
 </html>

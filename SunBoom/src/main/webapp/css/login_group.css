@@ -1,0 +1,48 @@
+.login-wrapper{
+    margin: 0 auto;
+    width: 30%;
+}
+.input-form {
+    text-align: center;
+    padding-top: 30px;
+    padding-button: 30px;
+}
+
+.input-name {
+    font-family: "微软雅黑 Light";
+    font-size: 18px;
+    text-align: center;
+}
+
+.input-field {
+    border-width: 0px;
+    width: 300px;
+    height: 30px;
+    font-size: 17px;
+    color: #050105;
+    font-family: "微软雅黑 Light";
+    padding-left: 2px;
+    border: 1px solid #325d7f;
+}
+
+.login-button {
+    background: url("/img/inputbg.png") fixed center center no-repeat;
+    background-size: cover;
+    border-width: 0px;
+    width: 80px;
+    height: 30px;
+    font-size: 17px;
+    color: white;
+    font-family: "微软雅黑 Light";
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: grey;
+}
+.avatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    margin: 10px 100px 30px 100px;
+}
