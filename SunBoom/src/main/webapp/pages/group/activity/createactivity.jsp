@@ -94,13 +94,13 @@
             <td class="tb">
                 <form name="reg_testdate">
                     <select id="selectYear" name="YYYY" onchange="YYYYDD(this.value)">
-                        <option value="">选择年</option>
+                        <option value=""></option>
                     </select>
-                    <select id="selectMonth" name="MM" onchange="MMDD(this.value)">
-                        <option value="">选择月</option>
+                    <select id="selectMonth" name="" onchange="MMDD(this.value)">
+                        <option value=""></option>
                     </select>
                     <select id="selectDay" name="DD">
-                        <option value="">选择日</option>
+                        <option value=""></option>
                     </select>
                 </form>
             </td>
@@ -112,13 +112,13 @@
             <td class="tb">
                 <form name="reg_testdate2">
                     <select id="selectYear2" name="YYYY2" onchange="YYYYDD2(this.value)">
-                        <option value="">选择年</option>
+                        <option value=""></option>
                     </select>
                     <select id="selectMonth2" name="MM2" onchange="MMDD2(this.value)">
-                        <option value="">选择月</option>
+                        <option value=""></option>
                     </select>
                     <select id="selectDay2" name="DD2">
-                        <option value="">选择日</option>
+                        <option value=""></option>
                     </select>
                 </form>
             </td>

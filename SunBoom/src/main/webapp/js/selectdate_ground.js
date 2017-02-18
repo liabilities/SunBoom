@@ -14,7 +14,7 @@ function YYYYMMDDstart3()
     document.reg_testdate3.MM3.value = "未定义";
     var n = MonHead[new Date().getMonth()];
     if (new Date().getMonth() ==1 && IsPinYear3(YYYYvalue)) n++;
-    writeDay(n); //赋日期下拉框Author:meizz
+    writeDay3(n); //赋日期下拉框Author:meizz
     document.reg_testdate3.DD3.value = "未定义";
 }
 if(document.attachEvent)
@@ -23,10 +23,10 @@ else
     window.addEventListener('load', YYYYMMDDstart3, false);
 function YYYYDD3(str) //年发生变化时日期发生变化(主要是判断闰平年)
 {
-    var MMvalue = document.reg_testdate3.MM3.options[document.reg_testdate.MM.selectedIndex].value;
+    var MMvalue = document.reg_testdate3.MM3.options[document.reg_testdate3.MM3.selectedIndex].value;
     if (MMvalue == ""){ var e = document.reg_testdate3.DD3; optionsClear3(e); return;}
     var n = MonHead[MMvalue - 1];
-    if (MMvalue ==3 && IsPinYear(str)) n++;
+    if (MMvalue ==2 && IsPinYear(str)) n++;
     writeDay3(n)
 }
 function MMDD3(str)   //月发生变化时日期联动
@@ -34,7 +34,7 @@ function MMDD3(str)   //月发生变化时日期联动
     var YYYYvalue = document.reg_testdate3.YYYY3.options[document.reg_testdate3.YYYY3.selectedIndex].value;
     if (YYYYvalue == ""){ var e = document.reg_testdate3.DD3; optionsClear3(e); return;}
     var n = MonHead[str - 1];
-    if (str ==3 && IsPinYear3(YYYYvalue)) n++;
+    if (str ==2 && IsPinYear3(YYYYvalue)) n++;
     writeDay3(n)
 }
 function writeDay3(n)   //据条件写日期的下拉框
@@ -66,7 +66,7 @@ function YYYYMMDDstart4()
     document.reg_testdate3.MM4.value = "未定义";
     var n = MonHead[new Date().getMonth()];
     if (new Date().getMonth() ==1 && IsPinYear4(YYYYvalue)) n++;
-    writeDay(n); //赋日期下拉框Author:meizz
+    writeDay4(n); //赋日期下拉框Author:meizz
     document.reg_testdate3.DD4.value = "未定义";
 }
 if(document.attachEvent)
@@ -75,10 +75,10 @@ else
     window.addEventListener('load', YYYYMMDDstart4, false);
 function YYYYDD4(str) //年发生变化时日期发生变化(主要是判断闰平年)
 {
-    var MMvalue = document.reg_testdate3.MM4.options[document.reg_testdate.MM.selectedIndex].value;
+    var MMvalue = document.reg_testdate3.MM4.options[document.reg_testdate3.MM4.selectedIndex].value;
     if (MMvalue == ""){ var e = document.reg_testdate3.DD4; optionsClear4(e); return;}
     var n = MonHead[MMvalue - 1];
-    if (MMvalue ==4 && IsPinYear(str)) n++;
+    if (MMvalue ==2 && IsPinYear(str)) n++;
     writeDay4(n)
 }
 function MMDD4(str)   //月发生变化时日期联动
@@ -86,7 +86,7 @@ function MMDD4(str)   //月发生变化时日期联动
     var YYYYvalue = document.reg_testdate3.YYYY4.options[document.reg_testdate3.YYYY4.selectedIndex].value;
     if (YYYYvalue == ""){ var e = document.reg_testdate3.DD4; optionsClear4(e); return;}
     var n = MonHead[str - 1];
-    if (str ==4 && IsPinYear4(YYYYvalue)) n++;
+    if (str ==2 && IsPinYear4(YYYYvalue)) n++;
     writeDay4(n)
 }
 function writeDay4(n)   //据条件写日期的下拉框
