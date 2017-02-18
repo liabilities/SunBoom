@@ -1,12 +1,8 @@
-package service;
+package service.activityService;
 
-import model.ActivityTemplateGeneral;
-import model.AxisModel;
-import utilities.enums.ActivityState;
-import utilities.enums.ActivityType;
-import utilities.enums.ResultMsg;
-import model.ActivityGeneralModel;
-import model.ActivityModel;
+import model.*;
+import pojo.Activity;
+import utilities.enums.*;
 import utilities.exceptions.NotExistException;
 
 import java.util.Date;
@@ -15,7 +11,7 @@ import java.util.List;
 /**
  * Created by lenovo on 2017/1/13.
  * Last changed by charles.
- * Updating time: 2017/2/16.
+ * Updating time: 2017/2/18.
  */
 public interface ActivityService {
 
@@ -29,7 +25,7 @@ public interface ActivityService {
      * Last changed by charles.
      * Updating time: 2017/2/16.
      */
-    public List<ActivityGeneralModel> defalutDisplay(String initiatorID) throws NotExistException;
+    public List<ActivityModel> defalutDisplay(String initiatorID) throws NotExistException;
 
     /**
      * 根据活动ID获取活动详情
@@ -82,25 +78,30 @@ public interface ActivityService {
      * Last changed by charles.
      * Updating time: 2017/2/16.
      */
-    public List<ActivityGeneralModel> getActivitySpecial(String initiatorID, ActivityState activityState) throws NotExistException;
+    public List<ActivityModel> getActivitySpecial(String initiatorID, ActivityState activityState) throws NotExistException;
 
 
 
     /*
-    搜索
+    搜索，排序
      */
     /**
      * 根据现有条件搜索显示
-     * @param activityName 活动名称
-     * @param activityType 活动类型
-     * @param activityState 要查看的活动状态（包括：尚未开始，正在进行，已结束）
-     * @param startTime 活动开始时间
+     * @param activitySearchCriterias 搜索的标准（可多个重叠）
+     * @param activitySearchCreteriaModel 在客户端和服务器之间传递
      * @return activity简介的列表
-     *
      * Last changed by charles.
-     * Updating time: 2017/2/16.
+     * Updating time: 2017/2/18.
      */
-    public List<ActivityGeneralModel> searchActivity(String activityName, ActivityType activityType, ActivityState activityState, Date startTime);
+    public List<ActivityModel> searchActivities(List<ActivitySearchCriteria> activitySearchCriterias, ActivitySearchCreteriaModel activitySearchCreteriaModel);
+
+    /**
+     * 根据现有规则排序显示
+     * @param activitySortStrategy 现有的排序规则
+     * @return
+     */
+    public List<ActivityModel> sortActivities(ActivitySortStrategy activitySortStrategy);
+
 
 
 

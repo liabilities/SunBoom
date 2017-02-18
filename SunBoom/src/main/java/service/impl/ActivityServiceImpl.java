@@ -2,15 +2,12 @@ package service.impl;
 
 import dao.ActivityDAO;
 import dao.impl.ActivityDAOImpl;
-import model.ActivityGeneralModel;
-import model.ActivityModel;
-import model.ActivityTemplateGeneral;
-import model.AxisModel;
+import model.*;
 import pojo.Activity;
-import service.ActivityService;
-import utilities.enums.ActivityState;
-import utilities.enums.ActivityType;
-import utilities.enums.ResultMsg;
+import service.activityService.ActivityService;
+import service.activityService.activityScan.search.SearchCriteriaFactory;
+import service.activityService.activityScan.sortComparator.SortComparatorFactory;
+import utilities.enums.*;
 import utilities.exceptions.NotExistException;
 
 import java.util.*;
@@ -18,9 +15,11 @@ import java.util.*;
 /**
  * Created by lenovo on 2017/1/23.
  * Last changed by charles.
- * Updating time: 2017/2/8.
+ * Updating time: 2017/2/18.
  */
 public class ActivityServiceImpl implements ActivityService {
+
+    List<ActivityModel> currentAcitivities;
 
     ActivityDAO activityDAO;
 
@@ -29,8 +28,9 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
 
-    public List<ActivityGeneralModel> defalutDisplay(String initiatorID) throws NotExistException {
-        return convertListPo2GeneralModel(activityDAO.findByProperty("initiatorID", Integer.parseInt(initiatorID)));
+    public List<ActivityModel> defalutDisplay(String initiatorID) throws NotExistException {
+        currentAcitivities = convertListPo2Model(activityDAO.findByProperty("initiatorID", Integer.parseInt(initiatorID)));
+        return currentAcitivities;
     }
 
     public ActivityModel getActivityDetail(String activityID) throws NotExistException {
@@ -56,7 +56,7 @@ public class ActivityServiceImpl implements ActivityService {
         return null;
     }
 
-    public List<ActivityGeneralModel> getActivitySpecial(String initiatorID, ActivityState activityState) throws NotExistException {
+    public List<ActivityModel> getActivitySpecial(String initiatorID, ActivityState activityState) throws NotExistException {
         Date now = Calendar.getInstance().getTime();
 
         List<Activity> findingResult = activityDAO.findByProperty("initiatorID", Integer.parseInt(initiatorID));
@@ -80,12 +80,26 @@ public class ActivityServiceImpl implements ActivityService {
             }
         }
 
-        return convertListPo2GeneralModel(findingResult);
+        currentAcitivities = convertListPo2Model(findingResult);
+
+        return currentAcitivities;
     }
 
-    // TODO Charles--等确定了再写
-    public List<ActivityGeneralModel> searchActivity(String activityName, ActivityType activityType, ActivityState activityState, Date startTime) {
-        return null;
+    public List<ActivityModel> searchActivities(List<ActivitySearchCriteria> activitySearchCriterias, ActivitySearchCreteriaModel activitySearchCreteriaModel) {
+        List<ActivityModel> result = currentAcitivities;
+        SearchCriteriaFactory factory = new SearchCriteriaFactory();
+        for (ActivitySearchCriteria activitySearchCriteria : activitySearchCriterias) {
+            result = factory.createSearchCriteria(activitySearchCriteria, activitySearchCreteriaModel).meetCriteria(result);
+        }
+        return result;
+    }
+
+    public List<ActivityModel> sortActivities(ActivitySortStrategy activitySortStrategy) {
+        List<ActivityModel> result = currentAcitivities;
+        SortComparatorFactory factory = new SortComparatorFactory();
+        Comparator<ActivityModel> comparator = factory.createComparator(activitySortStrategy);
+        result.sort(comparator);
+        return result;
     }
 
     // TODO 策划模版这个东西是啥。。
@@ -109,6 +123,14 @@ public class ActivityServiceImpl implements ActivityService {
         List<ActivityGeneralModel> result = new LinkedList<ActivityGeneralModel>();
         for (Activity thisActivity: thisActivitiesList) {
             result.add(new ActivityGeneralModel(thisActivity));
+        }
+        return result;
+    }
+
+    private List<ActivityModel> convertListPo2Model(List<Activity> thisActivitiesList) {
+        List<ActivityModel> result = new LinkedList<ActivityModel>();
+        for (Activity thisActivity: thisActivitiesList) {
+            result.add(new ActivityModel(thisActivity));
         }
         return result;
     }

@@ -9,16 +9,35 @@ public enum ActivityType {
     MUSIC(1),
     SPORT(2);
 
-    private int index;
-    private ActivityType(int index){
-        this.index = index;
+    private int representNum;
+    private ActivityType(int representNum){
+        this.representNum = representNum;
     }
 
-    public int getIndex() {
-        return index;
+    /**
+     *
+     * @return 该枚举相对应的汉字
+     *
+     * enum TO int
+     * 便于界面调用，写入数据库
+     */
+    public int getRepresentNum() {
+        return representNum;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    /**
+     *
+     * @return 该类型对应的枚举代码
+     *
+     * int TO enum
+     * 便于从数据库读入
+     */
+    public static ActivityType getEnum(int a) {
+        for (ActivityType thisEnum : ActivityType.values()){
+            if (thisEnum.representNum == a){
+                return thisEnum;
+            }
+        }
+        return null;
     }
 }
