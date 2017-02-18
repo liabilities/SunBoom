@@ -30,7 +30,6 @@ public class GroupController {
         } catch (NotExistException e) {
             e.printStackTrace();
         }
-        System.out.println("call2");
         String result = "<GROUP>";
         if (model != null) {
             result += "<NAME>" + model.getName() + "</NAME>";

@@ -45,6 +45,7 @@ public class ActivityServiceImpl implements ActivityService {
 
 
     public ResultMsg createActivity(ActivityModel activityModel) {
+        System.out.println("createActivity");
         boolean result = activityDAO.insertOne(new Activity(activityModel));
         if(result) return ResultMsg.SUCCESS;
         else return ResultMsg.FAIL;

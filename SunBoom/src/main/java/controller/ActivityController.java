@@ -10,13 +10,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import service.ActivityService;
 import service.impl.ActivityServiceImpl;
+import utilities.enums.ActivityInitiatorType;
 import utilities.enums.ActivityState;
+import utilities.enums.Place;
 import utilities.enums.ResultMsg;
 import utilities.exceptions.NotExistException;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
-import java.util.List;
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * Created by I Like Milk on 2017/2/17.
@@ -33,7 +35,13 @@ public class ActivityController {
     @RequestMapping(value = "/na", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
     @ResponseBody
     public String newActivity(HttpServletRequest request) {
-
+        System.out.println("newActivity");
+        System.out.println(activityService);
+        ResultMsg msg = activityService.createActivity(new ActivityModel(null, "0", request.getParameter("name"), "0",
+                ActivityInitiatorType.getEnum(Integer.parseInt(request.getParameter("initiatorType"))), Integer.parseInt(request.getParameterValues("scale")[0]),
+                Integer.parseInt(request.getParameterValues("scale")[1]), String.join(",", request.getParameterValues("activityType")),
+                Place.getEnum(Integer.parseInt(request.getParameter("place"))), null, null, null, null,
+                null, 0, 0, null));
         return "1";
     }
 

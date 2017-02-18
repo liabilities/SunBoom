@@ -18,19 +18,22 @@ function doSomething() {
         if ($("#editButton").text() == "编辑资料") {
             $("#info").addClass("disappear");
             $("#edit-info").removeClass("disappear");
-            $("#nameBox").attr("value", $("#name").text());
-            $("#signatureBox").attr("value", $("#signature").text());
-            $("#memberNumBox").attr("value", $("#memberNum").text());
-            $("#tagBox").attr("value", $("#tag").text());
+            $("#nameBox").val($("#name").text());
+            $("#signatureBox").val($("#signature").text());
+            $("#memberNumBox").val($("#memberNum").text());
+            $("#schoolBox").val($("#school").text());
+            $("#tagBox").val($("#tag").text());
             $("#editButton").text("保存更改");
         } else {
             $("#edit-info").addClass("disappear");
             $("#info").removeClass("disappear");
-            $("#name").text($("#nameBox").attr("value"));
-            $("#signature").text($("#signatureBox").attr("value"));
-            $("#memberNum").text($("#memberNumBox").attr("value"));
-            $("#tag").text($("#tagBox").attr("value"));
+            $("#name").text($("#nameBox").val());
+            $("#signature").text($("#signatureBox").val());
+            $("#memberNum").text($("#memberNumBox").val());
+            $("#school").text($("#schoolBox").val());
+            $("#tag").text($("#tagBox").val());
             $("#editButton").text("编辑资料");
+            alert("保存成功");
         }
     })
 }

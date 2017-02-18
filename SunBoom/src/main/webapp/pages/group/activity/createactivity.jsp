@@ -203,7 +203,6 @@
 <script>
     function create() {
         $(function () {
-            alert($("form").serialize());
             $.post("/na", $("form").serialize(), function(data) {
                 if (data == "1") {
                     setTab('activity',2,5);
