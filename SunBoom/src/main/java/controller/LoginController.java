@@ -48,7 +48,7 @@ public class LoginController {
     //退出登录
     @RequestMapping(value = "/Logout", method = RequestMethod.GET)
     public String Register(HttpServletRequest request) {
-        request.getSession().setAttribute("User", null);
+        request.getSession().setAttribute("group", null);
         return "HomePage";
     }
 

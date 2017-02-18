@@ -65,32 +65,29 @@
 
 <div class="main wrapper cf">
     <div class="input-form">
-        <form>
-            <div>
-                <table>
-                    <tr style="height:50px">
-                        <td>
-                            <label for="groupName" class="input-name">用户名</label>
-                        </td>
-                        <td>
-                            <input type="userName" class="input-field" id="groupName" name="groupName" placeholder="请输入用户名">
-                        </td>
-                    </tr>
-                    <tr style="height:50px">
-                        <td>
-                            <label for="password" class="input-name">密码</label>
-                        </td>
-                        <td>
-                            <input type="password" class="input-field" id="password" name="password" placeholder="请输入密码">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div style="height:50px">
-                <button type="submit" class="login-button" onclick="Login()">登录</button>
-            </div>
-
-        </form>
+        <div>
+            <table>
+                <tr style="height:50px">
+                    <td>
+                        <label for="groupName" class="input-name">用户名</label>
+                    </td>
+                    <td>
+                        <input type="userName" class="input-field" id="groupName" name="groupName" placeholder="请输入用户名">
+                    </td>
+                </tr>
+                <tr style="height:50px">
+                    <td>
+                        <label for="password" class="input-name">密码</label>
+                    </td>
+                    <td>
+                        <input type="password" class="input-field" id="password" name="password" placeholder="请输入密码">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="height:50px">
+            <button type="submit" class="login-button" onclick="Login()">登录</button>
+        </div>
     </div>
 </div>
 

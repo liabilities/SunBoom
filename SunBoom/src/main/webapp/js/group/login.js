@@ -28,7 +28,7 @@ function Login() {
         success: function (result) {
             if (result == "success") {
                 alert('登录成功');
-                setTimeout("window.location.href = 'home.jsp'", 1800);
+                setTimeout("window.location.href = 'pages/group/home.jsp'", 500);
             } else if (result == "fail") {
                 alert("用户名不存在或密码错误");
             } else {
