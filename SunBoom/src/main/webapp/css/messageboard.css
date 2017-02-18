@@ -1,7 +1,7 @@
 .message-single-dividerLine{
-    width: 80%;
+    width: 90%;
     height: 0;
-    margin: 0 auto 2px;
+    margin: 10px auto 5px;
     border: none;
     border-top: 1px solid #cadbe6;
 }
@@ -60,7 +60,7 @@
 .message-single-top-avatar-img{
     width: 100%;
     height:100%;
-    border-radius: 18px;
+    border-radius: 20px;
     float: left;
 }
 .message-single-top-leavername{
@@ -70,9 +70,73 @@
     max-height: 20px;
     color: #5cb85c;
     float: left;
+    margin-right: 10px;
 }
 .message-single-top-text{
     width: 700px;
     float: left;
-
+}
+.message-single-bottom-singlereply{
+    margin-bottom: 10px;
+}
+.message-single-bottom-avatar{
+    float: left;
+    width: 40px;
+    height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+}
+.message-single-bottom-avatar-img{
+    width: 30px;
+    height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    border-radius: 15px;
+}
+.message-single-bottom-time{
+    margin-top: 8px;
+    float: left;
+    width: auto;
+    max-width: 300px;
+    height: auto;
+    max-height: 20px;
+}
+.message-single-bottom-getUserName{
+    width: auto;
+    max-width: 100px;
+    float: left;
+    margin-right: 10px;
+    color: #5bc0de;
+}
+.message-single-bottom-getTime{
+    width: auto;
+    max-width: 200px;
+    float: left;
+}
+.message-single-bottom-reply-text{
+    float: left;
+    width: 500px;
+    height: 100px;
+    resize: none;
+    margin: 20px 0 20px 40px;
+}
+.message-singel-bottom-reply{
+    width: 100px;
+    height: 80px;
+    border-radius: 20px;
+}
+.message-single-bottom-reply-p{
+    margin: 40px 20px 0 20px;
+    float: left;
+}
+.message-single-bottom-getReply{
+    float: left;
+    width: 100%;
+    height: 30px;
+    margin: 0 0 0 5px;
+}
+.message-single-bottom-getReply-content{
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
 }
