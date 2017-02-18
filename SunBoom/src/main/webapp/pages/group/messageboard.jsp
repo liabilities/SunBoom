@@ -8,12 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>留言板</title>
     <link href="/css/nav2.css" rel="stylesheet" type="text/css" />
+    <link href="/css/messageboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id = "nav">
     <jsp:include page="nav/navigationbar1.jsp" ></jsp:include>
+</div>
+<div>
+    <jsp:include page=""></jsp:include>
 </div>
 
 </body>
