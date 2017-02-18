@@ -13,6 +13,7 @@ import service.DynamicsService;
 import utilities.enums.ResultMsg;
 import utilities.exceptions.NotExistException;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,10 +23,17 @@ import java.util.List;
  */
 public class DynamicsServiceImpl implements DynamicsService {
 
-    public ResultMsg pulish(Dynamic dy) {
+    public ResultMsg pulish(Dynamic dy) throws NotExistException{
         DynamicDAO dao = new DynamicDAOImpl();
         pojo.Dynamic dynamic = new pojo.Dynamic(dy);
+
+        GroupDAO groupDAO = new GroupDAOImpl();
+
         //TODO 图片组的存储
+        //File file = new File("D:\\SunBoomBoom\\"+groupDAO.getById(dynamic.getPublisherID()).getName()+"\\dynamic");
+        //if(!file.exists())
+            //file.mkdirs();
+
         boolean b = dao.insertOne(dynamic);
         if(b) return ResultMsg.SUCCESS;
         return ResultMsg.FAIL;
@@ -47,7 +55,7 @@ public class DynamicsServiceImpl implements DynamicsService {
     public List<Dynamic> getDynamicListByName(String groupname) throws NotExistException{
 
         GroupDAO groupDAO = new GroupDAOImpl();
-        Group group = groupDAO.findByProperty("username",groupname).get(0);
+        Group group = groupDAO.findByProperty("name",groupname).get(0);
 
         //所需动态的用户ID
         List<String> groupsID = new FellowServiceImpl().getFellowList(group.getGroupID()+"");
@@ -71,9 +79,11 @@ public class DynamicsServiceImpl implements DynamicsService {
             temp = new Dynamic(dynamic);
             temp.setGroupname(groupname);
             temp.setAvatar(group.getAvatar());
-            //TODO 图片组String
+            List<String> pictures = new ArrayList<String>(dynamic.getPictureNum());
 
-            //temp.setPictures(dynamic.getPictureNum());
+            //
+
+            temp.setPictures(pictures);
             comments = new DynamicsServiceImpl().getDynamicComment(dynamic.getDynamicID()+"");
             Collections.sort(comments);
             temp.setComments(comments);

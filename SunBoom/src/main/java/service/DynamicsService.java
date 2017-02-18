@@ -16,7 +16,7 @@ public interface DynamicsService {
      * @param dy 动态
      * @return ResultMsg
      */
-    public ResultMsg pulish(Dynamic dy);
+    public ResultMsg pulish(Dynamic dy) throws NotExistException;
 
     /**
      * 读取联系人团体的消息
