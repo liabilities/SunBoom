@@ -12,6 +12,9 @@ public class GroupInf {
     //账号名称
     private String userName;
 
+    public GroupInf() {
+    }
+
     public GroupInf(String groupID, String schoolID, String name, String userName) {
         this.groupID = groupID;
         this.schoolID = schoolID;

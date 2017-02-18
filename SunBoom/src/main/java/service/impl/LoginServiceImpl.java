@@ -27,25 +27,25 @@ public class LoginServiceImpl implements LoginService {
         GroupDAO dao = new GroupDAOImpl();
         Group group = null;
         List<Group> list = null;
-        GroupInf inf = null;
+        GroupInf inf = new GroupInf();
         try {
             list = dao.findByProperty("userName",groupName);
         } catch (Exception e) {
             e.printStackTrace();
-            return inf;
+            return null;
         }
         if (list.isEmpty()) {
             System.out.println("该账号不存在请重新输入");
-            return inf;
+            return null;
         }
         group=list.get(0);
         if(password.contains("=")){
             System.out.println("恶意攻击");
-            return inf;
+            return null;
         }
         if (!group.getPassword().equals(password)) {
             System.out.println("密码不对哟，看看大小写输对了没");
-            return inf;
+            return null;
         }
 //        System.out.print(group.getName()+" "+group.getUsername());
         inf.setName(group.getName());
