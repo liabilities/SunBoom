@@ -13,6 +13,7 @@ function YYYYMMDDstart3()
     document.reg_testdate3.YYYY3.value = "未定义";
     document.reg_testdate3.MM3.value = "未定义";
     var n = MonHead[new Date().getMonth()];
+    var YYYYvalue = new Date().getFullYear();
     if (new Date().getMonth() ==1 && IsPinYear3(YYYYvalue)) n++;
     writeDay3(n); //赋日期下拉框Author:meizz
     document.reg_testdate3.DD3.value = "未定义";
@@ -65,6 +66,7 @@ function YYYYMMDDstart4()
     document.reg_testdate3.YYYY4.value = "未定义";
     document.reg_testdate3.MM4.value = "未定义";
     var n = MonHead[new Date().getMonth()];
+    var YYYYvalue = new Date().getFullYear();
     if (new Date().getMonth() ==1 && IsPinYear4(YYYYvalue)) n++;
     writeDay4(n); //赋日期下拉框Author:meizz
     document.reg_testdate3.DD4.value = "未定义";

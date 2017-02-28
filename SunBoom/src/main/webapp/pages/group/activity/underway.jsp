@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script src="/js/tablealtrow.js"></script> 
-<link href="/css/table.css" rel="stylesheet" type="text/css" />
+<link href="/css/table1.css" rel="stylesheet" type="text/css" />
 
 <style>
     .underline{

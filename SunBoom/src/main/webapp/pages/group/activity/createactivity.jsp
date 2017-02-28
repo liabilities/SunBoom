@@ -222,21 +222,6 @@
     }
 </script>
 
-
-<script>
-    /*
-    根据状态state获得活动，然后执行callback
-     */
-    function getActivities(state, callback) {
-        $(function () {
-            $.post("/gi", {id:"0", state:state}, function (data) {
-                callback(data);
-            })
-        })
-    }
-</script>
-
-
 <script language="JavaScript">
     function YYYYMMDDstart(){
         MonHead = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -252,6 +237,7 @@
         document.reg_testdate.YYYY.value = y;
         document.reg_testdate.MM.value = new Date().getMonth() + 1;
         var n = MonHead[new Date().getMonth()];
+        var YYYYvalue = new Date().getFullYear();
         if (new Date().getMonth() ==1 && IsPinYear(YYYYvalue)) n++;
         writeDay(n); //赋日期下拉框Author:meizz
         document.reg_testdate.DD.value = new Date().getDate();
@@ -306,9 +292,10 @@
         document.reg_testdate.YYYY2.value = y;
         document.reg_testdate.MM2.value = new Date().getMonth() + 1;
         var n = MonHead[new Date().getMonth()];
+        var YYYYvalue = new Date().getFullYear();
         if (new Date().getMonth() ==1 && IsPinYear(YYYYvalue)) n++;
         writeDay(n); //赋日期下拉框Author:meizz
-        document.reg_testdate2.DD2.value = new Date().getDate();
+        document.reg_testdate.DD2.value = new Date().getDate();
     }
     if(document.attachEvent)
         window.attachEvent("onload", YYYYMMDDstart2);

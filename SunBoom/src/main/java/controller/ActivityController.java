@@ -66,16 +66,20 @@ public class ActivityController {
         JSONArray array = new JSONArray();
         JSONObject result = new JSONObject();
         try {
-            List<ActivityGeneralModel> list = activityService.getActivitySpecial(request.getParameter("id"),
+            List<ActivityModel> list = activityService.getActivitySpecial(request.getParameter("id"),
                     ActivityState.getEnum(Integer.parseInt(request.getParameter("state"))));
-            for (ActivityGeneralModel item: list) {
+            for (ActivityModel item: list) {
                 JSONObject json = new JSONObject();
+                json.put("activityID", item.activityID);
                 json.put("name",item.name);
                 json.put("minScale", item.minScale);
                 json.put("maxScale", item.maxScale);
                 json.put("type", item.type);
                 json.put("place", item.place);
                 json.put("startTime", item.startTime);
+                json.put("endTime", item.endTime);
+                json.put("likeNum", item.likeNum);
+                json.put("fellow", item.fellowNum);
                 array.put(json);
             }
         } catch (NotExistException e) {

@@ -21,7 +21,7 @@
     <div class="wrapper">
         <ul class="categories-nav">
             <li id="activity1" onclick="setTab('activity',1,5)" class="current-menu-item"><a>创建活动</a></li>
-            <li id="activity2" onclick="setTab('activity',2,5)"><a>尚未开始</a></li>
+            <li id="activity2" onclick="updateNotStarted()"><a>尚未开始</a></li>
             <li id="activity3" onclick="setTab('activity',3,5)"><a>正在进行</a></li>
             <li id="activity4" onclick="setTab('activity',4,5)"><a>历史活动</a></li>
             <li id="activity5" onclick="setTab('activity',5,5)"><a>活动广场</a></li>
@@ -49,6 +49,26 @@
         </div>
     </div>
 </nav>
-<script src="/js/tab.js"></script> 
+
+<script src="/js/tab.js"></script>
+
+<script>
+    function updateNotStarted() {
+        setTab('activity',2,5);
+    }
+</script>
+
+<script>
+    /*
+     根据状态state获得活动，然后执行callback
+     */
+    function getActivities(state, callback) {
+        $(function () {
+            $.post("/gi", {id:"0", state:state}, function (data) {
+                callback(data);
+            })
+        })
+    }
+</script>
 </body>
 </html>
